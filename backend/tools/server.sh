@@ -9,6 +9,7 @@ log "migration in progess.."
 
 sleep 1
 
+ 
 python3.12 manage.py migrate
 
 if [ $? -ne 0 ]; then

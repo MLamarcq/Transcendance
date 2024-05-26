@@ -75,11 +75,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-env_path = Path('/home/Transcendance/.env')
+env_path = Path('/Users/imranemoumini/Desktop/Transcendance.env')
 
 # Charger les variables d'environnement à partir du fichier .env
 load_dotenv(env_path)
-print(env_path)
+
 
 DATABASES = {
 	'default': {
@@ -92,9 +92,7 @@ DATABASES = {
 	}
 }
 
-for key, value in DATABASES.items() :
-	for role, res in value.items() :
-		print("Role = ", role, " sa clef =", res)
+
 # SECRET_KEY = os.getenv('SECRET_KEY', 'my-default-secret-key')
 # DEBUG = os.getenv('DEBUG', 'False').lower() in ['true', '1']
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
