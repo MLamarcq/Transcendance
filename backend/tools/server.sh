@@ -9,11 +9,26 @@ log "migration in progess.."
 
 sleep 1
 
- 
+python3.12 manage.py makemigrations
+
+if [ $? -ne 0 ]; then
+	log "Une erreur s'est produite lors de l'exécution de la commande -> python3.12 manage.py makemigrations."
+	log "Code de sortie: $?"
+	exit 1  # Quitter le script avec un code d'erreur
+fi
+
 python3.12 manage.py migrate
 
 if [ $? -ne 0 ]; then
 	log "Une erreur s'est produite lors de l'exécution de la commande -> python3.12 manage.py migrate."
+	log "Code de sortie: $?"
+	exit 1  # Quitter le script avec un code d'erreur
+fi
+
+python3.12 create_superuser.py
+
+if [ $? -ne 0 ]; then
+	log "Une erreur s'est produite lors de l'exécution de la commande -> python3.12 manage.py shell -c."
 	log "Code de sortie: $?"
 	exit 1  # Quitter le script avec un code d'erreur
 fi

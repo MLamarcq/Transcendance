@@ -1,9 +1,8 @@
 USERNAME :=$(shell whoami)
 
 all: 
-	
-	sudo mkdir -p /Users/imranemoumini/Desktop/data/database
-	sudo mkdir -p /Users/imranemoumini/Desktop/data/backend
+	sudo mkdir -p /home/$(USERNAME)/data/database
+	sudo mkdir -p /home/$(USERNAME)/data/backend
 	sudo docker-compose -f docker-compose.yml build --no-cache;
 	sudo docker-compose -f docker-compose.yml up -d
 
@@ -17,9 +16,8 @@ clean:
 	sudo docker network rm transcendance
 
 fclean: clean
-	sudo rm -rf /Users/imranemoumini/Desktop/data/database/*
-	sudo rm -rf /Users/imranemoumini/
-	Desktop/data/backend/*
+	sudo rm -rf /home/$(USERNAME)/data/database/*
+	sudo rm -rf /home/$(USERNAME)/data/backend/*
 	sudo docker system prune -af
 
 re: fclean all
