@@ -17,7 +17,7 @@ if [ $? -ne 0 ]; then
 	exit 1  # Quitter le script avec un code d'erreur
 fi
 
-python3.12 manage.py migrate
+python3.12 manage.py migrate --verbosity 3
 
 if [ $? -ne 0 ]; then
 	log "Une erreur s'est produite lors de l'exécution de la commande -> python3.12 manage.py migrate."

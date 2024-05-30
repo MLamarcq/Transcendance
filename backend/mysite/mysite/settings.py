@@ -39,7 +39,7 @@ INSTALLED_APPS = [
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
-	'pong'
+	'pong.apps.PongConfig'
 ]
 
 MIDDLEWARE = [
@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-env_path = Path('/home/Transcendance/.env')
+env_path = Path('/Users/imranemoumini/Desktop/Transcendance.env')
 
 # Charger les variables d'environnement à partir du fichier .env
 load_dotenv(env_path)
