@@ -1,3 +1,2 @@
 Makefile
-docker-compose.yml
 .env_virt
