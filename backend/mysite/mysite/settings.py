@@ -57,7 +57,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
 	{
 		'BACKEND': 'django.template.backends.django.DjangoTemplates',
-		'DIRS': [],
+		'DIRS': [BASE_DIR / "pong/templates/pong"],
 		'APP_DIRS': True,
 		'OPTIONS': {
 			'context_processors': [
@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-env_path = Path('/Users/imranemoumini/Desktop/Transcendance.env')
+env_path = Path('/home/Transcendance/.env')
 
 # Charger les variables d'environnement à partir du fichier .env
 load_dotenv(env_path)
@@ -133,6 +133,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+	 os.path.join(BASE_DIR, 'pong/static'),
+]
+
+# STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
