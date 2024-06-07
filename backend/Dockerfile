@@ -14,7 +14,9 @@ RUN apt-get update && \
 RUN pip install --upgrade pip && \
 	pip install -r requirements.txt
 
-COPY ./mysite ./
+RUN mkdir -p /code
+
+COPY ./mysite /code/
 
 # RUN mkdir /tools
 
