@@ -1,6 +1,6 @@
 .title_index{
 	color: #288c85;
-	font-family: "HK Modular";
+	/* font-family: "HK Modular", sans-serif; */
 	font-size: clamp(1.5rem, 5vw, 5rem);
 	text-shadow: 
         0 0 2px #000,
@@ -16,7 +16,7 @@
         0 0 10px #288c85,
         0 0 20px #288c85,
         0 0 30px #288c85; */
-    font-weight: bold;
+    /* font-weight: bold; */
 	/* animation: subtleNeon 2s ease-in-out infinite alternate;  */
 	display: flex;
     justify-content: center;
@@ -34,11 +34,11 @@
 
 .index_page_links_login{
     color: #ff914d;
-    font-family: "HK Modular";
+    /* font-family: "HK Modular"; */
     font-size: clamp(1.5rem, 3vw, 5rem);
     position: relative;
     top: 285px;
-    font-weight: 700;
+    /* font-weight: 100; */
     text-shadow: 
         0 0 5px #ff914d,
         0 0 10px #ff914d,
@@ -79,7 +79,7 @@
 
 .index_page_links_signup{
     color: #7900ff;
-    font-family: "HK Modular";
+    /* font-family: "HK Modular"; */
     font-size: clamp(1.5rem, 3vw, 5rem);
     position: relative;
     top: 270px;
@@ -152,4 +152,14 @@
             0 0 16px #ff914d,
             0 0 32px #ff914d;
     }
+}
+
+* {
+  font-family: "Tilt Neon", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "XROT" 0,
+    "YROT" 0;
 }
