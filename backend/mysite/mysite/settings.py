@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = "pong.User"
 
 # Application definition
 
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-env_path = Path('/home/Transcendance/.env')
+env_path = Path('/Users/imranemoumini/Desktop/Transcendance_last_version/.env')
 
 # Charger les variables d'environnement à partir du fichier .env
 load_dotenv(env_path)
@@ -92,6 +93,7 @@ DATABASES = {
 		'PORT': '5432'
 	}
 }
+
 
 
 # SECRET_KEY = os.getenv('SECRET_KEY', 'my-default-secret-key')

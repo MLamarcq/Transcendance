@@ -9,7 +9,7 @@ class Command(BaseCommand):
 		django.setup()
 		User = get_user_model()
 		if not User.objects.filter(username='admin').exists():
-			User.objects.create_superuser('admin', 'admin@example.com', 'adminpassword')
+			User.objects.create_superuser('admin@example.com', 'admin','adminpassword')
 
 if __name__ == "__main__":
 	Command().handle()
