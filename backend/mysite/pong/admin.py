@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import User, Tournament, Party, Chat, Message, Statistic, Participant, Friendship, BlockedUser
+from .models import NewUser, Tournament, Party, Chat, Message, Statistic, Participant, Friendship, BlockedUser
 
-admin.site.register(User)
+admin.site.register(NewUser)
 admin.site.register(Tournament)
 admin.site.register(Party)
 admin.site.register(Chat)

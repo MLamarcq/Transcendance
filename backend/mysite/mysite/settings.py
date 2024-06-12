@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = "pong.User"
+AUTH_USER_MODEL = "pong.NewUser"
 
 # Application definition
 

@@ -14,13 +14,13 @@ def validate_image(data):
 
 class CustomAccountManager(BaseUserManager):
 	def create_superuser(self, email, pseudo, password, **other_fields):
-		other_fields.setdefault('is_staff', True)
-		other_fields.setdefault('is_superuser', True)
+		#other_fields.setdefault('is_staff', True)
+		#other_fields.setdefault('is_superuser', True)
 		
-		if other_fields.get('is_staff') is not True:
-			raise ValueError('Superuser must have is_staff=True.')
-		if other_fields.get('is_superuser') is not True:
-			raise ValueError('Superuser must have is_superuser=True.')
+		#if other_fields.get('is_staff') is not True:
+		#	raise ValueError('Superuser must have is_staff=True.')
+		#if other_fields.get('is_superuser') is not True:
+		#	raise ValueError('Superuser must have is_superuser=True.')
 		return self.create_user(email, pseudo, password, **other_fields)
 		
 	def create_user(self, email, pseudo, password, **other_fields):
@@ -31,7 +31,7 @@ class CustomAccountManager(BaseUserManager):
 		user.save(using=self._db)
 		return user
 
-class User(AbstractBaseUser, PermissionsMixin):
+class NewUser(AbstractBaseUser, PermissionsMixin):
 	pseudo = models.CharField(max_length=20, unique=True)
 	email = models.EmailField(unique=True)
 	avatar = models.BinaryField(validators=[validate_image])
@@ -58,7 +58,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 	)
 
 	USERNAME_FIELD = 'email'
-	REQUIRED_FIELDS = ['email']
+	REQUIRED_FIELDS = ['pseudo']
 
 	
 

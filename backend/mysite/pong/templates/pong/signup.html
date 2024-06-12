@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form action="{% url 'signup' %}" method="post">
+<form action="{% url 'signup' %}" method="post"  type="file" enctype="multipart/form-data" name="avatar">
     {% csrf_token %}
     <input type="text" name="email" placeholder="Email">
     <input type="password" name="password" placeholder="Password">
