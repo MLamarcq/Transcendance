@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Pong - Chat{% endblock %}
+
+{% block css%}<link href="{% static 'pong/css/chat.css' %}" rel="stylesheet">{% endblock css %}
+
+{% block content %}
+	<section>
+		<aside>
+			<ul>
+				<li>Imrane</li>
+				<li>Gael</li>
+				<li>Cyril</li>
+				<li>Mathieu</li>
+			</ul>
+		</aside>
+		<article>
+			<div class="chat"><!--
+			--><ul>
+					<li class="moi">Coucou</li>
+					<li class="moi">Ca va ?</li>
+					<li class="toi">Hello bien et tout</li>
+					<li class="toi">*toi</li>
+					<li class="moi">yayayaya</li>
+					<li class="toi">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est aliquam voluptatem fugiat nam molestiae iste? Odit, praesentium sapiente quia, recusandae autem ducimus nihil fuga ullam minus placeat natus aut eius.</li>
+				</ul>
+			</div>
+			<div class="msg">
+				<input type="text"><!--
+				--><button>Envoyer</button>
+			</div>
+		</article>
+	</section>
+{% endblock %}

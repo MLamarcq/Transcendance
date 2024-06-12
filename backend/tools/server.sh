@@ -5,6 +5,16 @@ log()
 	echo -e "${BLUE}$(date +"%Y-%m-%d %H:%M:%S") - ${NC}$1"
 }
 
+sleep 1
+
+cd /code
+
+if [ $? -ne 0 ]; then
+	log "Une erreur s'est produite lors de l'exécution de la commande -> python3.12 manage.py makemigrations."
+	log "Code de sortie: $?"
+	exit 1  # Quitter le script avec un code d'erreur
+fi
+
 log "migration in progess.."
 
 sleep 1
@@ -17,7 +27,7 @@ if [ $? -ne 0 ]; then
 	exit 1  # Quitter le script avec un code d'erreur
 fi
 
-python3.12 manage.py migrate --verbosity 3
+python3.12 manage.py migrate
 
 if [ $? -ne 0 ]; then
 	log "Une erreur s'est produite lors de l'exécution de la commande -> python3.12 manage.py migrate."

@@ -14,8 +14,8 @@ def validate_image(data):
 
 class CustomAccountManager(BaseUserManager):
 	def create_superuser(self, email, pseudo, password, **other_fields):
-		#other_fields.setdefault('is_staff', True)
-		#other_fields.setdefault('is_superuser', True)
+		other_fields.setdefault('is_staff', True)
+		other_fields.setdefault('is_superuser', True)
 		
 		#if other_fields.get('is_staff') is not True:
 		#	raise ValueError('Superuser must have is_staff=True.')
@@ -39,6 +39,8 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
 	created_at = models.DateTimeField(auto_now_add=True)
 	statistic = models.OneToOneField('Statistic', on_delete=models.CASCADE, null=True, blank=True, related_name='user_statistic')
 	blocked_users = models.ManyToManyField('self', through='BlockedUser', symmetrical=False, related_name='blocking_users', blank=True)
+	is_active = models.BooleanField(default=True)
+	is_staff = models.BooleanField(default=False)
 	objects = CustomAccountManager()
 	
 
