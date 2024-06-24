@@ -55,9 +55,9 @@ def signup(request):
             return render(request, 'pong/signup.html', {
                 'error_message': "Email already exists. Please choose a different email."
             })
-        binary_data = b64encode(avatar.read())
 
-        user = NewUser.objects.create_user(email=email, password=password, pseudo=pseudo, avatar=binary_data)
+
+        user = NewUser.objects.create_user(email=email, password=password, pseudo=pseudo, avatar=avatar)
         user.save()
         print(user.id)
         return HttpResponseRedirect(reverse("index"))
@@ -134,7 +134,7 @@ def profile_view(request):
     buffered = BytesIO()
     qr.save(buffered)
     qr_base64 = base64.b64encode(buffered.getvalue()).decode('utf-8')
-    test_base64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/yrdW3QAAAAASUVORK5CYII="
+    
     if request.method == "POST":
         choice = request.POST.get("options")
         if choice == "enabled":
@@ -143,24 +143,20 @@ def profile_view(request):
         else:
             user.is_mfa_enabled = False
             user.save()
-    #permettre de supprimer un amis
-    # donner la poissibilité de si je clique sur un de mes amis je vois ses infos mais une paghe info limité
-    #voir comment bloquer une personne
-    # afficher tous les gens bloqué
-   
-   
-    #voir comment afficher l'image
+    try:
+        user_avatar = user.avatar.url
+    except ValueError:
+        user_avatar = None
 
-    ###############################logique d'affichage amis########################
     friends = get_friends(user)
-    ###############################################################################
+
     return render(request, "pong/profile.html", {
                                                         'user_info' : {
                                                             'user_choice' : user.is_mfa_enabled,
                                                             'user_url'    : qr_base64,
                                                             'user_pseudo' : user.pseudo,
                                                             'user_email' : user.email,
-                                                            'user_avatar' : "test",
+                                                            'user_avatar' : user_avatar,
                                                             'user_friends' : friends,
                                                             'user_blocked_users': "test"
 

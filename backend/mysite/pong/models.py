@@ -36,7 +36,7 @@ class CustomAccountManager(BaseUserManager):
 class NewUser(AbstractBaseUser, PermissionsMixin):
 	pseudo = models.CharField(max_length=20, unique=True)
 	email = models.EmailField(unique=True)
-	avatar = models.BinaryField(validators=[validate_image])
+	avatar = models.ImageField(upload_to='avatars/', validators=[validate_image], null=True, blank=True)
 	friends = models.ManyToManyField('self', through='Friendship')
 	created_at = models.DateTimeField(auto_now_add=True)
 	statistic = models.OneToOneField('Statistic', on_delete=models.CASCADE, null=True, blank=True, related_name='user_statistic')

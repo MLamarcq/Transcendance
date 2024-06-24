@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <form action="{% url 'profile' %}" method="post">
@@ -20,6 +21,12 @@
     </fieldset>
     <input type="submit" value="Submit">
 </form>
+
+{% if user_info.user_avatar %}
+    <img src="{{ user_info.user_avatar }}" alt="Avatar" />
+{% else %}
+    <img src="{% static 'pong/image/profil_default.png' %}" alt="Default Avatar" />
+{% endif %}
 
 {% if user_info.user_choice %}
     <p>scan this QR code in your authentificator app to sync in, at your next connexion you will use your authentificator in order to login</p>
