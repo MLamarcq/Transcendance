@@ -125,4 +125,144 @@ def logout_view(request):
         logout(request)
     return redirect('login')
 
+def profile_view(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("login"))
+    user = NewUser.objects.get(id=(request.session.get('user_id')))
+    url = pyotp.totp.TOTP(user.mfa_hash).provisioning_uri(name=user.email, issuer_name="Pong")
+    qr = qrcode.make(url)
+    buffered = BytesIO()
+    qr.save(buffered)
+    qr_base64 = base64.b64encode(buffered.getvalue()).decode('utf-8')
+    test_base64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/yrdW3QAAAAASUVORK5CYII="
+    if request.method == "POST":
+        choice = request.POST.get("options")
+        if choice == "enabled":
+            user.is_mfa_enabled = True
+            user.save()
+        else:
+            user.is_mfa_enabled = False
+            user.save()
+    #permettre de supprimer un amis
+    # donner la poissibilité de si je clique sur un de mes amis je vois ses infos mais une paghe info limité
+    #voir comment bloquer une personne
+    # afficher tous les gens bloqué
+   
+   
+    #voir comment afficher l'image
+
+    ###############################logique d'affichage amis########################
+    friends = get_friends(user)
+    ###############################################################################
+    return render(request, "pong/profile.html", {
+                                                        'user_info' : {
+                                                            'user_choice' : user.is_mfa_enabled,
+                                                            'user_url'    : qr_base64,
+                                                            'user_pseudo' : user.pseudo,
+                                                            'user_email' : user.email,
+                                                            'user_avatar' : "test",
+                                                            'user_friends' : friends,
+                                                            'user_blocked_users': "test"
+
+                                                            } 
+                                                    })
+
+
+
+def add_friends(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("login"))
+    user = NewUser.objects.get(id=(request.session.get('user_id')))
+    if request.method == "POST":
+        friend_pseudo = request.POST.get("friend_pseudo")
+        friend_user = None
+        try:
+            friend_user = NewUser.objects.get(pseudo=friend_pseudo)
+        except NewUser.DoesNotExist:
+            friend_user = None
+        #empecher d'etre amis avec sois même
+        if ( friend_user is not None) and (user.id is not friend_user.id) :
+            # Check if they are already friends
+            if Friendship.objects.filter(person1=user, person2=friend_user).exists() or Friendship.objects.filter(person1=friend_user, person2=user).exists():
+                return render(request, "pong/add_friends.html", {
+                                                'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : "you are already friends"
+                                                                }
+                                            })
+
+        # Create the friendship
+            Friendship.objects.create(person1=user, person2=friend_user)
+            return HttpResponseRedirect(reverse("profile"))
+        else:
+            if friend_user is None:
+                message = "this user doesn't exist"
+            else:
+                message = "you can't add yourself as friend"
+            return render(request, "pong/add_friends.html", {
+                                                'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : message
+                                                                }
+                                            })
+    else:
+        return render(request, "pong/add_friends.html", {
+                                                'error_message' : {
+                                                                        'value' : False,
+                                                                        'message' : "nothing"
+                                                                }
+                                            })
+
+
+
+
+def delete_friends(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse("login"))
+    user = NewUser.objects.get(id=(request.session.get('user_id')))
+    if request.method == "POST":
+        friend_pseudo = request.POST.get("friend_pseudo")
+        friend_user = None
+        try:
+            friend_user = NewUser.objects.get(pseudo=friend_pseudo)
+        except NewUser.DoesNotExist:
+            friend_user = None
+    
+        if ( friend_user is not None) and (user.id is not friend_user.id) :
+            friendship = Friendship.objects.filter(Q(person1=user, person2=friend_user) | Q(person1=friend_user, person2=user)).first()
+            if friendship:
+                friendship.delete()
+            else:
+                message = "you are not friends"
+                return render(request, "pong/delete_friends.html", {
+                                                'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : message
+                                                                }
+                                                })       
+            return HttpResponseRedirect(reverse("profile")) #succes delete frfiend 
+        else:
+            if friend_user is None:
+                message = "this user doesn't exist"
+            else:
+                message = "you can't delete yourself as friend"
+            return render(request, "pong/delete_friends.html", {
+                                                'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : message
+                                                                }
+                                            })
+    else:
+        return render(request, "pong/delete_friends.html", {
+                                                'error_message' : {
+                                                                        'value' : False,
+                                                                        'message' : "nothing"
+                                                                }
+                                            })
+
+
+
+
+
+
 
