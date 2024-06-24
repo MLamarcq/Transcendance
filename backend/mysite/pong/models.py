@@ -119,14 +119,14 @@ class Message(models.Model):
         return f'{self.sender.pseudo}: {self.content}'
 	
 def send_message(chat, sender, content):
-    message = Message.objects.create(sender=sender, content=content)
-    chat.messages.add(message)
+	message = Message.objects.create(sender=sender, content=content)
+	chat.messages.add(message)
 
-    # Deliver the message to participants who haven't blocked the sender
-    for participant in chat.participants.all():
-        if not participant.is_blocked(sender):
-            # Logic to deliver the message to the participant
-            pass
+	# Deliver the message to participants who haven't blocked the sender
+	for participant in chat.participants.all():
+		if not participant.is_blocked(sender):
+			# Logic to deliver the message to the participant
+			pass
 
 class Friendship(models.Model):
 	person1 = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='friendships', on_delete=models.CASCADE)
