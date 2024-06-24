@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="{% url 'profile' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <h1> {{user_info.user_pseudo}} right now you have chose to : </h1>
+        {% if user_info.user_choice %}
+            <p>enable 2FA </p>
+        {% else %}
+            <p>disable 2FA</p>
+        {% endif %} 
+    <legend> chose if you want to enable or disable 2FA :  </legend>
+            
+            <label for="option1">enabled</label>
+            <input type="checkbox" name="options" value="enabled">
+            
+            <label for="option2">disabled</label>
+            <input type="checkbox" name="options" value="disabled">
+    </fieldset>
+    <input type="submit" value="Submit">
+</form>
+
+{% if user_info.user_choice %}
+    <p>scan this QR code in your authentificator app to sync in, at your next connexion you will use your authentificator in order to login</p>
+    <img src="data:image/png;base64,{{ user_info.user_url|safe }}" alt="QR Code">
+{% endif %}    
+
+<div>
+    <a href="{% url 'add_friends' %}">add friends </a>
+</div>
+
+<div>
+    <h1>your friends are : </h1>
+    {% if user_info.user_friends %}
+        <ul>
+            {% for friend in user_info.user_friends %}
+                <li>{{ friend.pseudo }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'delete_friends' %}">delete a friend </a>
+    {% else %}
+        <p>you have no friends yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

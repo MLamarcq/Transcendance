@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager, BaseUserManager
 from django.core.exceptions import ValidationError
 import imghdr
+import pyotp
 
 def validate_image(data):
 	"""
@@ -28,6 +29,7 @@ class CustomAccountManager(BaseUserManager):
 		email = self.normalize_email(email)
 		user = self.model(email=email, pseudo=pseudo, **other_fields)
 		user.set_password(password)
+		user.mfa_hash = pyotp.random_base32()
 		user.save(using=self._db)
 		return user
 
@@ -41,6 +43,8 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
 	blocked_users = models.ManyToManyField('self', through='BlockedUser', symmetrical=False, related_name='blocking_users', blank=True)
 	is_active = models.BooleanField(default=True)
 	is_staff = models.BooleanField(default=False)
+	mfa_hash = models.CharField(max_length = 50, null=True, blank=True)
+	is_mfa_enabled = models.BooleanField(default=False)
 	objects = CustomAccountManager()
 	
 
