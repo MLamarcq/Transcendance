@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Pong - Homepage{% endblock %}
 
+{% block css %}<link href="{% static 'pong/css/homepage.css' %}" rel="stylesheet">{% endblock css %}
+
 {% block content %}
-		<h1 class="text-center">PONG - Game</h1>
-		<a href="/logout">logout</a>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nisi,
-			 velit sapiente quis, consequatur incidunt exercitationem aperiam, 
-			 sunt alias at corporis maiores doloribus delectus praesentium 
-			 laborum magnam eos ex. Magnam.
-		</p>
-	</div>
+		<!-- <a href="/logout">logout</a> -->
+		<div class="animated_text text-center" id="animatedText">
+			Welcome to the <a href="#" alt="Game">Pong</a> game !<br>
+			Here are the funniest experience you ever had !<br>
+			Play you platform on the <span class="blue">blue</span> or <span class="red">red</span> side and beat your opponent !<br>
+			Pong is an easy game that you can play without any experience !<br>
+			Play against players around the world or invite your friends for more fun !
+		</div>
 {% endblock %}

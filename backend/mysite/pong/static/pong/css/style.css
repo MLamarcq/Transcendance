@@ -12,6 +12,8 @@
 	font-weight: 400;
 	font-style: normal;
 	font-size: 16px;
+
+	box-sizing: border-box;
 	
 	border: none;
 	list-style: none;
@@ -21,6 +23,31 @@
 	--orange: #ff914d;
 	--input: #ffbd59;
 	--green: #288c85;
+	--light-green: #7fdcd5;
+	--blue: #3168d8;
+	--dark_blue: #142a57;
+	--light-blue: #84a9f3;
+}
+::-webkit-scrollbar
+{
+	width: 5px;
+}
+::-webkit-scrollbar-track
+{
+	background-color: var(--input);
+}
+::-webkit-scrollbar-thumb
+{
+	background-color: var(--orange);
+}
+
+html, body
+{
+	touch-action: manipulation;
+}
+
+input, textarea, select, button {
+    touch-action: manipulation;
 }
 
 body {
@@ -50,6 +77,7 @@ header > *
 header h3 a
 {
 	color: var(--green);
+	font-size: 30px;
 	
 }
 
