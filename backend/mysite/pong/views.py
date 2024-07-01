@@ -13,7 +13,10 @@ import pyotp
 import qrcode
 from io import BytesIO
 import base64
- 
+import sys
+import json
+from django.http import JsonResponse
+from datetime import timedelta
 
 
 def index(request):
@@ -90,32 +93,91 @@ def signin(request):
     else:
         return render(request, "pong/signin.html")
 #faire la ologique du otp sur la view otp avec la comparaison du code que le mec aura recu (comme il a deja scanné)
+# def otp_view(request):
+#     user = NewUser.objects.get(id=(request.session.get('user_id')))
+#     message = 'nothing'
+#     value = False
+#     if request.method == "POST":
+#         otp = request.POST["otp"]
+#         totp = pyotp.TOTP(user.mfa_hash) #check the secret key
+#         if totp.verify(otp): # the case where we can login the user
+#             login(request, user)
+#             return HttpResponseRedirect(reverse("index"))
+#         else: # le cas où la secret key n'est pas la bonne
+#             value = True
+#             message = 'invalid one time password or the password has expired'      
+#     return render(request, 'pong/otp.html' , {
+#                                                 'error_message' : {
+#                                                                         'value' : value,
+#                                                                         'message' : message
+#                                                                 }
+#                                             })
+
 def otp_view(request):
     user = NewUser.objects.get(id=(request.session.get('user_id')))
     message = 'nothing'
     value = False
     if request.method == "POST":
-        otp = request.POST["otp"]
-        totp = pyotp.TOTP(user.mfa_hash) #check the secret key
-        if totp.verify(otp): # the case where we can login the user
-            login(request, user)
-            return HttpResponseRedirect(reverse("index"))
-        else: # le cas où la secret key n'est pas la bonne
+        otp = ''.join([request.POST.get(f'otp_{i}') for i in range(6)])  # Récupère chaque chiffre du OTP
+        totp = pyotp.TOTP(user.mfa_hash)  # Initialise TOTP avec le hachage MFA de l'utilisateur
+        if totp.verify(otp):  # Vérifie si le OTP est correct
+            login(request, user)  # Connecte l'utilisateur
+            return HttpResponseRedirect(reverse("index"))  # Redirige vers la page d'accueil
+        else:
             value = True
-            message = 'invalid one time password or the password has expired'      
-    return render(request, 'pong/otp.html' , {
-                                                'error_message' : {
-                                                                        'value' : value,
-                                                                        'message' : message
-                                                                }
-                                            })
+            message = 'invalid one time password or the password has expired'
+    return render(request, 'pong/otp.html', {
+        'error_message': {
+            'value': value,
+            'message': message
+        }
+    })
 
 def statistics(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("index"))
-    user = request.user
+    user = NewUser.objects.get(id=(request.session.get('user_id')))
     statistics = user.statistic
-    return render(request, "pong/statistics.html", {'user' : user, 'statistics' : statistics})
+    history = []
+    partie = Party.objects.all()
+    for game in partie :
+        winner = game.winner.pseudo.strip()
+        loser = game.loser.pseudo.strip()
+        if ((user.pseudo == winner) or (user.pseudo == loser)) :
+            history.append(game)
+    game_date = []
+    game_result = []
+    game_result_numeric = []
+    for game in history :
+        game_date.append(game.date.strftime('%Y-%m-%d'))
+        if (game.winner.pseudo == user.pseudo) :
+            game_result.append('Victory')
+        elif (game.loser.pseudo == user.pseudo) :
+            game_result.append('Defeat')
+    for result in game_result :
+        if (result == "Victory") :
+            game_result_numeric.append(1)
+        else :
+            game_result_numeric.append(-1)
+    nbr_day = 1
+    for i in range(1, len(game_date)):
+        if game_date[i] != game_date[i - 1]:
+            nbr_day += 1
+    data = {}
+    game_duration = timedelta()
+    for i in range(len(history)):
+        game_duration += history[i].game_time
+        if ((i == len(history) - 1) or (history[i].date.strftime('%Y-%m-%d') != history[i + 1].date.strftime('%Y-%m-%d'))) :
+            data[history[i].date.strftime('%Y-%m-%d')] = game_duration.total_seconds()
+            game_duration = timedelta()
+    return render(request, "pong/statistics.html", {
+                                                    'user' : user,
+                                                    'statistics' : statistics,
+                                                    'history' : history,
+                                                    'game_dates_json': json.dumps(game_date),
+                                                    'game_results_json': json.dumps(game_result_numeric),
+                                                    'game_duration_json' : json.dumps(data)
+                                                    })
 
 def chat(request):
     return render(request, "pong/chat.html")

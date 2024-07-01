@@ -5,13 +5,19 @@ from django.core.exceptions import ValidationError
 import imghdr
 import pyotp
 
-def validate_image(data):
-	"""
-	Validate that the uploaded data is a valid image.
-	"""
-	image_format = imghdr.what(None, h=data)
-	if not image_format:
-		raise ValidationError('Invalid image format.')
+def validate_image(fieldfile_obj):
+    """
+    Validate that the uploaded data is a valid image.
+    """
+    if fieldfile_obj:
+        try:
+            data = fieldfile_obj.read()
+            image_format = imghdr.what(None, h=data)
+            if not image_format:
+                raise ValidationError('Invalid image format.')
+        except Exception as e:
+            raise ValidationError(f'Image validation failed: {e}')
+
 
 class CustomAccountManager(BaseUserManager):
 	def create_superuser(self, email, pseudo, password, **other_fields):
@@ -161,7 +167,11 @@ class Party(models.Model):
 	tournament = models.ForeignKey(Tournament, related_name='parties', on_delete=models.SET_NULL, null=True, blank=True)
 
 	def __str__(self):
-		return f"Game name is {self.game_name} - {self.winner} vs {self.loser} on {self.date} at tournament {self.tournament.name}"
+		if not self.tournament or not self.tournament.name :
+			tournament_name = "No tournament"
+		else :
+			tournament_name = self.tournament.name
+		return f"Game name is {self.game_name} - {self.winner} vs {self.loser} on {self.date} at tournament {tournament_name}"
 
 class Statistic(models.Model):
 	user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='statistic_user')
