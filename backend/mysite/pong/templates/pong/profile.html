@@ -22,21 +22,24 @@
     <input type="submit" value="Submit">
 </form>
 
-{% if user_info.user_avatar %}
-    <img src="{{ user_info.user_avatar }}" alt="Avatar" />
-{% else %}
-    <img src="{% static 'pong/image/profil_default.png' %}" alt="Default Avatar" />
-{% endif %}
+
+
 
 {% if user_info.user_choice %}
+<hr>
+<hr>
     <p>scan this QR code in your authentificator app to sync in, at your next connexion you will use your authentificator in order to login</p>
     <img src="data:image/png;base64,{{ user_info.user_url|safe }}" alt="QR Code">
 {% endif %}    
 
+<hr>
+<hr>
 <div>
     <a href="{% url 'add_friends' %}">add friends </a>
 </div>
 
+<hr>
+<hr>
 <div>
     <h1>your friends are : </h1>
     {% if user_info.user_friends %}
@@ -50,5 +53,91 @@
         <p>you have no friends yet.</p>
     {% endif %}
 </div>
+<hr>
+<hr>
 <a href="/logout">logout</a>
+
+<hr>
+<hr>
+
+	<form action="{% url 'profile' %}" method="post" >
+		{% csrf_token %}
+		
+		<label for="email">Your email is {{ user_info.user_email}}, change your email </label>
+		<input type="text" name="change_email" placeholder="Email">
+
+        <input type="submit" value="modify">
+    </form>
+    {% if other_error.email %}
+        <p> {{other_error.email}}</p>
+    {% endif %}
+    <hr>
+    <hr>
+    <form action="{% url 'profile' %}" method="post" >
+		{% csrf_token %}
+		<label for="pseudo">Your pseudo is {{ user_info.user_pseudo}}, change your pseudo</label>
+		<input type="text" name="change_pseudo" placeholder="Pseudo">
+
+        <input type="submit" value="modify">
+    </form>
+    {% if other_error.pseudo %}
+        <p> {{other_error.pseudo}}</p>
+    {% endif %}
+
+
+
+    <hr>
+    <hr>
+
+    {% if user_info.user_avatar %}
+        <img src="{{ user_info.user_avatar }}" alt="Avatar" />
+    {% else %}
+        <img src="{% static 'pong/image/profil_default.png' %}" alt="Default Avatar" />
+    {% endif %}
+    {% if other_error.avatar %}
+        <p> {{other_error.avatar}}</p>
+    {% endif %}
+    <hr>
+    <hr>
+    <form action="{% url 'profile' %}" method="post"  type="file" enctype="multipart/form-data">
+		{% csrf_token %}
+		<label for="avatar" class="avatar">Change your avatar</label>
+		<input id="avatar" type="file" name="change_avatar">
+
+        <input type="submit" value="modify">
+	</form>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <h2>Change Password</h2>
+        <div>
+            <label for="old_password">Old Password:</label>
+            <input type="password" name="old_password" id="old_password">
+        </div>
+        <div>
+            <label for="new_password1">New Password:</label>
+            <input type="password" name="new_password1" id="new_password1">
+        </div>
+        <div>
+            <label for="new_password2">Confirm New Password:</label>
+            <input type="password" name="new_password2" id="new_password2">
+        </div>
+        {% if password_form_errors %}
+            <div class="error">
+                <ul>
+                    {% for error in password_form_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <button type="submit" name="change_password">Change Password</button>
+
+    </form>
+    <hr>
+
+	
+	
+
 {% endblock %}

@@ -1,14 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from base64 import b64encode
 from django.core.files.base import ContentFile
-from .utils import get_friends
+from .utils import get_friends #, CustomPasswordChangeForm
 from .models import NewUser, Tournament, Party, Chat, Message, Statistic, Participant, Friendship, BlockedUser
-from django.http import HttpResponse, HttpResponseRedirect
 from datetime import datetime
 from django.db.models import Q
+from django.db import IntegrityError
 import pyotp
 import qrcode
 from io import BytesIO
@@ -73,6 +74,7 @@ def signin(request):
         email = request.POST.get("email")
         password = request.POST.get("password")
         user = authenticate(request, email=email, password=password)
+        alerte = False
         if user is not None:
             # login(request, user)
             request.session['user_id'] = user.id
@@ -84,7 +86,9 @@ def signin(request):
                 login(request, user)
                 return HttpResponseRedirect(reverse("index"))
         else:
+            alerte = True
             return render(request, "pong/signin.html", {
+                "error_message" : alerte,
                 "message": "Invalid credentials."
             })
     else:
@@ -126,30 +130,89 @@ def logout_view(request):
     return redirect('login')
 
 def profile_view(request):
+    #gérer block user
+    #gérer cliquer sur un user et redirigé vers profil plus simple
+    #faire spa
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
+ 
     user = NewUser.objects.get(id=(request.session.get('user_id')))
     url = pyotp.totp.TOTP(user.mfa_hash).provisioning_uri(name=user.email, issuer_name="Pong")
     qr = qrcode.make(url)
     buffered = BytesIO()
     qr.save(buffered)
     qr_base64 = base64.b64encode(buffered.getvalue()).decode('utf-8')
-    
-    if request.method == "POST":
-        choice = request.POST.get("options")
-        if choice == "enabled":
-            user.is_mfa_enabled = True
-            user.save()
-        else:
-            user.is_mfa_enabled = False
-            user.save()
     try:
         user_avatar = user.avatar.url
     except ValueError:
         user_avatar = None
-
     friends = get_friends(user)
+    password_form_errors = []
+    other_error  = {
+        "avatar" : None,
+        "email" : None,
+        "pseudo" : None
+    }
 
+    
+    if request.method == "POST":
+        if request.POST.get("options"):
+            choice = request.POST.get("options")
+            if choice == "enabled":
+                user.is_mfa_enabled = True
+                user.save()
+            else:
+                user.is_mfa_enabled = False
+                user.save()
+            #return HttpResponseRedirect(reverse("profile"))
+        if request.POST.get("change_pseudo"):
+            if user.pseudo is not request.POST.get("change_pseudo"):
+                try:
+                    test = NewUser.objects.get(pseudo=request.POST.get("change_pseudo"))
+                    other_error["pseudo"] = "this pseudo already exist"
+                except NewUser.DoesNotExist:
+                    user.pseudo = request.POST.get("change_pseudo")
+                    user.save()
+            else:
+                other_error["pseudo"] = "you are already name like this"
+                
+        if request.FILES.get("change_avatar"):
+            user.avatar = request.FILES.get("change_avatar")
+            user.save()
+            user_avatar = user.avatar.url
+            update_session_auth_hash(request, user)
+        if request.POST.get("change_email"):
+            if user.email is not request.POST.get("change_email"):
+                try:
+                    test = NewUser.objects.get(email=request.POST.get("change_email"))
+                    other_error["email"] =  "this email already exist"
+                except NewUser.DoesNotExist:
+                    user.email = request.POST.get("change_email")
+                    user.save()
+                    update_session_auth_hash(request, user)  
+            else:
+                other_error["email"] = "your email is already this one"
+
+        if request.POST.get("old_password"):
+            old_password = request.POST.get("old_password")
+            new_password1 = request.POST.get("new_password1")
+            new_password2 = request.POST.get("new_password2")
+            
+            if new_password1 and new_password2 and old_password:
+                if new_password1 == new_password2:
+                    if user.check_password(old_password):
+                        user.set_password(new_password1)
+                        user.save()
+                        update_session_auth_hash(request, user)  # Important to update session
+                        return HttpResponseRedirect(reverse("index"))
+                    else:
+                        password_form_errors.append('Old password is incorrect.')
+                else:
+                    password_form_errors.append('New passwords do not match.')
+            else:
+                password_form_errors.append('Please fill out all password fields.')
+    
+    
     return render(request, "pong/profile.html", {
                                                         'user_info' : {
                                                             'user_choice' : user.is_mfa_enabled,
@@ -160,7 +223,9 @@ def profile_view(request):
                                                             'user_friends' : friends,
                                                             'user_blocked_users': "test"
 
-                                                            } 
+                                                            },
+                                                            'password_form_errors': password_form_errors,
+                                                            'other_error': other_error
                                                     })
 
 
