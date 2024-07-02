@@ -1,42 +1,69 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block css %}<link href="{% static 'pong/css/profil.css' %}" rel="stylesheet">{% endblock %}
+
 {% block content %}
-<form action="{% url 'profile' %}" method="post">
-    {% csrf_token %}
-    <fieldset>
-        <h1> {{user_info.user_pseudo}} right now you have chose to : </h1>
-        {% if user_info.user_choice %}
-            <p>enable 2FA </p>
+<section class="left_side">
+    <h1>Your Profil</h1>
+    <div class="avatar">
+        <h2>Avatar</h2>
+        {% if user_info.user_avatar %}
+            <img src="{{ user_info.user_avatar }}" alt="Avatar" />
         {% else %}
-            <p>disable 2FA</p>
-        {% endif %} 
-    <legend> chose if you want to enable or disable 2FA :  </legend>
-            
-            <label for="option1">enabled</label>
-            <input type="checkbox" name="options" value="enabled">
-            
-            <label for="option2">disabled</label>
-            <input type="checkbox" name="options" value="disabled">
-    </fieldset>
-    <input type="submit" value="Submit">
-</form>
+            <img src="{% static 'pong/image/profil_default.png' %}" alt="Default Avatar" />
+        {% endif %}
+    </div>
+</section>
 
-
-
-
-{% if user_info.user_choice %}
-<hr>
-<hr>
-    <p>scan this QR code in your authentificator app to sync in, at your next connexion you will use your authentificator in order to login</p>
-    <img src="data:image/png;base64,{{ user_info.user_url|safe }}" alt="QR Code">
-{% endif %}    
+<section class="right_side">
+    <form action="{% url 'profile' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <h1> {{user_info.user_pseudo}} right now you have chose to : </h1>
+            {% if user_info.user_choice %}
+                <p>enable 2FA </p>
+            {% else %}
+                <p>disable 2FA</p>
+            {% endif %} 
+        <legend> chose if you want to enable or disable 2FA :  </legend>
+                
+                <label for="option1">enabled</label>
+                <input type="checkbox" name="options" value="enabled">
+                
+                <label for="option2">disabled</label>
+                <input type="checkbox" name="options" value="disabled">
+        </fieldset>
+        <input type="submit" value="Submit">
+    </form>
+    {% if user_info.user_choice %}
+        <p>scan this QR code in your authentificator app to sync in, at your next connexion you will use your authentificator in order to login</p>
+        <img src="data:image/png;base64,{{ user_info.user_url|safe }}" alt="QR Code">
+    {% endif %}     
 
 <hr>
 <hr>
 <div>
     <a href="{% url 'add_friends' %}">add friends </a>
 </div>
+
+    <div>
+        <h1>your friends are : </h1>
+        {% if user_info.user_friends %}
+            <ul>
+                {% for friend in user_info.user_friends %}
+                    <li>{{ friend.pseudo }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'delete_friends' %}">delete a friend </a>
+        {% else %}
+            <p>you have no friends yet.</p>
+        {% endif %}
+    </div>
+    <a href="/logout">logout</a>
+
+</section>
+
 
 <hr>
 <hr>
@@ -87,16 +114,6 @@
 
 
     <hr>
-    <hr>
-
-    {% if user_info.user_avatar %}
-        <img src="{{ user_info.user_avatar }}" alt="Avatar" />
-    {% else %}
-        <img src="{% static 'pong/image/profil_default.png' %}" alt="Default Avatar" />
-    {% endif %}
-    {% if other_error.avatar %}
-        <p> {{other_error.avatar}}</p>
-    {% endif %}
     <hr>
     <hr>
     <form action="{% url 'profile' %}" method="post"  type="file" enctype="multipart/form-data">
