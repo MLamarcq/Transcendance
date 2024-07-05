@@ -1,4 +1,4 @@
--e [0;34m2024-06-30 09:33:29 - [0mmigration in progess..
+-e [0;34m2024-07-04 18:25:26 - [0mmigration in progess..
 Collecting pyotp
   Downloading pyotp-2.9.0-py3-none-any.whl.metadata (9.8 kB)
 Downloading pyotp-2.9.0-py3-none-any.whl (13 kB)
@@ -11,18 +11,18 @@ Collecting typing-extensions (from qrcode)
 Collecting pypng (from qrcode)
   Downloading pypng-0.20220715.0-py3-none-any.whl.metadata (13 kB)
 Downloading qrcode-7.4.2-py3-none-any.whl (46 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.2/46.2 kB 3.9 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.2/46.2 kB 7.4 MB/s eta 0:00:00
 Downloading pypng-0.20220715.0-py3-none-any.whl (58 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.1/58.1 kB 5.9 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.1/58.1 kB 9.5 MB/s eta 0:00:00
 Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
 Installing collected packages: pypng, typing-extensions, qrcode
 Successfully installed pypng-0.20220715.0 qrcode-7.4.2 typing-extensions-4.12.2
 Collecting Pillow
-  Downloading pillow-10.3.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (9.2 kB)
-Downloading pillow-10.3.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.5 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 29.6 MB/s eta 0:00:00
+  Downloading pillow-10.4.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (9.2 kB)
+Downloading pillow-10.4.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 28.2 MB/s eta 0:00:00
 Installing collected packages: Pillow
-Successfully installed Pillow-10.3.0
+Successfully installed Pillow-10.4.0
 No changes detected
 Operations to perform:
   Apply all migrations: admin, auth, contenttypes, pong, sessions
@@ -31,7 +31,7 @@ Running migrations:
 Performing system checks...
 
 System check identified no issues (0 silenced).
-June 30, 2024 - 09:33:41
+July 04, 2024 - 18:25:33
 Django version 5.0.6, using settings 'mysite.settings'
 Starting development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.
@@ -39,19 +39,34 @@ Quit the server with CONTROL-C.
 Performing system checks...
 
 System check identified no issues (0 silenced).
-June 30, 2024 - 09:34:17
+July 04, 2024 - 18:27:31
 Django version 5.0.6, using settings 'mysite.settings'
 Starting development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.
 
-ok
 Performing system checks...
 
 System check identified no issues (0 silenced).
-June 30, 2024 - 09:34:51
+July 04, 2024 - 18:36:08
 Django version 5.0.6, using settings 'mysite.settings'
 Starting development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.
 
 Performing system checks...
+
+System check identified no issues (0 silenced).
+July 04, 2024 - 18:36:16
+Django version 5.0.6, using settings 'mysite.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+Performing system checks...
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 04, 2024 - 18:38:06
+Django version 5.0.6, using settings 'mysite.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
 

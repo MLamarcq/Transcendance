@@ -18,84 +18,221 @@ import sys
 import json
 from django.http import JsonResponse
 from datetime import timedelta
+from django.contrib import messages
+from django.template.loader import render_to_string
 
 
-def index(request):
+
+# def index(request):
+    # if not request.user.is_authenticated:
+    #     return HttpResponseRedirect(reverse("login"))
+    # return (render(request, "pong/homepage.html"))
+
+def index(request) :
     if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("login"))
-    return (render(request, "pong/homepage.html"))
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return JsonResponse({'redirect' : reverse("login")})
+        else :
+            return HttpResponseRedirect(reverse("login"))
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        html = render_to_string("pong/homepage_content.html", {}, request)
+        return (JsonResponse({'html' : html}))
+    else :
+        return render(request, "pong/homepage.html")
 
+# def login_view(request):
+    # if not request.user.is_authenticated:
+    #     return render(request,"pong/login.html")
+    # else:
+    #     #ça serait bien de rajouter une notification "vous êtes déjà connecté"
+    #     return HttpResponseRedirect(reverse("index"))
 
 def login_view(request):
-    if not request.user.is_authenticated:
-        return render(request,"pong/login.html")
+    if request.user.is_authenticated:
+        message = "Vous êtes déjà connecté"
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return JsonResponse({'redirect': reverse("index"), 'message': message})
+        else:
+            # Vous pouvez ajouter un message flash pour afficher la notification sur la page d'accueil.
+            messages.add_message(request, messages.INFO, message)
+            return HttpResponseRedirect(reverse("index"))
     else:
-        #ça serait bien de rajouter une notification "vous êtes déjà connecté"
-        return HttpResponseRedirect(reverse("index"))
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            html = render_to_string("pong/login_content.html", {}, request)
+            return JsonResponse({'html': html})
+        else:
+            return render(request, "pong/login.html")
+
+
+
+# def signup(request):
+    # if request.user.is_authenticated:
+    #     message = "Vous êtes déjà connecté"
+    #     # if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+    #     #     return JsonResponse({'redirect': reverse("index"), 'message': message})
+    #     # else:
+    #         # Vous pouvez ajouter un message flash pour afficher la notification sur la page d'accueil.
+    #     messages.add_message(request, messages.INFO, message)
+    #     return HttpResponseRedirect(reverse("index"))
+    # if request.method == "POST":
+    #     email = request.POST.get("email")
+    #     password = request.POST.get("password")
+    #     confirm_password = request.POST.get("confirm_password")
+    #     avatar = request.FILES.get("avatar")
+    #     pseudo = request.POST.get("pseudo")
+
+    #     if (confirm_password.casefold() != password.casefold()) :
+    #         return render(request, 'pong/signup.html', {
+    #             'error_message': "Password don't match, please try again."
+    #         })
+        
+    #     if NewUser.objects.filter(pseudo=pseudo).exists():
+    #         return render(request, 'pong/signup.html', {
+    #             'error_message': "Username already exists. Please choose a different pseudo."
+    #         })
+
+        
+    #     if NewUser.objects.filter(email=email).exists():
+    #         return render(request, 'pong/signup.html', {
+    #             'error_message': "Email already exists. Please choose a different email."
+    #         })
+
+
+    #     user = NewUser.objects.create_user(email=email, password=password, pseudo=pseudo, avatar=avatar)
+    #     user.save()
+    #     print(user.id)
+    #     return HttpResponseRedirect(reverse("index"))
+    # else:
+    #     return render(request, "pong/signup.html")
+        
+
+def validate_signup_data(email, password, confirm_password, pseudo):
+    if confirm_password.casefold() != password.casefold():
+        return "Password don't match, please try again."
+    if NewUser.objects.filter(pseudo=pseudo).exists():
+        return "Username already exists. Please choose a different pseudo."
+    if NewUser.objects.filter(email=email).exists():
+        return "Email already exists. Please choose a different email."
+    return None
 
 def signup(request):
     if request.user.is_authenticated:
-        #ça serait bien de rajouter une notification "vous êtes déjà connecté"
-        return HttpResponseRedirect(reverse("index"))
+        message = "Vous êtes déjà connecté"
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return JsonResponse({'redirect': reverse("index"), 'message': message})
+        else:
+            messages.add_message(request, messages.INFO, message)
+            return HttpResponseRedirect(reverse("index"))
+
     if request.method == "POST":
+        print("Nous passons bien ici")
         email = request.POST.get("email")
         password = request.POST.get("password")
         confirm_password = request.POST.get("confirm_password")
         avatar = request.FILES.get("avatar")
         pseudo = request.POST.get("pseudo")
-
-        if (confirm_password.casefold() != password.casefold()) :
-            return render(request, 'pong/signup.html', {
-                'error_message': "Password don't match, please try again."
-            })
         
-        if NewUser.objects.filter(pseudo=pseudo).exists():
-            return render(request, 'pong/signup.html', {
-                'error_message': "Username already exists. Please choose a different pseudo."
-            })
-
+        error_message = validate_signup_data(email, password, confirm_password, pseudo)
         
-        if NewUser.objects.filter(email=email).exists():
-            return render(request, 'pong/signup.html', {
-                'error_message': "Email already exists. Please choose a different email."
-            })
-
-
+        if error_message:
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                html = render_to_string("pong/signup_content.html", {'error_message': error_message}, request=request)
+                return JsonResponse({'html': html})
+            else:
+                return render(request, 'pong/signup.html', {'error_message': error_message})
+        
         user = NewUser.objects.create_user(email=email, password=password, pseudo=pseudo, avatar=avatar)
         user.save()
-        print(user.id)
-        return HttpResponseRedirect(reverse("index"))
-    else:
-        return render(request, "pong/signup.html")
         
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return JsonResponse({'redirect': reverse("index")})
+        else:
+            return HttpResponseRedirect(reverse("index"))
+
+    else:
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            print("Nous passons bien ici 2")
+            html = render_to_string("pong/signup_content.html", {}, request=request)
+            return JsonResponse({'html': html})
+        else:
+            return render(request, "pong/signup.html")
+
+
+
+# def signin(request):
+    # if request.user.is_authenticated:
+    #     #ça serait bien de rajouter une notification "vous êtes déjà connecté"
+    #     return HttpResponseRedirect(reverse("index"))
+    # if request.method == "POST":
+    #     email = request.POST.get("email")
+    #     password = request.POST.get("password")
+    #     user = authenticate(request, email=email, password=password)
+    #     alerte = False
+    #     if user is not None:
+    #         # login(request, user)
+    #         request.session['user_id'] = user.id
+    #         if user.is_mfa_enabled is True:
+    #             #send_otp(request)
+    #             #request.session["email"] = email
+    #             return redirect("otp")
+    #         else:
+    #             login(request, user)
+    #             return HttpResponseRedirect(reverse("index"))
+    #     else:
+    #         alerte = True
+    #         return render(request, "pong/signin.html", {
+    #             "error_message" : alerte,
+    #             "message": "Invalid credentials."
+    #         })
+    # else:
+    #     return render(request, "pong/signin.html")
+
+
+def handle_authentication(request, email, password):
+    user = authenticate(request, email=email, password=password)
+    if user is not None:
+        if user.is_mfa_enabled:
+            return {'redirect': reverse('otp')}
+        else:
+            login(request, user)
+            return {'redirect': reverse('index')}
+    else:
+        return {'error_message': "Invalid credentials."}
 
 def signin(request):
     if request.user.is_authenticated:
-        #ça serait bien de rajouter une notification "vous êtes déjà connecté"
-        return HttpResponseRedirect(reverse("index"))
+        message = "Vous êtes déjà connecté"
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return JsonResponse({'redirect': reverse("index"), 'message': message})
+        else:
+            messages.add_message(request, messages.INFO, message)
+            return HttpResponseRedirect(reverse("index"))
+
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
-        user = authenticate(request, email=email, password=password)
-        alerte = False
-        if user is not None:
-            # login(request, user)
-            request.session['user_id'] = user.id
-            if user.is_mfa_enabled is True:
-                #send_otp(request)
-                #request.session["email"] = email
-                return redirect("otp")
+        
+        result = handle_authentication(request, email, password)
+        
+        if 'error_message' in result:
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                html = render_to_string("pong/signin_content.html", {'error_message': True, 'message': result['error_message']}, request=request)
+                return JsonResponse({'html': html})
             else:
-                login(request, user)
-                return HttpResponseRedirect(reverse("index"))
+                return render(request, "pong/signin.html", {"error_message": True, "message": result['error_message']})
         else:
-            alerte = True
-            return render(request, "pong/signin.html", {
-                "error_message" : alerte,
-                "message": "Invalid credentials."
-            })
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'redirect': result['redirect']})
+            else:
+                return HttpResponseRedirect(result['redirect'])
+
     else:
-        return render(request, "pong/signin.html")
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            html = render_to_string("pong/signin_content.html", {}, request=request)
+            return JsonResponse({'html': html})
+        else:
+            return render(request, "pong/signin.html")
+
 #faire la ologique du otp sur la view otp avec la comparaison du code que le mec aura recu (comme il a deja scanné)
 # def otp_view(request):
 #     user = NewUser.objects.get(id=(request.session.get('user_id')))

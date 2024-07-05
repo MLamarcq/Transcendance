@@ -1,3 +1,20 @@
+<!-- {% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}PONG {% endblock %}
+
+{% block css %}<link href="static/pong/css/style_index.css" rel="stylesheet">{% endblock %}
+
+{% block content %}
+	{% include 'pong/login_content.html' %}
+{% endblock %} -->
+
+
+
+
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -9,14 +26,15 @@
 		<link href="static/pong/css/style_index.css" rel="stylesheet">
 	</head>
 	<body class="body_index">
-		<div class="container-fluid fixed_header">
-			<h1 class="text-center title_index p-5"><strong>PONG</strong></h1>
-		</div>
-		<div class="container-fluid index_page_text">
-			<a class="index_page_links_login" href="/signin" alt="SIGN IN">LOG IN</a>
-			<a class="index_page_links_signup" href="/signup" alt="SIGN IN"><strong>SIGN UP</strong></a>
-		</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>	
+			<div class="container-fluid fixed_header">
+				<h1 class="text-center title_index p-5"><strong>PONG</strong></h1>
+			</div>
+			<div class="container-fluid index_page_text">
+				<a class="index_page_links_login" href="{% url 'signin' %}" alt="SIGN IN">LOG IN</a>
+				<a class="index_page_links_signup" href="{% url 'signup' %}" alt="SIGN IN"><strong>SIGN UP</strong></a>
+			</div>
 	</body>
 </html>
+
+
+

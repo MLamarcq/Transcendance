@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-env_path = Path('Users/imranemoumini/Desktop/Transcendance_last_version/.env')
+env_path = Path('/home/Transcendance/.env')
 
 
 # Charger les variables d'environnement à partir du fichier .env
