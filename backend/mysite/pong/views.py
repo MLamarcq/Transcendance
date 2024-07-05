@@ -125,7 +125,7 @@ def signup(request):
             return HttpResponseRedirect(reverse("index"))
 
     if request.method == "POST":
-        print("Nous passons bien ici")
+        print("Nous passons bien ici oui")
         email = request.POST.get("email")
         password = request.POST.get("password")
         confirm_password = request.POST.get("confirm_password")
@@ -190,6 +190,7 @@ def signup(request):
 
 def handle_authentication(request, email, password):
     user = authenticate(request, email=email, password=password)
+    print("email =", email, "password =", password)
     if user is not None:
         if user.is_mfa_enabled:
             return {'redirect': reverse('otp')}
@@ -209,6 +210,7 @@ def signin(request):
             return HttpResponseRedirect(reverse("index"))
 
     if request.method == "POST":
+        print("Je passe ici quand j'appuie sur LOGIN oui")
         email = request.POST.get("email")
         password = request.POST.get("password")
         
@@ -323,10 +325,21 @@ def statistics(request):
 def chat(request):
     return render(request, "pong/chat.html")
 
+# def logout_view(request):
+    # if request.user.is_authenticated:
+    #     logout(request)
+    # return redirect('login')
+
+
 def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
-    return redirect('login')
+    
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return JsonResponse({'redirect': reverse('login')})
+    else:
+        return HttpResponseRedirect(reverse('login'))
+
 
 def profile_view(request):
     #gérer block user
