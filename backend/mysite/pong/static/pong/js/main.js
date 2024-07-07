@@ -335,13 +335,20 @@
 
 //4
 
+
+// IMRANE
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Script main.js est chargé');
     
     // Charger le contenu initial en fonction du chemin de l'URL actuelle
+
+    /*
     loadContent(window.location.pathname);
+    */
 
     // Gestionnaire d'événements pour les liens
+    
     document.addEventListener('click', event => {
         const link = event.target.closest('a');
         console.log("Fonction principale : link =", link);
@@ -349,10 +356,11 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const path = new URL(link.href).pathname;
             console.log("Fonction principale : path =", path);
-            window.history.pushState({}, '', path);
+            //window.history.pushState({}, '', path);
             loadContent(path);
         }
     });
+    
 
     // Gestionnaire d'événements pour les formulaires
     document.addEventListener('submit', event => {
@@ -364,11 +372,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Gestionnaire d'événements pour les changements dans l'historique de navigation
+    
+    
     window.addEventListener('popstate', () => {
         loadContent(window.location.pathname);
     });
+    
 
     // Gestionnaire d'événements pour le bouton de déconnexion
+    /*
     const logoutButton = document.querySelector('#logout-button');
     if (logoutButton) {
         logoutButton.addEventListener('click', event => {
@@ -381,15 +393,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .then(response => response.json())
-            .then(data => {
-                if (data.redirect) {
-                    window.location.href = data.redirect;
-                }
-            })
+            //.then(data => {
+            //    if (data.redirect) {
+            //        window.location.href = data.redirect;
+            //    }
+            //})
             .catch(error => console.error('Error during logout:', error));
         });
     }
+        */
 });
+
+
+
+// DEFINITIONB DES FONCTIONS
 
 function loadContent(path) {
     console.log('Loading content from:', path);
@@ -402,13 +419,10 @@ function loadContent(path) {
         try {
             const data = JSON.parse(text); // Parse JSON manually
             console.log("data =", data);
-            if (data.redirect) {
-                window.location.href = data.redirect;
-            } else if (data.html) {
-                document.getElementById('app').innerHTML = data.html;
-                attachFormListeners();
-                attachLinkListeners();
-            }
+            window.history.pushState({}, '', data.url);
+            document.getElementById('app').innerHTML = data.html;
+            //attachFormListeners();
+            //attachLinkListeners();
         } catch (error) {
             console.error('Error parsing JSON:', error);
             document.getElementById('app').innerHTML = text; // Display the HTML in the app div for debugging
@@ -417,6 +431,7 @@ function loadContent(path) {
     .catch(error => console.error('Error loading content:', error));
 }
 
+/*
 function attachFormListeners() {
     document.querySelectorAll('form').forEach(form => {
         form.addEventListener('submit', event => {
@@ -431,12 +446,12 @@ function attachLinkListeners() {
         link.addEventListener('click', event => {
             event.preventDefault();
             const path = new URL(link.href).pathname;
-            window.history.pushState({}, '', path);
+            //window.history.pushState({}, '', path);
             loadContent(path);
         });
     });
 }
-
+*/
 function submitForm(form) {
     const formData = new FormData(form);
     console.log("Submitting form:", form.action);
@@ -451,13 +466,10 @@ function submitForm(form) {
         try {
             const data = JSON.parse(text); // Parse JSON manually
             console.log("Parsed response:", data);
-            if (data.redirect) {
-                window.location.href = data.redirect;
-            } else if (data.html) {
-                document.getElementById('app').innerHTML = data.html;
-                attachFormListeners();
-                attachLinkListeners();
-            }
+            window.history.pushState({}, '', data.url);
+            document.getElementById('app').innerHTML = data.html;
+            //attachFormListeners();
+            //attachLinkListeners();
         } catch (error) {
             console.error('Error parsing JSON:', error);
             document.getElementById('app').innerHTML = text; // Display the HTML in the app div for debugging
@@ -466,6 +478,7 @@ function submitForm(form) {
     .catch(error => console.error('Error submitting form:', error));
 }
 
+/*
 function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -479,5 +492,7 @@ function getCookie(name) {
         }
     }
     return cookieValue;
+
 }
+*/  
 

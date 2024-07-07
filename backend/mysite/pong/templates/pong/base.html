@@ -30,10 +30,8 @@
 				<a href="{% url 'profile' %}" alt="Profil">Profil</a>
 			</nav>
 		</header>
-		<main id="app">
 			{% block content %}
 			{% endblock %}
-		</main>
 		{% block script %}
 		{% endblock %}
 		<script src="{% static 'pong/js/main.js' %}"></script>

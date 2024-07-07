@@ -31,12 +31,18 @@ from django.template.loader import render_to_string
 def index(request) :
     if not request.user.is_authenticated:
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            html = render_to_string("pong/login_content.html", {}, request)
+            return (JsonResponse({'html' : html,                 
+                                'url' :   reverse("login")     
+                }))
             return JsonResponse({'redirect' : reverse("login")})
         else :
             return HttpResponseRedirect(reverse("login"))
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         html = render_to_string("pong/homepage_content.html", {}, request)
-        return (JsonResponse({'html' : html}))
+        return (JsonResponse({'html' : html,                 
+                            'url' :   reverse("index")     
+                }))
     else :
         return render(request, "pong/homepage.html")
 
@@ -51,15 +57,20 @@ def login_view(request):
     if request.user.is_authenticated:
         message = "Vous êtes déjà connecté"
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-            return JsonResponse({'redirect': reverse("index"), 'message': message})
+            html = render_to_string("pong/homepage_content.html", {'message': message}, request)
+            return (JsonResponse({'html' : html,                 
+                            'url' :   reverse("index")     
+                }))
         else:
             # Vous pouvez ajouter un message flash pour afficher la notification sur la page d'accueil.
-            messages.add_message(request, messages.INFO, message)
+            #messages.add_message(request, messages.INFO, message)
             return HttpResponseRedirect(reverse("index"))
     else:
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             html = render_to_string("pong/login_content.html", {}, request)
-            return JsonResponse({'html': html})
+            return JsonResponse({'html': html, 
+                                'url' : reverse("login")
+                                })
         else:
             return render(request, "pong/login.html")
 
@@ -115,13 +126,17 @@ def validate_signup_data(email, password, confirm_password, pseudo):
         return "Email already exists. Please choose a different email."
     return None
 
+
 def signup(request):
     if request.user.is_authenticated:
         message = "Vous êtes déjà connecté"
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-            return JsonResponse({'redirect': reverse("index"), 'message': message})
+            html = render_to_string("pong/homepage_content.html", {'message': message}, request=request)
+            return JsonResponse({'html': html,
+                                'url' : reverse("index")
+                                })
         else:
-            messages.add_message(request, messages.INFO, message)
+            #messages.add_message(request, messages.INFO, message)
             return HttpResponseRedirect(reverse("index"))
 
     if request.method == "POST":
@@ -137,7 +152,9 @@ def signup(request):
         if error_message:
             if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
                 html = render_to_string("pong/signup_content.html", {'error_message': error_message}, request=request)
-                return JsonResponse({'html': html})
+                return JsonResponse({'html': html,
+                                    'url' : reverse("signup")
+                })
             else:
                 return render(request, 'pong/signup.html', {'error_message': error_message})
         
@@ -145,7 +162,10 @@ def signup(request):
         user.save()
         
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-            return JsonResponse({'redirect': reverse("index")})
+            html = render_to_string("pong/homepage_content.html", {}, request=request)
+            return JsonResponse({'html': html,
+                                'url' : reverse("index")
+            })
         else:
             return HttpResponseRedirect(reverse("index"))
 
@@ -153,7 +173,9 @@ def signup(request):
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             print("Nous passons bien ici 2")
             html = render_to_string("pong/signup_content.html", {}, request=request)
-            return JsonResponse({'html': html})
+            return JsonResponse({'html': html,
+                                'url' : reverse("signup")
+            })
         else:
             return render(request, "pong/signup.html")
 
@@ -193,10 +215,14 @@ def handle_authentication(request, email, password):
     print("email =", email, "password =", password)
     if user is not None:
         if user.is_mfa_enabled:
-            return {'redirect': reverse('otp')}
+            return {'redirect': "pong/otp_content.html",
+                    'url' : reverse("otp")
+            }
         else:
             login(request, user)
-            return {'redirect': reverse('index')}
+            return {'redirect': "pong/homepage_content.html",
+                    'url' : reverse("index")
+            }
     else:
         return {'error_message': "Invalid credentials."}
 
@@ -204,9 +230,12 @@ def signin(request):
     if request.user.is_authenticated:
         message = "Vous êtes déjà connecté"
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-            return JsonResponse({'redirect': reverse("index"), 'message': message})
+            html = render_to_string("pong/homepage_content.html", {'message': message}, request=request)
+            return JsonResponse({'html': html,
+                                'url' : reverse("index")
+            })
         else:
-            messages.add_message(request, messages.INFO, message)
+            #messages.add_message(request, messages.INFO, message)
             return HttpResponseRedirect(reverse("index"))
 
     if request.method == "POST":
@@ -219,19 +248,28 @@ def signin(request):
         if 'error_message' in result:
             if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
                 html = render_to_string("pong/signin_content.html", {'error_message': True, 'message': result['error_message']}, request=request)
-                return JsonResponse({'html': html})
+                return JsonResponse({'html': html,
+                                    'url' : reverse("signin")
+                })
             else:
                 return render(request, "pong/signin.html", {"error_message": True, "message": result['error_message']})
         else:
             if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-                return JsonResponse({'redirect': result['redirect']})
+                html = render_to_string(result['redirect'], {}, request=request)
+                return JsonResponse({'html': html,
+                                    'url' : result['url']
+                })
             else:
-                return HttpResponseRedirect(result['redirect'])
+                new_url = result['redirect']
+                new_url = new_url.replace("_content", "")
+                return HttpResponseRedirect(new_url)
 
     else:
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             html = render_to_string("pong/signin_content.html", {}, request=request)
-            return JsonResponse({'html': html})
+            return JsonResponse({'html': html,
+                                'url': reverse("signin")
+            })
         else:
             return render(request, "pong/signin.html")
 
@@ -265,16 +303,23 @@ def otp_view(request):
         totp = pyotp.TOTP(user.mfa_hash)  # Initialise TOTP avec le hachage MFA de l'utilisateur
         if totp.verify(otp):  # Vérifie si le OTP est correct
             login(request, user)  # Connecte l'utilisateur
-            return HttpResponseRedirect(reverse("index"))  # Redirige vers la page d'accueil
+            #return HttpResponseRedirect(reverse("index"))  # Redirige vers la page d'accueil
+            html = render_to_string("pong/homepage_content.html", {}, request=request)
+            return JsonResponse({'html': html,
+                                'url' : reverse("index")
+            })
         else:
             value = True
             message = 'invalid one time password or the password has expired'
-    return render(request, 'pong/otp.html', {
-        'error_message': {
-            'value': value,
-            'message': message
-        }
-    })
+            html = render_to_string("pong/otp_content.html", {'error_message': {
+                    'value': value,
+                    'message': message
+                }}, request=request)
+            return JsonResponse({'html': html,
+                                'url' : reverse('otp')
+            })
+
+    return render(request, "pong/otp.html")
 
 def statistics(request):
     if not request.user.is_authenticated:
@@ -336,7 +381,8 @@ def logout_view(request):
         logout(request)
     
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        return JsonResponse({'redirect': reverse('login')})
+        html = render_to_string("pong/login_content.html", {}, request=request)
+        return JsonResponse({'html': html})
     else:
         return HttpResponseRedirect(reverse('login'))
 
