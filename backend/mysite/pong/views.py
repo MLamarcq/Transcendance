@@ -20,8 +20,10 @@ from django.http import JsonResponse
 from datetime import timedelta
 from django.contrib import messages
 from django.template.loader import render_to_string
+import logging
 
 
+logger = logging.getLogger('pong')
 
 # def index(request):
     # if not request.user.is_authenticated:
@@ -118,6 +120,14 @@ def login_view(request):
         
 
 def validate_signup_data(email, password, confirm_password, pseudo):
+    if not email :
+        return "Email: this field can not be empty"
+    if not password :
+        return "Password: this field can not be empty"
+    if not confirm_password :
+        return "Confirm_password: this field can't be empty"
+    if not pseudo:
+        return "Pseudo: this field can't be empty"
     if confirm_password.casefold() != password.casefold():
         return "Password don't match, please try again."
     if NewUser.objects.filter(pseudo=pseudo).exists():
@@ -147,8 +157,16 @@ def signup(request):
         avatar = request.FILES.get("avatar")
         pseudo = request.POST.get("pseudo")
         
+        logger.debug("email = %s", email)
+        logger.debug("pseudo = %s", pseudo)
+        logger.debug("password = %s", password)
+        logger.debug("confirm_password = %s", confirm_password)
+
+
         error_message = validate_signup_data(email, password, confirm_password, pseudo)
         
+        logger.debug("error_message = %s", error_message)
+
         if error_message:
             if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
                 html = render_to_string("pong/signup_content.html", {'error_message': error_message}, request=request)
