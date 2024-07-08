@@ -346,9 +346,13 @@ document.addEventListener('DOMContentLoaded', () => {
     /*
     loadContent(window.location.pathname);
     */
-
+    window.addEventListener('popstate', event => {
+        event.preventDefault();
+      loadContent(window.location.pathname);
+ });
     // Gestionnaire d'événements pour les liens
     
+
     document.addEventListener('click', event => {
         const link = event.target.closest('a');
         console.log("Fonction principale : link =", link);
@@ -374,9 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gestionnaire d'événements pour les changements dans l'historique de navigation
     
     
-    // window.addEventListener('popstate', () => {
-    //     // loadContent(window.location.pathname);
-    // });
+     
     
 
     // Gestionnaire d'événements pour le bouton de déconnexion

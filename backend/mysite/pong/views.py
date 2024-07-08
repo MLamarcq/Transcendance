@@ -456,7 +456,13 @@ def profile_view(request):
     #gérer cliquer sur un user et redirigé vers profil plus simple
     #faire spa
     if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("login"))
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            html = render_to_string("pong/login_content.html", {}, request)
+            return JsonResponse({'html': html, 
+                                'url' : reverse("login")
+                                })
+        else:
+            return HttpResponseRedirect(reverse("login"))
  
     user = NewUser.objects.get(id=(request.session.get('user_id')))
     url = pyotp.totp.TOTP(user.mfa_hash).provisioning_uri(name=user.email, issuer_name="Pong")
@@ -533,9 +539,25 @@ def profile_view(request):
                     password_form_errors.append('New passwords do not match.')
             else:
                 password_form_errors.append('Please fill out all password fields.')
-    
-    
-    return render(request, "pong/profile.html", {
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        html = render_to_string("pong/profile_content.html", {
+                                                        'user_info' : {
+                                                            'user_choice' : user.is_mfa_enabled,
+                                                            'user_url'    : qr_base64,
+                                                            'user_pseudo' : user.pseudo,
+                                                            'user_email' : user.email,
+                                                            'user_avatar' : user_avatar,
+                                                            'user_friends' : friends,
+                                                            'user_blocked_users': "test"
+
+                                                            },
+                                                            'password_form_errors': password_form_errors,
+                                                            'other_error': other_error}, request=request)
+        return JsonResponse({'html': html,
+                                'url' : reverse("profile")
+                                })
+    else:    
+        return render(request, "pong/profile.html", {
                                                         'user_info' : {
                                                             'user_choice' : user.is_mfa_enabled,
                                                             'user_url'    : qr_base64,

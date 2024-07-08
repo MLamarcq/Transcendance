@@ -202,3 +202,2171 @@ DEBUG 2024-07-08 20:08:35,043 views html in sigin =
     
 
 
+INFO 2024-07-08 20:33:49,160 views html at ajax
+DEBUG 2024-07-08 20:33:49,167 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="BkQPYtObXQktLKRjpHDrkGsLkMsDOWmjgK2iijtDnqj40jPL5qJz36xQAk9Ltiez">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:34:09,453 views email avant parsing = test94@yahoo.fr
+DEBUG 2024-07-08 20:34:09,458 views test n*0 retour fonction parsing = 
+DEBUG 2024-07-08 20:34:09,459 views test n*1 retour fonction parsing = example@example.fr
+DEBUG 2024-07-08 20:34:09,460 views test n*2 retour fonction parsing = 
+DEBUG 2024-07-08 20:34:09,460 views test n*3 retour fonction parsing = 
+DEBUG 2024-07-08 20:34:09,460 views test n*4 retour fonction parsing = 
+DEBUG 2024-07-08 20:34:09,461 views test n*5 retour fonction parsing = 
+DEBUG 2024-07-08 20:34:09,461 views test n*6 retour fonction parsing = example@example..com
+DEBUG 2024-07-08 20:34:09,461 views test n*7 retour fonction parsing = example@example!.com
+DEBUG 2024-07-08 20:34:09,462 views email apres parsing = test94@yahoo.fr
+DEBUG 2024-07-08 20:34:09,462 views pseudo = test94
+DEBUG 2024-07-08 20:34:09,462 views password = test
+DEBUG 2024-07-08 20:34:09,463 views confirm_password = test
+DEBUG 2024-07-08 20:34:15,128 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="XZs8KFSjtuuRdIdEPLm5bR78D9DTqfkNCpEB4vxLT4tsshb6vusdUhcdTHk15Bc3">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+DEBUG 2024-07-08 20:34:24,276 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="QdllJQ7rR6VMwFh2SViHn0QMunoIW8OpvDxO3GMThGUnLefuyEoP6qVRKV5QBuGF">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:34:27,831 views html at ajax
+DEBUG 2024-07-08 20:34:27,833 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="9Pe8uPTkTMprnj8eieYMROYW9NQH87vrOfqBOFyMjmo2CS6GYX4UAe31plxPNtnH">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:35:38,816 views email avant parsing = test94@yahoo.fr
+DEBUG 2024-07-08 20:35:38,819 views test n*0 retour fonction parsing = 
+DEBUG 2024-07-08 20:35:38,820 views test n*1 retour fonction parsing = example@example.fr
+DEBUG 2024-07-08 20:35:38,820 views test n*2 retour fonction parsing = 
+DEBUG 2024-07-08 20:35:38,820 views test n*3 retour fonction parsing = 
+DEBUG 2024-07-08 20:35:38,821 views test n*4 retour fonction parsing = 
+DEBUG 2024-07-08 20:35:38,821 views test n*5 retour fonction parsing = 
+DEBUG 2024-07-08 20:35:38,821 views test n*6 retour fonction parsing = example@example..com
+DEBUG 2024-07-08 20:35:38,822 views test n*7 retour fonction parsing = example@example!.com
+DEBUG 2024-07-08 20:35:38,822 views email apres parsing = test94@yahoo.fr
+DEBUG 2024-07-08 20:35:38,822 views pseudo = test94
+DEBUG 2024-07-08 20:35:38,823 views password = test
+DEBUG 2024-07-08 20:35:38,823 views confirm_password = test
+DEBUG 2024-07-08 20:35:57,469 views email avant parsing = test94@yahoo.fr
+DEBUG 2024-07-08 20:35:57,471 views test n*0 retour fonction parsing = 
+DEBUG 2024-07-08 20:35:57,471 views test n*1 retour fonction parsing = example@example.fr
+DEBUG 2024-07-08 20:35:57,471 views test n*2 retour fonction parsing = 
+DEBUG 2024-07-08 20:35:57,472 views test n*3 retour fonction parsing = 
+DEBUG 2024-07-08 20:35:57,472 views test n*4 retour fonction parsing = 
+DEBUG 2024-07-08 20:35:57,472 views test n*5 retour fonction parsing = 
+DEBUG 2024-07-08 20:35:57,473 views test n*6 retour fonction parsing = example@example..com
+DEBUG 2024-07-08 20:35:57,473 views test n*7 retour fonction parsing = example@example!.com
+DEBUG 2024-07-08 20:35:57,473 views email apres parsing = test94@yahoo.fr
+DEBUG 2024-07-08 20:35:57,473 views pseudo = test94
+DEBUG 2024-07-08 20:35:57,474 views password = test94
+DEBUG 2024-07-08 20:35:57,474 views confirm_password = test94
+DEBUG 2024-07-08 20:36:16,222 views email avant parsing = test98@yahoo.com
+DEBUG 2024-07-08 20:36:16,224 views test n*0 retour fonction parsing = 
+DEBUG 2024-07-08 20:36:16,224 views test n*1 retour fonction parsing = example@example.fr
+DEBUG 2024-07-08 20:36:16,224 views test n*2 retour fonction parsing = 
+DEBUG 2024-07-08 20:36:16,224 views test n*3 retour fonction parsing = 
+DEBUG 2024-07-08 20:36:16,225 views test n*4 retour fonction parsing = 
+DEBUG 2024-07-08 20:36:16,225 views test n*5 retour fonction parsing = 
+DEBUG 2024-07-08 20:36:16,225 views test n*6 retour fonction parsing = example@example..com
+DEBUG 2024-07-08 20:36:16,225 views test n*7 retour fonction parsing = example@example!.com
+DEBUG 2024-07-08 20:36:16,225 views email apres parsing = test98@yahoo.com
+DEBUG 2024-07-08 20:36:16,226 views pseudo = test98
+DEBUG 2024-07-08 20:36:16,226 views password = test98
+DEBUG 2024-07-08 20:36:16,226 views confirm_password = test98
+DEBUG 2024-07-08 20:36:24,800 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="P2sMUaKw1jQgFJ5TnZEsRe1l0LomV8BqusEfe0pYrTPRUi3l3IKAAE6qgj5uAutG">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:47:08,692 views html at ajax
+DEBUG 2024-07-08 20:47:08,701 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="Tg8qnkWyrqZIJ1uN5r7fQsbhCVF74jElBEedAdzRr41YMuQf9Cq8EvxjnZdGkeYO">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:47:11,368 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="or9YZhYCBHlZGBYWGXytsJOFKdYJMO1L6PfLcaBVBlnfJ4koK8RmgMaHvhwi2Jle">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:47:14,780 views html at ajax
+DEBUG 2024-07-08 20:47:14,781 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="6M6GUomFTaIruNGd1CVvvU8NpdSYNs0IOact7hZYTOKHxg2F5NeojXuPahqx3nkb">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:47:17,285 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="qKHRDiS9ZCqUM14JeJmO98MKN9ZAYupx88NEQbvsZgsaPuqbiUFHXb8Mydx9epJ0">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:47:21,727 views html at ajax
+DEBUG 2024-07-08 20:47:21,731 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="4jBiqMp26qmoWalbKqo2VfS2NfgtkaueMHH5DF2l64oEZDHDOBHVJie4yjO2A5OH">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:47:23,927 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="aXXJ5gI2AHxwBoW6kejGm9qHDSKcNTRTSl3wi9llAlzMERiyopCzacMJoWiL3Obm">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:47:25,678 views html at ajax
+DEBUG 2024-07-08 20:47:25,679 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="jvVs9UHX7JXHcygd27U9rJEWQ1CNeWu11T1fmNkg7nZXf1CF6id2fM0YB5amuROu">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+INFO 2024-07-08 20:47:30,643 views html at ajax
+DEBUG 2024-07-08 20:47:30,644 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="XouSU1lappAmtviYIjMrFM1897DoVpnfFMAF7UYtp3CCwYEqMu5ktPnaUbbXbkHI">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+INFO 2024-07-08 20:47:38,269 views html at ajax
+DEBUG 2024-07-08 20:47:38,271 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="wnnWLVr5JCX47AQjUlmcacfvRY5qef4xeLtJYO4oJgZka3cLYwF5YfBxC2DZuao0">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:47:40,350 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="NFlKV73yf7zVM4zXlVhAfi85XxzZmNWyv3rx80GRfLBbPxVpp6At3lu7IB7yCIg1">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:47:41,855 views html at ajax
+DEBUG 2024-07-08 20:47:41,858 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="CmMuSwrkRUYPY1GsKgkMDICE05og75xhkKSh5p4DRy051u2UOrDFrLYGL9WPn0RK">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+INFO 2024-07-08 20:47:46,770 views html at ajax
+DEBUG 2024-07-08 20:47:46,772 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="eu7YRa9AQh0UsKvJ0ZrWIQwuL7h38RHLWSdL43MTQV2avdRb4aKPwTSwwbPCoM1e">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:47:48,048 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="crfDEVKCtwbq99i8ff9OkyVS4B4wbFpKUPlqROnVtadGcCEAjqsH8BhUPFC5rAJd">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:47:51,061 views html at ajax
+DEBUG 2024-07-08 20:47:51,063 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="wCONwepY8VowQGF0UUbDm0HwUCJ8an6oe0UAJ72h8zqMT91sY5uwa33yFGhHqiqR">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:47:52,100 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="76tbdxok0BSwgme6349G0S5RVQjdIkarPuzYqq1D0fUMjPAy7fszOVrTGURMYfuU">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:47:54,297 views html at ajax
+DEBUG 2024-07-08 20:47:54,298 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="r9Hm3bVJR2Opru0FfDBLMUscOwP3vlYC9xN9g4y2RGQFuXm7jOUEAXOezAnCLgi5">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+INFO 2024-07-08 20:48:00,529 views html at ajax
+DEBUG 2024-07-08 20:48:00,532 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="PBr0rYtZD1ShVCbZyhgkKXBo8lGrv5xCxZxNER6iDFUxY5xrCszdy0XqTpe0L0R5">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:48:01,860 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="Xumy0HRklvwrZnTFAzNNrDtVe86QZFkeFSsldAuDl9yH2Qf7EK6GfGPXZcEpfAEH">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:48:02,868 views html at ajax
+DEBUG 2024-07-08 20:48:02,870 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="N1VAvhRWwzaz3AurFY7SuQBiNZqvAXLyvp1nIaufwdcP63QTJ9qLiTXky3Y4QS51">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:48:06,476 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="qYUol1bo6YEvWb8TUXxuMkAqK7GUClgB8m0byUOH6CGLZEulY8QnAnWsvbetSgA4">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:48:15,444 views html at ajax
+DEBUG 2024-07-08 20:48:15,449 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="orZu9rsygDECLY1CyawQ4aeUvytZljhh6P5hmk5RghGSOrn4ClPJSdAWgC1yBeBK">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:48:16,847 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="hc3uUck4B3r1K6UsenWfYjVNWs6vSdmcZA9h75XnBHthNzgUiyf8MmhPHwE488GF">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:48:19,111 views html at ajax
+DEBUG 2024-07-08 20:48:19,112 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="3xbscu3wbk6VBfOzDJgfJIyPOW3hvuhgLVhfpnGPbY8bEIa1HUz8xLURz0BQLpBJ">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:58:39,487 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="A3fWNMmtvhh24CKFpW0y8VR5RWNBFdztirlJ0FZMvVji7567t7jrWYd7C0laV8TW">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+DEBUG 2024-07-08 20:58:44,338 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="OWq4R02cX5wijdTLNCFBRKZC5vBnqUIXwkwR4TFvXJyymGfdRNYuFNlEQz9WGP2q">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+DEBUG 2024-07-08 20:58:47,610 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="KES7XlR9Z15Ur0afAh0Txo0lpLdx3Puos2YUaeusZF7autwHEsjMlrmnaPL6jKOR">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:58:50,079 views html at ajax
+DEBUG 2024-07-08 20:58:50,084 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="jhwpc0az3G8oE6fq8U6bF8appslEC2cq1FCcpTNS3kaEHzBSc5p4tbwrawTdSXwT">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:58:51,367 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="sMzVEABfogHuGBykaF16UlHKxS1J1kpNaaFIRteyoUJKJ4UMeQkZIo3MiWzihfJg">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:58:54,029 views html at ajax
+DEBUG 2024-07-08 20:58:54,030 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="UGZjzGPRjtImSTO3my0brJOT1ltHE1TmC456Mzsaj7KCVmavqJj4fMaVMp1gUWdP">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:59:01,340 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="4xRI3tynxeWes9VmtNorsKla8PcAp7CdMVXvgmbGxSYuvChOxYHkgNHcTTK9F2WG">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:59:02,987 views html at ajax
+DEBUG 2024-07-08 20:59:02,989 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="n4VWLAdK0vSGL0gMUpdGg0GLVlvRmp4x5s1JYtQ309UWOtCeYAwz432NGp3qCko0">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:59:05,914 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="8wm0nCxnl6trdK5TR8TfbnT7KJLp9yXDQUsNAvaGlKvHgdrlVjc8Zqf9vNjYpth6">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:59:10,311 views html at ajax
+DEBUG 2024-07-08 20:59:10,315 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="0pyyG4sV6cs4bGlo7Sarc7tD3gLY4N5LINElTX5e6Quke9HQb3tk0aPFOkjxkIpe">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:59:17,445 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="r7cLEhrGkoVE5qAbuOpd032DThEq03U39viyRa4Zk2XU8TWDyZI6O6oFElcZgYew">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:59:18,833 views html at ajax
+DEBUG 2024-07-08 20:59:18,834 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="qdbfXmEZCj6GZpHZd2FIv44xIZIMwLqq8Bh2afhiCX8W2S3rhdYBj7qzt3glMGKT">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:59:19,838 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="Rv6bJERHqWYnF0vDffVV7X4Tl6pcux9bzTcYWxu0qA0DItR5jqeOV0qV6aXLKstE">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:59:20,820 views html at ajax
+DEBUG 2024-07-08 20:59:20,822 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="FokCoW2SiQlh7fc51T19uXd55QXDZjN6nMqpBPFbiunxaIyx54k2i0z7QUvcfe7z">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:59:22,878 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="e8ET74DoirXphNuRqhMoeSfIbOtTZQogWwKGkXgHi5ZFkgQjus5h2VBKWS1sfLIJ">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:59:30,113 views html at ajax
+DEBUG 2024-07-08 20:59:30,118 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="hEnLg6v3XNmb4o2F4YJXQ5Yn3dZjMwUVZ2tytZ8mXror7Ro7892QE8kpOhxS2reo">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:59:34,257 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="62OyLP18xpc4efRza7TfRJEq0vJJbfIoOqUlYIErx3ekhId1eic8FM0sLzhira2R">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:59:38,997 views html at ajax
+DEBUG 2024-07-08 20:59:39,000 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="wySc9ha5IEF1gkCtXlyI4ZbYn9Qn7iV4eWYZmaNoIiHhjNYV1wRBS2x08doWndfx">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:59:41,105 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="M0DtG0bfoZwlhlZ9A1nRWk9UC58p90TcuoJgTTOyoDyBkOlBEcGKKnvWn9GYpVdF">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:59:42,687 views html at ajax
+DEBUG 2024-07-08 20:59:42,689 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="sk34z323HwMLtGIEZt64Ki4osCOzpqiTaI9RMWFmHaO1w9463EpXylqqdGm8FlCm">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:59:44,674 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="O61feUAQANlcbmPb3WRVGSDAk097jno6wu72rNd9ArnsePbD77aOuVZC54HGziIz">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:59:53,436 views html at ajax
+DEBUG 2024-07-08 20:59:53,437 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="tInPsXLg7vTZWvyLdbgANnV6Y9NI2ecSb6tCFQoz79VfZYUdhmztBqh8Jdlhi9wl">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 20:59:55,455 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="304ZufzApsfMhidSx7EfCk7daA1xerHPLoaMH8cTp6h2kLzkBiX8qntfVEz6um1i">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 20:59:57,657 views html at ajax
+DEBUG 2024-07-08 20:59:57,658 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="BFHJSW15gsQZ9IAcQVi4qpM6FLvWzhBij3Nw5PEog6SfcbWEU6BXes88qP3vPcVL">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 21:04:13,250 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="JsFpdPrB7ENchBsu3hnE9sPVvxoLLCFKrQLcqI4U7iPsk4OW7sGxXvbXgBWk1xZd">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 21:04:15,899 views html at ajax
+DEBUG 2024-07-08 21:04:15,905 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="QURvEtPsHzND6e7d4IEWPk4PLrzjkcDXyiXiRmsLHdPT9HtF8TXPDnqRwv7SA7Xq">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 21:04:17,313 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="yWe27tCGdVe09LjZXBlWbBtD25IZ8hAJgkkPkmfZdzggceFr1MEPZEPFN9gyocUc">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 21:04:19,880 views html at ajax
+DEBUG 2024-07-08 21:04:19,881 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="T3BD20Y0QpKda6bkf6Iz7QnRVzNCWedmBrHqfTBjQ3MtdzxMjh1sVTJTGDlbc9xP">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 21:04:26,029 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="Jbh0gEqd2KxuI6hYKkqVV16dUYuh7HwJrznNtx3w2ozKLzDqOvJOJ4sfF22QnCQc">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 21:04:46,410 views html at ajax
+DEBUG 2024-07-08 21:04:46,412 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="vHOQ1DrSOAnpx9ADNt8D0Y0PQHEnK15Jd5UDew4bOepFACW5RErwO1mRBLcW0Wpc">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 21:04:48,861 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="3AfY8fQmwsTvjOHMqLPhQ5QF3RF7CEjfLYlLl8tFw6VLmh3euW8aE8cHOVdGSzDI">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+DEBUG 2024-07-08 21:04:57,807 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="cG9TXTh9e5slbOadmFJpN63ODVU8toorU4fGaMUseJuBehwFqQ2iB9pQoZsHJjIU">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 21:04:59,711 views html at ajax
+DEBUG 2024-07-08 21:04:59,712 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="jjkNegJ0Z6wZ7ef21qNE1kHRavN1blKU1HqAr9mjZKyfaHBu5B6xPn3TVzlArg4n">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 21:05:01,897 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="t62cceyjk86giZcXq401WwMhRUk4leLabu8Zp7bCkM8wlsypufjUKz8jCYSDB95D">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 21:05:06,962 views html at ajax
+DEBUG 2024-07-08 21:05:06,964 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="3JLMIkYZoHywdA4jvnQkQ2gNDmrhMhzoL7RzVdBiolAMg3qLzy9dE5CPoqZQ2cTR">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 21:05:11,547 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="8QTtqy4kW6LEPhfoUoVHXCAaPHlI4KysQeZgDrHDWKNUSKBQYzeALFWcALThkFSV">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 21:06:10,998 views html at ajax
+DEBUG 2024-07-08 21:06:11,007 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="aq0J6ERcLxK2W5PrzdRfWIjDAoW2QVFTSO6wjxuvLbMiZybTDoa8KLFFlsuB6QZm">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 21:06:17,124 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="Fca3JNTdsVmisPOkGPa3b9ewQlfGrQqBnAgQWGwwszoyviaMK0tWZcAyBpNfHLK4">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-08 21:06:21,946 views html at ajax
+DEBUG 2024-07-08 21:06:21,948 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="KSrQ0v6UOz2ZzlxVeRijf3xqTaW1UJzFsgxDdoJdOd4fCOTni2Bc36TsEeuAaET8">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+INFO 2024-07-08 21:06:26,841 views html at ajax
+DEBUG 2024-07-08 21:06:26,842 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="3weKQqiTycjImgqCynnfjisnL5grSCPKLUkx3jVcyQlYpJM4CyG87lOpw9O08x9d">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
