@@ -276,6 +276,7 @@ def handle_authentication(request, email, password):
     user = authenticate(request, email=email, password=password)
     print("email =", email, "password =", password)
     if user is not None:
+        request.session['user_id'] = user.id
         if user.is_mfa_enabled:
             return {'redirect': "pong/otp_content.html",
                     'url' : reverse("otp")
