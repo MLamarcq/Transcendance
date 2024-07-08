@@ -1,4 +1,5 @@
 Makefile
 .env_virt
 docker-compose.yml
-certs
+certs/pong.fr.crt
+certs/pong.fr.key
