@@ -1,116 +1,75 @@
-DEBUG 2024-07-06 13:49:29,271 views error_message = Username already exists. Please choose a different pseudo.
-DEBUG 2024-07-06 13:49:29,289 views error_message = Username already exists. Please choose a different pseudo.
-DEBUG 2024-07-06 13:53:46,127 views email = 
-DEBUG 2024-07-06 13:53:46,129 views pseudo = 
-DEBUG 2024-07-06 13:53:46,150 views email = 
-DEBUG 2024-07-06 13:53:46,152 views pseudo = 
-DEBUG 2024-07-06 13:54:15,638 views email = 
-DEBUG 2024-07-06 13:54:15,639 views pseudo = 
-DEBUG 2024-07-06 13:54:15,639 views password = 
-DEBUG 2024-07-06 13:54:15,640 views confirm_password = 
-DEBUG 2024-07-06 13:54:15,649 views error_message = Username already exists. Please choose a different pseudo.
-DEBUG 2024-07-06 13:54:15,657 views email = 
-DEBUG 2024-07-06 13:54:15,660 views pseudo = 
-DEBUG 2024-07-06 13:54:15,660 views password = 
-DEBUG 2024-07-06 13:54:15,660 views confirm_password = 
-DEBUG 2024-07-06 13:54:15,668 views error_message = Username already exists. Please choose a different pseudo.
-DEBUG 2024-07-06 13:54:17,628 views email = 
-DEBUG 2024-07-06 13:54:17,629 views pseudo = 
-DEBUG 2024-07-06 13:54:17,629 views password = 
-DEBUG 2024-07-06 13:54:17,629 views confirm_password = 
-DEBUG 2024-07-06 13:54:17,637 views error_message = Username already exists. Please choose a different pseudo.
-DEBUG 2024-07-06 13:54:17,644 views email = 
-DEBUG 2024-07-06 13:54:17,646 views pseudo = 
-DEBUG 2024-07-06 13:54:17,646 views password = 
-DEBUG 2024-07-06 13:54:17,647 views confirm_password = 
-DEBUG 2024-07-06 13:54:17,657 views error_message = Username already exists. Please choose a different pseudo.
-DEBUG 2024-07-06 14:00:47,334 views email = 
-DEBUG 2024-07-06 14:00:47,334 views pseudo = 
-DEBUG 2024-07-06 14:00:47,335 views password = 
-DEBUG 2024-07-06 14:00:47,335 views confirm_password = 
-DEBUG 2024-07-06 14:00:47,335 views error_message = Email: this field can not be empty
-DEBUG 2024-07-06 14:00:47,347 views email = 
-DEBUG 2024-07-06 14:00:47,347 views pseudo = 
-DEBUG 2024-07-06 14:00:47,347 views password = 
-DEBUG 2024-07-06 14:00:47,348 views confirm_password = 
-DEBUG 2024-07-06 14:00:47,348 views error_message = Email: this field can not be empty
-DEBUG 2024-07-06 14:00:49,774 views email = 
-DEBUG 2024-07-06 14:00:49,775 views pseudo = 
-DEBUG 2024-07-06 14:00:49,775 views password = 
-DEBUG 2024-07-06 14:00:49,775 views confirm_password = 
-DEBUG 2024-07-06 14:00:49,775 views error_message = Email: this field can not be empty
-DEBUG 2024-07-06 14:00:49,780 views email = 
-DEBUG 2024-07-06 14:00:49,781 views pseudo = 
-DEBUG 2024-07-06 14:00:49,781 views password = 
-DEBUG 2024-07-06 14:00:49,781 views confirm_password = 
-DEBUG 2024-07-06 14:00:49,781 views error_message = Email: this field can not be empty
-DEBUG 2024-07-06 14:03:19,743 views email = 
-DEBUG 2024-07-06 14:03:19,743 views pseudo = 
-DEBUG 2024-07-06 14:03:19,744 views password = 
-DEBUG 2024-07-06 14:03:19,744 views confirm_password = 
-DEBUG 2024-07-06 14:03:19,744 views error_message = Email: this field can not be empty
-DEBUG 2024-07-06 14:03:19,751 views email = 
-DEBUG 2024-07-06 14:03:19,752 views pseudo = 
-DEBUG 2024-07-06 14:03:19,752 views password = 
-DEBUG 2024-07-06 14:03:19,752 views confirm_password = 
-DEBUG 2024-07-06 14:03:19,752 views error_message = Email: this field can not be empty
-DEBUG 2024-07-06 14:03:34,289 views email = 
-DEBUG 2024-07-06 14:03:34,289 views pseudo = 
-DEBUG 2024-07-06 14:03:34,289 views password = 
-DEBUG 2024-07-06 14:03:34,289 views confirm_password = 
-DEBUG 2024-07-06 14:03:34,289 views error_message = Email: this field can not be empty
-DEBUG 2024-07-06 14:03:34,299 views email = 
-DEBUG 2024-07-06 14:03:34,299 views pseudo = 
-DEBUG 2024-07-06 14:03:34,299 views password = 
-DEBUG 2024-07-06 14:03:34,299 views confirm_password = 
-DEBUG 2024-07-06 14:03:34,299 views error_message = Email: this field can not be empty
-DEBUG 2024-07-06 14:03:36,309 views email = 
-DEBUG 2024-07-06 14:03:36,309 views pseudo = 
-DEBUG 2024-07-06 14:03:36,309 views password = 
-DEBUG 2024-07-06 14:03:36,309 views confirm_password = 
-DEBUG 2024-07-06 14:03:36,310 views error_message = Email: this field can not be empty
-DEBUG 2024-07-06 14:03:36,317 views email = 
-DEBUG 2024-07-06 14:03:36,317 views pseudo = 
-DEBUG 2024-07-06 14:03:36,317 views password = 
-DEBUG 2024-07-06 14:03:36,317 views confirm_password = 
-DEBUG 2024-07-06 14:03:36,317 views error_message = Email: this field can not be empty
-DEBUG 2024-07-06 14:04:03,320 views email = ff
-DEBUG 2024-07-06 14:04:03,320 views pseudo = 
-DEBUG 2024-07-06 14:04:03,320 views password = 
-DEBUG 2024-07-06 14:04:03,320 views confirm_password = 
-DEBUG 2024-07-06 14:04:03,320 views error_message = Password: this field can not be empty
-DEBUG 2024-07-06 14:04:03,331 views email = ff
-DEBUG 2024-07-06 14:04:03,331 views pseudo = 
-DEBUG 2024-07-06 14:04:03,332 views password = 
-DEBUG 2024-07-06 14:04:03,332 views confirm_password = 
-DEBUG 2024-07-06 14:04:03,332 views error_message = Password: this field can not be empty
-DEBUG 2024-07-06 14:04:17,737 views email = ff
-DEBUG 2024-07-06 14:04:17,738 views pseudo = 
-DEBUG 2024-07-06 14:04:17,738 views password = ff
-DEBUG 2024-07-06 14:04:17,738 views confirm_password = 
-DEBUG 2024-07-06 14:04:17,738 views error_message = Confirm_password: this field can't be empty
-DEBUG 2024-07-06 14:04:17,743 views email = ff
-DEBUG 2024-07-06 14:04:17,743 views pseudo = 
-DEBUG 2024-07-06 14:04:17,744 views password = ff
-DEBUG 2024-07-06 14:04:17,744 views confirm_password = 
-DEBUG 2024-07-06 14:04:17,744 views error_message = Confirm_password: this field can't be empty
-DEBUG 2024-07-06 14:05:43,838 views email = ff
-DEBUG 2024-07-06 14:05:43,839 views pseudo = 
-DEBUG 2024-07-06 14:05:43,839 views password = ff
-DEBUG 2024-07-06 14:05:43,839 views confirm_password = ff
-DEBUG 2024-07-06 14:05:43,839 views error_message = Pseudo: this field can't be empty
-DEBUG 2024-07-06 14:05:43,845 views email = ff
-DEBUG 2024-07-06 14:05:43,845 views pseudo = 
-DEBUG 2024-07-06 14:05:43,845 views password = ff
-DEBUG 2024-07-06 14:05:43,845 views confirm_password = ff
-DEBUG 2024-07-06 14:05:43,845 views error_message = Pseudo: this field can't be empty
-DEBUG 2024-07-06 14:06:13,323 views email = ff
-DEBUG 2024-07-06 14:06:13,323 views pseudo = ff
-DEBUG 2024-07-06 14:06:13,323 views password = ff
-DEBUG 2024-07-06 14:06:13,323 views confirm_password = ff
-DEBUG 2024-07-06 14:06:13,332 views error_message = None
-DEBUG 2024-07-06 14:06:13,350 views email = ff
-DEBUG 2024-07-06 14:06:13,353 views pseudo = ff
-DEBUG 2024-07-06 14:06:13,353 views password = ff
-DEBUG 2024-07-06 14:06:13,353 views confirm_password = ff
-DEBUG 2024-07-06 14:06:13,364 views error_message = None
+DEBUG 2024-07-08 17:12:49,444 views email avant parsing = 
+DEBUG 2024-07-08 17:12:49,445 views test n*0 retour fonction parsing = 
+DEBUG 2024-07-08 17:12:49,445 views test n*1 retour fonction parsing = example@example.fr
+DEBUG 2024-07-08 17:12:49,445 views test n*2 retour fonction parsing = 
+DEBUG 2024-07-08 17:12:49,445 views test n*3 retour fonction parsing = 
+DEBUG 2024-07-08 17:12:49,446 views test n*4 retour fonction parsing = 
+DEBUG 2024-07-08 17:12:49,447 views test n*5 retour fonction parsing = 
+DEBUG 2024-07-08 17:12:49,447 views test n*6 retour fonction parsing = example@example..com
+DEBUG 2024-07-08 17:12:49,447 views test n*7 retour fonction parsing = example@example!.com
+DEBUG 2024-07-08 17:12:49,447 views email apres parsing = 
+DEBUG 2024-07-08 17:12:49,447 views pseudo = 
+DEBUG 2024-07-08 17:12:49,447 views password = 
+DEBUG 2024-07-08 17:12:49,447 views confirm_password = 
+INFO 2024-07-08 17:40:18,947 views html at ajax
+DEBUG 2024-07-08 17:40:18,947 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="2kqSyn1Mqvcdk0OUkdoBAOwwPjbh20vcSWLLIB0lwmi26zZfex1sTRlhgs3BQbgL">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-08 17:40:32,823 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="RSmprd4o6FE2RJjrlXH6ylIuGn45bI7fHuHiBr3XcwKRDiuMfhkXRoxf7wWpZTSO">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+

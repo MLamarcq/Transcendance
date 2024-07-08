@@ -33,7 +33,7 @@ logger = logging.getLogger('pong')
 def index(request) :
     if not request.user.is_authenticated:
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-            html = render_to_string("pong/login_content.html", {}, request)
+            html = render_to_string("pong/login_content.html", {}, request=request)
             return (JsonResponse({'html' : html,                 
                                 'url' :   reverse("login")     
                 }))
@@ -41,7 +41,7 @@ def index(request) :
         else :
             return HttpResponseRedirect(reverse("login"))
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        html = render_to_string("pong/homepage_content.html", {}, request)
+        html = render_to_string("pong/homepage_content.html", {}, request=request)
         return (JsonResponse({'html' : html,                 
                             'url' :   reverse("index")     
                 }))
@@ -119,6 +119,42 @@ def login_view(request):
     #     return render(request, "pong/signup.html")
         
 
+def parsing_email(email) :
+    if email :
+        try :
+            index = email.index("@")
+        except ValueError :
+            logger.info("On passe ici exception")
+            return ('')
+        for i in range(len(email)):
+            if email[i] == '@':
+                if i + 1 < len(email) and not email[i + 1].isalnum():
+                    return ''
+            if email[i] == ' ':
+                return ''
+        if not (email.endswith("com") or email.endswith(".fr")) :
+            return ('')
+    
+        # Test de la fonction
+    return (email)
+
+def test_mail() :
+    test_emails = [
+        "example@'example.com",
+        "example@example.fr",
+        "example@ example.com",
+        "example@example.c",
+        "example@example.",
+        " example@example.com ",
+        "example@example..com",
+        "example@example!.com"
+    ]
+
+    for i,email in enumerate(test_emails):
+        result = parsing_email(email)
+        logger.debug("test n*%d retour fonction parsing = %s", i, result)
+
+
 def validate_signup_data(email, password, confirm_password, pseudo):
     if not email :
         return "Email: this field can not be empty"
@@ -157,7 +193,13 @@ def signup(request):
         avatar = request.FILES.get("avatar")
         pseudo = request.POST.get("pseudo")
         
-        logger.debug("email = %s", email)
+        logger.debug("email avant parsing = %s", email)
+
+        email = parsing_email(email)
+
+        test_mail()
+
+        logger.debug("email apres parsing = %s", email)
         logger.debug("pseudo = %s", pseudo)
         logger.debug("password = %s", password)
         logger.debug("confirm_password = %s", confirm_password)
@@ -165,7 +207,7 @@ def signup(request):
 
         error_message = validate_signup_data(email, password, confirm_password, pseudo)
         
-        logger.debug("error_message = %s", error_message)
+        # logger.debug("error_message = %s", error_message)
 
         if error_message:
             if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
@@ -190,7 +232,9 @@ def signup(request):
     else:
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             print("Nous passons bien ici 2")
+            logger.info("html at ajax")
             html = render_to_string("pong/signup_content.html", {}, request=request)
+            logger.debug("html in signup = %s", html)
             return JsonResponse({'html': html,
                                 'url' : reverse("signup")
             })
@@ -285,6 +329,7 @@ def signin(request):
     else:
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             html = render_to_string("pong/signin_content.html", {}, request=request)
+            logger.debug("html in sigin = %s", html)
             return JsonResponse({'html': html,
                                 'url': reverse("signin")
             })

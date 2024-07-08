@@ -14,9 +14,12 @@ from pathlib import Path
 from dotenv import load_dotenv
 import environ
 import os
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+print("BASE_DIR 1 = ", BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -88,7 +91,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-env_path = Path('Users/imranemoumini/Desktop/Transcendance_last_version/.env')
+env_path = Path('/home/Transcendance_2/.env')
 
 
 # Charger les variables d'environnement à partir du fichier .env
@@ -152,6 +155,10 @@ STATICFILES_DIRS = [
 	 os.path.join(BASE_DIR, 'pong/static'),
 ]
 
+print("BASE_dIR =", BASE_DIR)
+
+print("Statifile dir =", STATICFILES_DIRS)
+
 # STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
@@ -170,43 +177,43 @@ SECURE_HSTS_SECONDS = 3600
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
-#LOGGING = {
-#    'version': 1,
-#    'disable_existing_loggers': False,
-#    'formatters': {
-#        'verbose': {
-#            'format': '{levelname} {asctime} {module} {message}',
-#            'style': '{',
-#        },
-#        'simple': {
-#            'format': '{levelname} {message}',
-#            'style': '{',
-#        },
-#    },
-#    'handlers': {
-#        'file': {
-#            'level': 'DEBUG',
-#            'class': 'logging.FileHandler',
-#            'filename': 'debug.log',
-#            'formatter': 'verbose',
-#        },
-#        'console': {
-#            'level': 'DEBUG',
-#            'class': 'logging.StreamHandler',
-#            'formatter': 'simple',
-#        },
-#    },
-#    'loggers': {
-#        'django': {
-#            'handlers': ['console'],
-#            'level': 'INFO',
-#            'propagate': True,
-#        },
-#        'pong': {
-#            'handlers': ['console', 'file'],
-#            'level': 'DEBUG',
-#            'propagate': False,
-#        },
-#    },
-#}
+LOGGING = {
+   'version': 1,
+   'disable_existing_loggers': False,
+   'formatters': {
+       'verbose': {
+           'format': '{levelname} {asctime} {module} {message}',
+           'style': '{',
+       },
+       'simple': {
+           'format': '{levelname} {message}',
+           'style': '{',
+       },
+   },
+   'handlers': {
+       'file': {
+           'level': 'DEBUG',
+           'class': 'logging.FileHandler',
+           'filename': 'debug.log',
+           'formatter': 'verbose',
+       },
+       'console': {
+           'level': 'DEBUG',
+           'class': 'logging.StreamHandler',
+           'formatter': 'simple',
+       },
+   },
+   'loggers': {
+       'django': {
+           'handlers': ['console'],
+           'level': 'INFO',
+           'propagate': True,
+       },
+       'pong': {
+           'handlers': ['console', 'file'],
+           'level': 'DEBUG',
+           'propagate': False,
+       },
+   },
+}
 

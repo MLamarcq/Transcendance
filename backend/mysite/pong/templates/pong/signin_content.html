@@ -1,9 +1,8 @@
-<main id="app">
-    {% block content %}
     {% load static %}
     {% block css%}
     <link href="{% static 'pong/css/signup.css' %}" rel="stylesheet">
     {% endblock css %}
+
     <h1 class="text-center">Pong</h1>
     <section class="login">
         <form action="{% url 'signin' %}" method="post">
@@ -26,5 +25,4 @@
     {% if error_message %}
             <p> {{message}}</p>
     {% endif %}
-    {% endblock %}
-</main>
+

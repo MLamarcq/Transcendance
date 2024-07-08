@@ -374,9 +374,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gestionnaire d'événements pour les changements dans l'historique de navigation
     
     
-    window.addEventListener('popstate', () => {
-        loadContent(window.location.pathname);
-    });
+    // window.addEventListener('popstate', () => {
+    //     // loadContent(window.location.pathname);
+    // });
     
 
     // Gestionnaire d'événements pour le bouton de déconnexion

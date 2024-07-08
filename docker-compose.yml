@@ -52,13 +52,6 @@ volumes:
  db_data:
     driver: local
 
- backend_data:
-    driver: local
-    driver_opts:
-      type: 'none'
-      o: 'bind'
-      device: /Users/imranemoumini/Desktop/data/backend
-
 networks:
   transcendance:
     name: transcendance
