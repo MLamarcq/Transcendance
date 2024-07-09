@@ -615,7 +615,17 @@ def add_friends(request):
         if ( friend_user is not None) and (user.id is not friend_user.id) :
             # Check if they are already friends
             if Friendship.objects.filter(person1=user, person2=friend_user).exists() or Friendship.objects.filter(person1=friend_user, person2=user).exists():
-                return render(request, "pong/add_friends.html", {
+                if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                    html = render_to_string("pong/add_friends_content.html", {'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : "you are already friends"
+                                                                }
+                                            }, request=request)
+                    return JsonResponse({'html': html,
+                                'url' : reverse("add_friends")
+                    })
+                else:
+                    return render(request, "pong/add_friends.html", {
                                                 'error_message' : {
                                                                         'value' : True,
                                                                         'message' : "you are already friends"
@@ -630,14 +640,34 @@ def add_friends(request):
                 message = "this user doesn't exist"
             else:
                 message = "you can't add yourself as friend"
-            return render(request, "pong/add_friends.html", {
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                    html = render_to_string("pong/add_friends_content.html", {'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : message
+                                                                }
+                                            }, request=request)
+                    return JsonResponse({'html': html,
+                                'url' : reverse("add_friends")
+                    })
+            else:
+                return render(request, "pong/add_friends.html", {
                                                 'error_message' : {
                                                                         'value' : True,
                                                                         'message' : message
                                                                 }
                                             })
     else:
-        return render(request, "pong/add_friends.html", {
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                    html = render_to_string("pong/add_friends_content.html", {'error_message' : {
+                                                                        'value' : False,
+                                                                        'message' : "nothing"
+                                                                }
+                                            }, request=request)
+                    return JsonResponse({'html': html,
+                                'url' : reverse("add_friends")
+                    })
+        else:
+            return render(request, "pong/add_friends.html", {
                                                 'error_message' : {
                                                                         'value' : False,
                                                                         'message' : "nothing"
