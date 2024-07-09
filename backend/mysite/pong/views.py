@@ -602,8 +602,14 @@ def profile_view(request):
 
 def add_friends(request):
     if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("login"))
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            html = render_to_string("pong/login_content.html", {}, request=request)
+            return JsonResponse({'html': html})
+        else:
+            return HttpResponseRedirect(reverse("login"))
+
     user = NewUser.objects.get(id=(request.session.get('user_id')))
+
     if request.method == "POST":
         friend_pseudo = request.POST.get("friend_pseudo")
         friend_user = None
@@ -634,7 +640,23 @@ def add_friends(request):
 
         # Create the friendship
             Friendship.objects.create(person1=user, person2=friend_user)
-            return HttpResponseRedirect(reverse("profile"))
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                html = render_to_string("pong/add_friends_content.html", {'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : "you are now friends"
+                                                                }
+                                            }, request=request)
+                return JsonResponse({'html': html,
+                                'url' : reverse("add_friends")
+                    })
+            else:
+                return render(request, "pong/add_friends.html", {
+                                                'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : "you are now friends"
+                                                                }
+                                            })
+            
         else:
             if friend_user is None:
                 message = "this user doesn't exist"
@@ -679,8 +701,14 @@ def add_friends(request):
 
 def delete_friends(request):
     if not request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("login"))
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            html = render_to_string("pong/login_content.html", {}, request=request)
+            return JsonResponse({'html': html})
+        else:
+            return HttpResponseRedirect(reverse("login"))
+
     user = NewUser.objects.get(id=(request.session.get('user_id')))
+
     if request.method == "POST":
         friend_pseudo = request.POST.get("friend_pseudo")
         friend_user = None
@@ -695,31 +723,82 @@ def delete_friends(request):
                 friendship.delete()
             else:
                 message = "you are not friends"
+                if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                    html = render_to_string("pong/delete_friends_content.html", {'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : message
+                                                                }
+                                            }, request=request)
+                    return JsonResponse({'html': html,
+                                'url' : reverse("delete_friends")
+                    })
                 return render(request, "pong/delete_friends.html", {
                                                 'error_message' : {
                                                                         'value' : True,
                                                                         'message' : message
                                                                 }
-                                                })       
-            return HttpResponseRedirect(reverse("profile")) #succes delete frfiend 
+                                                })
+
+           
+            #succes delete friend 
+            message = "you are not friends anymore"
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                html = render_to_string("pong/delete_friends_content.html", {'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : message
+                                                                }
+                                            }, request=request)
+                return JsonResponse({'html': html,
+                                'url' : reverse("delete_friends")
+                    })
+            else:
+                return render(request, "pong/delete_friends.html", {
+                                                'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : message
+                                                                }
+                                                }) 
         else:
             if friend_user is None:
                 message = "this user doesn't exist"
             else:
                 message = "you can't delete yourself as friend"
-            return render(request, "pong/delete_friends.html", {
+
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                html = render_to_string("pong/delete_friends_content.html", {'error_message' : {
+                                                                        'value' : True,
+                                                                        'message' : message
+                                                                }
+                                            }, request=request)
+                return JsonResponse({'html': html,
+                                'url' : reverse("delete_friends")
+                    })
+            else:
+                return render(request, "pong/delete_friends.html", {
                                                 'error_message' : {
                                                                         'value' : True,
                                                                         'message' : message
                                                                 }
-                                            })
+                                                }) 
     else:
-        return render(request, "pong/delete_friends.html", {
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            html = render_to_string("pong/delete_friends_content.html", {'error_message' : {
+                                                                        'value' : False,
+                                                                        'message' : "nothing"
+                                                                }
+                                            }, request=request)
+            return JsonResponse({'html': html,
+                                'url' : reverse("delete_friends")
+                    })
+        else:
+                return render(request, "pong/delete_friends.html", {
                                                 'error_message' : {
                                                                         'value' : False,
                                                                         'message' : "nothing"
                                                                 }
-                                            })
+                                                                }
+                                                                )
+
 
 
 
