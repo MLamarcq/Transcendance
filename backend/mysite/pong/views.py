@@ -379,9 +379,17 @@ def otp_view(request):
             login(request, user)  # Connecte l'utilisateur
             #return HttpResponseRedirect(reverse("index"))  # Redirige vers la page d'accueil
             html = render_to_string("pong/homepage_content.html", {}, request=request)
-            return JsonResponse({'html': html,
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'html': html,
                                 'url' : reverse("index")
-            })
+                })
+            else :
+                return render(request, 'pong/otp.html' , {
+                                                'error_message' : {
+                                                                        'value' : value,
+                                                                        'message' : message
+                                                                }
+                                            })
         else:
             value = True
             message = 'invalid one time password or the password has expired'
@@ -389,9 +397,17 @@ def otp_view(request):
                     'value': value,
                     'message': message
                 }}, request=request)
-            return JsonResponse({'html': html,
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'html': html,
                                 'url' : reverse('otp')
-            })
+                    })
+            else :
+                return render(request, 'pong/otp.html' , {
+                                                'error_message' : {
+                                                                        'value' : value,
+                                                                        'message' : message
+                                                                }
+                                            })
 
     return render(request, "pong/otp.html")
 

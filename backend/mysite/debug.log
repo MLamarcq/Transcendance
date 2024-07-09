@@ -69,3 +69,197 @@ DEBUG 2024-07-09 17:24:16,080 views email apres parsing =
 DEBUG 2024-07-09 17:24:16,080 views pseudo = 
 DEBUG 2024-07-09 17:24:16,080 views password = 
 DEBUG 2024-07-09 17:24:16,080 views confirm_password = 
+DEBUG 2024-07-09 21:44:37,928 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="h0R4YVYYWBotA409FsX6wthlpZkfPOwcZoXRbOBhWfqJDxmBJDgZkwDna3SO5JQF">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+DEBUG 2024-07-09 21:45:09,816 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="AtzL2P3CTWyj3160CATDCk1bCFt7MS09iRFyfIGVTAAz6ussGLcwqnndnJ1G2NkC">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-09 22:02:53,591 views html at ajax
+DEBUG 2024-07-09 22:02:53,595 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="j3FVdtCBxOJwjFqrZNHTGNDwrwvHEsUfHYAAfjl1h5XW6eHCVeFu4r0Khl5VtyIW">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-09 22:03:07,168 views email avant parsing = testotp
+INFO 2024-07-09 22:03:07,170 views On passe ici exception
+DEBUG 2024-07-09 22:03:07,170 views email apres parsing = 
+DEBUG 2024-07-09 22:03:07,170 views pseudo = test
+DEBUG 2024-07-09 22:03:07,171 views password = test
+DEBUG 2024-07-09 22:03:07,171 views confirm_password = test
+DEBUG 2024-07-09 22:03:23,820 views email avant parsing = testotp
+INFO 2024-07-09 22:03:23,822 views On passe ici exception
+DEBUG 2024-07-09 22:03:23,823 views email apres parsing = 
+DEBUG 2024-07-09 22:03:23,823 views pseudo = testotp
+DEBUG 2024-07-09 22:03:23,824 views password = test
+DEBUG 2024-07-09 22:03:23,824 views confirm_password = test
+DEBUG 2024-07-09 22:03:41,854 views email avant parsing = test92
+INFO 2024-07-09 22:03:41,856 views On passe ici exception
+DEBUG 2024-07-09 22:03:41,856 views email apres parsing = 
+DEBUG 2024-07-09 22:03:41,856 views pseudo = test92
+DEBUG 2024-07-09 22:03:41,856 views password = test92
+DEBUG 2024-07-09 22:03:41,856 views confirm_password = test92
+DEBUG 2024-07-09 22:04:04,733 views email avant parsing = test92
+INFO 2024-07-09 22:04:04,735 views On passe ici exception
+DEBUG 2024-07-09 22:04:04,735 views email apres parsing = 
+DEBUG 2024-07-09 22:04:04,735 views pseudo = test92
+DEBUG 2024-07-09 22:04:04,736 views password = test92test
+DEBUG 2024-07-09 22:04:04,736 views confirm_password = test92test
+DEBUG 2024-07-09 22:04:09,553 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="AL1W3BFQ0jyelsywfQ2HEd4kDzzk9F5sYGWB5rogKAME81PHbh0i2Rryto9yYLT9">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+DEBUG 2024-07-09 22:05:27,625 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="e7JwhZh1qtrHG6GdbbZMozAK3T6E2QpF4M3e3GdB4QvO5Yv7cVYU84rEknpb0xXW">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+DEBUG 2024-07-09 22:06:50,145 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="ylNsyBji5pbarxoF7LxGjn6vt7nSx0cADNjDb5oW5HShfnziqjhYu6sGOkMUg0h4">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+

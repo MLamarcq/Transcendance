@@ -1,3 +1,7 @@
+{% load static %}
+
+{% block css %}<link href="{% static 'pong/css/otp.css' %}" rel="stylesheet">{% endblock css %}
+
 {% block content %}
     {% if error_message.value %}
         <p>{{error_message.message}}</p>
