@@ -21,6 +21,7 @@ from datetime import timedelta
 from django.contrib import messages
 from django.template.loader import render_to_string
 import logging
+import re
 
 
 logger = logging.getLogger('pong')
@@ -121,21 +122,30 @@ def login_view(request):
 
 def parsing_email(email) :
     if email :
+        email = email.strip()
         try :
             index = email.index("@")
         except ValueError :
             logger.info("On passe ici exception")
             return ('')
-        for i in range(len(email)):
-            if email[i] == '@':
-                if i + 1 < len(email) and not email[i + 1].isalnum():
-                    return ''
-            if email[i] == ' ':
-                return ''
-        if not (email.endswith("com") or email.endswith(".fr")) :
+        if ' ' in email :
+            return ' '
+        logger.info("oui oui")
+        email_part = email[:index]
+        domain_part = email[index+1:]
+        logger.debug("email_part = %s", email_part)
+        logger.debug("domain_part = %s", domain_part)
+        if not email_part or '..' in email_part:
+            return ''
+        if not domain_part or '..' in domain_part:
+            return ''
+        if not (domain_part.endswith("com") or domain_part.endswith(".fr")) :
             return ('')
-    
-        # Test de la fonction
+        email_invalid_chars = re.compile(r'[ !#\$%&\'\*\+\-/=\?\^_`\{\|\}~]')
+        domain_invalid_chars = re.compile(r'[ !#\$%&\'\*\+\-/=\?\^_`\{\|\}~]')
+        if email_invalid_chars.search(email_part) or domain_invalid_chars.search(domain_part):
+            logger.info("Wrong char found !")
+            return ''
     return (email)
 
 def test_mail() :
@@ -197,7 +207,7 @@ def signup(request):
 
         email = parsing_email(email)
 
-        test_mail()
+        # test_mail()
 
         logger.debug("email apres parsing = %s", email)
         logger.debug("pseudo = %s", pseudo)
@@ -222,7 +232,7 @@ def signup(request):
         user.save()
         
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-            html = render_to_string("pong/homepage_content.html", {}, request=request)
+            html = render_to_string("pong/login_content.html", {}, request=request)
             return JsonResponse({'html': html,
                                 'url' : reverse("index")
             })
