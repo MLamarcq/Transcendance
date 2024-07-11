@@ -25,13 +25,13 @@
                 <p>enable 2FA </p>
             {% else %}
                 <p>disable 2FA</p>
-            {% endif %} 
+            {% endif %}
         <legend> chose if you want to enable or disable 2FA :  </legend>
-                
-                <label for="option1">enabled</label>
+
+                <label for="options">enabled</label>
                 <input type="checkbox" name="options" value="enabled">
-                
-                <label for="option2">disabled</label>
+
+                <label for="options">disabled</label>
                 <input type="checkbox" name="options" value="disabled">
         </fieldset>
         <input type="submit" value="Submit">
@@ -39,7 +39,7 @@
     {% if user_info.user_choice %}
         <p>scan this QR code in your authentificator app to sync in, at your next connexion you will use your authentificator in order to login</p>
         <img src="data:image/png;base64,{{ user_info.user_url|safe }}" alt="QR Code">
-    {% endif %}     
+    {% endif %}
 
 <hr>
 <hr>
@@ -89,7 +89,7 @@
 
 	<form action="{% url 'profile' %}" method="post" >
 		{% csrf_token %}
-		
+
 		<label for="email">Your email is {{ user_info.user_email}}, change your email </label>
 		<input type="text" name="change_email" placeholder="Email">
 

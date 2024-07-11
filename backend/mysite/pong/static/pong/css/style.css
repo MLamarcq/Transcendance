@@ -14,7 +14,7 @@
 	font-size: 16px;
 
 	box-sizing: border-box;
-	
+
 	border: none;
 	list-style: none;
 }
@@ -47,7 +47,7 @@ html, body
 }
 
 input, textarea, select, button {
-    touch-action: manipulation;
+	touch-action: manipulation;
 }
 
 body {
@@ -69,7 +69,7 @@ header
 	backdrop-filter: blur(2px);
 }
 
-header > * 
+header > *
 {
 	margin: 25px;
 }
@@ -78,7 +78,7 @@ header h3 a
 {
 	color: var(--green);
 	font-size: 30px;
-	
+
 }
 
 header h3 a:hover
@@ -130,6 +130,37 @@ header nav a:last-of-type
 	border-radius: 5px;
 	background: white;
 	color: var(--green);
+	width: 105px;
+	height: 36px;
+	display: inline-block;
+	text-align: center;
+	position: relative;
+}
+
+header nav a:last-of-type span
+{
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+	transform: translate(-50%, 70%);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	font-size: 0.7em;
+	color: #444;
+	background-color: #eee;
+
+	border-radius: 5px;
+	padding: 3px 10px 1px;
+}
+header nav a:last-of-type:hover span
+{
+	background: white;
+	color: var(--green);
+	text-shadow: none;
 }
 
 header nav a:last-of-type:hover
@@ -145,16 +176,7 @@ input
 	border-radius: 50px;
 }
 
-#pop_up
+main *
 {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 350px;
-	height: 130px;
-	background: blue;
 	color: white;
-	font-size: 20px;
-	transform: translate(-50%, -50%);
-	z-index: 9999;
 }

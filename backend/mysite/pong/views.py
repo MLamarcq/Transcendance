@@ -35,16 +35,16 @@ def index(request) :
     if not request.user.is_authenticated:
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             html = render_to_string("pong/login_content.html", {}, request=request)
-            return (JsonResponse({'html' : html,                 
-                                'url' :   reverse("login")     
+            return (JsonResponse({'html' : html,
+                                'url' :   reverse("login")
                 }))
             return JsonResponse({'redirect' : reverse("login")})
         else :
             return HttpResponseRedirect(reverse("login"))
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         html = render_to_string("pong/homepage_content.html", {}, request=request)
-        return (JsonResponse({'html' : html,                 
-                            'url' :   reverse("index")     
+        return (JsonResponse({'html' : html,
+                            'url' :   reverse("index")
                 }))
     else :
         return render(request, "pong/homepage.html")
@@ -61,8 +61,8 @@ def login_view(request):
         message = "Vous êtes déjà connecté"
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             html = render_to_string("pong/homepage_content.html", {'message': message}, request)
-            return (JsonResponse({'html' : html,                 
-                            'url' :   reverse("index")     
+            return (JsonResponse({'html' : html,
+                            'url' :   reverse("index")
                 }))
         else:
             # Vous pouvez ajouter un message flash pour afficher la notification sur la page d'accueil.
@@ -71,7 +71,7 @@ def login_view(request):
     else:
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             html = render_to_string("pong/login_content.html", {}, request)
-            return JsonResponse({'html': html, 
+            return JsonResponse({'html': html,
                                 'url' : reverse("login")
                                 })
         else:
@@ -99,13 +99,13 @@ def login_view(request):
     #         return render(request, 'pong/signup.html', {
     #             'error_message': "Password don't match, please try again."
     #         })
-        
+
     #     if NewUser.objects.filter(pseudo=pseudo).exists():
     #         return render(request, 'pong/signup.html', {
     #             'error_message': "Username already exists. Please choose a different pseudo."
     #         })
 
-        
+
     #     if NewUser.objects.filter(email=email).exists():
     #         return render(request, 'pong/signup.html', {
     #             'error_message': "Email already exists. Please choose a different email."
@@ -118,7 +118,7 @@ def login_view(request):
     #     return HttpResponseRedirect(reverse("index"))
     # else:
     #     return render(request, "pong/signup.html")
-        
+
 
 def parsing_email(email) :
     if email :
@@ -202,7 +202,7 @@ def signup(request):
         confirm_password = request.POST.get("confirm_password")
         avatar = request.FILES.get("avatar")
         pseudo = request.POST.get("pseudo")
-        
+
         logger.debug("email avant parsing = %s", email)
 
         email = parsing_email(email)
@@ -216,7 +216,7 @@ def signup(request):
 
 
         error_message = validate_signup_data(email, password, confirm_password, pseudo)
-        
+
         # logger.debug("error_message = %s", error_message)
 
         if error_message:
@@ -227,10 +227,10 @@ def signup(request):
                 })
             else:
                 return render(request, 'pong/signup.html', {'error_message': error_message})
-        
+
         user = NewUser.objects.create_user(email=email, password=password, pseudo=pseudo, avatar=avatar)
         user.save()
-        
+
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             html = render_to_string("pong/login_content.html", {}, request=request)
             return JsonResponse({'html': html,
@@ -315,9 +315,9 @@ def signin(request):
         print("Je passe ici quand j'appuie sur LOGIN oui")
         email = request.POST.get("email")
         password = request.POST.get("password")
-        
+
         result = handle_authentication(request, email, password)
-        
+
         if 'error_message' in result:
             if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
                 html = render_to_string("pong/signin_content.html", {'error_message': True, 'message': result['error_message']}, request=request)
@@ -360,7 +360,7 @@ def signin(request):
 #             return HttpResponseRedirect(reverse("index"))
 #         else: # le cas où la secret key n'est pas la bonne
 #             value = True
-#             message = 'invalid one time password or the password has expired'      
+#             message = 'invalid one time password or the password has expired'
 #     return render(request, 'pong/otp.html' , {
 #                                                 'error_message' : {
 #                                                                         'value' : value,
@@ -469,7 +469,7 @@ def chat(request):
 def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
-    
+
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         html = render_to_string("pong/login_content.html", {}, request=request)
         return JsonResponse({'html': html})
@@ -484,12 +484,12 @@ def profile_view(request):
     if not request.user.is_authenticated:
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             html = render_to_string("pong/login_content.html", {}, request)
-            return JsonResponse({'html': html, 
+            return JsonResponse({'html': html,
                                 'url' : reverse("login")
                                 })
         else:
             return HttpResponseRedirect(reverse("login"))
- 
+
     user = NewUser.objects.get(id=(request.session.get('user_id')))
     url = pyotp.totp.TOTP(user.mfa_hash).provisioning_uri(name=user.email, issuer_name="Pong")
     qr = qrcode.make(url)
@@ -508,7 +508,7 @@ def profile_view(request):
         "pseudo" : None
     }
 
-    
+
     if request.method == "POST":
         if request.POST.get("options"):
             choice = request.POST.get("options")
@@ -529,7 +529,7 @@ def profile_view(request):
                     user.save()
             else:
                 other_error["pseudo"] = "you are already name like this"
-                
+
         if request.FILES.get("change_avatar"):
             user.avatar = request.FILES.get("change_avatar")
             user.save()
@@ -543,7 +543,7 @@ def profile_view(request):
                 except NewUser.DoesNotExist:
                     user.email = request.POST.get("change_email")
                     user.save()
-                    update_session_auth_hash(request, user)  
+                    update_session_auth_hash(request, user)
             else:
                 other_error["email"] = "your email is already this one"
 
@@ -551,7 +551,7 @@ def profile_view(request):
             old_password = request.POST.get("old_password")
             new_password1 = request.POST.get("new_password1")
             new_password2 = request.POST.get("new_password2")
-            
+
             if new_password1 and new_password2 and old_password:
                 if new_password1 == new_password2:
                     if user.check_password(old_password):
@@ -582,7 +582,7 @@ def profile_view(request):
         return JsonResponse({'html': html,
                                 'url' : reverse("profile")
                                 })
-    else:    
+    else:
         return render(request, "pong/profile.html", {
                                                         'user_info' : {
                                                             'user_choice' : user.is_mfa_enabled,
@@ -656,7 +656,7 @@ def add_friends(request):
                                                                         'message' : "you are now friends"
                                                                 }
                                             })
-            
+
         else:
             if friend_user is None:
                 message = "this user doesn't exist"
@@ -716,7 +716,7 @@ def delete_friends(request):
             friend_user = NewUser.objects.get(pseudo=friend_pseudo)
         except NewUser.DoesNotExist:
             friend_user = None
-    
+
         if ( friend_user is not None) and (user.id is not friend_user.id) :
             friendship = Friendship.objects.filter(Q(person1=user, person2=friend_user) | Q(person1=friend_user, person2=user)).first()
             if friendship:
@@ -739,8 +739,8 @@ def delete_friends(request):
                                                                 }
                                                 })
 
-           
-            #succes delete friend 
+
+            #succes delete friend
             message = "you are not friends anymore"
             if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
                 html = render_to_string("pong/delete_friends_content.html", {'error_message' : {
@@ -757,7 +757,7 @@ def delete_friends(request):
                                                                         'value' : True,
                                                                         'message' : message
                                                                 }
-                                                }) 
+                                                })
         else:
             if friend_user is None:
                 message = "this user doesn't exist"
@@ -779,7 +779,7 @@ def delete_friends(request):
                                                                         'value' : True,
                                                                         'message' : message
                                                                 }
-                                                }) 
+                                                })
     else:
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             html = render_to_string("pong/delete_friends_content.html", {'error_message' : {
@@ -799,7 +799,74 @@ def delete_friends(request):
                                                                 }
                                                                 )
 
+def waiting_room(request):
+	if not request.user.is_authenticated:
+		return HttpResponseRedirect(reverse("login"))
+	user = request.user
+	other_user = NewUser.objects.filter(in_waiting_room=True).exclude(id=user.id).first()
+	if other_user:
+		print(" - ")
+		print(" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ ")
+		print(other_user.pseudo)
+		print(" - ")
+		party = Party.objects.create(user1=user, user2=other_user, game_name='Game Name', game_time=timedelta(minutes=30))
+		user.in_waiting_room = False
+		other_user.in_waiting_room = False
+		user.save()
+		other_user.save()
+		return render(request, 'waiting_room.html')
+	else:
+		user.in_waiting_room = True
+		user.save()
+		print(" ")
+		print(" else wait ")
+		print(" ")
+		return render(request, 'waiting_room.html')
 
+def check_match(request):
+	if not request.user.is_authenticated:
+		return HttpResponseRedirect(reverse("login"))
+
+	user = request.user
+	party = Party.objects.filter(Q(user1=user) | Q(user2=user), is_ended=False).last()
+	if party and party.user1 and party.user2:
+		print(" ")
+		print("found OK !")
+		print(" ")
+		# party.user1.in_waiting_room = False
+		# party.user2.in_waiting_room = False
+		# party.user1.save()
+		# party.user2.save()
+		return JsonResponse({
+			'match_found': True,
+			'party_id': party.id,
+			'check_match': True,
+			'user_red': party.user1.pseudo,
+			'user_blue': party.user2.pseudo,
+			'id_red': party.user1.id,
+			'id_blue': party.user2.id
+		})
+	else:
+		print(" ")
+		print("Nothing")
+		print(" ")
+		return JsonResponse({
+			'match_found': False})
+
+def game_page(request, party_id):
+	if not request.user.is_authenticated:
+		return HttpResponseRedirect(reverse("login"))
+
+	party = get_object_or_404(Party, id=party_id)
+	# user
+	print(party)
+	return render(request, 'game_page.html', {'party': party})
+
+def home_game(request):
+	if not request.user.is_authenticated:
+		return HttpResponseRedirect(reverse("login"))
+
+	return render(request, 'home_game.html')
 
 
 
