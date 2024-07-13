@@ -18,5 +18,6 @@ urlpatterns = [
 	path('waiting_room/', views.waiting_room, name='waiting_room'),
 	path('game_page/<int:party_id>/', views.game_page, name='game_page'),
 	path('check_match/', views.check_match, name='check_match'),
-	path('home_game/', views.home_game, name='home_game')
+	path('home_game/', views.home_game, name='home_game'),
 ]
+	# path('delete_friends_id/<int:id>', views.delete_friends_id, name='delete_friends_id'),

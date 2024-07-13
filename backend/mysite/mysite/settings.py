@@ -103,7 +103,7 @@ ASGI_APPLICATION = 'mysite.asgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-env_path = Path('/home/gael/transcendence_commun/.env')
+env_path = Path('/home/mael/Transcendance_4/.env')
 
 
 # Charger les variables d'environnement à partir du fichier .env

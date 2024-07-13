@@ -1,24 +1,1625 @@
-INFO 2024-07-11 08:44:46,919 asgi  _@@@@@@_ 
-DEBUG 2024-07-11 08:44:46,923 asgi <channels.routing.ProtocolTypeRouter object at 0x7f91fd111880>
-INFO 2024-07-11 08:48:48,850 asgi  _@@@@@@_ 
-INFO 2024-07-11 08:48:52,083 asgi  _@@@@@@_ 
-INFO 2024-07-11 08:49:15,768 asgi  _@@@@@@_ 
-DEBUG 2024-07-11 08:49:15,768 asgi <channels.routing.ProtocolTypeRouter object at 0x7f7198f8c890>
-INFO 2024-07-11 08:51:54,504 asgi  _@@@@@@_ 
-DEBUG 2024-07-11 08:51:54,505 asgi <channels.routing.ProtocolTypeRouter object at 0x7f678c925dc0>
-INFO 2024-07-11 09:17:00,144 asgi  _@@@@@@_ 
-DEBUG 2024-07-11 09:17:00,145 asgi <channels.routing.ProtocolTypeRouter object at 0x7fc2a1989010>
-INFO 2024-07-11 09:17:03,598 asgi  _@@@@@@_ 
-DEBUG 2024-07-11 09:17:03,599 asgi <channels.routing.ProtocolTypeRouter object at 0x7f8d8fb08b90>
-INFO 2024-07-11 09:17:05,783 asgi  _@@@@@@_ 
-DEBUG 2024-07-11 09:17:05,784 asgi <channels.routing.ProtocolTypeRouter object at 0x7f84c9b3c620>
-INFO 2024-07-11 09:21:45,047 asgi  _@@@@@@_ 
-DEBUG 2024-07-11 09:21:45,048 asgi <channels.routing.ProtocolTypeRouter object at 0x7fb9908fa360>
-INFO 2024-07-11 11:21:10,712 asgi  _@@@@@@_ 
-DEBUG 2024-07-11 11:21:10,712 asgi <channels.routing.ProtocolTypeRouter object at 0x7f9a013bab70>
-INFO 2024-07-11 11:47:28,313 asgi  _@@@@@@_ 
-DEBUG 2024-07-11 11:47:28,314 asgi <channels.routing.ProtocolTypeRouter object at 0x7f11de0e49b0>
-INFO 2024-07-11 11:47:33,729 asgi  _@@@@@@_ 
-DEBUG 2024-07-11 11:47:33,730 asgi <channels.routing.ProtocolTypeRouter object at 0x7f1bff7ac290>
-INFO 2024-07-11 11:53:28,003 asgi  _@@@@@@_ 
-DEBUG 2024-07-11 11:53:28,004 asgi <channels.routing.ProtocolTypeRouter object at 0x7f7a113acad0>
+DEBUG 2024-07-12 20:06:17,201 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 20:06:17,208 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 20:06:17,212 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>, <NewUser: admin>]
+INFO 2024-07-12 20:08:21,979 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 20:08:21,983 asgi <channels.routing.ProtocolTypeRouter object at 0x7c7a861b1f10>
+INFO 2024-07-12 20:08:35,653 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 20:08:35,655 asgi <channels.routing.ProtocolTypeRouter object at 0x79cba53ab920>
+DEBUG 2024-07-12 20:08:41,975 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 20:08:41,982 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 20:08:42,000 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+INFO 2024-07-12 20:47:54,375 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 20:47:54,376 asgi <channels.routing.ProtocolTypeRouter object at 0x7da1f5fb6330>
+INFO 2024-07-12 21:15:26,078 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 21:15:26,078 asgi <channels.routing.ProtocolTypeRouter object at 0x71d61475b230>
+INFO 2024-07-12 21:15:45,681 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 21:15:45,687 asgi <channels.routing.ProtocolTypeRouter object at 0x7301d4533020>
+INFO 2024-07-12 21:15:52,238 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 21:15:52,243 asgi <channels.routing.ProtocolTypeRouter object at 0x77d86ad6a810>
+INFO 2024-07-12 21:15:58,573 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 21:15:58,579 asgi <channels.routing.ProtocolTypeRouter object at 0x7ab5b7d172f0>
+INFO 2024-07-12 21:16:37,238 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 21:16:37,252 asgi <channels.routing.ProtocolTypeRouter object at 0x78919f7be0c0>
+INFO 2024-07-12 21:16:45,421 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 21:16:45,423 asgi <channels.routing.ProtocolTypeRouter object at 0x7abf41caeea0>
+INFO 2024-07-12 21:16:51,610 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 21:16:51,619 asgi <channels.routing.ProtocolTypeRouter object at 0x76e0aabc4260>
+INFO 2024-07-12 21:16:57,712 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 21:16:57,713 asgi <channels.routing.ProtocolTypeRouter object at 0x70e89098f110>
+INFO 2024-07-12 21:17:08,815 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 21:17:08,828 asgi <channels.routing.ProtocolTypeRouter object at 0x75a4c7962d80>
+INFO 2024-07-12 21:17:14,506 asgi  _@@@@@@_ 
+DEBUG 2024-07-12 21:17:14,510 asgi <channels.routing.ProtocolTypeRouter object at 0x7e0ac1dab0e0>
+DEBUG 2024-07-12 21:23:27,174 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:23:27,180 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:23:27,182 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:26:18,597 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:26:18,598 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:26:18,601 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:32:46,796 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:32:46,804 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:32:46,806 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:32:48,281 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:32:48,288 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:32:48,294 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:38:16,659 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:38:16,661 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:38:16,667 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:38:46,083 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:38:46,088 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:38:46,092 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:39:45,094 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:39:45,099 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:39:45,103 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:39:59,755 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:39:59,759 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:39:59,766 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:40:01,437 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:40:01,441 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:40:01,449 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:40:12,696 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:40:12,704 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:40:12,706 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:40:28,990 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:40:28,992 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:40:29,000 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:46:37,814 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:46:37,820 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:46:37,822 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:47:47,184 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:47:47,188 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:47:47,195 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:48:09,490 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:48:09,495 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:48:09,500 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:48:25,150 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:48:25,153 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:48:25,158 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:48:59,150 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:48:59,154 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:48:59,159 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:49:00,475 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:49:00,478 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:49:00,482 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:49:09,698 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:49:09,704 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:49:09,707 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 21:49:26,596 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:49:26,601 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 21:49:26,604 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:04:09,485 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:04:09,490 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:04:09,498 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:05:24,574 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:05:24,577 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:05:24,582 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:05:36,796 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:05:36,800 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:05:36,805 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:05:59,727 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:05:59,729 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:05:59,733 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:06:51,473 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:06:51,476 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:06:51,480 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:06:52,974 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:06:52,979 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:06:52,984 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:07:02,991 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:07:02,996 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:07:03,000 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:13:49,392 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:13:49,395 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:13:49,399 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:14:05,350 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:14:05,352 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:14:05,357 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:14:38,653 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:14:38,656 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:14:38,661 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:14:48,205 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:14:48,210 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:14:48,214 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:15:57,139 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:15:57,141 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:15:57,143 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:16:58,690 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:16:58,696 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:16:58,701 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:17:12,761 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:17:12,767 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:17:12,772 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:17:21,470 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:17:21,472 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:17:21,479 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:18:23,981 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:18:23,984 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:18:23,986 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:18:56,032 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:18:56,033 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:18:56,035 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:19:03,904 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:19:03,906 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:19:03,911 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:19:05,847 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:19:05,850 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:19:05,853 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:19:16,759 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:19:16,765 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:19:16,769 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:28:41,764 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:28:41,768 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:28:41,774 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:28:59,792 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:28:59,795 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:28:59,799 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:29:45,806 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:29:45,812 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:29:45,814 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:30:56,760 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:30:56,764 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:30:56,768 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:30:58,221 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:30:58,226 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:30:58,228 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:31:28,760 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:31:28,761 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:31:28,769 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:31:59,249 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:31:59,256 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:31:59,259 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:34:12,491 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:34:12,497 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:34:12,501 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:35:13,241 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:35:13,244 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:35:13,249 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:35:29,615 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:35:29,621 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:35:29,623 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:35:48,336 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:35:48,339 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:35:48,345 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:36:18,816 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:36:18,822 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:36:18,824 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:36:27,531 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:36:27,540 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:36:27,550 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:36:48,833 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:36:48,837 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:36:48,840 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:36:59,860 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:36:59,866 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:36:59,870 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:38:13,737 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:38:13,740 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:38:13,744 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:38:49,912 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:38:49,913 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:38:49,918 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:39:02,253 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:39:02,255 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:39:02,261 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:39:33,154 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:39:33,157 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:39:33,163 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:40:06,054 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:40:06,060 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:40:06,065 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:40:07,855 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:40:07,857 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:40:07,858 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:40:17,190 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:40:17,197 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:40:17,204 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:40:18,929 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:40:18,932 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:40:18,936 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:40:57,919 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:40:57,925 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:40:57,927 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:41:18,554 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:41:18,556 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:41:18,563 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:41:47,386 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:41:47,388 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:41:47,390 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:41:48,908 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:41:48,916 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:41:48,918 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:42:29,965 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:42:29,970 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:42:29,978 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:42:48,902 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:42:48,904 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:42:48,909 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:43:01,136 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:43:01,141 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:43:01,148 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:43:15,561 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:43:15,566 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:43:15,569 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:43:28,393 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:43:28,397 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:43:28,401 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:43:41,653 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:43:41,657 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:43:41,662 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:44:04,903 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:44:04,907 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:44:04,913 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:44:18,303 views friend = lili is connected
+DEBUG 2024-07-12 22:44:18,304 views friend = lala is connected
+DEBUG 2024-07-12 22:44:18,304 views friend = lolo is deconnected
+DEBUG 2024-07-12 22:44:18,304 views friend = fafa is deconnected
+DEBUG 2024-07-12 22:44:18,304 views friend = fufu is deconnected
+DEBUG 2024-07-12 22:44:18,304 views friend = fifi is connected
+DEBUG 2024-07-12 22:46:09,692 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:46:09,694 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:46:09,698 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:46:57,535 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:46:57,536 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:46:57,539 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:47:25,365 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:47:25,370 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:47:25,373 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:47:45,702 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:47:45,706 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:47:45,711 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:48:01,352 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:48:01,357 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:48:01,361 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:48:39,063 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:48:39,066 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:48:39,070 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:48:48,153 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:48:48,154 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:48:48,161 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:49:02,659 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:49:02,663 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:49:02,668 views la liste des users non amis : [<NewUser: toto>, <NewUser: fofo>]
+DEBUG 2024-07-12 22:49:05,290 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:49:05,296 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:49:05,301 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-12 22:49:10,856 views friend = lili is connected
+DEBUG 2024-07-12 22:49:10,856 views friend = lala is connected
+DEBUG 2024-07-12 22:49:10,856 views friend = lolo is deconnected
+DEBUG 2024-07-12 22:49:10,856 views friend = toto is deconnected
+DEBUG 2024-07-12 22:49:10,856 views friend = fafa is deconnected
+DEBUG 2024-07-12 22:49:10,856 views friend = fufu is deconnected
+DEBUG 2024-07-12 22:49:10,856 views friend = fifi is connected
+DEBUG 2024-07-12 22:49:17,582 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:49:17,584 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:49:17,587 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-12 22:49:29,573 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:49:29,574 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:49:29,579 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-12 22:49:33,611 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:49:33,616 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:49:33,620 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-12 22:50:25,392 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:50:25,400 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 22:50:25,402 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-12 22:53:52,825 views friend = lili is connected
+DEBUG 2024-07-12 22:53:52,828 views friend = lala is connected
+DEBUG 2024-07-12 22:53:52,828 views friend = lolo is deconnected
+DEBUG 2024-07-12 22:53:52,828 views friend = toto is deconnected
+DEBUG 2024-07-12 22:53:52,829 views friend = fafa is deconnected
+DEBUG 2024-07-12 22:53:52,829 views friend = fufu is deconnected
+DEBUG 2024-07-12 22:53:52,829 views friend = fifi is connected
+DEBUG 2024-07-12 22:54:35,641 views friend = lili is connected
+DEBUG 2024-07-12 22:54:35,641 views friend = lala is connected
+DEBUG 2024-07-12 22:54:35,642 views friend = lolo is deconnected
+DEBUG 2024-07-12 22:54:35,642 views friend = toto is deconnected
+DEBUG 2024-07-12 22:54:35,642 views friend = fafa is deconnected
+DEBUG 2024-07-12 22:54:35,642 views friend = fufu is deconnected
+DEBUG 2024-07-12 22:54:35,642 views friend = fifi is connected
+DEBUG 2024-07-12 22:55:51,366 views friend = lili is connected
+DEBUG 2024-07-12 22:55:51,366 views friend = lala is connected
+DEBUG 2024-07-12 22:55:51,366 views friend = lolo is deconnected
+DEBUG 2024-07-12 22:55:51,366 views friend = toto is deconnected
+DEBUG 2024-07-12 22:55:51,367 views friend = fafa is deconnected
+DEBUG 2024-07-12 22:55:51,367 views friend = fufu is deconnected
+DEBUG 2024-07-12 22:55:51,367 views friend = fifi is connected
+DEBUG 2024-07-12 23:00:07,019 views friend = lili is connected
+DEBUG 2024-07-12 23:00:07,019 views friend = lala is connected
+DEBUG 2024-07-12 23:00:07,019 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:00:07,019 views friend = toto is deconnected
+DEBUG 2024-07-12 23:00:07,019 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:00:07,019 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:00:07,020 views friend = fifi is connected
+DEBUG 2024-07-12 23:00:09,546 views friend = lili is connected
+DEBUG 2024-07-12 23:00:09,547 views friend = lala is connected
+DEBUG 2024-07-12 23:00:09,548 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:00:09,548 views friend = toto is deconnected
+DEBUG 2024-07-12 23:00:09,548 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:00:09,548 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:00:09,548 views friend = fifi is connected
+DEBUG 2024-07-12 23:00:25,545 views friend = lili is connected
+DEBUG 2024-07-12 23:00:25,548 views friend = lala is connected
+DEBUG 2024-07-12 23:00:25,549 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:00:25,549 views friend = toto is deconnected
+DEBUG 2024-07-12 23:00:25,549 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:00:25,549 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:00:25,549 views friend = fifi is connected
+DEBUG 2024-07-12 23:00:33,171 views friend = lili is connected
+DEBUG 2024-07-12 23:00:33,172 views friend = lala is connected
+DEBUG 2024-07-12 23:00:33,172 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:00:33,172 views friend = toto is deconnected
+DEBUG 2024-07-12 23:00:33,172 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:00:33,172 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:00:33,172 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:11,056 views friend = lili is connected
+DEBUG 2024-07-12 23:02:11,056 views friend = lala is connected
+DEBUG 2024-07-12 23:02:11,056 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:11,056 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:11,056 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:11,056 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:11,056 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:13,229 views friend = lili is connected
+DEBUG 2024-07-12 23:02:13,235 views friend = lala is connected
+DEBUG 2024-07-12 23:02:13,235 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:13,235 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:13,235 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:13,236 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:13,236 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:14,686 views friend = lili is connected
+DEBUG 2024-07-12 23:02:14,701 views friend = lala is connected
+DEBUG 2024-07-12 23:02:14,702 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:14,702 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:14,702 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:14,702 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:14,702 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:15,937 views friend = lili is connected
+DEBUG 2024-07-12 23:02:15,939 views friend = lala is connected
+DEBUG 2024-07-12 23:02:15,939 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:15,939 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:15,939 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:15,939 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:15,939 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:17,058 views friend = lili is connected
+DEBUG 2024-07-12 23:02:17,063 views friend = lala is connected
+DEBUG 2024-07-12 23:02:17,063 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:17,063 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:17,063 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:17,063 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:17,063 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:18,600 views friend = lili is connected
+DEBUG 2024-07-12 23:02:18,601 views friend = lala is connected
+DEBUG 2024-07-12 23:02:18,601 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:18,601 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:18,601 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:18,601 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:18,601 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:19,704 views friend = lili is connected
+DEBUG 2024-07-12 23:02:19,704 views friend = lala is connected
+DEBUG 2024-07-12 23:02:19,705 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:19,705 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:19,705 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:19,705 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:19,705 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:20,933 views friend = lili is connected
+DEBUG 2024-07-12 23:02:20,935 views friend = lala is connected
+DEBUG 2024-07-12 23:02:20,935 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:20,935 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:20,935 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:20,935 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:20,935 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:25,361 views friend = lili is connected
+DEBUG 2024-07-12 23:02:25,361 views friend = lala is connected
+DEBUG 2024-07-12 23:02:25,361 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:25,362 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:25,362 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:25,362 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:25,362 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:31,449 views friend = lili is connected
+DEBUG 2024-07-12 23:02:31,451 views friend = lala is connected
+DEBUG 2024-07-12 23:02:31,451 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:31,451 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:31,451 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:31,451 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:31,451 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:32,855 views friend = lili is connected
+DEBUG 2024-07-12 23:02:32,857 views friend = lala is connected
+DEBUG 2024-07-12 23:02:32,858 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:32,858 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:32,859 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:32,859 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:32,859 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:34,466 views friend = lili is connected
+DEBUG 2024-07-12 23:02:34,466 views friend = lala is connected
+DEBUG 2024-07-12 23:02:34,467 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:34,467 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:34,467 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:34,467 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:34,467 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:35,181 views friend = lili is connected
+DEBUG 2024-07-12 23:02:35,185 views friend = lala is connected
+DEBUG 2024-07-12 23:02:35,185 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:35,185 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:35,185 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:35,185 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:35,185 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:37,429 views friend = lili is connected
+DEBUG 2024-07-12 23:02:37,431 views friend = lala is connected
+DEBUG 2024-07-12 23:02:37,431 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:37,431 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:37,431 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:37,431 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:37,431 views friend = fifi is connected
+DEBUG 2024-07-12 23:02:39,055 views friend = lili is connected
+DEBUG 2024-07-12 23:02:39,057 views friend = lala is connected
+DEBUG 2024-07-12 23:02:39,058 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:02:39,058 views friend = toto is deconnected
+DEBUG 2024-07-12 23:02:39,058 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:02:39,058 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:02:39,058 views friend = fifi is connected
+DEBUG 2024-07-12 23:03:20,658 views friend = lili is connected
+DEBUG 2024-07-12 23:03:20,658 views friend = lala is connected
+DEBUG 2024-07-12 23:03:20,658 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:03:20,658 views friend = toto is deconnected
+DEBUG 2024-07-12 23:03:20,658 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:03:20,658 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:03:20,658 views friend = fifi is connected
+DEBUG 2024-07-12 23:03:22,612 views friend = lili is connected
+DEBUG 2024-07-12 23:03:22,612 views friend = lala is connected
+DEBUG 2024-07-12 23:03:22,612 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:03:22,612 views friend = toto is deconnected
+DEBUG 2024-07-12 23:03:22,612 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:03:22,612 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:03:22,612 views friend = fifi is connected
+DEBUG 2024-07-12 23:03:26,205 views friend = lili is connected
+DEBUG 2024-07-12 23:03:26,212 views friend = lala is connected
+DEBUG 2024-07-12 23:03:26,212 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:03:26,212 views friend = toto is deconnected
+DEBUG 2024-07-12 23:03:26,212 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:03:26,212 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:03:26,212 views friend = fifi is connected
+DEBUG 2024-07-12 23:03:28,849 views friend = lili is connected
+DEBUG 2024-07-12 23:03:28,850 views friend = lala is connected
+DEBUG 2024-07-12 23:03:28,850 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:03:28,851 views friend = toto is deconnected
+DEBUG 2024-07-12 23:03:28,851 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:03:28,851 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:03:28,852 views friend = fifi is connected
+DEBUG 2024-07-12 23:04:05,315 views friend = lili is connected
+DEBUG 2024-07-12 23:04:05,319 views friend = lala is connected
+DEBUG 2024-07-12 23:04:05,319 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:04:05,319 views friend = toto is deconnected
+DEBUG 2024-07-12 23:04:05,319 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:04:05,319 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:04:05,319 views friend = fifi is connected
+DEBUG 2024-07-12 23:04:44,186 views friend = lili is connected
+DEBUG 2024-07-12 23:04:44,188 views friend = lala is connected
+DEBUG 2024-07-12 23:04:44,188 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:04:44,188 views friend = toto is deconnected
+DEBUG 2024-07-12 23:04:44,189 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:04:44,189 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:04:44,189 views friend = fifi is connected
+DEBUG 2024-07-12 23:05:50,680 views friend = lili is connected
+DEBUG 2024-07-12 23:05:50,681 views friend = lala is connected
+DEBUG 2024-07-12 23:05:50,681 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:05:50,683 views friend = toto is deconnected
+DEBUG 2024-07-12 23:05:50,683 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:05:50,684 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:05:50,684 views friend = fifi is connected
+DEBUG 2024-07-12 23:06:43,289 views friend = lili is connected
+DEBUG 2024-07-12 23:06:43,291 views friend = lala is connected
+DEBUG 2024-07-12 23:06:43,293 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:06:43,293 views friend = toto is deconnected
+DEBUG 2024-07-12 23:06:43,293 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:06:43,294 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:06:43,294 views friend = fifi is connected
+DEBUG 2024-07-12 23:07:12,881 views friend = lili is connected
+DEBUG 2024-07-12 23:07:12,881 views friend = lala is connected
+DEBUG 2024-07-12 23:07:12,881 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:07:12,882 views friend = toto is deconnected
+DEBUG 2024-07-12 23:07:12,882 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:07:12,882 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:07:12,882 views friend = fifi is connected
+DEBUG 2024-07-12 23:07:15,594 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-12 23:07:15,599 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-12 23:07:15,603 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-12 23:07:23,279 views friend = lili is connected
+DEBUG 2024-07-12 23:07:23,279 views friend = lala is connected
+DEBUG 2024-07-12 23:07:23,280 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:07:23,280 views friend = toto is deconnected
+DEBUG 2024-07-12 23:07:23,280 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:07:23,280 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:07:23,280 views friend = fifi is connected
+DEBUG 2024-07-12 23:13:30,037 views friend = lili is connected
+DEBUG 2024-07-12 23:13:30,039 views friend = lala is connected
+DEBUG 2024-07-12 23:13:30,039 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:13:30,039 views friend = toto is deconnected
+DEBUG 2024-07-12 23:13:30,039 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:13:30,040 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:13:30,040 views friend = fifi is connected
+DEBUG 2024-07-12 23:22:06,582 views friend = lili is connected
+DEBUG 2024-07-12 23:22:06,582 views friend = lala is connected
+DEBUG 2024-07-12 23:22:06,582 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:22:06,582 views friend = toto is deconnected
+DEBUG 2024-07-12 23:22:06,582 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:22:06,582 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:22:06,582 views friend = fifi is connected
+DEBUG 2024-07-12 23:22:53,702 views friend = lili is connected
+DEBUG 2024-07-12 23:22:53,705 views friend = lala is connected
+DEBUG 2024-07-12 23:22:53,705 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:22:53,705 views friend = toto is deconnected
+DEBUG 2024-07-12 23:22:53,705 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:22:53,705 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:22:53,705 views friend = fifi is connected
+DEBUG 2024-07-12 23:22:56,088 views friend = lili is connected
+DEBUG 2024-07-12 23:22:56,091 views friend = lala is connected
+DEBUG 2024-07-12 23:22:56,092 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:22:56,092 views friend = toto is deconnected
+DEBUG 2024-07-12 23:22:56,092 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:22:56,092 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:22:56,092 views friend = fifi is connected
+DEBUG 2024-07-12 23:23:18,325 views friend = lili is connected
+DEBUG 2024-07-12 23:23:18,326 views friend = lala is connected
+DEBUG 2024-07-12 23:23:18,326 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:23:18,326 views friend = toto is deconnected
+DEBUG 2024-07-12 23:23:18,326 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:23:18,326 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:23:18,326 views friend = fifi is connected
+DEBUG 2024-07-12 23:23:35,159 views friend = lili is connected
+DEBUG 2024-07-12 23:23:35,159 views friend = lala is connected
+DEBUG 2024-07-12 23:23:35,160 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:23:35,160 views friend = toto is deconnected
+DEBUG 2024-07-12 23:23:35,160 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:23:35,160 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:23:35,160 views friend = fifi is connected
+DEBUG 2024-07-12 23:23:38,949 views friend = lili is connected
+DEBUG 2024-07-12 23:23:38,949 views friend = lala is connected
+DEBUG 2024-07-12 23:23:38,949 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:23:38,950 views friend = toto is deconnected
+DEBUG 2024-07-12 23:23:38,950 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:23:38,950 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:23:38,950 views friend = fifi is connected
+DEBUG 2024-07-12 23:23:42,301 views friend = lili is connected
+DEBUG 2024-07-12 23:23:42,307 views friend = lala is connected
+DEBUG 2024-07-12 23:23:42,307 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:23:42,307 views friend = toto is deconnected
+DEBUG 2024-07-12 23:23:42,307 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:23:42,307 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:23:42,307 views friend = fifi is connected
+DEBUG 2024-07-12 23:24:12,990 views friend = lili is connected
+DEBUG 2024-07-12 23:24:12,992 views friend = lala is connected
+DEBUG 2024-07-12 23:24:12,992 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:24:12,992 views friend = toto is deconnected
+DEBUG 2024-07-12 23:24:12,992 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:24:12,993 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:24:12,994 views friend = fifi is connected
+DEBUG 2024-07-12 23:24:16,035 views friend = lili is connected
+DEBUG 2024-07-12 23:24:16,037 views friend = lala is connected
+DEBUG 2024-07-12 23:24:16,037 views friend = lolo is deconnected
+DEBUG 2024-07-12 23:24:16,037 views friend = toto is deconnected
+DEBUG 2024-07-12 23:24:16,038 views friend = fafa is deconnected
+DEBUG 2024-07-12 23:24:16,039 views friend = fufu is deconnected
+DEBUG 2024-07-12 23:24:16,039 views friend = fifi is connected
+DEBUG 2024-07-13 09:33:20,417 views friend = lili is connected
+DEBUG 2024-07-13 09:33:20,422 views friend = lala is connected
+DEBUG 2024-07-13 09:33:20,422 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:33:20,422 views friend = toto is deconnected
+DEBUG 2024-07-13 09:33:20,423 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:33:20,423 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:33:20,423 views friend = fifi is connected
+DEBUG 2024-07-13 09:34:28,993 views friend = lili is connected
+DEBUG 2024-07-13 09:34:28,993 views friend = lala is connected
+DEBUG 2024-07-13 09:34:28,993 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:34:28,993 views friend = toto is deconnected
+DEBUG 2024-07-13 09:34:28,993 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:34:28,994 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:34:28,994 views friend = fifi is connected
+DEBUG 2024-07-13 09:34:49,029 views friend = lili is connected
+DEBUG 2024-07-13 09:34:49,030 views friend = lala is connected
+DEBUG 2024-07-13 09:34:49,031 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:34:49,031 views friend = toto is deconnected
+DEBUG 2024-07-13 09:34:49,031 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:34:49,031 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:34:49,032 views friend = fifi is connected
+DEBUG 2024-07-13 09:35:33,129 views friend = lili is connected
+DEBUG 2024-07-13 09:35:33,129 views friend = lala is connected
+DEBUG 2024-07-13 09:35:33,130 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:35:33,130 views friend = toto is deconnected
+DEBUG 2024-07-13 09:35:33,130 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:35:33,130 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:35:33,130 views friend = fifi is connected
+DEBUG 2024-07-13 09:35:52,603 views friend = lili is connected
+DEBUG 2024-07-13 09:35:52,604 views friend = lala is connected
+DEBUG 2024-07-13 09:35:52,604 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:35:52,604 views friend = toto is deconnected
+DEBUG 2024-07-13 09:35:52,604 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:35:52,604 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:35:52,604 views friend = fifi is connected
+DEBUG 2024-07-13 09:36:22,191 views friend = lili is connected
+DEBUG 2024-07-13 09:36:22,193 views friend = lala is connected
+DEBUG 2024-07-13 09:36:22,193 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:36:22,193 views friend = toto is deconnected
+DEBUG 2024-07-13 09:36:22,194 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:36:22,194 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:36:22,194 views friend = fifi is connected
+DEBUG 2024-07-13 09:36:23,770 views friend = lili is connected
+DEBUG 2024-07-13 09:36:23,774 views friend = lala is connected
+DEBUG 2024-07-13 09:36:23,774 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:36:23,774 views friend = toto is deconnected
+DEBUG 2024-07-13 09:36:23,774 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:36:23,774 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:36:23,774 views friend = fifi is connected
+DEBUG 2024-07-13 09:36:25,873 views friend = lili is connected
+DEBUG 2024-07-13 09:36:25,873 views friend = lala is connected
+DEBUG 2024-07-13 09:36:25,873 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:36:25,873 views friend = toto is deconnected
+DEBUG 2024-07-13 09:36:25,873 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:36:25,873 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:36:25,873 views friend = fifi is connected
+DEBUG 2024-07-13 09:36:49,921 views friend = lili is connected
+DEBUG 2024-07-13 09:36:49,924 views friend = lala is connected
+DEBUG 2024-07-13 09:36:49,924 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:36:49,924 views friend = toto is deconnected
+DEBUG 2024-07-13 09:36:49,924 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:36:49,924 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:36:49,924 views friend = fifi is connected
+DEBUG 2024-07-13 09:40:24,104 views friend = lili is connected
+DEBUG 2024-07-13 09:40:24,105 views friend = lala is connected
+DEBUG 2024-07-13 09:40:24,105 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:40:24,106 views friend = toto is deconnected
+DEBUG 2024-07-13 09:40:24,106 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:40:24,106 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:40:24,106 views friend = fifi is connected
+DEBUG 2024-07-13 09:42:32,168 views friend = lili is connected
+DEBUG 2024-07-13 09:42:32,170 views friend = lala is connected
+DEBUG 2024-07-13 09:42:32,171 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:42:32,171 views friend = toto is deconnected
+DEBUG 2024-07-13 09:42:32,171 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:42:32,171 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:42:32,171 views friend = fifi is connected
+DEBUG 2024-07-13 09:42:33,577 views friend = lili is connected
+DEBUG 2024-07-13 09:42:33,582 views friend = lala is connected
+DEBUG 2024-07-13 09:42:33,582 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:42:33,582 views friend = toto is deconnected
+DEBUG 2024-07-13 09:42:33,582 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:42:33,583 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:42:33,583 views friend = fifi is connected
+DEBUG 2024-07-13 09:43:07,322 views friend = lili is connected
+DEBUG 2024-07-13 09:43:07,323 views friend = lala is connected
+DEBUG 2024-07-13 09:43:07,323 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:43:07,323 views friend = toto is deconnected
+DEBUG 2024-07-13 09:43:07,323 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:43:07,323 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:43:07,323 views friend = fifi is connected
+DEBUG 2024-07-13 09:43:08,729 views friend = lili is connected
+DEBUG 2024-07-13 09:43:08,730 views friend = lala is connected
+DEBUG 2024-07-13 09:43:08,730 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:43:08,731 views friend = toto is deconnected
+DEBUG 2024-07-13 09:43:08,731 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:43:08,731 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:43:08,731 views friend = fifi is connected
+DEBUG 2024-07-13 09:43:39,483 views friend = lili is connected
+DEBUG 2024-07-13 09:43:39,483 views friend = lala is connected
+DEBUG 2024-07-13 09:43:39,484 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:43:39,484 views friend = toto is deconnected
+DEBUG 2024-07-13 09:43:39,484 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:43:39,484 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:43:39,484 views friend = fifi is connected
+DEBUG 2024-07-13 09:44:01,612 views friend = lili is connected
+DEBUG 2024-07-13 09:44:01,612 views friend = lala is connected
+DEBUG 2024-07-13 09:44:01,613 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:44:01,613 views friend = toto is deconnected
+DEBUG 2024-07-13 09:44:01,613 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:44:01,613 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:44:01,613 views friend = fifi is connected
+DEBUG 2024-07-13 09:44:17,388 views friend = lili is connected
+DEBUG 2024-07-13 09:44:17,389 views friend = lala is connected
+DEBUG 2024-07-13 09:44:17,389 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:44:17,389 views friend = toto is deconnected
+DEBUG 2024-07-13 09:44:17,389 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:44:17,389 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:44:17,389 views friend = fifi is connected
+DEBUG 2024-07-13 09:45:16,253 views friend = lili is connected
+DEBUG 2024-07-13 09:45:16,255 views friend = lala is connected
+DEBUG 2024-07-13 09:45:16,255 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:45:16,256 views friend = toto is deconnected
+DEBUG 2024-07-13 09:45:16,256 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:45:16,256 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:45:16,256 views friend = fifi is connected
+DEBUG 2024-07-13 09:45:35,836 views friend = lili is connected
+DEBUG 2024-07-13 09:45:35,837 views friend = lala is connected
+DEBUG 2024-07-13 09:45:35,837 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:45:35,837 views friend = toto is deconnected
+DEBUG 2024-07-13 09:45:35,837 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:45:35,837 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:45:35,838 views friend = fifi is connected
+DEBUG 2024-07-13 09:46:09,723 views friend = lili is connected
+DEBUG 2024-07-13 09:46:09,724 views friend = lala is connected
+DEBUG 2024-07-13 09:46:09,724 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:46:09,724 views friend = toto is deconnected
+DEBUG 2024-07-13 09:46:09,724 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:46:09,724 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:46:09,724 views friend = fifi is connected
+DEBUG 2024-07-13 09:46:11,356 views friend = lili is connected
+DEBUG 2024-07-13 09:46:11,362 views friend = lala is connected
+DEBUG 2024-07-13 09:46:11,362 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:46:11,362 views friend = toto is deconnected
+DEBUG 2024-07-13 09:46:11,362 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:46:11,362 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:46:11,362 views friend = fifi is connected
+DEBUG 2024-07-13 09:46:42,827 views friend = lili is connected
+DEBUG 2024-07-13 09:46:42,827 views friend = lala is connected
+DEBUG 2024-07-13 09:46:42,827 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:46:42,827 views friend = toto is deconnected
+DEBUG 2024-07-13 09:46:42,827 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:46:42,827 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:46:42,827 views friend = fifi is connected
+DEBUG 2024-07-13 09:46:51,077 views friend = lili is connected
+DEBUG 2024-07-13 09:46:51,077 views friend = lala is connected
+DEBUG 2024-07-13 09:46:51,078 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:46:51,078 views friend = toto is deconnected
+DEBUG 2024-07-13 09:46:51,078 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:46:51,079 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:46:51,079 views friend = fifi is connected
+DEBUG 2024-07-13 09:47:28,113 views friend = lili is connected
+DEBUG 2024-07-13 09:47:28,114 views friend = lala is connected
+DEBUG 2024-07-13 09:47:28,114 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:47:28,114 views friend = toto is deconnected
+DEBUG 2024-07-13 09:47:28,114 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:47:28,114 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:47:28,114 views friend = fifi is connected
+DEBUG 2024-07-13 09:59:27,589 views friend = lili is connected
+DEBUG 2024-07-13 09:59:27,589 views friend = lala is connected
+DEBUG 2024-07-13 09:59:27,589 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:59:27,589 views friend = toto is deconnected
+DEBUG 2024-07-13 09:59:27,589 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:59:27,589 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:59:27,589 views friend = fifi is connected
+DEBUG 2024-07-13 09:59:48,839 views friend = lili is connected
+DEBUG 2024-07-13 09:59:48,846 views friend = lala is connected
+DEBUG 2024-07-13 09:59:48,846 views friend = lolo is deconnected
+DEBUG 2024-07-13 09:59:48,846 views friend = toto is deconnected
+DEBUG 2024-07-13 09:59:48,846 views friend = fafa is deconnected
+DEBUG 2024-07-13 09:59:48,847 views friend = fufu is deconnected
+DEBUG 2024-07-13 09:59:48,847 views friend = fifi is connected
+DEBUG 2024-07-13 10:00:10,596 views friend = lili is connected
+DEBUG 2024-07-13 10:00:10,602 views friend = lala is connected
+DEBUG 2024-07-13 10:00:10,603 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:00:10,603 views friend = toto is deconnected
+DEBUG 2024-07-13 10:00:10,603 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:00:10,603 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:00:10,603 views friend = fifi is connected
+DEBUG 2024-07-13 10:01:02,620 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-13 10:01:02,623 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-13 10:01:02,627 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-13 10:01:04,856 views friend = lili is connected
+DEBUG 2024-07-13 10:01:04,858 views friend = lala is connected
+DEBUG 2024-07-13 10:01:04,858 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:01:04,859 views friend = toto is deconnected
+DEBUG 2024-07-13 10:01:04,859 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:01:04,859 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:01:04,859 views friend = fifi is connected
+DEBUG 2024-07-13 10:01:08,044 views friend = lili is connected
+DEBUG 2024-07-13 10:01:08,045 views friend = lala is connected
+DEBUG 2024-07-13 10:01:08,045 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:01:08,045 views friend = toto is deconnected
+DEBUG 2024-07-13 10:01:08,045 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:01:08,045 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:01:08,045 views friend = fifi is connected
+DEBUG 2024-07-13 10:01:09,175 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-13 10:01:09,177 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-13 10:01:09,179 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-13 10:01:18,685 views friend = lili is connected
+DEBUG 2024-07-13 10:01:18,686 views friend = lala is connected
+DEBUG 2024-07-13 10:01:18,686 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:01:18,686 views friend = toto is deconnected
+DEBUG 2024-07-13 10:01:18,686 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:01:18,687 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:01:18,687 views friend = fifi is connected
+DEBUG 2024-07-13 10:03:16,639 views friend = lili is connected
+DEBUG 2024-07-13 10:03:16,639 views friend = lala is connected
+DEBUG 2024-07-13 10:03:16,639 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:03:16,639 views friend = toto is deconnected
+DEBUG 2024-07-13 10:03:16,639 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:03:16,639 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:03:16,639 views friend = fifi is connected
+DEBUG 2024-07-13 10:04:13,680 views friend = lili is connected
+DEBUG 2024-07-13 10:04:13,681 views friend = lala is connected
+DEBUG 2024-07-13 10:04:13,681 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:04:13,681 views friend = toto is deconnected
+DEBUG 2024-07-13 10:04:13,681 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:04:13,681 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:04:13,681 views friend = fifi is connected
+DEBUG 2024-07-13 10:04:32,152 views friend = lili is connected
+DEBUG 2024-07-13 10:04:32,152 views friend = lala is connected
+DEBUG 2024-07-13 10:04:32,152 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:04:32,152 views friend = toto is deconnected
+DEBUG 2024-07-13 10:04:32,152 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:04:32,152 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:04:32,153 views friend = fifi is connected
+DEBUG 2024-07-13 10:05:10,841 views friend = lili is connected
+DEBUG 2024-07-13 10:05:10,841 views friend = lala is connected
+DEBUG 2024-07-13 10:05:10,841 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:05:10,841 views friend = toto is deconnected
+DEBUG 2024-07-13 10:05:10,841 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:05:10,841 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:05:10,841 views friend = fifi is connected
+DEBUG 2024-07-13 10:05:13,010 views friend = lili is connected
+DEBUG 2024-07-13 10:05:13,014 views friend = lala is connected
+DEBUG 2024-07-13 10:05:13,014 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:05:13,014 views friend = toto is deconnected
+DEBUG 2024-07-13 10:05:13,014 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:05:13,014 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:05:13,015 views friend = fifi is connected
+DEBUG 2024-07-13 10:05:45,088 views friend = lili is connected
+DEBUG 2024-07-13 10:05:45,089 views friend = lala is connected
+DEBUG 2024-07-13 10:05:45,089 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:05:45,089 views friend = toto is deconnected
+DEBUG 2024-07-13 10:05:45,089 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:05:45,093 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:05:45,093 views friend = fifi is connected
+DEBUG 2024-07-13 10:06:10,061 views friend = lili is connected
+DEBUG 2024-07-13 10:06:10,062 views friend = lala is connected
+DEBUG 2024-07-13 10:06:10,062 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:06:10,063 views friend = toto is deconnected
+DEBUG 2024-07-13 10:06:10,064 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:06:10,064 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:06:10,064 views friend = fifi is connected
+DEBUG 2024-07-13 10:06:47,595 views friend = lili is connected
+DEBUG 2024-07-13 10:06:47,595 views friend = lala is connected
+DEBUG 2024-07-13 10:06:47,596 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:06:47,596 views friend = toto is deconnected
+DEBUG 2024-07-13 10:06:47,596 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:06:47,596 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:06:47,596 views friend = fifi is connected
+DEBUG 2024-07-13 10:08:25,595 views friend = lili is connected
+DEBUG 2024-07-13 10:08:25,598 views friend = lala is connected
+DEBUG 2024-07-13 10:08:25,599 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:08:25,599 views friend = toto is deconnected
+DEBUG 2024-07-13 10:08:25,599 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:08:25,599 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:08:25,599 views friend = fifi is connected
+DEBUG 2024-07-13 10:09:12,372 views friend = lili is connected
+DEBUG 2024-07-13 10:09:12,373 views friend = lala is connected
+DEBUG 2024-07-13 10:09:12,373 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:09:12,373 views friend = toto is deconnected
+DEBUG 2024-07-13 10:09:12,373 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:09:12,373 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:09:12,373 views friend = fifi is connected
+DEBUG 2024-07-13 10:09:35,307 views friend = lili is connected
+DEBUG 2024-07-13 10:09:35,308 views friend = lala is connected
+DEBUG 2024-07-13 10:09:35,308 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:09:35,308 views friend = toto is deconnected
+DEBUG 2024-07-13 10:09:35,308 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:09:35,309 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:09:35,309 views friend = fifi is connected
+DEBUG 2024-07-13 10:11:28,424 views friend = lili is connected
+DEBUG 2024-07-13 10:11:28,426 views friend = lala is connected
+DEBUG 2024-07-13 10:11:28,426 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:11:28,426 views friend = toto is deconnected
+DEBUG 2024-07-13 10:11:28,426 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:11:28,427 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:11:28,427 views friend = fifi is connected
+DEBUG 2024-07-13 10:20:35,693 views friend = lili is connected
+DEBUG 2024-07-13 10:20:35,695 views friend = lala is connected
+DEBUG 2024-07-13 10:20:35,695 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:20:35,695 views friend = toto is deconnected
+DEBUG 2024-07-13 10:20:35,695 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:20:35,695 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:20:35,695 views friend = fifi is connected
+DEBUG 2024-07-13 10:21:03,097 views friend = lili is connected
+DEBUG 2024-07-13 10:21:03,098 views friend = lala is connected
+DEBUG 2024-07-13 10:21:03,098 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:21:03,098 views friend = toto is deconnected
+DEBUG 2024-07-13 10:21:03,099 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:21:03,099 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:21:03,099 views friend = fifi is connected
+DEBUG 2024-07-13 10:21:39,235 views friend = lili is connected
+DEBUG 2024-07-13 10:21:39,235 views friend = lala is connected
+DEBUG 2024-07-13 10:21:39,235 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:21:39,235 views friend = toto is deconnected
+DEBUG 2024-07-13 10:21:39,235 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:21:39,235 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:21:39,235 views friend = fifi is connected
+DEBUG 2024-07-13 10:21:56,377 views friend = lili is connected
+DEBUG 2024-07-13 10:21:56,380 views friend = lala is connected
+DEBUG 2024-07-13 10:21:56,380 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:21:56,380 views friend = toto is deconnected
+DEBUG 2024-07-13 10:21:56,380 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:21:56,380 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:21:56,380 views friend = fifi is connected
+DEBUG 2024-07-13 10:22:24,455 views friend = lili is connected
+DEBUG 2024-07-13 10:22:24,456 views friend = lala is connected
+DEBUG 2024-07-13 10:22:24,457 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:22:24,457 views friend = toto is deconnected
+DEBUG 2024-07-13 10:22:24,458 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:22:24,458 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:22:24,458 views friend = fifi is connected
+DEBUG 2024-07-13 10:22:56,154 views friend = lili is connected
+DEBUG 2024-07-13 10:22:56,154 views friend = lala is connected
+DEBUG 2024-07-13 10:22:56,154 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:22:56,154 views friend = toto is deconnected
+DEBUG 2024-07-13 10:22:56,154 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:22:56,154 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:22:56,154 views friend = fifi is connected
+DEBUG 2024-07-13 10:23:10,246 views friend = lili is connected
+DEBUG 2024-07-13 10:23:10,248 views friend = lala is connected
+DEBUG 2024-07-13 10:23:10,249 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:23:10,250 views friend = toto is deconnected
+DEBUG 2024-07-13 10:23:10,250 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:23:10,250 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:23:10,250 views friend = fifi is connected
+DEBUG 2024-07-13 10:23:19,283 views friend = lili is connected
+DEBUG 2024-07-13 10:23:19,283 views friend = lala is connected
+DEBUG 2024-07-13 10:23:19,283 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:23:19,283 views friend = toto is deconnected
+DEBUG 2024-07-13 10:23:19,283 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:23:19,283 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:23:19,283 views friend = fifi is connected
+DEBUG 2024-07-13 10:28:50,137 views friend = lili is connected
+DEBUG 2024-07-13 10:28:50,137 views friend = lala is connected
+DEBUG 2024-07-13 10:28:50,137 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:28:50,138 views friend = toto is deconnected
+DEBUG 2024-07-13 10:28:50,138 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:28:50,138 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:28:50,141 views friend = fifi is connected
+DEBUG 2024-07-13 10:28:56,389 views friend = lili is connected
+DEBUG 2024-07-13 10:28:56,390 views friend = lala is connected
+DEBUG 2024-07-13 10:28:56,390 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:28:56,390 views friend = toto is deconnected
+DEBUG 2024-07-13 10:28:56,390 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:28:56,391 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:28:56,391 views friend = fifi is connected
+DEBUG 2024-07-13 10:31:27,009 views friend = lili is connected
+DEBUG 2024-07-13 10:31:27,010 views friend = lala is connected
+DEBUG 2024-07-13 10:31:27,010 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:31:27,010 views friend = toto is deconnected
+DEBUG 2024-07-13 10:31:27,010 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:31:27,011 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:31:27,011 views friend = fifi is connected
+DEBUG 2024-07-13 10:31:30,114 views friend = lili is connected
+DEBUG 2024-07-13 10:31:30,115 views friend = lala is connected
+DEBUG 2024-07-13 10:31:30,115 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:31:30,115 views friend = toto is deconnected
+DEBUG 2024-07-13 10:31:30,115 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:31:30,115 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:31:30,115 views friend = fifi is connected
+DEBUG 2024-07-13 10:31:37,111 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-13 10:31:37,114 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-13 10:31:37,116 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-13 10:31:51,122 views friend = lili is connected
+DEBUG 2024-07-13 10:31:51,123 views friend = lala is connected
+DEBUG 2024-07-13 10:31:51,123 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:31:51,123 views friend = toto is deconnected
+DEBUG 2024-07-13 10:31:51,123 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:31:51,123 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:31:51,123 views friend = fifi is connected
+DEBUG 2024-07-13 10:31:55,380 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-13 10:31:55,383 views la liste des users  : <QuerySet [<NewUser: lulu>, <NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-13 10:31:55,387 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-13 10:31:57,829 views friend = lili is connected
+DEBUG 2024-07-13 10:31:57,834 views friend = lala is connected
+DEBUG 2024-07-13 10:31:57,835 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:31:57,835 views friend = toto is deconnected
+DEBUG 2024-07-13 10:31:57,835 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:31:57,835 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:31:57,835 views friend = fifi is connected
+DEBUG 2024-07-13 10:32:00,483 views friend = lili is connected
+DEBUG 2024-07-13 10:32:00,484 views friend = lala is connected
+DEBUG 2024-07-13 10:32:00,484 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:32:00,484 views friend = toto is deconnected
+DEBUG 2024-07-13 10:32:00,484 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:32:00,484 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:32:00,484 views friend = fifi is connected
+DEBUG 2024-07-13 10:32:02,364 views friend = lili is connected
+DEBUG 2024-07-13 10:32:02,364 views friend = lala is connected
+DEBUG 2024-07-13 10:32:02,364 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:32:02,364 views friend = toto is deconnected
+DEBUG 2024-07-13 10:32:02,365 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:32:02,365 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:32:02,365 views friend = fifi is connected
+DEBUG 2024-07-13 10:32:02,708 views friend = lili is connected
+DEBUG 2024-07-13 10:32:02,710 views friend = lala is connected
+DEBUG 2024-07-13 10:32:02,710 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:32:02,711 views friend = toto is deconnected
+DEBUG 2024-07-13 10:32:02,712 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:32:02,712 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:32:02,712 views friend = fifi is connected
+DEBUG 2024-07-13 10:32:02,912 views friend = lili is connected
+DEBUG 2024-07-13 10:32:02,913 views friend = lala is connected
+DEBUG 2024-07-13 10:32:02,913 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:32:02,913 views friend = toto is deconnected
+DEBUG 2024-07-13 10:32:02,913 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:32:02,913 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:32:02,913 views friend = fifi is connected
+DEBUG 2024-07-13 10:32:05,527 views friend = lili is connected
+DEBUG 2024-07-13 10:32:05,528 views friend = lala is connected
+DEBUG 2024-07-13 10:32:05,529 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:32:05,529 views friend = toto is deconnected
+DEBUG 2024-07-13 10:32:05,529 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:32:05,529 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:32:05,530 views friend = fifi is connected
+DEBUG 2024-07-13 10:35:12,988 views friend = lili is connected
+DEBUG 2024-07-13 10:35:12,988 views friend = lala is connected
+DEBUG 2024-07-13 10:35:12,988 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:35:12,988 views friend = toto is deconnected
+DEBUG 2024-07-13 10:35:12,989 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:35:12,989 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:35:12,989 views friend = fifi is connected
+DEBUG 2024-07-13 10:35:14,459 views friend = lili is connected
+DEBUG 2024-07-13 10:35:14,460 views friend = lala is connected
+DEBUG 2024-07-13 10:35:14,460 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:35:14,460 views friend = toto is deconnected
+DEBUG 2024-07-13 10:35:14,460 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:35:14,460 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:35:14,461 views friend = fifi is connected
+DEBUG 2024-07-13 10:35:19,832 views friend = lili is connected
+DEBUG 2024-07-13 10:35:19,832 views friend = lala is connected
+DEBUG 2024-07-13 10:35:19,832 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:35:19,833 views friend = toto is deconnected
+DEBUG 2024-07-13 10:35:19,833 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:35:19,833 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:35:19,833 views friend = fifi is connected
+DEBUG 2024-07-13 10:35:23,308 views friend = lili is connected
+DEBUG 2024-07-13 10:35:23,314 views friend = lala is connected
+DEBUG 2024-07-13 10:35:23,315 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:35:23,315 views friend = toto is deconnected
+DEBUG 2024-07-13 10:35:23,315 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:35:23,315 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:35:23,315 views friend = fifi is connected
+DEBUG 2024-07-13 10:35:29,446 views friend = lili is connected
+DEBUG 2024-07-13 10:35:29,446 views friend = lala is connected
+DEBUG 2024-07-13 10:35:29,447 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:35:29,447 views friend = toto is deconnected
+DEBUG 2024-07-13 10:35:29,447 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:35:29,447 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:35:29,447 views friend = fifi is connected
+DEBUG 2024-07-13 10:35:33,568 views friend = lili is connected
+DEBUG 2024-07-13 10:35:33,568 views friend = lala is connected
+DEBUG 2024-07-13 10:35:33,568 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:35:33,569 views friend = toto is deconnected
+DEBUG 2024-07-13 10:35:33,569 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:35:33,569 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:35:33,569 views friend = fifi is connected
+DEBUG 2024-07-13 10:35:34,959 views friend = lili is connected
+DEBUG 2024-07-13 10:35:34,967 views friend = lala is connected
+DEBUG 2024-07-13 10:35:34,967 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:35:34,967 views friend = toto is deconnected
+DEBUG 2024-07-13 10:35:34,967 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:35:34,967 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:35:34,967 views friend = fifi is connected
+DEBUG 2024-07-13 10:36:39,764 views friend = lili is connected
+DEBUG 2024-07-13 10:36:39,770 views friend = lala is connected
+DEBUG 2024-07-13 10:36:39,770 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:36:39,770 views friend = toto is deconnected
+DEBUG 2024-07-13 10:36:39,771 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:36:39,771 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:36:39,771 views friend = fifi is connected
+DEBUG 2024-07-13 10:38:55,383 views friend = lili is connected
+DEBUG 2024-07-13 10:38:55,385 views friend = lala is connected
+DEBUG 2024-07-13 10:38:55,385 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:38:55,385 views friend = toto is deconnected
+DEBUG 2024-07-13 10:38:55,385 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:38:55,385 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:38:55,385 views friend = fifi is connected
+DEBUG 2024-07-13 10:43:52,784 views friend = lili is connected
+DEBUG 2024-07-13 10:43:52,785 views friend = lala is connected
+DEBUG 2024-07-13 10:43:52,785 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:43:52,785 views friend = toto is deconnected
+DEBUG 2024-07-13 10:43:52,785 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:43:52,785 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:43:52,785 views friend = fifi is connected
+DEBUG 2024-07-13 10:43:57,674 views friend = lili is connected
+DEBUG 2024-07-13 10:43:57,674 views friend = lala is connected
+DEBUG 2024-07-13 10:43:57,674 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:43:57,675 views friend = toto is deconnected
+DEBUG 2024-07-13 10:43:57,675 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:43:57,675 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:43:57,675 views friend = fifi is connected
+DEBUG 2024-07-13 10:44:41,395 views friend = lili is connected
+DEBUG 2024-07-13 10:44:41,398 views friend = lala is connected
+DEBUG 2024-07-13 10:44:41,398 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:44:41,398 views friend = toto is deconnected
+DEBUG 2024-07-13 10:44:41,399 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:44:41,399 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:44:41,399 views friend = fifi is connected
+DEBUG 2024-07-13 10:45:10,991 views friend = lili is connected
+DEBUG 2024-07-13 10:45:10,991 views friend = lala is connected
+DEBUG 2024-07-13 10:45:10,991 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:45:10,991 views friend = toto is deconnected
+DEBUG 2024-07-13 10:45:10,991 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:45:10,991 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:45:10,991 views friend = fifi is connected
+DEBUG 2024-07-13 10:45:43,238 views friend = lili is connected
+DEBUG 2024-07-13 10:45:43,239 views friend = lala is connected
+DEBUG 2024-07-13 10:45:43,239 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:45:43,239 views friend = toto is deconnected
+DEBUG 2024-07-13 10:45:43,239 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:45:43,239 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:45:43,239 views friend = fifi is connected
+DEBUG 2024-07-13 10:46:07,167 views friend = lili is connected
+DEBUG 2024-07-13 10:46:07,170 views friend = lala is connected
+DEBUG 2024-07-13 10:46:07,170 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:46:07,170 views friend = toto is deconnected
+DEBUG 2024-07-13 10:46:07,170 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:46:07,170 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:46:07,171 views friend = fifi is connected
+DEBUG 2024-07-13 10:46:46,818 views friend = lili is connected
+DEBUG 2024-07-13 10:46:46,819 views friend = lala is connected
+DEBUG 2024-07-13 10:46:46,819 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:46:46,820 views friend = toto is deconnected
+DEBUG 2024-07-13 10:46:46,820 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:46:46,820 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:46:46,820 views friend = fifi is connected
+DEBUG 2024-07-13 10:47:16,438 views friend = lili is connected
+DEBUG 2024-07-13 10:47:16,439 views friend = lala is connected
+DEBUG 2024-07-13 10:47:16,439 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:47:16,439 views friend = toto is deconnected
+DEBUG 2024-07-13 10:47:16,439 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:47:16,439 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:47:16,439 views friend = fifi is connected
+DEBUG 2024-07-13 10:47:18,560 views friend = lili is connected
+DEBUG 2024-07-13 10:47:18,560 views friend = lala is connected
+DEBUG 2024-07-13 10:47:18,560 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:47:18,561 views friend = toto is deconnected
+DEBUG 2024-07-13 10:47:18,561 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:47:18,561 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:47:18,561 views friend = fifi is connected
+DEBUG 2024-07-13 10:47:38,037 views friend = lili is connected
+DEBUG 2024-07-13 10:47:38,039 views friend = lala is connected
+DEBUG 2024-07-13 10:47:38,039 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:47:38,039 views friend = toto is deconnected
+DEBUG 2024-07-13 10:47:38,040 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:47:38,040 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:47:38,040 views friend = fifi is connected
+DEBUG 2024-07-13 10:48:06,468 views friend = lili is connected
+DEBUG 2024-07-13 10:48:06,470 views friend = lala is connected
+DEBUG 2024-07-13 10:48:06,471 views friend = lolo is deconnected
+DEBUG 2024-07-13 10:48:06,471 views friend = toto is deconnected
+DEBUG 2024-07-13 10:48:06,471 views friend = fafa is deconnected
+DEBUG 2024-07-13 10:48:06,471 views friend = fufu is deconnected
+DEBUG 2024-07-13 10:48:06,471 views friend = fifi is connected
+DEBUG 2024-07-13 11:00:50,186 views friend = lili is connected
+DEBUG 2024-07-13 11:00:50,189 views friend = lala is connected
+DEBUG 2024-07-13 11:00:50,190 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:00:50,190 views friend = toto is deconnected
+DEBUG 2024-07-13 11:00:50,190 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:00:50,190 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:00:50,190 views friend = fifi is connected
+DEBUG 2024-07-13 11:01:10,825 views friend = lili is connected
+DEBUG 2024-07-13 11:01:10,827 views friend = lala is connected
+DEBUG 2024-07-13 11:01:10,828 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:01:10,828 views friend = toto is deconnected
+DEBUG 2024-07-13 11:01:10,828 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:01:10,828 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:01:10,829 views friend = fifi is connected
+DEBUG 2024-07-13 11:03:56,209 views friend = lili is connected
+DEBUG 2024-07-13 11:03:56,209 views friend = lala is connected
+DEBUG 2024-07-13 11:03:56,210 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:03:56,210 views friend = toto is deconnected
+DEBUG 2024-07-13 11:03:56,210 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:03:56,211 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:03:56,211 views friend = fifi is connected
+DEBUG 2024-07-13 11:04:43,971 views friend = lili is connected
+DEBUG 2024-07-13 11:04:43,972 views friend = lala is connected
+DEBUG 2024-07-13 11:04:43,972 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:04:43,972 views friend = toto is deconnected
+DEBUG 2024-07-13 11:04:43,972 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:04:43,972 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:04:43,972 views friend = fifi is connected
+DEBUG 2024-07-13 11:04:46,768 views friend = lili is connected
+DEBUG 2024-07-13 11:04:46,771 views friend = lala is connected
+DEBUG 2024-07-13 11:04:46,772 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:04:46,772 views friend = toto is deconnected
+DEBUG 2024-07-13 11:04:46,772 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:04:46,772 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:04:46,772 views friend = fifi is connected
+DEBUG 2024-07-13 11:05:39,585 views friend = lili is connected
+DEBUG 2024-07-13 11:05:39,590 views friend = lala is connected
+DEBUG 2024-07-13 11:05:39,590 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:05:39,590 views friend = toto is deconnected
+DEBUG 2024-07-13 11:05:39,590 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:05:39,590 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:05:39,590 views friend = fifi is connected
+DEBUG 2024-07-13 11:07:33,605 views friend = lili is connected
+DEBUG 2024-07-13 11:07:33,607 views friend = lala is connected
+DEBUG 2024-07-13 11:07:33,607 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:07:33,607 views friend = toto is deconnected
+DEBUG 2024-07-13 11:07:33,607 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:07:33,608 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:07:33,608 views friend = fifi is connected
+DEBUG 2024-07-13 11:08:48,075 views friend = lili is connected
+DEBUG 2024-07-13 11:08:48,075 views friend = lala is connected
+DEBUG 2024-07-13 11:08:48,075 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:08:48,075 views friend = toto is deconnected
+DEBUG 2024-07-13 11:08:48,075 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:08:48,075 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:08:48,075 views friend = fifi is connected
+INFO 2024-07-13 11:09:52,860 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:09:52,874 asgi <channels.routing.ProtocolTypeRouter object at 0x70fe04bc3830>
+INFO 2024-07-13 11:10:24,136 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:10:24,143 asgi <channels.routing.ProtocolTypeRouter object at 0x7085384e6cf0>
+INFO 2024-07-13 11:11:46,336 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:11:46,338 asgi <channels.routing.ProtocolTypeRouter object at 0x746cbfec5160>
+DEBUG 2024-07-13 11:24:29,067 views friend = lili is connected
+DEBUG 2024-07-13 11:24:29,068 views friend = lala is connected
+DEBUG 2024-07-13 11:24:29,068 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:24:29,068 views friend = toto is deconnected
+DEBUG 2024-07-13 11:24:29,068 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:24:29,068 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:24:29,068 views friend = fifi is connected
+INFO 2024-07-13 11:30:04,250 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:30:04,259 asgi <channels.routing.ProtocolTypeRouter object at 0x7896781ab2c0>
+INFO 2024-07-13 11:30:35,512 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:30:35,515 asgi <channels.routing.ProtocolTypeRouter object at 0x7676b1187710>
+INFO 2024-07-13 11:30:44,391 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:30:44,392 asgi <channels.routing.ProtocolTypeRouter object at 0x7735d9d1b890>
+INFO 2024-07-13 11:30:55,332 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:30:55,341 asgi <channels.routing.ProtocolTypeRouter object at 0x7ef622ad2180>
+INFO 2024-07-13 11:31:06,119 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:31:06,123 asgi <channels.routing.ProtocolTypeRouter object at 0x739261cdf380>
+INFO 2024-07-13 11:31:14,402 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:31:14,407 asgi <channels.routing.ProtocolTypeRouter object at 0x7e082ddb6d80>
+INFO 2024-07-13 11:31:17,524 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:31:17,525 asgi <channels.routing.ProtocolTypeRouter object at 0x7b3c96d225d0>
+INFO 2024-07-13 11:31:22,741 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:31:22,742 asgi <channels.routing.ProtocolTypeRouter object at 0x7ae1f3ee6d80>
+INFO 2024-07-13 11:31:25,948 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:31:25,958 asgi <channels.routing.ProtocolTypeRouter object at 0x7a8336da7050>
+INFO 2024-07-13 11:31:32,207 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:31:32,210 asgi <channels.routing.ProtocolTypeRouter object at 0x756563fa35f0>
+INFO 2024-07-13 11:31:36,352 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:31:36,362 asgi <channels.routing.ProtocolTypeRouter object at 0x7a20534b7c20>
+DEBUG 2024-07-13 11:31:54,732 views friend = lili is connected
+DEBUG 2024-07-13 11:31:54,736 views friend = lala is connected
+DEBUG 2024-07-13 11:31:54,736 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:31:54,736 views friend = toto is deconnected
+DEBUG 2024-07-13 11:31:54,736 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:31:54,736 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:31:54,736 views friend = fifi is connected
+DEBUG 2024-07-13 11:33:57,055 views friend = lili is connected
+DEBUG 2024-07-13 11:33:57,059 views friend = lala is connected
+DEBUG 2024-07-13 11:33:57,059 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:33:57,060 views friend = toto is deconnected
+DEBUG 2024-07-13 11:33:57,060 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:33:57,060 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:33:57,060 views friend = fifi is connected
+INFO 2024-07-13 11:52:36,717 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:52:36,738 asgi <channels.routing.ProtocolTypeRouter object at 0x71aa7e99ab40>
+INFO 2024-07-13 11:52:47,374 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:52:47,387 asgi <channels.routing.ProtocolTypeRouter object at 0x7d498434aab0>
+INFO 2024-07-13 11:52:50,041 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:52:50,043 asgi <channels.routing.ProtocolTypeRouter object at 0x7383dfedf4d0>
+INFO 2024-07-13 11:52:52,758 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:52:52,771 asgi <channels.routing.ProtocolTypeRouter object at 0x7111f1daeff0>
+INFO 2024-07-13 11:52:55,468 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:52:55,468 asgi <channels.routing.ProtocolTypeRouter object at 0x7c41c06d7860>
+INFO 2024-07-13 11:53:35,531 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:53:35,532 asgi <channels.routing.ProtocolTypeRouter object at 0x7c6c12dbf200>
+INFO 2024-07-13 11:53:39,143 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:53:39,154 asgi <channels.routing.ProtocolTypeRouter object at 0x792dba0d4140>
+INFO 2024-07-13 11:53:52,522 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:53:52,528 asgi <channels.routing.ProtocolTypeRouter object at 0x778ad17bb7d0>
+INFO 2024-07-13 11:54:07,193 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:54:07,197 asgi <channels.routing.ProtocolTypeRouter object at 0x772589bbc890>
+INFO 2024-07-13 11:54:14,906 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:54:14,908 asgi <channels.routing.ProtocolTypeRouter object at 0x7d230b993950>
+INFO 2024-07-13 11:54:21,014 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:54:21,018 asgi <channels.routing.ProtocolTypeRouter object at 0x7e745efc7740>
+INFO 2024-07-13 11:54:26,378 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:54:26,384 asgi <channels.routing.ProtocolTypeRouter object at 0x7faa811b2c00>
+INFO 2024-07-13 11:54:30,065 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:54:30,081 asgi <channels.routing.ProtocolTypeRouter object at 0x7bb8803bfaa0>
+INFO 2024-07-13 11:54:37,171 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:54:37,178 asgi <channels.routing.ProtocolTypeRouter object at 0x7b88941974d0>
+INFO 2024-07-13 11:54:51,761 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:54:51,762 asgi <channels.routing.ProtocolTypeRouter object at 0x774202c9ac60>
+INFO 2024-07-13 11:54:56,417 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:54:56,426 asgi <channels.routing.ProtocolTypeRouter object at 0x729515f08a70>
+INFO 2024-07-13 11:55:01,138 asgi  _@@@@@@_ 
+DEBUG 2024-07-13 11:55:01,146 asgi <channels.routing.ProtocolTypeRouter object at 0x7affbd11fb90>
+DEBUG 2024-07-13 11:56:49,391 views friend = lili is connected
+DEBUG 2024-07-13 11:56:49,392 views friend = lala is connected
+DEBUG 2024-07-13 11:56:49,392 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:56:49,392 views friend = toto is deconnected
+DEBUG 2024-07-13 11:56:49,392 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:56:49,392 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:56:49,392 views friend = fifi is connected
+DEBUG 2024-07-13 11:56:52,192 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-13 11:56:52,198 views la liste des users  : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: lulu>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-13 11:56:52,204 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-13 11:56:53,772 views friend = lili is connected
+DEBUG 2024-07-13 11:56:53,774 views friend = lala is connected
+DEBUG 2024-07-13 11:56:53,774 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:56:53,774 views friend = toto is deconnected
+DEBUG 2024-07-13 11:56:53,774 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:56:53,774 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:56:53,774 views friend = fifi is connected
+DEBUG 2024-07-13 11:59:35,120 views friend = lili is connected
+DEBUG 2024-07-13 11:59:35,124 views friend = lala is connected
+DEBUG 2024-07-13 11:59:35,124 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:59:35,124 views friend = toto is deconnected
+DEBUG 2024-07-13 11:59:35,124 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:59:35,124 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:59:35,124 views friend = fifi is connected
+DEBUG 2024-07-13 11:59:36,594 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-13 11:59:36,597 views la liste des users  : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: lulu>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-13 11:59:36,602 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-13 11:59:37,623 views friend = lili is connected
+DEBUG 2024-07-13 11:59:37,623 views friend = lala is connected
+DEBUG 2024-07-13 11:59:37,624 views friend = lolo is deconnected
+DEBUG 2024-07-13 11:59:37,624 views friend = toto is deconnected
+DEBUG 2024-07-13 11:59:37,624 views friend = fafa is deconnected
+DEBUG 2024-07-13 11:59:37,624 views friend = fufu is deconnected
+DEBUG 2024-07-13 11:59:37,624 views friend = fifi is connected
+DEBUG 2024-07-13 12:00:08,477 views friend = lili is connected
+DEBUG 2024-07-13 12:00:08,478 views friend = lala is connected
+DEBUG 2024-07-13 12:00:08,478 views friend = lolo is deconnected
+DEBUG 2024-07-13 12:00:08,478 views friend = toto is deconnected
+DEBUG 2024-07-13 12:00:08,478 views friend = fafa is deconnected
+DEBUG 2024-07-13 12:00:08,478 views friend = fufu is deconnected
+DEBUG 2024-07-13 12:00:08,478 views friend = fifi is connected
+DEBUG 2024-07-13 12:00:09,851 views la liste des users amis : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fifi>]>
+DEBUG 2024-07-13 12:00:09,854 views la liste des users  : <QuerySet [<NewUser: lili>, <NewUser: lala>, <NewUser: lolo>, <NewUser: lulu>, <NewUser: toto>, <NewUser: fafa>, <NewUser: fufu>, <NewUser: fofo>, <NewUser: admin>, <NewUser: fifi>]>
+DEBUG 2024-07-13 12:00:09,856 views la liste des users non amis : [<NewUser: fofo>]
+DEBUG 2024-07-13 12:00:10,880 views friend = lili is connected
+DEBUG 2024-07-13 12:00:10,880 views friend = lala is connected
+DEBUG 2024-07-13 12:00:10,881 views friend = lolo is deconnected
+DEBUG 2024-07-13 12:00:10,881 views friend = toto is deconnected
+DEBUG 2024-07-13 12:00:10,881 views friend = fafa is deconnected
+DEBUG 2024-07-13 12:00:10,882 views friend = fufu is deconnected
+DEBUG 2024-07-13 12:00:10,882 views friend = fifi is connected
+INFO 2024-07-13 12:01:24,663 views html at ajax
+DEBUG 2024-07-13 12:01:24,664 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="M31TimVtBx66bBXVuFyuDTPC1sV30oe4TrECXR4WRpexk6hPPxZmvbK3PVXeKPMR">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-13 12:01:26,384 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="Ctia44BJRXRcJIFPAnlFdAeNYa38UKQvJRVTJzKc7PZDSdZJVfMx5S9eMD5jEboi">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-13 12:01:27,098 views html at ajax
+DEBUG 2024-07-13 12:01:27,099 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="ogTnxkLWqRYyl3WFrCsqcHldKQPpRNvNvEw6cPUpGJ6ZuygzMuTi4ZgEyjRABe3A">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-13 12:01:28,778 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="w55nKWa6D4KohlAmkMKd2U7CCiMEtcobDtI6prjzTWSPqQUgFEb5Uc23qLOPdDWY">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-13 12:01:29,591 views html at ajax
+DEBUG 2024-07-13 12:01:29,592 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="jV8fR6xMoKSXZDOwgaHNiasllqL2it8wqjLYwBGfEC0o888qB28FasnM9TNd2UGj">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-13 12:01:30,308 views email avant parsing = 
+DEBUG 2024-07-13 12:01:30,309 views email apres parsing = 
+DEBUG 2024-07-13 12:01:30,309 views pseudo = 
+DEBUG 2024-07-13 12:01:30,309 views password = 
+DEBUG 2024-07-13 12:01:30,309 views confirm_password = 
+DEBUG 2024-07-13 12:01:32,898 views email avant parsing = 
+DEBUG 2024-07-13 12:01:32,898 views email apres parsing = 
+DEBUG 2024-07-13 12:01:32,898 views pseudo = 
+DEBUG 2024-07-13 12:01:32,898 views password = 
+DEBUG 2024-07-13 12:01:32,899 views confirm_password = 
+DEBUG 2024-07-13 12:01:33,805 views email avant parsing = 
+DEBUG 2024-07-13 12:01:33,806 views email apres parsing = 
+DEBUG 2024-07-13 12:01:33,806 views pseudo = 
+DEBUG 2024-07-13 12:01:33,806 views password = 
+DEBUG 2024-07-13 12:01:33,806 views confirm_password = 
+DEBUG 2024-07-13 12:01:34,664 views email avant parsing = 
+DEBUG 2024-07-13 12:01:34,665 views email apres parsing = 
+DEBUG 2024-07-13 12:01:34,665 views pseudo = 
+DEBUG 2024-07-13 12:01:34,665 views password = 
+DEBUG 2024-07-13 12:01:34,665 views confirm_password = 
+DEBUG 2024-07-13 12:01:36,053 views email avant parsing = 
+DEBUG 2024-07-13 12:01:36,054 views email apres parsing = 
+DEBUG 2024-07-13 12:01:36,054 views pseudo = 
+DEBUG 2024-07-13 12:01:36,054 views password = 
+DEBUG 2024-07-13 12:01:36,054 views confirm_password = 
+DEBUG 2024-07-13 12:02:37,879 views email avant parsing = 
+DEBUG 2024-07-13 12:02:37,883 views email apres parsing = 
+DEBUG 2024-07-13 12:02:37,883 views pseudo = 
+DEBUG 2024-07-13 12:02:37,883 views password = 
+DEBUG 2024-07-13 12:02:37,883 views confirm_password = 
+DEBUG 2024-07-13 12:03:52,255 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="84txgL9Fu98XVmo8bKj6uA2Txn94iswyfs6gVgi8K1go4RI2wCKYmSXklQbf2T4l">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-13 12:03:54,007 views html at ajax
+DEBUG 2024-07-13 12:03:54,008 views html in signup = 
+	
+	<link href="/static/pong/css/signup.css" rel="stylesheet">
+	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
+
+	<section>
+		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
+			<input type="hidden" name="csrfmiddlewaretoken" value="gf4X0swyFhtz4diZ7i16C0auUK9gDrzYnDHGFXF1V9B0dICTsasYui5VIdbrnS7L">
+		
+			<label for="email">email</label>
+			<input type="text" name="email" placeholder="Email">
+
+			<label for="password">password</label>
+			<input type="password" name="password" placeholder="Password">
+
+			<label for="confirm_password">confirm password</label>
+			<input type="password" name="confirm_password" placeholder="Confirm_Password">
+
+			<label for="pseudo">pseudo</label>
+			<input type="text" name="pseudo" placeholder="Pseudo">
+
+			<label for="avatar" class="avatar">Select avatar</label>
+			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
+		
+			<input type="submit" value="SIGN UP">
+		</form>
+	
+		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
+	</section>
+
+
+
+
+
+DEBUG 2024-07-13 12:03:55,168 views email avant parsing = 
+DEBUG 2024-07-13 12:03:55,170 views email apres parsing = 
+DEBUG 2024-07-13 12:03:55,170 views pseudo = 
+DEBUG 2024-07-13 12:03:55,170 views password = 
+DEBUG 2024-07-13 12:03:55,170 views confirm_password = 

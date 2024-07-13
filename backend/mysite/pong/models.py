@@ -47,7 +47,7 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
 	created_at = models.DateTimeField(auto_now_add=True)
 	statistic = models.OneToOneField('Statistic', on_delete=models.CASCADE, null=True, blank=True, related_name='user_statistic')
 	blocked_users = models.ManyToManyField('self', through='BlockedUser', symmetrical=False, related_name='blocking_users', blank=True)
-	is_active = models.BooleanField(default=True)
+	is_active = models.BooleanField(default=False)
 	is_staff = models.BooleanField(default=False)
 	mfa_hash = models.CharField(max_length = 50, null=True, blank=True)
 	is_mfa_enabled = models.BooleanField(default=False)
