@@ -184,9 +184,6 @@
 //     .catch(error => console.error('Error submitting form:', error));
 // }
 
-
-
-// IMRANE
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Script main.js est chargé');
 
@@ -414,4 +411,3 @@ function submitForm(form, addToHistory) {
     })
     .catch(error => console.error('Error submitting form:', error));
 }
-

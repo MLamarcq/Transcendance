@@ -147,8 +147,6 @@ main
 	width: 100%;
 	text-align: center;
 	margin-right: 50px;
-	position: relative;
-	bottom: 30vh;
 	background: var(--orange);
 }
 

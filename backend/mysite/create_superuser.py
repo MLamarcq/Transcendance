@@ -13,5 +13,3 @@ class Command(BaseCommand):
 
 if __name__ == "__main__":
 	Command().handle()
-
-

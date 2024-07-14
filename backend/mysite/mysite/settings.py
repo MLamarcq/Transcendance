@@ -37,6 +37,7 @@ AUTH_USER_MODEL = "pong.NewUser"
 # Application definition
 
 INSTALLED_APPS = [
+	'daphne',
 	'django.contrib.admin',
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
 	'pong.apps.PongConfig',
-	'channels',
 	#'django_otp',
     #'django_otp.plugins.otp_totp',
 	#'django_otp',
@@ -55,16 +55,6 @@ INSTALLED_APPS = [
     #'two_factor.plugins.phonenumber',  # <- if you want phone number capability.
     #'two_factor.plugins.email',  # <- if you want email capabili
 ]
-
-
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            'hosts': [('127.0.0.1', 6379)],
-        },
-    },
-}
 
 MIDDLEWARE = [
 	'django.middleware.security.SecurityMiddleware',
@@ -96,14 +86,15 @@ TEMPLATES = [
 	},
 ]
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+# WSGI_APPLICATION = 'mysite.wsgi.application'
 
-ASGI_APPLICATION = 'mysite.asgi.application'
+ASGI_APPLICATION = "myproject.asgi.application"
+
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-env_path = Path('/home/mael/Transcendance_4/.env')
+env_path = Path('/home/Transcendance_6/.env')
 
 
 # Charger les variables d'environnement à partir du fichier .env

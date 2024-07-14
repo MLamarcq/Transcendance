@@ -2,11 +2,12 @@ main
 {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	width: 100%;
 	/* min-height: calc(100% - 90px); */
 	padding: 50px;
 	margin-top: 100px;
+	flex-direction: column;
 }
 
 .title
@@ -84,9 +85,10 @@ section
 	height: 50%;
 }
 
-.users_list h1
+.users_list h4
 {
 	text-align: center;
+	color: white;
 }
 
 .users_list ul
@@ -98,13 +100,53 @@ section
 	/* justify-content: center; */
 	overflow-y: scroll;
 	height: 100%;
+	width: 100%;
+	padding: 1%;
 }
 
 .users_list ul li
 {
-	border: 2px solid white;
+	border: 2px solid var(--input);
 	text-align: center;
-	margin: 5px;
+	margin-top: 20px;
 	border-radius: 5px;
+	width: 100%;
+	color: white;
+	padding: 5px;
+	margin: 5px 0px;
 }
 
+.users_list p
+{
+	margin-top : 50px;
+	color: white;
+	text-align: center;
+	text-shadow: 
+		0 0 5px white;
+	border: 2px solid crimson;
+	padding: 10px;
+	border-radius: 5px;
+	background: crimson;
+}
+
+.message
+{
+	height: 15vh;
+	width: 100%;
+}
+
+.message p
+{
+	border: 2px solid var(--orange);
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
+	position: relative;
+	top: 50%;
+	font-size: 30px;
+	color: white;
+	text-shadow: 
+		0 0 5px black,
+		0 0 5px black;
+	background: var(--orange);
+}

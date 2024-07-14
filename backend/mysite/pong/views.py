@@ -35,16 +35,16 @@ def index(request) :
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/login_content.html", {}, request=request)
-			return (JsonResponse({'html' : html,
-								'url' :   reverse("login")
+			return (JsonResponse({'html' : html,                 
+								'url' :   reverse("login")     
 				}))
 			return JsonResponse({'redirect' : reverse("login")})
 		else :
 			return HttpResponseRedirect(reverse("login"))
 	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 		html = render_to_string("pong/homepage_content.html", {}, request=request)
-		return (JsonResponse({'html' : html,
-							'url' :   reverse("index")
+		return (JsonResponse({'html' : html,                 
+							'url' :   reverse("index")     
 				}))
 	else :
 		return render(request, "pong/homepage.html")
@@ -61,8 +61,8 @@ def login_view(request):
 		message = "Vous êtes déjà connecté"
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/homepage_content.html", {'message': message}, request)
-			return (JsonResponse({'html' : html,
-							'url' :   reverse("index")
+			return (JsonResponse({'html' : html,                 
+							'url' :   reverse("index")     
 				}))
 		else:
 			# Vous pouvez ajouter un message flash pour afficher la notification sur la page d'accueil.
@@ -71,7 +71,7 @@ def login_view(request):
 	else:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/login_content.html", {}, request)
-			return JsonResponse({'html': html,
+			return JsonResponse({'html': html, 
 								'url' : reverse("login")
 								})
 		else:
@@ -99,13 +99,13 @@ def login_view(request):
 	#         return render(request, 'pong/signup.html', {
 	#             'error_message': "Password don't match, please try again."
 	#         })
-
+		
 	#     if NewUser.objects.filter(pseudo=pseudo).exists():
 	#         return render(request, 'pong/signup.html', {
 	#             'error_message': "Username already exists. Please choose a different pseudo."
 	#         })
 
-
+		
 	#     if NewUser.objects.filter(email=email).exists():
 	#         return render(request, 'pong/signup.html', {
 	#             'error_message': "Email already exists. Please choose a different email."
@@ -118,7 +118,7 @@ def login_view(request):
 	#     return HttpResponseRedirect(reverse("index"))
 	# else:
 	#     return render(request, "pong/signup.html")
-
+		
 
 def parsing_email(email) :
 	if email :
@@ -202,7 +202,7 @@ def signup(request):
 		confirm_password = request.POST.get("confirm_password")
 		avatar = request.FILES.get("avatar")
 		pseudo = request.POST.get("pseudo")
-
+		
 		logger.debug("email avant parsing = %s", email)
 
 		email = parsing_email(email)
@@ -216,7 +216,7 @@ def signup(request):
 
 
 		error_message = validate_signup_data(email, password, confirm_password, pseudo)
-
+		
 		# logger.debug("error_message = %s", error_message)
 
 		if error_message:
@@ -227,10 +227,11 @@ def signup(request):
 				})
 			else:
 				return render(request, 'pong/signup.html', {'error_message': error_message})
-
+		
 		user = NewUser.objects.create_user(email=email, password=password, pseudo=pseudo, avatar=avatar)
+		# user.create_statistic()
 		user.save()
-
+		
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/login_content.html", {}, request=request)
 			return JsonResponse({'html': html,
@@ -315,9 +316,9 @@ def signin(request):
 		print("Je passe ici quand j'appuie sur LOGIN oui")
 		email = request.POST.get("email")
 		password = request.POST.get("password")
-
+		
 		result = handle_authentication(request, email, password)
-
+		
 		if 'error_message' in result:
 			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 				html = render_to_string("pong/signin_content.html", {'error_message': True, 'message': result['error_message']}, request=request)
@@ -327,9 +328,6 @@ def signin(request):
 			else:
 				return render(request, "pong/signin.html", {"error_message": True, "message": result['error_message']})
 		else:
-			user = NewUser.objects.get(id=(request.session.get('user_id')))
-			user.is_active = True
-			user.save()
 			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 				html = render_to_string(result['redirect'], {}, request=request)
 				return JsonResponse({'html': html,
@@ -363,7 +361,7 @@ def signin(request):
 #             return HttpResponseRedirect(reverse("index"))
 #         else: # le cas où la secret key n'est pas la bonne
 #             value = True
-#             message = 'invalid one time password or the password has expired'
+#             message = 'invalid one time password or the password has expired'      
 #     return render(request, 'pong/otp.html' , {
 #                                                 'error_message' : {
 #                                                                         'value' : value,
@@ -414,6 +412,52 @@ def otp_view(request):
 
 	return render(request, "pong/otp.html")
 
+# def statistics(request):
+	# if not request.user.is_authenticated:
+	#     return HttpResponseRedirect(reverse("index"))
+	# user = NewUser.objects.get(id=(request.session.get('user_id')))
+	# statistics = user.statistic
+	# history = []
+	# partie = Party.objects.all()
+	# for game in partie :
+	#     winner = game.winner.pseudo.strip()
+	#     loser = game.loser.pseudo.strip()
+	#     if ((user.pseudo == winner) or (user.pseudo == loser)) :
+	#         history.append(game)
+	# game_date = []
+	# game_result = []
+	# game_result_numeric = []
+	# for game in history :
+	#     game_date.append(game.date.strftime('%Y-%m-%d'))
+	#     if (game.winner.pseudo == user.pseudo) :
+	#         game_result.append('Victory')
+	#     elif (game.loser.pseudo == user.pseudo) :
+	#         game_result.append('Defeat')
+	# for result in game_result :
+	#     if (result == "Victory") :
+	#         game_result_numeric.append(1)
+	#     else :
+	#         game_result_numeric.append(-1)
+	# nbr_day = 1
+	# for i in range(1, len(game_date)):
+	#     if game_date[i] != game_date[i - 1]:
+	#         nbr_day += 1
+	# data = {}
+	# game_duration = timedelta()
+	# for i in range(len(history)):
+	#     game_duration += history[i].game_time
+	#     if ((i == len(history) - 1) or (history[i].date.strftime('%Y-%m-%d') != history[i + 1].date.strftime('%Y-%m-%d'))) :
+	#         data[history[i].date.strftime('%Y-%m-%d')] = game_duration.total_seconds()
+	#         game_duration = timedelta()
+	# return render(request, "pong/statistics.html", {
+	#                                                 'user' : user,
+	#                                                 'statistics' : statistics,
+	#                                                 'history' : history,
+	#                                                 'game_dates_json': json.dumps(game_date),
+	#                                                 'game_results_json': json.dumps(game_result_numeric),
+	#                                                 'game_duration_json' : json.dumps(data)
+	#                                                 })
+
 def statistics(request):
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
@@ -424,14 +468,49 @@ def statistics(request):
 		else:
 			return HttpResponseRedirect(reverse("index"))
 	user = NewUser.objects.get(id=(request.session.get('user_id')))
-	statistics = user.statistic
+	if not user.statistic :
+		logger.info("On passe la ouai")
+		user_statistic, created = Statistic.objects.get_or_create(user=user)
+		# user_statistic.nbr_won_parties += 1
+	logger.debug("user = %s", user)
+	logger.debug("statistics = %s", user_statistic)
 	history = []
 	partie = Party.objects.all()
+	user_here = 0
 	for game in partie :
 		winner = game.winner.pseudo.strip()
 		loser = game.loser.pseudo.strip()
 		if ((user.pseudo == winner) or (user.pseudo == loser)) :
 			history.append(game)
+			user_here += 1
+			user.nbr_parties = user_here
+			logger.info("C'est ici que ca se passe")
+			if user_statistic :
+				if user.nbr_parties > (user_statistic.nbr_won_parties + user_statistic.nbr_lose_parties) :
+					if user.pseudo == winner :
+						logger.info("C'est ici que ca se passe")
+						logger.debug(" nbr victoires avant = %d", user_statistic.nbr_won_parties)
+						user_statistic.nbr_won_parties += 1
+						logger.debug(" nbr victoires apres = %d", user_statistic.nbr_won_parties)
+					else :
+						user_statistic.nbr_lose_parties += 1
+					if game.tournament and game.tournament.name :
+						user_statistic.nbr_won_tournaments += 1
+					user_statistic.save()
+		# if user.pseudo == winner:
+		# 	if user.statistic:
+		# 		user.statistic.nbr_won_parties += 1
+		# 	# else:
+		# 	# 	# Vous pouvez créer l'objet Statistic ici si nécessaire
+		# 	# 	logger.info("on passe dans le else")
+		# 	# 	# user_statistic = Statistic.objects.create(user=user)
+		# 	# 	user_statistic.nbr_lose_parties += 1
+		# 	# 	user_statistic.save()
+		# elif user.pseudo == loser :
+			
+			
+	# logger.debug("user_here = %d", user_here)
+	logger.debug("user stats = %s", user_statistic)
 	game_date = []
 	game_result = []
 	game_result_numeric = []
@@ -454,29 +533,34 @@ def statistics(request):
 	game_duration = timedelta()
 	for i in range(len(history)):
 		game_duration += history[i].game_time
+		if user_statistic :
+			user_statistic.total_time_played += history[i].game_time
 		if ((i == len(history) - 1) or (history[i].date.strftime('%Y-%m-%d') != history[i + 1].date.strftime('%Y-%m-%d'))) :
 			data[history[i].date.strftime('%Y-%m-%d')] = game_duration.total_seconds()
 			game_duration = timedelta()
 	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/statistics_content.html", {'user' : user,
-																	'statistics' : statistics,
+																	'statistics' : user_statistic,
 																	'history' : history,
 																	'game_dates_json': json.dumps(game_date),
 																	'game_results_json': json.dumps(game_result_numeric),
-																	'game_duration_json' : json.dumps(data)}, 
-																		request=request)
+																	'game_duration_json' : json.dumps(data),
+																	'css_file' : 'pong/css/statistics.css',
+																	}, request=request)
 			return JsonResponse({'html': html,
-								'url' : reverse("index")
+								'url' : reverse("statistics")
 			})
 	else :
 		return render(request, "pong/statistics.html", {
 													'user' : user,
-													'statistics' : statistics,
+													'statistics' : user_statistic,
 													'history' : history,
 													'game_dates_json': json.dumps(game_date),
 													'game_results_json': json.dumps(game_result_numeric),
-													'game_duration_json' : json.dumps(data)
+													'game_duration_json' : json.dumps(data),
+													'css_file' : 'pong/css/statistics.css',
 													})
+
 
 def chat(request):
 	return render(request, "pong/chat.html")
@@ -486,6 +570,16 @@ def chat(request):
 	#     logout(request)
 	# return redirect('login')
 
+
+# def logout_view(request):
+	# if request.user.is_authenticated:
+	#     logout(request)
+	
+	# if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+	#     html = render_to_string("pong/login_content.html", {}, request=request)
+	#     return JsonResponse({'html': html})
+	# else:
+	#     return HttpResponseRedirect(reverse('login'))
 
 def logout_view(request):
 	if request.user.is_authenticated:
@@ -508,12 +602,12 @@ def profile_view(request):
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/login_content.html", {}, request)
-			return JsonResponse({'html': html,
+			return JsonResponse({'html': html, 
 								'url' : reverse("login")
 								})
 		else:
 			return HttpResponseRedirect(reverse("login"))
-
+ 
 	user = NewUser.objects.get(id=(request.session.get('user_id')))
 	url = pyotp.totp.TOTP(user.mfa_hash).provisioning_uri(name=user.email, issuer_name="Pong")
 	qr = qrcode.make(url)
@@ -525,12 +619,6 @@ def profile_view(request):
 	except ValueError:
 		user_avatar = None
 	friends = get_friends(user)
-	for friend in friends :
-		if (friend.is_active == True) :
-			logger.debug("friend = %s is connected", friend)
-		else :
-			logger.debug("friend = %s is deconnected", friend)
-
 	password_form_errors = []
 	other_error  = {
 		"avatar" : None,
@@ -538,7 +626,7 @@ def profile_view(request):
 		"pseudo" : None
 	}
 
-
+	
 	if request.method == "POST":
 		if request.POST.get("options"):
 			choice = request.POST.get("options")
@@ -559,7 +647,7 @@ def profile_view(request):
 					user.save()
 			else:
 				other_error["pseudo"] = "you are already name like this"
-
+				
 		if request.FILES.get("change_avatar"):
 			user.avatar = request.FILES.get("change_avatar")
 			user.save()
@@ -573,7 +661,7 @@ def profile_view(request):
 				except NewUser.DoesNotExist:
 					user.email = request.POST.get("change_email")
 					user.save()
-					update_session_auth_hash(request, user)
+					update_session_auth_hash(request, user)  
 			else:
 				other_error["email"] = "your email is already this one"
 
@@ -581,7 +669,7 @@ def profile_view(request):
 			old_password = request.POST.get("old_password")
 			new_password1 = request.POST.get("new_password1")
 			new_password2 = request.POST.get("new_password2")
-
+			
 			if new_password1 and new_password2 and old_password:
 				if new_password1 == new_password2:
 					if user.check_password(old_password):
@@ -610,10 +698,9 @@ def profile_view(request):
 															'password_form_errors': password_form_errors,
 															'other_error': other_error}, request=request)
 		return JsonResponse({'html': html,
-								'url' : reverse("profile"),
-								
+								'url' : reverse("profile")
 								})
-	else:
+	else:    
 		return render(request, "pong/profile.html", {
 														'user_info' : {
 															'user_choice' : user.is_mfa_enabled,
@@ -629,6 +716,103 @@ def profile_view(request):
 															'other_error': other_error
 													})
 
+
+
+# def add_friends(request):
+	# if not request.user.is_authenticated:
+	#     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+	#         html = render_to_string("pong/login_content.html", {}, request=request)
+	#         return JsonResponse({'html': html})
+	#     else:
+	#         return HttpResponseRedirect(reverse("login"))
+
+	# user = NewUser.objects.get(id=(request.session.get('user_id')))
+
+	# if request.method == "POST":
+	#     friend_pseudo = request.POST.get("friend_pseudo")
+	#     friend_user = None
+	#     try:
+	#         friend_user = NewUser.objects.get(pseudo=friend_pseudo)
+	#     except NewUser.DoesNotExist:
+	#         friend_user = None
+	#     #empecher d'etre amis avec sois même
+	#     if ( friend_user is not None) and (user.id is not friend_user.id) :
+	#         # Check if they are already friends
+	#         if Friendship.objects.filter(person1=user, person2=friend_user).exists() or Friendship.objects.filter(person1=friend_user, person2=user).exists():
+	#             if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+	#                 html = render_to_string("pong/add_friends_content.html", {'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : "you are already friends"
+	#                                                             }
+	#                                         }, request=request)
+	#                 return JsonResponse({'html': html,
+	#                             'url' : reverse("add_friends")
+	#                 })
+	#             else:
+	#                 return render(request, "pong/add_friends.html", {
+	#                                             'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : "you are already friends"
+	#                                                             }
+	#                                         })
+
+	#     # Create the friendship
+	#         Friendship.objects.create(person1=user, person2=friend_user)
+	#         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+	#             html = render_to_string("pong/add_friends_content.html", {'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : "you are now friends"
+	#                                                             }
+	#                                         }, request=request)
+	#             return JsonResponse({'html': html,
+	#                             'url' : reverse("add_friends")
+	#                 })
+	#         else:
+	#             return render(request, "pong/add_friends.html", {
+	#                                             'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : "you are now friends"
+	#                                                             }
+	#                                         })
+			
+	#     else:
+	#         if friend_user is None:
+	#             message = "this user doesn't exist"
+	#         else:
+	#             message = "you can't add yourself as friend"
+	#         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+	#                 html = render_to_string("pong/add_friends_content.html", {'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : message
+	#                                                             }
+	#                                         }, request=request)
+	#                 return JsonResponse({'html': html,
+	#                             'url' : reverse("add_friends")
+	#                 })
+	#         else:
+	#             return render(request, "pong/add_friends.html", {
+	#                                             'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : message
+	#                                                             }
+	#                                         })
+	# else:
+	#     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+	#                 html = render_to_string("pong/add_friends_content.html", {'error_message' : {
+	#                                                                     'value' : False,
+	#                                                                     'message' : "nothing"
+	#                                                             }
+	#                                         }, request=request)
+	#                 return JsonResponse({'html': html,
+	#                             'url' : reverse("add_friends")
+	#                 })
+	#     else:
+	#         return render(request, "pong/add_friends.html", {
+	#                                             'error_message' : {
+	#                                                                     'value' : False,
+	#                                                                     'message' : "nothing"
+	#                                                             }
+	#                                         })
 
 
 def add_friends(request):
@@ -679,10 +863,14 @@ def add_friends(request):
 
 		# Create the friendship
 			Friendship.objects.create(person1=user, person2=friend_user)
+			logger.debug("friend_user = %s", friend_user)
+			temp = friend_user.pseudo.upper()
+			logger.debug("friend_user apres = %s", friend_user)
+			message = temp + " IS NOW YOUR FRIEND"
 			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 				html = render_to_string("pong/add_friends_content.html", {'error_message' : {
 																		'value' : True,
-																		'message' : "you are now friends"
+																		'message' : message
 																}, 'users_list' : users_list,
 											}, request=request)
 				return JsonResponse({'html': html,
@@ -692,7 +880,7 @@ def add_friends(request):
 				return render(request, "pong/add_friends.html", {
 												'error_message' : {
 																		'value' : True,
-																		'message' : "you are now friends"
+																		'message' : message
 																}, 'users_list' : users_list,
 											})
 
@@ -736,37 +924,107 @@ def add_friends(request):
 											})
 
 
-# def delete_friends_id(request, id):
-#     logger.info("On rentre bien dans la vue delete_friends_id")
-#     info = None
-#     if not request.user.is_authenticated :
-#         if request.headers.get('X-Requested-With' == 'XMLHttpRequest') :
-#             html = render_to_string("pong/login_content.html", {}, request=request)
-#             return JsonResponse({'html' : html})
-#         else:
-#             return HttpResponseRedirect(reverse("login"))
-#     if (request.method == 'POST') :
-#         logger.info("On rentre bien dans la vue delete_friends_id")
-#         logger.debug("friend_id = %s", id)
-#         if (request.POST.get("user_info")) :
-#             logger.info("salut")
-#             info = request.POST.get("user_info")
-#             logger.debug("user_info = %s", info)
-#     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-#         logger.info("Requête AJAX détectée")
-#         if info is not None:
-#             logger.debug("user_info_2 = %s", info)
-#             context = {'user_info': info}
-#             html = render_to_string("pong/profile_content.html", context, request=request)
-#             logger.debug("Contenu de html après rendu : %s", html)  # Log le contenu de html
-#             return JsonResponse({
-#                 'html': html,
-#                 'url': reverse("profile"),
-#             })
-#         else:
-#             return JsonResponse({'error': 'Aucune info trouvée'})
-#     else:
-#         return HttpResponseRedirect(reverse("profile"))
+
+
+# def delete_friends(request):
+	# if not request.user.is_authenticated:
+	#     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+	#         html = render_to_string("pong/login_content.html", {}, request=request)
+	#         return JsonResponse({'html': html})
+	#     else:
+	#         return HttpResponseRedirect(reverse("login"))
+
+	# user = NewUser.objects.get(id=(request.session.get('user_id')))
+
+	# if request.method == "POST":
+	#     friend_pseudo = request.POST.get("friend_pseudo")
+	#     friend_user = None
+	#     try:
+	#         friend_user = NewUser.objects.get(pseudo=friend_pseudo)
+	#     except NewUser.DoesNotExist:
+	#         friend_user = None
+	
+	#     if ( friend_user is not None) and (user.id is not friend_user.id) :
+	#         friendship = Friendship.objects.filter(Q(person1=user, person2=friend_user) | Q(person1=friend_user, person2=user)).first()
+	#         if friendship:
+	#             friendship.delete()
+	#         else:
+	#             message = "you are not friends"
+	#             if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+	#                 html = render_to_string("pong/delete_friends_content.html", {'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : message
+	#                                                             }
+	#                                         }, request=request)
+	#                 return JsonResponse({'html': html,
+	#                             'url' : reverse("delete_friends")
+	#                 })
+	#             return render(request, "pong/delete_friends.html", {
+	#                                             'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : message
+	#                                                             }
+	#                                             })
+
+		   
+	#         #succes delete friend 
+	#         message = "you are not friends anymore"
+	#         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+	#             html = render_to_string("pong/delete_friends_content.html", {'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : message
+	#                                                             }
+	#                                         }, request=request)
+	#             return JsonResponse({'html': html,
+	#                             'url' : reverse("delete_friends")
+	#                 })
+	#         else:
+	#             return render(request, "pong/delete_friends.html", {
+	#                                             'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : message
+	#                                                             }
+	#                                             }) 
+	#     else:
+	#         if friend_user is None:
+	#             message = "this user doesn't exist"
+	#         else:
+	#             message = "you can't delete yourself as friend"
+
+	#         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+	#             html = render_to_string("pong/delete_friends_content.html", {'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : message
+	#                                                             }
+	#                                         }, request=request)
+	#             return JsonResponse({'html': html,
+	#                             'url' : reverse("delete_friends")
+	#                 })
+	#         else:
+	#             return render(request, "pong/delete_friends.html", {
+	#                                             'error_message' : {
+	#                                                                     'value' : True,
+	#                                                                     'message' : message
+	#                                                             }
+	#                                             }) 
+	# else:
+	#     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+	#         html = render_to_string("pong/delete_friends_content.html", {'error_message' : {
+	#                                                                     'value' : False,
+	#                                                                     'message' : "nothing"
+	#                                                             }
+	#                                         }, request=request)
+	#         return JsonResponse({'html': html,
+	#                             'url' : reverse("delete_friends")
+	#                 })
+	#     else:
+	#             return render(request, "pong/delete_friends.html", {
+	#                                             'error_message' : {
+	#                                                                     'value' : False,
+	#                                                                     'message' : "nothing"
+	#                                                             }
+	#                                                             }
+	#                                                             )
 
 
 def delete_friends(request):
@@ -870,77 +1128,27 @@ def delete_friends(request):
 																}, 'user_friend' : user_friend,
 																})
 
-def waiting_room(request):
-	if not request.user.is_authenticated:
-		return HttpResponseRedirect(reverse("login"))
-	user = request.user
-	other_user = NewUser.objects.filter(in_waiting_room=True).exclude(id=user.id).first()
-	if other_user:
-		print(" - ")
-		print(" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ ")
-		print(other_user.pseudo)
-		print(" - ")
-		party = Party.objects.create(user1=user, user2=other_user, game_name='Game Name', game_time=timedelta(minutes=30))
-		user.in_waiting_room = False
-		other_user.in_waiting_room = False
-		user.save()
-		other_user.save()
-		return render(request, 'waiting_room.html')
-	else:
-		user.in_waiting_room = True
-		user.save()
-		print(" ")
-		print(" else wait ")
-		print(" ")
-		return render(request, 'waiting_room.html')
-
-def check_match(request):
-	if not request.user.is_authenticated:
-		return HttpResponseRedirect(reverse("login"))
-
-	user = request.user
-	party = Party.objects.filter(Q(user1=user) | Q(user2=user), is_ended=False).last()
-	if party and party.user1 and party.user2:
-		print(" ")
-		print("found OK !")
-		print(" ")
-		# party.user1.in_waiting_room = False
-		# party.user2.in_waiting_room = False
-		# party.user1.save()
-		# party.user2.save()
-		return JsonResponse({
-			'match_found': True,
-			'party_id': party.id,
-			'check_match': True,
-			'user_red': party.user1.pseudo,
-			'user_blue': party.user2.pseudo,
-			'id_red': party.user1.id,
-			'id_blue': party.user2.id
-		})
-	else:
-		print(" ")
-		print("Nothing")
-		print(" ")
-		return JsonResponse({
-			'match_found': False})
-
-def game_page(request, party_id):
-	if not request.user.is_authenticated:
-		return HttpResponseRedirect(reverse("login"))
-
-	party = get_object_or_404(Party, id=party_id)
-	# user
-	print(party)
-	return render(request, 'game_page.html', {'party': party})
-
-def home_game(request):
-	if not request.user.is_authenticated:
-		return HttpResponseRedirect(reverse("login"))
-
-	return render(request, 'home_game.html')
 
 
 
+
+# user_id = request.session.get('user_id')
+# 	if not user_id:
+# 		return HttpResponseRedirect(reverse("index"))
+
+# 	user = get_object_or_404(NewUser.objects.select_related('statistic'), id=user_id)
+
+# 	# Déboguer la valeur de user.statistic
+# 	logger.debug("User: %s", user)
+# 	logger.debug("User.statistic: %s", user.statistic)
+
+# 	# Vérifier si user.statistic est nul ou non
+# 	if user.statistic is None:
+# 		logger.info("On passe la")
+# 		user_statistic, created = Statistic.objects.get_or_create(user=user)
+# 		user_statistic.save()
+# 	else:
+# 		logger.info("Statistique déjà existante")
 
 
 
