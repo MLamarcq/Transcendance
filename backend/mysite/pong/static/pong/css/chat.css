@@ -42,16 +42,21 @@ article
 
 .msg *
 {
-	display: inline-block;
+	display: flex;
 }
 
-.msg input
+.msg form
+{
+	width: 100%;
+}
+
+.msg form input[type="text"]
 {
 	width: calc(100% - (10px * 2) - 150px - 10px);
 	margin: 0 10px;
 	padding-left: 10px;
 }
-.msg button
+.msg form input[type="submit"]
 {
 	margin: 0 10px 0 0 ;
 	width: 150px;
@@ -86,12 +91,44 @@ article
 	border-radius: 20px;
 }
 
-.chat .moi
+
+/* .chat form input
+{
+	width: max-content;
+	max-width: 400px;
+	min-height: 40px;
+	
+	display: block;
+
+	margin: 10px;
+	padding: 7px 12px 3px;
+	
+	border: solid 2px black;
+	border-radius: 20px;
+} */
+
+
+/* .chat ul li 
+{
+	width: max-content;
+	max-width: 400px;
+	min-height: 40px;
+	
+	display: block;
+
+	margin: 10px;
+	padding: 7px 12px 3px;
+	
+	border: solid 2px black;
+	border-radius: 20px;
+} */
+
+.chat .toi
 {
 	background: var(--orange);
 }
 
-.chat .toi
+.chat .moi
 {
 	background: var(--purple);
 	/* margin-right: 5px; */

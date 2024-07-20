@@ -27,6 +27,9 @@
 	
 		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
 	</section>
+	{% if error_message %}
+		<p>{{ error_message.error_message }}</p>
+	{% endif %}
 
 
 

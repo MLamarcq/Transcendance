@@ -10,10 +10,14 @@ urlpatterns = [
     path("login", views.login_view, name="login"),
     path("logout", views.logout_view, name="logout"),
     path("statistics/", views.statistics, name="statistics"),
-    path("chat/", views.chat, name="chat"),
+    path("chat/", views.chat_solo, name="chat_solo"),
+    path("chat/<chat_name>", views.chat_room, name="chat_room"),
     path("otp/", views.otp_view, name="otp"),
     path("profile", views.profile_view, name = "profile"),
     path("add_friends", views.add_friends, name ="add_friends"),
-    path("delete_friends", views.delete_friends, name = "delete_friends")
-    
+    path("delete_friends", views.delete_friends, name = "delete_friends"),
+    path("add_chat", views.add_chat, name="add_chat"),
+    path("join_chat", views.join_chat, name="join_chat"),
+    path("render_chat/<chat_name>", views.render_chat, name="render_chat"),
+    path("other_profile/<username>", views.other_profile, name="other_profile"),
 ]
