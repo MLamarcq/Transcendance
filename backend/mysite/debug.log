@@ -7423,8 +7423,8 @@ DEBUG 2024-07-17 15:06:41,634 views user participants = roro
 DEBUG 2024-07-17 15:06:41,636 views user participants = lulu
 DEBUG 2024-07-17 15:06:41,636 views user participants = roro
 DEBUG 2024-07-17 15:06:41,637 views user participants = roro
-INFO 2024-07-17 19:46:16,055 views __ A
-DEBUG 2024-07-17 19:46:16,063 views html in sigin =     
+INFO 2024-07-20 14:28:18,010 views __ A
+DEBUG 2024-07-20 14:28:18,014 views html in sigin =     
     
     <link href="/static/pong/css/signup.css" rel="stylesheet">
     
@@ -7432,7 +7432,7 @@ DEBUG 2024-07-17 19:46:16,063 views html in sigin =
     <h1 class="text-center">Pong</h1>
     <section class="login">
         <form action="/signin" method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="9BwSQg90cWaB8uJu9SXIxDHQCog3Ffkr38qHCCXxbaqhPVih5mLLIWf4BsJajgqH">
+            <input type="hidden" name="csrfmiddlewaretoken" value="uPodY9Fd7L2BvObUwFg8mNP3APOFFtrNDHVZwmfo216gI7LlBKWmcRKUDDjrZep1">
         
             <label for="email">email</label>
             <input type="text" name="email" placeholder="Email">
@@ -7451,15 +7451,15 @@ DEBUG 2024-07-17 19:46:16,063 views html in sigin =
     
 
 
-INFO 2024-07-17 19:46:20,383 views html at ajax
-DEBUG 2024-07-17 19:46:20,388 views html in signup = 
+INFO 2024-07-20 14:28:21,390 views html at ajax
+DEBUG 2024-07-20 14:28:21,396 views html in signup = 
 	
 	<link href="/static/pong/css/signup.css" rel="stylesheet">
 	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
 
 	<section>
 		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
-			<input type="hidden" name="csrfmiddlewaretoken" value="HqyVKMC4AEhYVMYbeaI1uFLFYaMypOysBXsKw8qBzSxECdxYaEw4FYjTXefF3PEI">
+			<input type="hidden" name="csrfmiddlewaretoken" value="DaYrRyENnNwxEM4pZ6Rnsfc6tNVJ4V8bM2vdpLeYi3AcR5EQ4bxBij7XwBqvoG6p">
 		
 			<label for="email">email</label>
 			<input type="text" name="email" placeholder="Email">
@@ -7487,16 +7487,16 @@ DEBUG 2024-07-17 19:46:20,388 views html in signup =
 
 
 
-DEBUG 2024-07-17 19:47:31,757 views email avant parsing = test90@yahoo.com
-INFO 2024-07-17 19:47:31,758 views oui oui
-DEBUG 2024-07-17 19:47:31,759 views email_part = test90
-DEBUG 2024-07-17 19:47:31,759 views domain_part = yahoo.com
-DEBUG 2024-07-17 19:47:31,760 views email apres parsing = test90@yahoo.com
-DEBUG 2024-07-17 19:47:31,760 views pseudo = test90
-DEBUG 2024-07-17 19:47:31,760 views password = test90
-DEBUG 2024-07-17 19:47:31,760 views confirm_password = test90
-INFO 2024-07-17 19:47:35,582 views __ A
-DEBUG 2024-07-17 19:47:35,585 views html in sigin =     
+DEBUG 2024-07-20 14:28:37,459 views email avant parsing = test944@yahoo.fr
+INFO 2024-07-20 14:28:37,460 views oui oui
+DEBUG 2024-07-20 14:28:37,460 views email_part = test944
+DEBUG 2024-07-20 14:28:37,460 views domain_part = yahoo.fr
+DEBUG 2024-07-20 14:28:37,461 views email apres parsing = test944@yahoo.fr
+DEBUG 2024-07-20 14:28:37,461 views pseudo = test944
+DEBUG 2024-07-20 14:28:37,461 views password = test944
+DEBUG 2024-07-20 14:28:37,461 views confirm_password = test944
+INFO 2024-07-20 14:28:40,190 views __ A
+DEBUG 2024-07-20 14:28:40,191 views html in sigin =     
     
     <link href="/static/pong/css/signup.css" rel="stylesheet">
     
@@ -7504,7 +7504,7 @@ DEBUG 2024-07-17 19:47:35,585 views html in sigin =
     <h1 class="text-center">Pong</h1>
     <section class="login">
         <form action="/signin" method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="7ve5J9doxa0GajVsEDHByRYONNB7yusg128Uvv1VwogmRKufA7vEJaw2MR4ecvyw">
+            <input type="hidden" name="csrfmiddlewaretoken" value="kIo6p3AVLN2J7V1NrxGmwaZleq4VneKXtAVSXga6G36okeBewCmAmeUchezHHZIb">
         
             <label for="email">email</label>
             <input type="text" name="email" placeholder="Email">
@@ -7523,66 +7523,14 @@ DEBUG 2024-07-17 19:47:35,585 views html in sigin =
     
 
 
-INFO 2024-07-17 19:47:46,674 views __ A
-INFO 2024-07-17 19:47:46,675 views __ C
-INFO 2024-07-17 19:47:46,676 views __ D
-INFO 2024-07-17 19:47:46,876 views __ F
-INFO 2024-07-17 19:47:46,876 views l'utilisateur est null
-DEBUG 2024-07-17 19:47:46,876 views email = test90@yahoo.fr
-DEBUG 2024-07-17 19:47:46,877 views password = test90
-INFO 2024-07-17 19:48:03,064 views __ A
-INFO 2024-07-17 19:48:03,066 views __ C
-INFO 2024-07-17 19:48:03,066 views __ D
-INFO 2024-07-17 19:48:03,271 views __ F
-INFO 2024-07-17 19:48:03,271 views l'utilisateur est null
-DEBUG 2024-07-17 19:48:03,272 views email = test90@yahoo.fr
-DEBUG 2024-07-17 19:48:03,272 views password = test90
-INFO 2024-07-17 19:48:05,353 views html at ajax
-DEBUG 2024-07-17 19:48:05,354 views html in signup = 
-	
-	<link href="/static/pong/css/signup.css" rel="stylesheet">
-	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
-
-	<section>
-		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
-			<input type="hidden" name="csrfmiddlewaretoken" value="HYQTyNfUfKHkaqZTGqABUdI5wi6rM56OBvKIk93reYX0RRyGCUoE5wgjvmzyq6c4">
-		
-			<label for="email">email</label>
-			<input type="text" name="email" placeholder="Email">
-
-			<label for="password">password</label>
-			<input type="password" name="password" placeholder="Password">
-
-			<label for="confirm_password">confirm password</label>
-			<input type="password" name="confirm_password" placeholder="Confirm_Password">
-
-			<label for="pseudo">pseudo</label>
-			<input type="text" name="pseudo" placeholder="Pseudo">
-
-			<label for="avatar" class="avatar">Select avatar</label>
-			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
-		
-			<input type="submit" value="SIGN UP">
-		</form>
-	
-		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
-	</section>
-	
-
-
-
-
-
-DEBUG 2024-07-17 19:48:21,166 views email avant parsing = test94@yahoo.fr
-INFO 2024-07-17 19:48:21,167 views oui oui
-DEBUG 2024-07-17 19:48:21,168 views email_part = test94
-DEBUG 2024-07-17 19:48:21,168 views domain_part = yahoo.fr
-DEBUG 2024-07-17 19:48:21,168 views email apres parsing = test94@yahoo.fr
-DEBUG 2024-07-17 19:48:21,169 views pseudo = test94
-DEBUG 2024-07-17 19:48:21,169 views password = test94
-DEBUG 2024-07-17 19:48:21,169 views confirm_password = test94
-INFO 2024-07-17 19:48:27,082 views __ A
-DEBUG 2024-07-17 19:48:27,084 views html in sigin =     
+INFO 2024-07-20 14:28:48,958 views __ A
+INFO 2024-07-20 14:28:48,959 views __ C
+INFO 2024-07-20 14:28:48,960 views __ D
+INFO 2024-07-20 14:28:49,184 views __ E
+DEBUG 2024-07-20 14:28:49,191 views email = test944@yahoo.fr
+DEBUG 2024-07-20 14:28:49,191 views password = test944
+INFO 2024-07-20 14:28:53,654 views __ A
+DEBUG 2024-07-20 14:28:53,656 views html in sigin =     
     
     <link href="/static/pong/css/signup.css" rel="stylesheet">
     
@@ -7590,7 +7538,7 @@ DEBUG 2024-07-17 19:48:27,084 views html in sigin =
     <h1 class="text-center">Pong</h1>
     <section class="login">
         <form action="/signin" method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="A38wuFyqE3jKxYm69CTQkPpfY86XCrRouA2lg1mXDhzqepVT56HTv8XtXcz4gsXE">
+            <input type="hidden" name="csrfmiddlewaretoken" value="ORnrHQAEmQOuHKMx4tkccm6EjkktLuFvt6r7vWoERslRlQ1rFD5vFQaR7Ixf39M4">
         
             <label for="email">email</label>
             <input type="text" name="email" placeholder="Email">
@@ -7609,428 +7557,9 @@ DEBUG 2024-07-17 19:48:27,084 views html in sigin =
     
 
 
-INFO 2024-07-17 19:48:33,129 views __ A
-INFO 2024-07-17 19:48:33,131 views __ C
-INFO 2024-07-17 19:48:33,131 views __ D
-INFO 2024-07-17 19:48:33,339 views __ E
-DEBUG 2024-07-17 19:48:33,346 views email = test94@yahoo.fr
-DEBUG 2024-07-17 19:48:33,346 views password = test94
-INFO 2024-07-17 19:48:38,238 views __ A
-DEBUG 2024-07-17 19:48:38,240 views html in sigin =     
-    
-    <link href="/static/pong/css/signup.css" rel="stylesheet">
-    
-
-    <h1 class="text-center">Pong</h1>
-    <section class="login">
-        <form action="/signin" method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="XthI7I2WYuNdEjqoi9VcZsYAsDTXW1ieU0z3wYv00taClvFiuw6hXCzM3JvSV8eP">
-        
-            <label for="email">email</label>
-            <input type="text" name="email" placeholder="Email">
-        
-        
-            <label for="password">password</label>
-            <input type="password" name="password" placeholder="Password">
-        
-            <input type="submit" value="Log In">
-        </form>
-	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
-
-    
-    </section>
-
-    
-
-
-INFO 2024-07-17 19:48:44,899 views __ A
-INFO 2024-07-17 19:48:44,901 views __ C
-INFO 2024-07-17 19:48:44,902 views __ D
-INFO 2024-07-17 19:48:45,108 views __ F
-INFO 2024-07-17 19:48:45,108 views l'utilisateur est null
-DEBUG 2024-07-17 19:48:45,108 views email = test94@yahoo.fr
-DEBUG 2024-07-17 19:48:45,109 views password = test94
-INFO 2024-07-20 13:23:24,176 views __ A
-INFO 2024-07-20 13:23:26,135 views html at ajax
-DEBUG 2024-07-20 13:23:26,137 views html in signup = 
-	
-	<link href="/static/pong/css/signup.css" rel="stylesheet">
-	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
-
-	<section>
-		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
-			<input type="hidden" name="csrfmiddlewaretoken" value="x38lwWTlTbtMiBdjcRSKrdsB1GbRGGHTuAqGVcmpVaQbZNsdoe3Ppn3NCMNMFNDu">
-		
-			<label for="email">email</label>
-			<input type="text" name="email" placeholder="Email">
-
-			<label for="password">password</label>
-			<input type="password" name="password" placeholder="Password">
-
-			<label for="confirm_password">confirm password</label>
-			<input type="password" name="confirm_password" placeholder="Confirm_Password">
-
-			<label for="pseudo">pseudo</label>
-			<input type="text" name="pseudo" placeholder="Pseudo">
-
-			<label for="avatar" class="avatar">Select avatar</label>
-			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
-		
-			<input type="submit" value="SIGN UP">
-		</form>
-	
-		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
-	</section>
-	
-
-
-
-
-
-DEBUG 2024-07-20 13:23:51,511 views email avant parsing = test940@yahoo.fr
-INFO 2024-07-20 13:23:51,513 views oui oui
-DEBUG 2024-07-20 13:23:51,514 views email_part = test940
-DEBUG 2024-07-20 13:23:51,514 views domain_part = yahoo.fr
-DEBUG 2024-07-20 13:23:51,515 views email apres parsing = test940@yahoo.fr
-DEBUG 2024-07-20 13:23:51,515 views pseudo = test940
-DEBUG 2024-07-20 13:23:51,515 views password = test940
-DEBUG 2024-07-20 13:23:51,515 views confirm_password = test940
-INFO 2024-07-20 13:23:54,750 views __ A
-DEBUG 2024-07-20 13:23:54,752 views html in sigin =     
-    
-    <link href="/static/pong/css/signup.css" rel="stylesheet">
-    
-
-    <h1 class="text-center">Pong</h1>
-    <section class="login">
-        <form action="/signin" method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="zxJcjkBROnHRnbk5nUT2MOh5feovI1x5w41xIA4VQm4g4nzZzh47KYShQk0qH8tG">
-        
-            <label for="email">email</label>
-            <input type="text" name="email" placeholder="Email">
-        
-        
-            <label for="password">password</label>
-            <input type="password" name="password" placeholder="Password">
-        
-            <input type="submit" value="Log In">
-        </form>
-	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
-
-    
-    </section>
-
-    
-
-
-INFO 2024-07-20 13:24:01,732 views __ A
-INFO 2024-07-20 13:24:01,734 views __ C
-INFO 2024-07-20 13:24:01,735 views __ D
-INFO 2024-07-20 13:24:01,942 views __ E
-DEBUG 2024-07-20 13:24:01,950 views email = test940@yahoo.fr
-DEBUG 2024-07-20 13:24:01,950 views password = test940
-INFO 2024-07-20 13:24:39,807 views __ A
-DEBUG 2024-07-20 13:24:39,814 views html in sigin =     
-    
-    <link href="/static/pong/css/signup.css" rel="stylesheet">
-    
-
-    <h1 class="text-center">Pong</h1>
-    <section class="login">
-        <form action="/signin" method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="y1wn3OWFWFi8bcUk68vQVNwc5Z3SE8HY7SCdmvsGi9ImmXCjQfkdMg6irsAaof5A">
-        
-            <label for="email">email</label>
-            <input type="text" name="email" placeholder="Email">
-        
-        
-            <label for="password">password</label>
-            <input type="password" name="password" placeholder="Password">
-        
-            <input type="submit" value="Log In">
-        </form>
-	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
-
-    
-    </section>
-
-    
-
-
-INFO 2024-07-20 13:24:48,232 views __ A
-INFO 2024-07-20 13:24:48,236 views __ C
-INFO 2024-07-20 13:24:48,236 views __ D
-INFO 2024-07-20 13:24:48,446 views __ F
-INFO 2024-07-20 13:24:48,447 views l'utilisateur est null
-DEBUG 2024-07-20 13:24:48,447 views email = test940@yahoo.fr
-DEBUG 2024-07-20 13:24:48,447 views password = test940
-INFO 2024-07-20 13:37:51,543 views __ A
-INFO 2024-07-20 13:37:53,441 views html at ajax
-DEBUG 2024-07-20 13:37:53,444 views html in signup = 
-	
-	<link href="/static/pong/css/signup.css" rel="stylesheet">
-	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
-
-	<section>
-		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
-			<input type="hidden" name="csrfmiddlewaretoken" value="39EIeq2dOk2vO7G0XtpfQjT1CmBl50WQC0Kyx7yeaOsJZSoZHAeCHMt7YP8DP7ks">
-		
-			<label for="email">email</label>
-			<input type="text" name="email" placeholder="Email">
-
-			<label for="password">password</label>
-			<input type="password" name="password" placeholder="Password">
-
-			<label for="confirm_password">confirm password</label>
-			<input type="password" name="confirm_password" placeholder="Confirm_Password">
-
-			<label for="pseudo">pseudo</label>
-			<input type="text" name="pseudo" placeholder="Pseudo">
-
-			<label for="avatar" class="avatar">Select avatar</label>
-			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
-		
-			<input type="submit" value="SIGN UP">
-		</form>
-	
-		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
-	</section>
-	
-
-
-
-
-
-DEBUG 2024-07-20 13:38:14,955 views email avant parsing = test941@yahoo.fr
-INFO 2024-07-20 13:38:14,956 views oui oui
-DEBUG 2024-07-20 13:38:14,956 views email_part = test941
-DEBUG 2024-07-20 13:38:14,956 views domain_part = yahoo.fr
-DEBUG 2024-07-20 13:38:14,957 views email apres parsing = test941@yahoo.fr
-DEBUG 2024-07-20 13:38:14,957 views pseudo = test941
-DEBUG 2024-07-20 13:38:14,957 views password = test941
-DEBUG 2024-07-20 13:38:14,957 views confirm_password = test941
-INFO 2024-07-20 13:38:17,484 views __ A
-DEBUG 2024-07-20 13:38:17,486 views html in sigin =     
-    
-    <link href="/static/pong/css/signup.css" rel="stylesheet">
-    
-
-    <h1 class="text-center">Pong</h1>
-    <section class="login">
-        <form action="/signin" method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="J8sQS044uFgJiuXyPEFQkO3kLLSNukI6iZyGbHA5Q9GXtfFxzLudbhDq7ep5er6I">
-        
-            <label for="email">email</label>
-            <input type="text" name="email" placeholder="Email">
-        
-        
-            <label for="password">password</label>
-            <input type="password" name="password" placeholder="Password">
-        
-            <input type="submit" value="Log In">
-        </form>
-	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
-
-    
-    </section>
-
-    
-
-
-INFO 2024-07-20 13:38:26,229 views __ A
-INFO 2024-07-20 13:38:26,231 views __ C
-INFO 2024-07-20 13:38:26,231 views __ D
-INFO 2024-07-20 13:38:26,450 views __ E
-DEBUG 2024-07-20 13:38:26,458 views email = test941@yahoo.fr
-DEBUG 2024-07-20 13:38:26,459 views password = test941
-INFO 2024-07-20 13:38:29,694 views __ A
-DEBUG 2024-07-20 13:38:29,696 views html in sigin =     
-    
-    <link href="/static/pong/css/signup.css" rel="stylesheet">
-    
-
-    <h1 class="text-center">Pong</h1>
-    <section class="login">
-        <form action="/signin" method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="YzhfS4PgPei75oLdMeygWvsYtyxAIbfmtTQPWdKy6KudUVdQ0dSixD4mpy0eBECN">
-        
-            <label for="email">email</label>
-            <input type="text" name="email" placeholder="Email">
-        
-        
-            <label for="password">password</label>
-            <input type="password" name="password" placeholder="Password">
-        
-            <input type="submit" value="Log In">
-        </form>
-	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
-
-    
-    </section>
-
-    
-
-
-INFO 2024-07-20 13:38:37,406 views __ A
-INFO 2024-07-20 13:38:37,408 views __ C
-INFO 2024-07-20 13:38:37,408 views __ D
-INFO 2024-07-20 13:38:37,605 views __ E
-DEBUG 2024-07-20 13:38:37,613 views email = test941@yahoo.fr
-DEBUG 2024-07-20 13:38:37,613 views password = test941
-INFO 2024-07-20 13:40:14,828 views html at ajax
-DEBUG 2024-07-20 13:40:14,830 views html in signup = 
-	
-	<link href="/static/pong/css/signup.css" rel="stylesheet">
-	<h1 class="text-center">CREATE YOUR ACCOUNT</h1>
-
-	<section>
-		<form action="/signup" method="post"  type="file" enctype="multipart/form-data" name="avatar">
-			<input type="hidden" name="csrfmiddlewaretoken" value="8bQzWRmJ4Vd8YJn4jlgvhblLRltgwSfjnNrMbvAbjrO7p2BMwREVUjQRK31ceTnx">
-		
-			<label for="email">email</label>
-			<input type="text" name="email" placeholder="Email">
-
-			<label for="password">password</label>
-			<input type="password" name="password" placeholder="Password">
-
-			<label for="confirm_password">confirm password</label>
-			<input type="password" name="confirm_password" placeholder="Confirm_Password">
-
-			<label for="pseudo">pseudo</label>
-			<input type="text" name="pseudo" placeholder="Pseudo">
-
-			<label for="avatar" class="avatar">Select avatar</label>
-			<input id="avatar" style="visibility:hidden;" type="file" name="avatar">
-		
-			<input type="submit" value="SIGN UP">
-		</form>
-	
-		<p>Already registered ?<br>Log in <a href="/signin">here</a></p>
-	</section>
-	
-
-
-
-
-
-DEBUG 2024-07-20 13:40:37,527 views email avant parsing = test942@yahoo.fr
-INFO 2024-07-20 13:40:37,528 views oui oui
-DEBUG 2024-07-20 13:40:37,528 views email_part = test942
-DEBUG 2024-07-20 13:40:37,528 views domain_part = yahoo.fr
-DEBUG 2024-07-20 13:40:37,529 views email apres parsing = test942@yahoo.fr
-DEBUG 2024-07-20 13:40:37,529 views pseudo = test942
-DEBUG 2024-07-20 13:40:37,529 views password = test942
-DEBUG 2024-07-20 13:40:37,529 views confirm_password = test942
-INFO 2024-07-20 13:40:38,733 views __ A
-DEBUG 2024-07-20 13:40:38,735 views html in sigin =     
-    
-    <link href="/static/pong/css/signup.css" rel="stylesheet">
-    
-
-    <h1 class="text-center">Pong</h1>
-    <section class="login">
-        <form action="/signin" method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="JZ6uSuHf0c5ipjyv0wDwK62AE83G31XgYBHH78VHfIGhQCMdd21WnexGxQBCL25u">
-        
-            <label for="email">email</label>
-            <input type="text" name="email" placeholder="Email">
-        
-        
-            <label for="password">password</label>
-            <input type="password" name="password" placeholder="Password">
-        
-            <input type="submit" value="Log In">
-        </form>
-	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
-
-    
-    </section>
-
-    
-
-
-INFO 2024-07-20 13:40:46,859 views __ A
-INFO 2024-07-20 13:40:46,862 views __ C
-INFO 2024-07-20 13:40:46,862 views __ D
-INFO 2024-07-20 13:40:47,090 views __ E
-DEBUG 2024-07-20 13:40:47,097 views email = test942@yahoo.fr
-DEBUG 2024-07-20 13:40:47,098 views password = test942
-DEBUG 2024-07-20 13:40:52,590 views la liste des users amis : <QuerySet []>
-DEBUG 2024-07-20 13:40:52,592 views la liste des users  : <QuerySet [<NewUser: admin>, <NewUser: test941>, <NewUser: test942>]>
-DEBUG 2024-07-20 13:40:52,594 views la liste des users non amis : [<NewUser: test941>]
-DEBUG 2024-07-20 13:41:00,300 views la liste des users amis : <QuerySet []>
-DEBUG 2024-07-20 13:41:00,302 views la liste des users  : <QuerySet [<NewUser: admin>, <NewUser: test941>, <NewUser: test942>]>
-DEBUG 2024-07-20 13:41:00,304 views la liste des users non amis : [<NewUser: test941>]
-DEBUG 2024-07-20 13:41:00,310 views friend_user = test941
-DEBUG 2024-07-20 13:41:00,311 views friend_user apres = test941
-DEBUG 2024-07-20 13:41:07,921 views la liste des users amis : <QuerySet [<NewUser: test941>]>
-DEBUG 2024-07-20 13:41:07,923 views la liste des users  : <QuerySet [<NewUser: admin>, <NewUser: test941>, <NewUser: test942>]>
-DEBUG 2024-07-20 13:41:07,925 views la liste des users non amis : []
-DEBUG 2024-07-20 13:41:21,738 views info_add_chat = {'token': True, 'users_ok': [<NewUser: test941>], 'blocked_users': []}
-DEBUG 2024-07-20 13:41:21,739 views chat_name = test
-DEBUG 2024-07-20 13:41:21,740 views chats = <QuerySet []>
-DEBUG 2024-07-20 13:41:55,483 views user participants = test942
-DEBUG 2024-07-20 13:42:14,780 views user participants = test942
-DEBUG 2024-07-20 13:42:14,782 views message_content = haha
-DEBUG 2024-07-20 13:42:14,782 views context = {'chat_info': {'list_of_chats': [<Chat: test>]}, 'message_info': '{"test": []}', 'chat_name': 'test', 'chat_name_json': '{"chat_name": "test"}'}
-DEBUG 2024-07-20 13:42:14,783 views chat_objet = test
-DEBUG 2024-07-20 13:42:22,654 views user participants = test942
-DEBUG 2024-07-20 13:42:22,658 views message_content = bob
-DEBUG 2024-07-20 13:42:22,659 views context = {'chat_info': {'list_of_chats': [<Chat: test>]}, 'message_info': '{"test": [{"message": "haha", "sender": "test942", "time": "2024-07-20T13:42:14.785031+00:00"}]}', 'chat_name': 'test', 'chat_name_json': '{"chat_name": "test"}'}
-DEBUG 2024-07-20 13:42:22,660 views chat_objet = test
-INFO 2024-07-20 13:42:38,026 views __ A
-DEBUG 2024-07-20 13:42:38,029 views html in sigin =     
-    
-    <link href="/static/pong/css/signup.css" rel="stylesheet">
-    
-
-    <h1 class="text-center">Pong</h1>
-    <section class="login">
-        <form action="/signin" method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="P5NTQr6CrXQa3tymfiXxj4JCrHdMw7E5hqtk5cTDOLlYQemu28vQU6SgoYM2rwGP">
-        
-            <label for="email">email</label>
-            <input type="text" name="email" placeholder="Email">
-        
-        
-            <label for="password">password</label>
-            <input type="password" name="password" placeholder="Password">
-        
-            <input type="submit" value="Log In">
-        </form>
-	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
-
-    
-    </section>
-
-    
-
-
-INFO 2024-07-20 13:42:48,641 views __ A
-INFO 2024-07-20 13:42:48,642 views __ C
-INFO 2024-07-20 13:42:48,642 views __ D
-INFO 2024-07-20 13:42:48,853 views __ E
-DEBUG 2024-07-20 13:42:48,857 views email = test941@yahoo.fr
-DEBUG 2024-07-20 13:42:48,857 views password = test941
-DEBUG 2024-07-20 13:42:51,696 views user participants = test942
-DEBUG 2024-07-20 13:43:07,499 views user participants = test942
-DEBUG 2024-07-20 13:43:07,500 views user participants = test941
-DEBUG 2024-07-20 13:43:12,388 views user participants = test942
-DEBUG 2024-07-20 13:43:12,388 views user participants = test941
-DEBUG 2024-07-20 13:43:12,393 views message_content = dada
-DEBUG 2024-07-20 13:43:12,393 views context = {'chat_info': {'list_of_chats': [<Chat: test>]}, 'message_info': '{"test": [{"message": "haha", "sender": "test942", "time": "2024-07-20T13:42:14.785031+00:00"}, {"message": "bob", "sender": "test942", "time": "2024-07-20T13:42:22.660669+00:00"}]}', 'chat_name': 'test', 'chat_name_json': '{"chat_name": "test"}'}
-DEBUG 2024-07-20 13:43:12,394 views chat_objet = test
-DEBUG 2024-07-20 13:43:36,209 views info_add_chat = {'token': True, 'users_ok': [<NewUser: test942>], 'blocked_users': []}
-DEBUG 2024-07-20 13:43:44,253 views info_add_chat = {'token': True, 'users_ok': [<NewUser: test942>], 'blocked_users': []}
-INFO 2024-07-20 13:43:44,254 views On se retrouve bien ici
-DEBUG 2024-07-20 13:43:44,254 views friend_name = test942
-DEBUG 2024-07-20 13:43:44,254 views friend_name = <class 'str'>
-DEBUG 2024-07-20 13:43:44,258 views friend_list = <QuerySet [<NewUser: test942>]>
-DEBUG 2024-07-20 13:43:56,784 views user participants = test942
-DEBUG 2024-07-20 13:43:56,785 views user participants = test941
-DEBUG 2024-07-20 13:43:56,787 views user participants = test942
-DEBUG 2024-07-20 13:43:56,787 views user participants = test941
-DEBUG 2024-07-20 13:43:59,041 views user participants = test942
-DEBUG 2024-07-20 13:43:59,042 views user participants = test941
-DEBUG 2024-07-20 13:43:59,043 views user participants = test942
-DEBUG 2024-07-20 13:43:59,043 views user participants = test941
+INFO 2024-07-20 14:29:03,795 views __ A
+INFO 2024-07-20 14:29:03,797 views __ C
+INFO 2024-07-20 14:29:03,797 views __ D
+INFO 2024-07-20 14:29:04,009 views __ E
+DEBUG 2024-07-20 14:29:04,015 views email = test944@yahoo.fr
+DEBUG 2024-07-20 14:29:04,015 views password = test944
