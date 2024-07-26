@@ -748,7 +748,8 @@ def looking_for_invitation(request):
 
 		if user.in_waiting_pong or user.in_waiting_tic:
 			return JsonResponse({
-				'status': False
+				'status': False,
+				'wait': True
 			})
 		return JsonResponse({
 			'status': True,

@@ -428,3 +428,522 @@ INFO 2024-07-26 19:23:34,481 views
 DEBUG 2024-07-26 19:23:34,481 views user= moi
 DEBUG 2024-07-26 19:23:34,481 views receiver = pedro
 DEBUG 2024-07-26 19:23:34,485 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was already sended to pedro', 'is_solo': True}
+DEBUG 2024-07-26 19:25:07,339 views user participants = pedro
+DEBUG 2024-07-26 19:25:07,339 views user participants = moi
+DEBUG 2024-07-26 19:25:12,106 views user participants = pedro
+DEBUG 2024-07-26 19:25:12,107 views user participants = moi
+DEBUG 2024-07-26 19:25:18,256 views user participants = pedro
+DEBUG 2024-07-26 19:25:18,256 views user participants = moi
+DEBUG 2024-07-26 19:25:20,797 views user participants = pedro
+DEBUG 2024-07-26 19:25:20,798 views user participants = moi
+DEBUG 2024-07-26 19:25:25,356 views user participants = pedro
+DEBUG 2024-07-26 19:25:25,356 views user participants = moi
+INFO 2024-07-26 19:25:25,359 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 19:25:25,359 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 19:25:25,360 views receiver = moi
+INFO 2024-07-26 19:25:25,360 views 
+-----------
+DEBUG 2024-07-26 19:25:25,360 views user= pedro
+DEBUG 2024-07-26 19:25:25,360 views receiver = moi
+INFO 2024-07-26 19:25:25,362 views On rentre ici malgre tout
+DEBUG 2024-07-26 19:25:25,371 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to moi', 'is_solo': True}
+DEBUG 2024-07-26 19:25:37,464 views user participants = pedro
+DEBUG 2024-07-26 19:25:37,464 views user participants = moi
+INFO 2024-07-26 19:25:37,467 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 19:25:37,467 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 19:25:37,470 views receiver = moi
+INFO 2024-07-26 19:25:37,470 views 
+-----------
+DEBUG 2024-07-26 19:25:37,470 views user= pedro
+DEBUG 2024-07-26 19:25:37,470 views receiver = moi
+INFO 2024-07-26 19:25:37,472 views On rentre ici malgre tout
+DEBUG 2024-07-26 19:25:37,480 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to moi', 'is_solo': True}
+INFO 2024-07-26 19:26:25,231 views On passe la ouai
+DEBUG 2024-07-26 19:26:25,253 views user = moi
+DEBUG 2024-07-26 19:26:25,253 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:26:25,259 views C'est ici que ca se passe
+INFO 2024-07-26 19:26:25,262 views C'est ici que ca se passe
+INFO 2024-07-26 19:26:25,270 views C'est ici que ca se passe
+INFO 2024-07-26 19:26:25,277 views C'est ici que ca se passe
+INFO 2024-07-26 19:26:25,280 views C'est ici que ca se passe
+INFO 2024-07-26 19:26:25,285 views C'est ici que ca se passe
+INFO 2024-07-26 19:26:25,288 views C'est ici que ca se passe
+INFO 2024-07-26 19:26:25,294 views C'est ici que ca se passe
+INFO 2024-07-26 19:26:25,294 views J'arrive jusque la
+DEBUG 2024-07-26 19:26:25,298 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:26:25,298 views Ici oui
+DEBUG 2024-07-26 19:26:25,298 views time = 0:00:00
+DEBUG 2024-07-26 19:26:25,299 views time 2 = 0:00:00
+INFO 2024-07-26 19:26:25,299 views Ici oui
+DEBUG 2024-07-26 19:26:25,299 views time = 0:00:00
+DEBUG 2024-07-26 19:26:25,300 views time 2 = 0:00:00
+INFO 2024-07-26 19:26:25,300 views Ici oui
+DEBUG 2024-07-26 19:26:25,301 views time = 0:00:00
+DEBUG 2024-07-26 19:26:25,301 views time 2 = 0:00:00
+INFO 2024-07-26 19:26:25,301 views Ici oui
+DEBUG 2024-07-26 19:26:25,301 views time = 0:00:00
+DEBUG 2024-07-26 19:26:25,301 views time 2 = 0:00:00
+INFO 2024-07-26 19:26:25,302 views Ici oui
+DEBUG 2024-07-26 19:26:25,302 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:26:25,302 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:26:25,302 views Ici oui
+DEBUG 2024-07-26 19:26:25,302 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:26:25,303 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:26:25,303 views Ici oui
+DEBUG 2024-07-26 19:26:25,303 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:26:25,303 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:26:25,304 views Ici oui
+DEBUG 2024-07-26 19:26:25,305 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:26:25,305 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:26:25,312 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:14,112 views On passe la ouai
+DEBUG 2024-07-26 19:27:14,114 views user = moi
+DEBUG 2024-07-26 19:27:14,115 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:14,126 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:14,131 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:14,138 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:14,145 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:14,150 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:14,154 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:14,158 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:14,165 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:14,165 views J'arrive jusque la
+DEBUG 2024-07-26 19:27:14,172 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:14,179 views Ici oui
+DEBUG 2024-07-26 19:27:14,180 views time = 0:00:00
+DEBUG 2024-07-26 19:27:14,180 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:14,181 views Ici oui
+DEBUG 2024-07-26 19:27:14,181 views time = 0:00:00
+DEBUG 2024-07-26 19:27:14,181 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:14,181 views Ici oui
+DEBUG 2024-07-26 19:27:14,181 views time = 0:00:00
+DEBUG 2024-07-26 19:27:14,181 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:14,181 views Ici oui
+DEBUG 2024-07-26 19:27:14,182 views time = 0:00:00
+DEBUG 2024-07-26 19:27:14,182 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:14,182 views Ici oui
+DEBUG 2024-07-26 19:27:14,183 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:14,183 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:14,183 views Ici oui
+DEBUG 2024-07-26 19:27:14,184 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:14,184 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:14,184 views Ici oui
+DEBUG 2024-07-26 19:27:14,185 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:14,185 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:14,185 views Ici oui
+DEBUG 2024-07-26 19:27:14,186 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:14,186 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:14,201 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:22,147 views On passe la ouai
+DEBUG 2024-07-26 19:27:22,151 views user = moi
+DEBUG 2024-07-26 19:27:22,153 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:22,159 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:22,169 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:22,175 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:22,185 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:22,190 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:22,194 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:22,197 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:22,199 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:22,199 views J'arrive jusque la
+DEBUG 2024-07-26 19:27:22,205 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:22,216 views Ici oui
+DEBUG 2024-07-26 19:27:22,216 views time = 0:00:00
+DEBUG 2024-07-26 19:27:22,216 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:22,216 views Ici oui
+DEBUG 2024-07-26 19:27:22,219 views time = 0:00:00
+DEBUG 2024-07-26 19:27:22,219 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:22,221 views Ici oui
+DEBUG 2024-07-26 19:27:22,222 views time = 0:00:00
+DEBUG 2024-07-26 19:27:22,222 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:22,224 views Ici oui
+DEBUG 2024-07-26 19:27:22,224 views time = 0:00:00
+DEBUG 2024-07-26 19:27:22,224 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:22,225 views Ici oui
+DEBUG 2024-07-26 19:27:22,225 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:22,225 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:22,225 views Ici oui
+DEBUG 2024-07-26 19:27:22,225 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:22,226 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:22,226 views Ici oui
+DEBUG 2024-07-26 19:27:22,226 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:22,226 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:22,226 views Ici oui
+DEBUG 2024-07-26 19:27:22,227 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:22,227 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:22,238 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:24,649 views On passe la ouai
+DEBUG 2024-07-26 19:27:24,652 views user = moi
+DEBUG 2024-07-26 19:27:24,655 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:24,662 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:24,667 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:24,672 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:24,677 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:24,682 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:24,687 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:24,693 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:24,699 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:24,699 views J'arrive jusque la
+DEBUG 2024-07-26 19:27:24,704 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:24,707 views Ici oui
+DEBUG 2024-07-26 19:27:24,707 views time = 0:00:00
+DEBUG 2024-07-26 19:27:24,708 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:24,708 views Ici oui
+DEBUG 2024-07-26 19:27:24,709 views time = 0:00:00
+DEBUG 2024-07-26 19:27:24,709 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:24,710 views Ici oui
+DEBUG 2024-07-26 19:27:24,710 views time = 0:00:00
+DEBUG 2024-07-26 19:27:24,710 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:24,710 views Ici oui
+DEBUG 2024-07-26 19:27:24,710 views time = 0:00:00
+DEBUG 2024-07-26 19:27:24,710 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:24,711 views Ici oui
+DEBUG 2024-07-26 19:27:24,712 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:24,714 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:24,714 views Ici oui
+DEBUG 2024-07-26 19:27:24,714 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:24,714 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:24,715 views Ici oui
+DEBUG 2024-07-26 19:27:24,715 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:24,715 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:24,715 views Ici oui
+DEBUG 2024-07-26 19:27:24,715 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:24,715 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:24,721 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:25,963 views On passe la ouai
+DEBUG 2024-07-26 19:27:25,965 views user = moi
+DEBUG 2024-07-26 19:27:25,969 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:25,979 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:25,982 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:25,985 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:25,990 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:25,995 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:26,001 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:26,006 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:26,011 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:26,012 views J'arrive jusque la
+DEBUG 2024-07-26 19:27:26,017 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:26,018 views Ici oui
+DEBUG 2024-07-26 19:27:26,018 views time = 0:00:00
+DEBUG 2024-07-26 19:27:26,018 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:26,019 views Ici oui
+DEBUG 2024-07-26 19:27:26,019 views time = 0:00:00
+DEBUG 2024-07-26 19:27:26,019 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:26,019 views Ici oui
+DEBUG 2024-07-26 19:27:26,019 views time = 0:00:00
+DEBUG 2024-07-26 19:27:26,019 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:26,020 views Ici oui
+DEBUG 2024-07-26 19:27:26,020 views time = 0:00:00
+DEBUG 2024-07-26 19:27:26,021 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:26,022 views Ici oui
+DEBUG 2024-07-26 19:27:26,022 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:26,023 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:26,024 views Ici oui
+DEBUG 2024-07-26 19:27:26,024 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:26,025 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:26,025 views Ici oui
+DEBUG 2024-07-26 19:27:26,026 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:26,027 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:26,027 views Ici oui
+DEBUG 2024-07-26 19:27:26,028 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:26,029 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:26,036 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:27,136 views On passe la ouai
+DEBUG 2024-07-26 19:27:27,138 views user = moi
+DEBUG 2024-07-26 19:27:27,140 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:27,152 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:27,158 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:27,176 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:27,180 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:27,191 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:27,198 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:27,204 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:27,208 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:27,208 views J'arrive jusque la
+DEBUG 2024-07-26 19:27:27,213 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:27,223 views Ici oui
+DEBUG 2024-07-26 19:27:27,223 views time = 0:00:00
+DEBUG 2024-07-26 19:27:27,223 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:27,223 views Ici oui
+DEBUG 2024-07-26 19:27:27,223 views time = 0:00:00
+DEBUG 2024-07-26 19:27:27,223 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:27,224 views Ici oui
+DEBUG 2024-07-26 19:27:27,224 views time = 0:00:00
+DEBUG 2024-07-26 19:27:27,224 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:27,224 views Ici oui
+DEBUG 2024-07-26 19:27:27,224 views time = 0:00:00
+DEBUG 2024-07-26 19:27:27,224 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:27,224 views Ici oui
+DEBUG 2024-07-26 19:27:27,224 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:27,225 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:27,228 views Ici oui
+DEBUG 2024-07-26 19:27:27,228 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:27,229 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:27,229 views Ici oui
+DEBUG 2024-07-26 19:27:27,229 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:27,230 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:27,230 views Ici oui
+DEBUG 2024-07-26 19:27:27,231 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:27,232 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:27,238 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:28,365 views On passe la ouai
+DEBUG 2024-07-26 19:27:28,368 views user = moi
+DEBUG 2024-07-26 19:27:28,372 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:28,386 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:28,393 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:28,399 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:28,407 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:28,414 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:28,429 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:28,437 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:28,456 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:28,457 views J'arrive jusque la
+DEBUG 2024-07-26 19:27:28,464 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:28,470 views Ici oui
+DEBUG 2024-07-26 19:27:28,470 views time = 0:00:00
+DEBUG 2024-07-26 19:27:28,470 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:28,471 views Ici oui
+DEBUG 2024-07-26 19:27:28,471 views time = 0:00:00
+DEBUG 2024-07-26 19:27:28,471 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:28,472 views Ici oui
+DEBUG 2024-07-26 19:27:28,472 views time = 0:00:00
+DEBUG 2024-07-26 19:27:28,473 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:28,473 views Ici oui
+DEBUG 2024-07-26 19:27:28,473 views time = 0:00:00
+DEBUG 2024-07-26 19:27:28,474 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:28,474 views Ici oui
+DEBUG 2024-07-26 19:27:28,474 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:28,475 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:28,475 views Ici oui
+DEBUG 2024-07-26 19:27:28,475 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:28,481 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:28,483 views Ici oui
+DEBUG 2024-07-26 19:27:28,483 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:28,484 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:28,486 views Ici oui
+DEBUG 2024-07-26 19:27:28,487 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:28,487 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:28,496 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:29,533 views On passe la ouai
+DEBUG 2024-07-26 19:27:29,536 views user = moi
+DEBUG 2024-07-26 19:27:29,543 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:29,557 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:29,565 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:29,571 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:29,576 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:29,581 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:29,587 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:29,592 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:29,597 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:29,598 views J'arrive jusque la
+DEBUG 2024-07-26 19:27:29,611 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:29,618 views Ici oui
+DEBUG 2024-07-26 19:27:29,620 views time = 0:00:00
+DEBUG 2024-07-26 19:27:29,620 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:29,621 views Ici oui
+DEBUG 2024-07-26 19:27:29,621 views time = 0:00:00
+DEBUG 2024-07-26 19:27:29,621 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:29,622 views Ici oui
+DEBUG 2024-07-26 19:27:29,622 views time = 0:00:00
+DEBUG 2024-07-26 19:27:29,625 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:29,625 views Ici oui
+DEBUG 2024-07-26 19:27:29,626 views time = 0:00:00
+DEBUG 2024-07-26 19:27:29,626 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:29,626 views Ici oui
+DEBUG 2024-07-26 19:27:29,626 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:29,627 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:29,627 views Ici oui
+DEBUG 2024-07-26 19:27:29,627 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:29,628 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:29,628 views Ici oui
+DEBUG 2024-07-26 19:27:29,628 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:29,628 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:29,629 views Ici oui
+DEBUG 2024-07-26 19:27:29,629 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:29,629 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:29,635 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:30,688 views On passe la ouai
+DEBUG 2024-07-26 19:27:30,690 views user = moi
+DEBUG 2024-07-26 19:27:30,692 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:30,707 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:30,714 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:30,721 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:30,730 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:30,736 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:30,742 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:30,754 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:30,769 views C'est ici que ca se passe
+DEBUG 2024-07-26 19:27:30,769 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:30,772 views Ici oui
+DEBUG 2024-07-26 19:27:30,772 views time = 0:00:00
+DEBUG 2024-07-26 19:27:30,772 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:30,773 views Ici oui
+DEBUG 2024-07-26 19:27:30,773 views time = 0:00:00
+DEBUG 2024-07-26 19:27:30,773 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:30,773 views Ici oui
+DEBUG 2024-07-26 19:27:30,773 views time = 0:00:00
+DEBUG 2024-07-26 19:27:30,773 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:30,774 views Ici oui
+DEBUG 2024-07-26 19:27:30,774 views time = 0:00:00
+DEBUG 2024-07-26 19:27:30,774 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:30,775 views Ici oui
+DEBUG 2024-07-26 19:27:30,775 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:30,775 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:30,775 views Ici oui
+DEBUG 2024-07-26 19:27:30,776 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:30,776 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:30,776 views Ici oui
+DEBUG 2024-07-26 19:27:30,776 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:30,776 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:30,776 views Ici oui
+DEBUG 2024-07-26 19:27:30,776 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:30,776 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:30,789 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:31,757 views On passe la ouai
+DEBUG 2024-07-26 19:27:31,761 views user = moi
+DEBUG 2024-07-26 19:27:31,764 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:31,776 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:31,781 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:31,788 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:31,794 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:31,801 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:31,809 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:31,819 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:31,826 views C'est ici que ca se passe
+DEBUG 2024-07-26 19:27:31,826 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:31,829 views Ici oui
+DEBUG 2024-07-26 19:27:31,829 views time = 0:00:00
+DEBUG 2024-07-26 19:27:31,829 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:31,829 views Ici oui
+DEBUG 2024-07-26 19:27:31,830 views time = 0:00:00
+DEBUG 2024-07-26 19:27:31,830 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:31,830 views Ici oui
+DEBUG 2024-07-26 19:27:31,830 views time = 0:00:00
+DEBUG 2024-07-26 19:27:31,830 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:31,831 views Ici oui
+DEBUG 2024-07-26 19:27:31,831 views time = 0:00:00
+DEBUG 2024-07-26 19:27:31,831 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:31,832 views Ici oui
+DEBUG 2024-07-26 19:27:31,832 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:31,833 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:31,833 views Ici oui
+DEBUG 2024-07-26 19:27:31,834 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:31,834 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:31,834 views Ici oui
+DEBUG 2024-07-26 19:27:31,834 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:31,835 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:31,835 views Ici oui
+DEBUG 2024-07-26 19:27:31,835 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:31,835 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:31,843 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:32,806 views On passe la ouai
+DEBUG 2024-07-26 19:27:32,808 views user = moi
+DEBUG 2024-07-26 19:27:32,811 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:32,820 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:32,827 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:32,836 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:32,840 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:32,845 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:32,854 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:32,864 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:32,875 views C'est ici que ca se passe
+DEBUG 2024-07-26 19:27:32,875 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:32,881 views Ici oui
+DEBUG 2024-07-26 19:27:32,883 views time = 0:00:00
+DEBUG 2024-07-26 19:27:32,888 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:32,889 views Ici oui
+DEBUG 2024-07-26 19:27:32,889 views time = 0:00:00
+DEBUG 2024-07-26 19:27:32,890 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:32,890 views Ici oui
+DEBUG 2024-07-26 19:27:32,890 views time = 0:00:00
+DEBUG 2024-07-26 19:27:32,891 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:32,892 views Ici oui
+DEBUG 2024-07-26 19:27:32,893 views time = 0:00:00
+DEBUG 2024-07-26 19:27:32,893 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:32,894 views Ici oui
+DEBUG 2024-07-26 19:27:32,894 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:32,894 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:32,895 views Ici oui
+DEBUG 2024-07-26 19:27:32,896 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:32,897 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:32,897 views Ici oui
+DEBUG 2024-07-26 19:27:32,898 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:32,898 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:32,898 views Ici oui
+DEBUG 2024-07-26 19:27:32,898 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:32,898 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:32,905 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:33,937 views On passe la ouai
+DEBUG 2024-07-26 19:27:33,939 views user = moi
+DEBUG 2024-07-26 19:27:33,940 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:33,952 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:33,958 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:33,961 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:33,967 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:33,975 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:33,979 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:33,983 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:33,989 views C'est ici que ca se passe
+DEBUG 2024-07-26 19:27:33,989 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:33,994 views Ici oui
+DEBUG 2024-07-26 19:27:33,996 views time = 0:00:00
+DEBUG 2024-07-26 19:27:33,997 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:33,998 views Ici oui
+DEBUG 2024-07-26 19:27:34,000 views time = 0:00:00
+DEBUG 2024-07-26 19:27:34,001 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:34,002 views Ici oui
+DEBUG 2024-07-26 19:27:34,003 views time = 0:00:00
+DEBUG 2024-07-26 19:27:34,004 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:34,005 views Ici oui
+DEBUG 2024-07-26 19:27:34,008 views time = 0:00:00
+DEBUG 2024-07-26 19:27:34,009 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:34,010 views Ici oui
+DEBUG 2024-07-26 19:27:34,011 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:34,012 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:34,013 views Ici oui
+DEBUG 2024-07-26 19:27:34,015 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:34,016 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:34,017 views Ici oui
+DEBUG 2024-07-26 19:27:34,018 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:34,019 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:34,020 views Ici oui
+DEBUG 2024-07-26 19:27:34,022 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:34,024 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:34,032 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
+INFO 2024-07-26 19:27:35,162 views On passe la ouai
+DEBUG 2024-07-26 19:27:35,165 views user = moi
+DEBUG 2024-07-26 19:27:35,166 views statistics = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:35,176 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:35,180 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:35,184 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:35,187 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:35,190 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:35,193 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:35,197 views C'est ici que ca se passe
+INFO 2024-07-26 19:27:35,202 views C'est ici que ca se passe
+DEBUG 2024-07-26 19:27:35,202 views user stats = Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:00
+INFO 2024-07-26 19:27:35,205 views Ici oui
+DEBUG 2024-07-26 19:27:35,205 views time = 0:00:00
+DEBUG 2024-07-26 19:27:35,205 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:35,205 views Ici oui
+DEBUG 2024-07-26 19:27:35,205 views time = 0:00:00
+DEBUG 2024-07-26 19:27:35,205 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:35,206 views Ici oui
+DEBUG 2024-07-26 19:27:35,206 views time = 0:00:00
+DEBUG 2024-07-26 19:27:35,206 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:35,206 views Ici oui
+DEBUG 2024-07-26 19:27:35,206 views time = 0:00:00
+DEBUG 2024-07-26 19:27:35,206 views time 2 = 0:00:00
+INFO 2024-07-26 19:27:35,206 views Ici oui
+DEBUG 2024-07-26 19:27:35,206 views time = 0:00:08.624000
+DEBUG 2024-07-26 19:27:35,206 views time 2 = 0:00:08.624000
+INFO 2024-07-26 19:27:35,206 views Ici oui
+DEBUG 2024-07-26 19:27:35,206 views time = 0:00:07.593000
+DEBUG 2024-07-26 19:27:35,207 views time 2 = 0:00:16.217000
+INFO 2024-07-26 19:27:35,207 views Ici oui
+DEBUG 2024-07-26 19:27:35,207 views time = 0:00:17.614000
+DEBUG 2024-07-26 19:27:35,207 views time 2 = 0:00:33.831000
+INFO 2024-07-26 19:27:35,207 views Ici oui
+DEBUG 2024-07-26 19:27:35,207 views time = 0:00:07.871000
+DEBUG 2024-07-26 19:27:35,207 views time 2 = 0:00:41.702000
+DEBUG 2024-07-26 19:27:35,215 views data = {'history': [<Party: Game name is pong - moi vs pedro on 2024-07-26 18:55:55.288202+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 18:59:33.084445+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:02:13.617195+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:06:37.165365+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:10:17.868428+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:11:15.413670+00:00 at tournament No tournament>, <Party: Game name is pong - moi vs pedro on 2024-07-26 19:17:44.529932+00:00 at tournament No tournament>, <Party: Game name is pong - pedro vs moi on 2024-07-26 19:25:48.892001+00:00 at tournament No tournament>], 'user_statistic': <Statistic: Statistics for moi - won parties : 0 - lose parties : 0 - won tournament : 0 - total time played : 0:00:41.702000>, 'game_dates_json': '["2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26", "2024-07-26"]', 'game_results_json': '[1, 1, -1, 1, -1, 1, 1, -1]', 'game_duration_json': '{"2024-07-26": 41.702}'}
