@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from base64 import b64encode
 from django.core.files.base import ContentFile
 from .utils import get_friends #, CustomPasswordChangeForm
-from .models import NewUser, Tournament, Party, Chat, Message, Statistic, Participant, Friendship, BlockedUser, send_message
+from .models import NewUser, Tournament, Party, Chat, Message, Statistic, Participant, Friendship, BlockedUser, send_message, Invitation
 from datetime import datetime
 from django.db.models import Q, F
 from django.db import IntegrityError
@@ -608,6 +608,7 @@ def chat_solo(request):
 	user = NewUser.objects.get(id=(request.session.get('user_id')))
 	chats = Chat.objects.all() #if none 
 	message_block = None
+	message_invitation = None
 	if not chats :
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/add_chat_content.html", {}, request=request)
@@ -650,6 +651,7 @@ def chat_solo(request):
 				'chat_name' : name_chat,
 				'chat_name_json' : json.dumps({'chat_name' : name_chat}),
 				'message_block' : message_block,
+				'message_invitation' : message_invitation,
 				'is_solo' : True
 	}
 	if request.method == 'POST' :
@@ -678,10 +680,29 @@ def chat_solo(request):
 			# 	chat_name_url = chat_name
 			# else: 
 			chat_name_url = name_chat
-			logger.debug("message = %s", context['message'])
 			logger.debug("context = %s", context)
 			BlockedUser_all = BlockedUser.objects.all()
 			logger.debug("BlockedUser_all = %s", BlockedUser_all)
+		if request.POST.get("invit") :
+			logger.info("On rentre bien dans l'invitation")
+			other_user = request.POST.get("invit")
+			try :
+				receiver = NewUser.objects.get(pseudo=other_user)
+				logger.debug("receiver = %s", receiver)
+				try :
+					logger.debug("user= %s", user)
+					logger.debug("receiver = %s", receiver)
+					invitation = Invitation.objects.filter(sender=user, receiver=receiver).first()
+				except ObjectDoesNotExist :
+					logger.info("On rentre ici malgre tout")
+					invitation = Invitation.objects.create(sender=user, receiver=receiver)
+					message_invitation = f"Invitation was sended to {receiver.pseudo}"
+					logger.debug("invitation = %s", invitation)
+					context['message_invitation'] = message_invitation
+					invitation.save()
+			except ObjectDoesNotExist :
+				message_invitation = "User doesn't exist"
+				context['message_invitation'] = message_invitation
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/chat_content.html", context, request=request)
 			return JsonResponse({'html': html,
@@ -697,6 +718,10 @@ def chat_solo(request):
 	else:
 		return render(request, "pong/chat.html", context)
 
+# def looking_for_invitation(request) :
+	
+
+
 
 def chat_room(request, chat_name):
 	if not request.user.is_authenticated:
@@ -710,6 +735,7 @@ def chat_room(request, chat_name):
 	user = NewUser.objects.get(id=(request.session.get('user_id')))
 	chats = Chat.objects.all() #if none
 	message_block = None
+	message_invitation = None
 	if not chats :
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/add_chat_content.html", {'chat_info' : {
@@ -744,6 +770,7 @@ def chat_room(request, chat_name):
 					'chat_name' : None,
 					'chat_name_json' : None,
 					'message_block' : message_block,
+					'message_invitation' : message_invitation,
 					'is_solo' : False
 		}
 	if not chat_name :
@@ -859,6 +886,38 @@ def chat_room(request, chat_name):
 			logger.debug("context = %s", context)
 			BlockedUser_all = BlockedUser.objects.all()
 			logger.debug("BlockedUser_all = %s", BlockedUser_all)
+			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+				html = render_to_string("pong/chat_content.html", context, request=request)
+				return JsonResponse({'html': html,
+										'url' : (f"{chat_name_url}")
+					})
+			else:
+				return render(request, "pong/chat.html", context)
+		if request.POST.get("invit") :
+			logger.info("On rentre bien dans l'invitation")
+			other_user = request.POST.get("invit")
+			try :
+				receiver = NewUser.objects.get(pseudo=other_user)
+				logger.debug("receiver = %s", receiver)
+				try :
+					logger.debug("user= %s", user)
+					logger.debug("receiver = %s", receiver)
+					invitation = Invitation.objects.filter(sender=user, receiver=receiver).first()
+				except ObjectDoesNotExist :
+					logger.info("On rentre ici malgre tout")
+					invitation = Invitation.objects.create(sender=user, receiver=receiver)
+					message_invitation = f"Invitation was sended to {receiver.pseudo}"
+					logger.debug("invitation = %s", invitation)
+					context['message_invitation'] = message_invitation
+					invitation.save()
+			except ObjectDoesNotExist :
+				message_invitation = "User doesn't exist"
+				context['message_invitation'] = message_invitation
+			chat_name_url = None
+			if chat_name :
+				chat_name_url = chat_name
+			else: 
+				chat_name_url = name_chat
 			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 				html = render_to_string("pong/chat_content.html", context, request=request)
 				return JsonResponse({'html': html,
@@ -1329,6 +1388,7 @@ def leave_chat(request) :
 
 
 
+###PROFILE###
 def logout_view(request):
 	if request.user.is_authenticated:
 		user = NewUser.objects.get(id=(request.session.get('user_id')))

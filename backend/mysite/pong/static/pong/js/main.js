@@ -192,6 +192,17 @@ var searchingMatchInterval;
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('Script main.js est chargé');
 
+	var InvitationInterval = setInterval(() => {
+		$.ajax({
+			url: '/looking_for_invitation/',
+			type: 'POST',
+			async: false,
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+			},
+			success: function() {}
+		});
+	}, 2000)
 
 	window.addEventListener('popstate', event => {
 		console.log("event = ", event);

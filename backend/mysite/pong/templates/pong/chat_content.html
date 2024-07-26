@@ -9,6 +9,25 @@
 		<a href="{% url 'leave_chat' %}" alt="LEAVE CHAT">LEAVE CHAT</a>
 	</div>
 	<div class="form_chat">
+		<h1>INVIT TO A GAME</h1>
+		{% if is_solo %}
+			<form action="{% url 'chat_solo' %}" method="post">
+				{% csrf_token %}
+				<input type="text" name="invit" placeholder="PSEUDO">
+				<input type="submit" value="BLOCK">
+			</form>
+		{% else %}
+			<form action="{% url 'chat_room' chat_name %}" method="post">
+				{% csrf_token %}
+				<input type="text" name="invit" placeholder="PSEUDO">
+				<input type="submit" value="BLOCK">
+			</form>
+		{% endif %}
+		{% if message_block %}
+			<p class="message_form_chat">{{ message_invitation }}</p>
+		{% endif %}
+	</div>
+	<div class="form_chat">
 		<h1>BLOCK A USER</h1>
 		{% if is_solo %}
 			<form action="{% url 'chat_solo' %}" method="post">

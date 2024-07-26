@@ -214,3 +214,6 @@ class Invitation(models.Model) :
 	receiver = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='receive_invitation', on_delete=models.CASCADE)
 	is_accepted = models.BooleanField(default=False)
 	is_ended = models.BooleanField(default=False)
+
+	def __str__(self) :
+		return f"Invitation : sender = {self.sender.psuedo} and receiver = {self.receiver.pseudo}. The invitation status is = {self.is_accepted} and its ended = {self.is_ended}"

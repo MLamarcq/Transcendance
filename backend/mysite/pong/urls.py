@@ -17,6 +17,7 @@ urlpatterns = [
     path("render_chat/<chat_name>", views.render_chat, name="render_chat"),
     path("other_profile/<username>", views.other_profile, name="other_profile"),
     path("leave_chat", views.leave_chat, name="leave_chat"),
+    # path("looking_for_invitation", views.looking_for_invitation, name="looking_for_invitation"),
     
     path("otp/", views.otp_view, name="otp"),
     path("profile", views.profile_view, name = "profile"),
