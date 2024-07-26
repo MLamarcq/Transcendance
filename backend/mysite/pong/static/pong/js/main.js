@@ -353,6 +353,7 @@ function loadContent(path, addToHistory) {
 					if (toggle === true)
 						window.history.pushState({ path: data.url }, '', data.url);
 				}
+				console.log("custom_hisotry = ", data)
 				if (customHistory.length > 2
 					&& customHistory[customHistory.length - 1].indexOf('pong_page') == -1
 					&& customHistory[customHistory.length - 2].indexOf('waiting_pong') != -1)

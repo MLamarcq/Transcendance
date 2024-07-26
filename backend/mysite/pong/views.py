@@ -1337,7 +1337,8 @@ def logout_view(request):
 		logout(request)
 	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 		html = render_to_string("pong/login_content.html", {}, request=request)
-		return JsonResponse({'html': html})
+		return JsonResponse({'html': html,
+								'url' : reverse('login')})
 	else:
 		return HttpResponseRedirect(reverse('login'))
 

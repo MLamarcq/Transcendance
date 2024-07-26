@@ -339,3 +339,134 @@ INFO 2024-07-26 13:49:19,164 views __ D
 INFO 2024-07-26 13:49:20,026 views __ E
 DEBUG 2024-07-26 13:49:20,042 views email = lulu@lulu.com
 DEBUG 2024-07-26 13:49:20,042 views password = lulu
+INFO 2024-07-26 13:54:24,333 views __ A
+INFO 2024-07-26 13:54:26,070 views __ A
+DEBUG 2024-07-26 13:54:26,071 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="Oiw28GZU67nB4ETQTPQ3Y51QDsoHKsCRhZLjHNnNtFzZX8jS0zMISb6nrxSp7nIq">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-26 13:55:30,482 views __ A
+DEBUG 2024-07-26 13:55:30,483 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="mPUqQ1yyWqyxP9pgd9ia0ogzWbntMJV1Pw9Hp8WrjYKVIDPikTePUul6KgRb9E1A">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-26 13:55:38,934 views __ A
+INFO 2024-07-26 13:55:38,935 views __ C
+INFO 2024-07-26 13:55:38,935 views __ D
+INFO 2024-07-26 13:55:39,674 views __ E
+DEBUG 2024-07-26 13:55:39,690 views email = lulu@lulu.com
+DEBUG 2024-07-26 13:55:39,690 views password = lulu
+INFO 2024-07-26 13:56:44,885 views __ A
+DEBUG 2024-07-26 13:56:44,885 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="PlfLS6Zjc2w1YHiWp007eqS3FVYOMmG6wkuetf00Cb760kVQZcM8eUCuhWKb4Rac">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-26 13:56:54,869 views __ A
+INFO 2024-07-26 13:56:54,869 views __ C
+INFO 2024-07-26 13:56:54,870 views __ D
+INFO 2024-07-26 13:56:55,654 views __ E
+DEBUG 2024-07-26 13:56:55,669 views email = lulu@lulu.com
+DEBUG 2024-07-26 13:56:55,669 views password = lulu
+INFO 2024-07-26 13:57:56,373 views __ A
+DEBUG 2024-07-26 13:57:56,376 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="SNf2A38ikVhFgRzF9Ox5L3ozikiJh5MQbdTGG0nWJ7E4t1NHAavNVHLbpLxNqPzW">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-26 13:58:10,810 views __ A
+INFO 2024-07-26 13:58:10,810 views __ C
+INFO 2024-07-26 13:58:10,810 views __ D
+INFO 2024-07-26 13:58:11,624 views __ E
+DEBUG 2024-07-26 13:58:11,640 views email = lulu@lulu.com
+DEBUG 2024-07-26 13:58:11,640 views password = lulu
