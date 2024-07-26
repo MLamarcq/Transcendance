@@ -14,16 +14,16 @@
 			<form action="{% url 'chat_solo' %}" method="post">
 				{% csrf_token %}
 				<input type="text" name="invit" placeholder="PSEUDO">
-				<input type="submit" value="BLOCK">
+				<input type="submit" value="SEND">
 			</form>
 		{% else %}
 			<form action="{% url 'chat_room' chat_name %}" method="post">
 				{% csrf_token %}
 				<input type="text" name="invit" placeholder="PSEUDO">
-				<input type="submit" value="BLOCK">
+				<input type="submit" value="SEND">
 			</form>
 		{% endif %}
-		{% if message_block %}
+		{% if message_invitation %}
 			<p class="message_form_chat">{{ message_invitation }}</p>
 		{% endif %}
 	</div>
@@ -126,7 +126,7 @@
 						chat.innerHTML = "";
 						// console.log("receive_data['update_message'] =", receive_data['update_message']);
 						// console.log("receive_data['update_message'].chatName = ", JSON.parse(receive_data['update_message'].chatName))
-						
+
 						receive_data['update_message'][chatName].forEach((msg) => {
 							var li = document.createElement("li");
 							var a = document.createElement("a")

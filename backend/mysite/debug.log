@@ -1,39 +1,430 @@
-DEBUG 2024-07-26 16:23:23,235 views user participants = lulu
-DEBUG 2024-07-26 16:23:23,240 views user participants = toto
-DEBUG 2024-07-26 16:23:23,240 views user participants = titi
-DEBUG 2024-07-26 16:23:27,562 views user participants = lulu
-DEBUG 2024-07-26 16:23:27,565 views user participants = toto
-DEBUG 2024-07-26 16:23:27,567 views user participants = titi
-INFO 2024-07-26 16:23:27,585 views On rentre bien dans l'invitation
-DEBUG 2024-07-26 16:23:27,597 views receiver = lulu
-DEBUG 2024-07-26 16:23:51,575 views user participants = lulu
-DEBUG 2024-07-26 16:23:51,577 views user participants = toto
-DEBUG 2024-07-26 16:23:51,577 views user participants = titi
-DEBUG 2024-07-26 16:23:53,727 views user participants = lulu
-DEBUG 2024-07-26 16:23:53,727 views user participants = toto
-DEBUG 2024-07-26 16:23:53,727 views user participants = titi
-DEBUG 2024-07-26 16:23:56,672 views user participants = lulu
-DEBUG 2024-07-26 16:23:56,676 views user participants = toto
-DEBUG 2024-07-26 16:23:56,676 views user participants = titi
-INFO 2024-07-26 16:23:56,677 views On rentre bien dans l'invitation
-DEBUG 2024-07-26 16:23:56,680 views receiver = lulu
-DEBUG 2024-07-26 16:24:25,868 views user participants = lulu
-DEBUG 2024-07-26 16:24:25,869 views user participants = toto
-DEBUG 2024-07-26 16:24:25,869 views user participants = titi
-DEBUG 2024-07-26 16:24:29,074 views user participants = lulu
-DEBUG 2024-07-26 16:24:29,079 views user participants = toto
-DEBUG 2024-07-26 16:24:29,079 views user participants = titi
-INFO 2024-07-26 16:24:29,080 views On rentre bien dans l'invitation
-DEBUG 2024-07-26 16:24:29,082 views receiver = lulu
-DEBUG 2024-07-26 16:24:29,087 views user= toto
-DEBUG 2024-07-26 16:24:29,087 views receiver = lulu
-DEBUG 2024-07-26 16:24:52,930 views user participants = lulu
-DEBUG 2024-07-26 16:24:52,932 views user participants = toto
-DEBUG 2024-07-26 16:24:52,933 views user participants = titi
-DEBUG 2024-07-26 16:24:56,461 views user participants = lulu
-DEBUG 2024-07-26 16:24:56,462 views user participants = toto
-DEBUG 2024-07-26 16:24:56,462 views user participants = titi
-INFO 2024-07-26 16:24:56,463 views On rentre bien dans l'invitation
-DEBUG 2024-07-26 16:24:56,468 views receiver = toto
-DEBUG 2024-07-26 16:24:56,468 views user= titi
-DEBUG 2024-07-26 16:24:56,468 views receiver = toto
+DEBUG 2024-07-26 17:06:08,875 views user participants = moi
+DEBUG 2024-07-26 17:06:08,875 views user participants = pedro
+INFO 2024-07-26 17:06:08,883 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:06:08,886 views receiver = moi
+INFO 2024-07-26 17:06:08,887 views 
+-----------
+DEBUG 2024-07-26 17:06:08,887 views user= moi
+DEBUG 2024-07-26 17:06:08,887 views receiver = moi
+INFO 2024-07-26 17:06:08,889 views On rentre ici malgre tout
+DEBUG 2024-07-26 17:11:52,364 views user participants = moi
+DEBUG 2024-07-26 17:11:52,365 views user participants = pedro
+DEBUG 2024-07-26 17:11:54,894 views user participants = moi
+DEBUG 2024-07-26 17:11:54,894 views user participants = pedro
+DEBUG 2024-07-26 17:12:00,918 views user participants = moi
+DEBUG 2024-07-26 17:12:00,919 views user participants = pedro
+INFO 2024-07-26 17:12:00,921 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:14:50,235 views user participants = moi
+DEBUG 2024-07-26 17:14:50,235 views user participants = pedro
+DEBUG 2024-07-26 17:14:54,340 views user participants = moi
+DEBUG 2024-07-26 17:14:54,341 views user participants = pedro
+DEBUG 2024-07-26 17:14:57,861 views user participants = moi
+DEBUG 2024-07-26 17:14:57,862 views user participants = pedro
+INFO 2024-07-26 17:14:57,865 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:15:24,821 views user participants = moi
+DEBUG 2024-07-26 17:15:24,821 views user participants = pedro
+INFO 2024-07-26 17:15:24,827 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:15:44,375 views user participants = moi
+DEBUG 2024-07-26 17:15:44,375 views user participants = pedro
+INFO 2024-07-26 17:15:44,379 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:17:18,446 views user participants = moi
+DEBUG 2024-07-26 17:17:18,446 views user participants = pedro
+DEBUG 2024-07-26 17:17:21,604 views user participants = moi
+DEBUG 2024-07-26 17:17:21,604 views user participants = pedro
+INFO 2024-07-26 17:17:21,608 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:17:21,609 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 17:17:21,609 views ctxt2 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'You cannot invit yourself', 'is_solo': True}
+DEBUG 2024-07-26 17:18:07,837 views user participants = moi
+DEBUG 2024-07-26 17:18:07,837 views user participants = pedro
+DEBUG 2024-07-26 17:18:08,190 views user participants = moi
+DEBUG 2024-07-26 17:18:08,190 views user participants = pedro
+DEBUG 2024-07-26 17:18:08,549 views user participants = moi
+DEBUG 2024-07-26 17:18:08,549 views user participants = pedro
+DEBUG 2024-07-26 17:18:08,846 views user participants = moi
+DEBUG 2024-07-26 17:18:08,847 views user participants = pedro
+DEBUG 2024-07-26 17:18:12,447 views user participants = moi
+DEBUG 2024-07-26 17:18:12,447 views user participants = pedro
+INFO 2024-07-26 17:18:12,453 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:18:12,453 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 17:18:12,453 views ctxt2 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'You cannot invit yourself', 'is_solo': True}
+DEBUG 2024-07-26 17:18:27,649 views user participants = moi
+DEBUG 2024-07-26 17:18:27,649 views user participants = pedro
+INFO 2024-07-26 17:18:27,653 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:18:27,654 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 17:18:27,657 views receiver = moi
+INFO 2024-07-26 17:18:27,657 views 
+-----------
+DEBUG 2024-07-26 17:18:27,658 views user= pedro
+DEBUG 2024-07-26 17:18:27,658 views receiver = moi
+INFO 2024-07-26 17:18:27,661 views On rentre ici malgre tout
+DEBUG 2024-07-26 17:18:27,682 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to moi', 'is_solo': True}
+DEBUG 2024-07-26 17:18:35,626 views user participants = moi
+DEBUG 2024-07-26 17:18:35,627 views user participants = pedro
+INFO 2024-07-26 17:18:35,629 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:18:35,629 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 17:18:35,631 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': "User doesn't exist", 'is_solo': True}
+DEBUG 2024-07-26 17:18:46,539 views user participants = moi
+DEBUG 2024-07-26 17:18:46,539 views user participants = pedro
+DEBUG 2024-07-26 17:18:51,281 views user participants = moi
+DEBUG 2024-07-26 17:18:51,282 views user participants = pedro
+INFO 2024-07-26 17:18:51,284 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:18:51,286 views ctxt = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': "User doesn't exist", 'is_solo': False}
+DEBUG 2024-07-26 17:18:54,193 views user participants = moi
+DEBUG 2024-07-26 17:18:54,193 views user participants = pedro
+INFO 2024-07-26 17:18:54,195 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:18:57,031 views user participants = moi
+DEBUG 2024-07-26 17:18:57,031 views user participants = pedro
+INFO 2024-07-26 17:18:57,034 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:18:57,036 views receiver = moi
+DEBUG 2024-07-26 17:18:57,037 views user= pedro
+DEBUG 2024-07-26 17:18:57,037 views receiver = moi
+DEBUG 2024-07-26 17:18:57,039 views ctxt = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': False}
+DEBUG 2024-07-26 17:20:26,908 views user participants = moi
+DEBUG 2024-07-26 17:20:26,909 views user participants = pedro
+DEBUG 2024-07-26 17:20:29,961 views user participants = moi
+DEBUG 2024-07-26 17:20:29,961 views user participants = pedro
+INFO 2024-07-26 17:20:29,965 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:20:29,969 views receiver = moi
+DEBUG 2024-07-26 17:20:29,970 views user= pedro
+DEBUG 2024-07-26 17:20:29,970 views receiver = moi
+DEBUG 2024-07-26 17:20:29,972 views ctxt = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was already sended to moi', 'is_solo': False}
+DEBUG 2024-07-26 17:21:28,032 views user participants = moi
+DEBUG 2024-07-26 17:21:28,032 views user participants = pedro
+INFO 2024-07-26 17:21:28,037 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:21:28,038 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 17:21:28,040 views receiver = pedro
+INFO 2024-07-26 17:21:28,040 views 
+-----------
+DEBUG 2024-07-26 17:21:28,041 views user= moi
+DEBUG 2024-07-26 17:21:28,041 views receiver = pedro
+INFO 2024-07-26 17:21:28,042 views On rentre ici malgre tout
+DEBUG 2024-07-26 17:21:28,057 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to pedro', 'is_solo': True}
+DEBUG 2024-07-26 17:21:37,781 views user participants = moi
+DEBUG 2024-07-26 17:21:37,781 views user participants = pedro
+INFO 2024-07-26 17:21:37,787 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:21:42,102 views user participants = moi
+DEBUG 2024-07-26 17:21:42,103 views user participants = pedro
+INFO 2024-07-26 17:21:42,107 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:21:42,111 views receiver = moi
+DEBUG 2024-07-26 17:21:42,112 views user= pedro
+DEBUG 2024-07-26 17:21:42,112 views receiver = moi
+DEBUG 2024-07-26 17:21:42,114 views ctxt = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was already sended to moi', 'is_solo': False}
+DEBUG 2024-07-26 17:41:20,072 views user participants = moi
+DEBUG 2024-07-26 17:41:20,072 views user participants = pedro
+DEBUG 2024-07-26 17:42:00,669 views user participants = moi
+DEBUG 2024-07-26 17:42:00,670 views user participants = pedro
+DEBUG 2024-07-26 17:43:01,070 views user participants = moi
+DEBUG 2024-07-26 17:43:01,070 views user participants = pedro
+DEBUG 2024-07-26 17:44:09,414 views user participants = moi
+DEBUG 2024-07-26 17:44:09,414 views user participants = pedro
+DEBUG 2024-07-26 17:45:09,692 views user participants = moi
+DEBUG 2024-07-26 17:45:09,693 views user participants = pedro
+DEBUG 2024-07-26 17:45:24,604 views user participants = moi
+DEBUG 2024-07-26 17:45:24,604 views user participants = pedro
+INFO 2024-07-26 17:45:24,607 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:45:24,609 views receiver = moi
+DEBUG 2024-07-26 17:45:24,610 views user= pedro
+DEBUG 2024-07-26 17:45:24,610 views receiver = moi
+INFO 2024-07-26 17:45:24,616 views On rentre ici malgre tout
+DEBUG 2024-07-26 17:45:24,660 views ctxt = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to moi', 'is_solo': False}
+DEBUG 2024-07-26 17:45:48,277 views user participants = moi
+DEBUG 2024-07-26 17:45:48,278 views user participants = pedro
+DEBUG 2024-07-26 17:45:55,837 views user participants = moi
+DEBUG 2024-07-26 17:45:55,837 views user participants = pedro
+INFO 2024-07-26 17:45:55,840 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 17:45:55,840 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 17:45:55,843 views receiver = pedro
+INFO 2024-07-26 17:45:55,843 views 
+-----------
+DEBUG 2024-07-26 17:45:55,843 views user= moi
+DEBUG 2024-07-26 17:45:55,843 views receiver = pedro
+INFO 2024-07-26 17:45:55,847 views On rentre ici malgre tout
+DEBUG 2024-07-26 17:45:55,862 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to pedro', 'is_solo': True}
+DEBUG 2024-07-26 17:53:27,961 views user participants = moi
+DEBUG 2024-07-26 17:53:27,961 views user participants = pedro
+DEBUG 2024-07-26 17:53:36,632 views user participants = moi
+DEBUG 2024-07-26 17:53:36,633 views user participants = pedro
+DEBUG 2024-07-26 17:53:38,915 views user participants = moi
+DEBUG 2024-07-26 17:53:38,916 views user participants = pedro
+DEBUG 2024-07-26 17:53:43,873 views user participants = moi
+DEBUG 2024-07-26 17:53:43,873 views user participants = pedro
+DEBUG 2024-07-26 17:53:51,157 views user participants = moi
+DEBUG 2024-07-26 17:53:51,157 views user participants = pedro
+DEBUG 2024-07-26 17:54:02,134 views user participants = moi
+DEBUG 2024-07-26 17:54:02,139 views user participants = pedro
+DEBUG 2024-07-26 17:54:36,227 views user participants = moi
+DEBUG 2024-07-26 17:54:36,227 views user participants = pedro
+DEBUG 2024-07-26 17:57:21,364 views user participants = moi
+DEBUG 2024-07-26 17:57:21,365 views user participants = pedro
+DEBUG 2024-07-26 17:57:59,280 views user participants = moi
+DEBUG 2024-07-26 17:57:59,281 views user participants = pedro
+DEBUG 2024-07-26 18:04:49,292 views user participants = moi
+DEBUG 2024-07-26 18:04:49,292 views user participants = pedro
+DEBUG 2024-07-26 18:05:35,337 views user participants = moi
+DEBUG 2024-07-26 18:05:35,338 views user participants = pedro
+DEBUG 2024-07-26 18:07:29,229 views user participants = moi
+DEBUG 2024-07-26 18:07:29,230 views user participants = pedro
+DEBUG 2024-07-26 18:10:39,565 views user participants = moi
+DEBUG 2024-07-26 18:10:39,566 views user participants = pedro
+DEBUG 2024-07-26 18:41:48,743 views user participants = pedro
+DEBUG 2024-07-26 18:41:48,743 views user participants = moi
+INFO 2024-07-26 18:41:55,118 views oppo nothing
+DEBUG 2024-07-26 18:42:55,205 views user participants = pedro
+DEBUG 2024-07-26 18:42:55,205 views user participants = moi
+DEBUG 2024-07-26 18:43:01,576 views ----------------> 
+DEBUG 2024-07-26 18:43:51,743 views user participants = pedro
+DEBUG 2024-07-26 18:43:51,743 views user participants = moi
+DEBUG 2024-07-26 18:44:02,769 views user participants = pedro
+DEBUG 2024-07-26 18:44:02,769 views user participants = moi
+DEBUG 2024-07-26 18:44:06,380 views ----------------> <QueryDict: {'accept': ['0'], 'opponent': ['']}>
+DEBUG 2024-07-26 18:46:41,707 views user participants = pedro
+DEBUG 2024-07-26 18:46:41,707 views user participants = moi
+DEBUG 2024-07-26 18:46:48,520 views user participants = pedro
+DEBUG 2024-07-26 18:46:48,521 views user participants = moi
+DEBUG 2024-07-26 18:47:12,614 views user participants = pedro
+DEBUG 2024-07-26 18:47:12,614 views user participants = moi
+DEBUG 2024-07-26 18:47:15,470 views user participants = pedro
+DEBUG 2024-07-26 18:47:15,470 views user participants = moi
+DEBUG 2024-07-26 18:47:20,788 views ----------------> <QueryDict: {'accept': ['0'], 'opponent': ['']}>
+DEBUG 2024-07-26 18:48:01,645 views user participants = pedro
+DEBUG 2024-07-26 18:48:01,646 views user participants = moi
+DEBUG 2024-07-26 18:48:30,871 views user participants = pedro
+DEBUG 2024-07-26 18:48:30,871 views user participants = moi
+DEBUG 2024-07-26 18:48:38,162 views user participants = pedro
+DEBUG 2024-07-26 18:48:38,162 views user participants = moi
+DEBUG 2024-07-26 18:48:42,095 views user participants = pedro
+DEBUG 2024-07-26 18:48:42,095 views user participants = moi
+INFO 2024-07-26 18:48:42,098 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 18:48:42,098 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 18:48:42,102 views receiver = pedro
+INFO 2024-07-26 18:48:42,103 views 
+-----------
+DEBUG 2024-07-26 18:48:42,103 views user= moi
+DEBUG 2024-07-26 18:48:42,104 views receiver = pedro
+INFO 2024-07-26 18:48:42,106 views On rentre ici malgre tout
+DEBUG 2024-07-26 18:48:42,117 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to pedro', 'is_solo': True}
+DEBUG 2024-07-26 18:49:37,545 views user participants = pedro
+DEBUG 2024-07-26 18:49:37,545 views user participants = moi
+DEBUG 2024-07-26 18:49:47,769 views user participants = pedro
+DEBUG 2024-07-26 18:49:47,769 views user participants = moi
+INFO 2024-07-26 18:49:47,771 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 18:49:47,772 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 18:49:47,774 views receiver = pedro
+INFO 2024-07-26 18:49:47,774 views 
+-----------
+DEBUG 2024-07-26 18:49:47,774 views user= moi
+DEBUG 2024-07-26 18:49:47,774 views receiver = pedro
+INFO 2024-07-26 18:49:47,776 views On rentre ici malgre tout
+DEBUG 2024-07-26 18:49:47,793 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to pedro', 'is_solo': True}
+DEBUG 2024-07-26 18:49:51,667 views user participants = pedro
+DEBUG 2024-07-26 18:49:51,667 views user participants = moi
+DEBUG 2024-07-26 18:50:42,913 views user participants = pedro
+DEBUG 2024-07-26 18:50:42,913 views user participants = moi
+DEBUG 2024-07-26 18:51:16,632 views user participants = pedro
+DEBUG 2024-07-26 18:51:16,632 views user participants = moi
+DEBUG 2024-07-26 18:55:37,281 views user participants = pedro
+DEBUG 2024-07-26 18:55:37,282 views user participants = moi
+DEBUG 2024-07-26 18:55:45,973 views user participants = pedro
+DEBUG 2024-07-26 18:55:45,973 views user participants = moi
+DEBUG 2024-07-26 18:55:51,495 views user participants = pedro
+DEBUG 2024-07-26 18:55:51,495 views user participants = moi
+INFO 2024-07-26 18:55:51,498 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 18:55:51,498 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 18:55:51,500 views receiver = moi
+INFO 2024-07-26 18:55:51,501 views 
+-----------
+DEBUG 2024-07-26 18:55:51,501 views user= pedro
+DEBUG 2024-07-26 18:55:51,501 views receiver = moi
+INFO 2024-07-26 18:55:51,507 views On rentre ici malgre tout
+DEBUG 2024-07-26 18:55:51,521 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to moi', 'is_solo': True}
+DEBUG 2024-07-26 18:57:39,462 views user participants = pedro
+DEBUG 2024-07-26 18:57:39,463 views user participants = moi
+INFO 2024-07-26 18:57:39,468 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 18:57:39,469 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 18:57:39,471 views receiver = moi
+INFO 2024-07-26 18:57:39,471 views 
+-----------
+DEBUG 2024-07-26 18:57:39,472 views user= pedro
+DEBUG 2024-07-26 18:57:39,472 views receiver = moi
+INFO 2024-07-26 18:57:39,473 views On rentre ici malgre tout
+DEBUG 2024-07-26 18:57:39,481 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to moi', 'is_solo': True}
+DEBUG 2024-07-26 18:59:21,194 views user participants = pedro
+DEBUG 2024-07-26 18:59:21,194 views user participants = moi
+DEBUG 2024-07-26 18:59:24,197 views user participants = pedro
+DEBUG 2024-07-26 18:59:24,197 views user participants = moi
+DEBUG 2024-07-26 18:59:27,410 views user participants = pedro
+DEBUG 2024-07-26 18:59:27,410 views user participants = moi
+INFO 2024-07-26 18:59:27,412 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 18:59:27,412 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 18:59:27,413 views receiver = moi
+INFO 2024-07-26 18:59:27,413 views 
+-----------
+DEBUG 2024-07-26 18:59:27,414 views user= pedro
+DEBUG 2024-07-26 18:59:27,414 views receiver = moi
+DEBUG 2024-07-26 18:59:27,415 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was already sended to moi', 'is_solo': True}
+INFO 2024-07-26 18:59:33,083 views @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+DEBUG 2024-07-26 19:01:56,910 views user participants = pedro
+DEBUG 2024-07-26 19:01:56,910 views user participants = moi
+DEBUG 2024-07-26 19:02:10,361 views user participants = pedro
+DEBUG 2024-07-26 19:02:10,361 views user participants = moi
+INFO 2024-07-26 19:02:10,368 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 19:02:10,369 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 19:02:10,372 views receiver = pedro
+INFO 2024-07-26 19:02:10,372 views 
+-----------
+DEBUG 2024-07-26 19:02:10,372 views user= moi
+DEBUG 2024-07-26 19:02:10,373 views receiver = pedro
+INFO 2024-07-26 19:02:10,374 views On rentre ici malgre tout
+DEBUG 2024-07-26 19:02:10,384 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to pedro', 'is_solo': True}
+DEBUG 2024-07-26 19:06:23,247 views user participants = pedro
+DEBUG 2024-07-26 19:06:23,248 views user participants = moi
+DEBUG 2024-07-26 19:06:26,645 views user participants = pedro
+DEBUG 2024-07-26 19:06:26,645 views user participants = moi
+DEBUG 2024-07-26 19:06:33,418 views user participants = pedro
+DEBUG 2024-07-26 19:06:33,418 views user participants = moi
+INFO 2024-07-26 19:06:33,421 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 19:06:33,421 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 19:06:33,423 views receiver = moi
+INFO 2024-07-26 19:06:33,423 views 
+-----------
+DEBUG 2024-07-26 19:06:33,423 views user= pedro
+DEBUG 2024-07-26 19:06:33,423 views receiver = moi
+INFO 2024-07-26 19:06:33,426 views On rentre ici malgre tout
+DEBUG 2024-07-26 19:06:33,436 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to moi', 'is_solo': True}
+DEBUG 2024-07-26 19:08:46,015 views user participants = pedro
+DEBUG 2024-07-26 19:08:46,015 views user participants = moi
+DEBUG 2024-07-26 19:09:13,236 views user participants = pedro
+DEBUG 2024-07-26 19:09:13,236 views user participants = moi
+DEBUG 2024-07-26 19:09:16,834 views user participants = pedro
+DEBUG 2024-07-26 19:09:16,834 views user participants = moi
+INFO 2024-07-26 19:09:16,836 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 19:09:16,836 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 19:09:16,837 views receiver = moi
+INFO 2024-07-26 19:09:16,837 views 
+-----------
+DEBUG 2024-07-26 19:09:16,837 views user= pedro
+DEBUG 2024-07-26 19:09:16,837 views receiver = moi
+INFO 2024-07-26 19:09:16,839 views On rentre ici malgre tout
+DEBUG 2024-07-26 19:09:16,848 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to moi', 'is_solo': True}
+DEBUG 2024-07-26 19:09:29,446 views user participants = pedro
+DEBUG 2024-07-26 19:09:29,446 views user participants = moi
+DEBUG 2024-07-26 19:09:31,997 views user participants = pedro
+DEBUG 2024-07-26 19:09:31,997 views user participants = moi
+DEBUG 2024-07-26 19:11:08,591 views user participants = pedro
+DEBUG 2024-07-26 19:11:08,591 views user participants = moi
+DEBUG 2024-07-26 19:11:10,886 views user participants = pedro
+DEBUG 2024-07-26 19:11:10,886 views user participants = moi
+INFO 2024-07-26 19:11:10,889 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 19:11:10,889 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 19:11:10,891 views receiver = pedro
+INFO 2024-07-26 19:11:10,891 views 
+-----------
+DEBUG 2024-07-26 19:11:10,891 views user= moi
+DEBUG 2024-07-26 19:11:10,891 views receiver = pedro
+INFO 2024-07-26 19:11:10,894 views On rentre ici malgre tout
+DEBUG 2024-07-26 19:11:10,905 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to pedro', 'is_solo': True}
+DEBUG 2024-07-26 19:13:30,196 views user participants = moi
+DEBUG 2024-07-26 19:13:30,197 views user participants = pedro
+DEBUG 2024-07-26 19:17:20,301 views user participants = moi
+DEBUG 2024-07-26 19:17:20,301 views user participants = pedro
+DEBUG 2024-07-26 19:17:29,247 views user participants = moi
+DEBUG 2024-07-26 19:17:29,247 views user participants = pedro
+INFO 2024-07-26 19:17:29,250 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 19:17:29,250 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 19:17:29,252 views receiver = moi
+INFO 2024-07-26 19:17:29,252 views 
+-----------
+DEBUG 2024-07-26 19:17:29,252 views user= pedro
+DEBUG 2024-07-26 19:17:29,252 views receiver = moi
+INFO 2024-07-26 19:17:29,254 views On rentre ici malgre tout
+DEBUG 2024-07-26 19:17:29,266 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to moi', 'is_solo': True}
+DEBUG 2024-07-26 19:17:38,626 views user participants = moi
+DEBUG 2024-07-26 19:17:38,627 views user participants = pedro
+INFO 2024-07-26 19:19:10,549 views __ A
+DEBUG 2024-07-26 19:19:10,552 views html in sigin =     
+    
+    <link href="/static/pong/css/signup.css" rel="stylesheet">
+    
+
+    <h1 class="text-center">Pong</h1>
+    <section class="login">
+        <form action="/signin" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="DU8L3K0iX6eWuoXKB4rjDKpo7Ow30mJ4mGoj9JHTKoCX2R4aOhGDw5seXJxRjsUA">
+        
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="Email">
+        
+        
+            <label for="password">password</label>
+            <input type="password" name="password" placeholder="Password">
+        
+            <input type="submit" value="Log In">
+        </form>
+	    <p>New ?<br>Sign up <a href="/signup">here</a></p>
+
+    
+    </section>
+
+    
+
+
+INFO 2024-07-26 19:19:19,020 views __ A
+INFO 2024-07-26 19:19:19,020 views __ C
+INFO 2024-07-26 19:19:19,020 views __ D
+INFO 2024-07-26 19:19:19,647 views __ E
+DEBUG 2024-07-26 19:19:19,657 views email = moi@gmail.com
+DEBUG 2024-07-26 19:19:19,657 views password = moi
+DEBUG 2024-07-26 19:19:22,428 views user participants = pedro
+DEBUG 2024-07-26 19:19:22,429 views user participants = moi
+DEBUG 2024-07-26 19:19:24,629 views user participants = pedro
+DEBUG 2024-07-26 19:19:24,630 views user participants = moi
+DEBUG 2024-07-26 19:19:27,612 views user participants = pedro
+DEBUG 2024-07-26 19:19:27,612 views user participants = moi
+INFO 2024-07-26 19:19:27,617 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 19:19:27,617 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 19:19:27,620 views receiver = pedro
+INFO 2024-07-26 19:19:27,621 views 
+-----------
+DEBUG 2024-07-26 19:19:27,621 views user= moi
+DEBUG 2024-07-26 19:19:27,621 views receiver = pedro
+INFO 2024-07-26 19:19:27,623 views On rentre ici malgre tout
+DEBUG 2024-07-26 19:19:27,631 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to pedro', 'is_solo': True}
+DEBUG 2024-07-26 19:20:04,491 views user participants = pedro
+DEBUG 2024-07-26 19:20:04,491 views user participants = moi
+DEBUG 2024-07-26 19:20:10,689 views user participants = pedro
+DEBUG 2024-07-26 19:20:10,689 views user participants = moi
+INFO 2024-07-26 19:20:10,691 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 19:20:10,691 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 19:20:10,693 views receiver = moi
+INFO 2024-07-26 19:20:10,693 views 
+-----------
+DEBUG 2024-07-26 19:20:10,693 views user= pedro
+DEBUG 2024-07-26 19:20:10,694 views receiver = moi
+INFO 2024-07-26 19:20:10,696 views On rentre ici malgre tout
+DEBUG 2024-07-26 19:20:10,707 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was sended to moi', 'is_solo': True}
+DEBUG 2024-07-26 19:22:53,290 views user participants = pedro
+DEBUG 2024-07-26 19:22:53,291 views user participants = moi
+DEBUG 2024-07-26 19:22:55,617 views user participants = pedro
+DEBUG 2024-07-26 19:22:55,618 views user participants = moi
+DEBUG 2024-07-26 19:23:11,161 views user participants = pedro
+DEBUG 2024-07-26 19:23:11,161 views user participants = moi
+DEBUG 2024-07-26 19:23:18,143 views user participants = pedro
+DEBUG 2024-07-26 19:23:18,143 views user participants = moi
+INFO 2024-07-26 19:23:18,150 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 19:23:18,150 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 19:23:18,152 views receiver = pedro
+INFO 2024-07-26 19:23:18,152 views 
+-----------
+DEBUG 2024-07-26 19:23:18,152 views user= moi
+DEBUG 2024-07-26 19:23:18,152 views receiver = pedro
+DEBUG 2024-07-26 19:23:18,155 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was already sended to pedro', 'is_solo': True}
+DEBUG 2024-07-26 19:23:34,467 views user participants = pedro
+DEBUG 2024-07-26 19:23:34,468 views user participants = moi
+INFO 2024-07-26 19:23:34,470 views On rentre bien dans l'invitation
+DEBUG 2024-07-26 19:23:34,472 views ctxt1 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': None, 'is_solo': True}
+DEBUG 2024-07-26 19:23:34,481 views receiver = pedro
+INFO 2024-07-26 19:23:34,481 views 
+-----------
+DEBUG 2024-07-26 19:23:34,481 views user= moi
+DEBUG 2024-07-26 19:23:34,481 views receiver = pedro
+DEBUG 2024-07-26 19:23:34,485 views ctxt3 = {'chat_info': {'list_of_chats': [<Chat: abc>]}, 'message_info': '{"abc": []}', 'chat_name': 'abc', 'chat_name_json': '{"chat_name": "abc"}', 'message_block': None, 'message_invitation': 'Invitation was already sended to pedro', 'is_solo': True}

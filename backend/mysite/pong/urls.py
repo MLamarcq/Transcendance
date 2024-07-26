@@ -17,14 +17,15 @@ urlpatterns = [
     path("render_chat/<chat_name>", views.render_chat, name="render_chat"),
     path("other_profile/<username>", views.other_profile, name="other_profile"),
     path("leave_chat", views.leave_chat, name="leave_chat"),
-    # path("looking_for_invitation", views.looking_for_invitation, name="looking_for_invitation"),
-    
+    path("looking_for_invitation/", views.looking_for_invitation, name="looking_for_invitation"),
+    path("invitation_response/", views.invitation_response, name="invitation_response"),
+
     path("otp/", views.otp_view, name="otp"),
     path("profile", views.profile_view, name = "profile"),
     path("add_friends", views.add_friends, name ="add_friends"),
     path("delete_friends", views.delete_friends, name = "delete_friends"),
     path("statistics/", views.statistics, name="statistics"),
-    
+
     path('home_game/', views.home_game, name='home_game'),
 
 	path('waiting_pong/', views.waiting_pong, name='waiting_pong'),
