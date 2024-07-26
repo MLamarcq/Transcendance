@@ -94,7 +94,7 @@ ASGI_APPLICATION = "pong.asgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-env_path = Path('/Users/imranemoumini/Desktop/transcendance_last_version/.env')
+env_path = Path('/home/sgoinfre/PONG/.env')
 
 
 # Charger les variables d'environnement à partir du fichier .env

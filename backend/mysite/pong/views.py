@@ -8,8 +8,9 @@ from django.core.files.base import ContentFile
 from .utils import get_friends #, CustomPasswordChangeForm
 from .models import NewUser, Tournament, Party, Chat, Message, Statistic, Participant, Friendship, BlockedUser, send_message
 from datetime import datetime
-from django.db.models import Q
+from django.db.models import Q, F
 from django.db import IntegrityError
+from django import forms
 import pyotp
 import qrcode
 from io import BytesIO
@@ -22,7 +23,8 @@ from django.contrib import messages
 from django.template.loader import render_to_string
 import logging
 import re
-
+from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Count
 
 logger = logging.getLogger('pong')
 
@@ -597,7 +599,7 @@ def statistics(request):
 def chat_solo(request):
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			html = render_to_string("pong/login_content.html", {}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("index")
 			})
@@ -605,6 +607,7 @@ def chat_solo(request):
 			return HttpResponseRedirect(reverse("index"))
 	user = NewUser.objects.get(id=(request.session.get('user_id')))
 	chats = Chat.objects.all() #if none 
+	message_block = None
 	if not chats :
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/add_chat_content.html", {}, request=request)
@@ -646,7 +649,46 @@ def chat_solo(request):
 				'message_info' : json.dumps(message_info),
 				'chat_name' : name_chat,
 				'chat_name_json' : json.dumps({'chat_name' : name_chat}),
+				'message_block' : message_block,
+				'is_solo' : True
 	}
+	if request.method == 'POST' :
+		if request.POST.get('user_target') :
+			logger.info("Oui c'est bon")
+			user_target = request.POST.get('user_target')
+			all_users = NewUser.objects.all()
+			# message = None
+			found = False
+			for founded in all_users : 
+				if (user_target == founded.pseudo) :
+					if founded.pseudo == user.pseudo :
+						message_block = "You can't block yourself"
+					else :
+						found = True
+					break
+			if found :
+				BlockedUser.objects.create(blocker=user, blocked_user=user_target)
+				message_block = f"{user_target} has been blocked"
+			elif not found and not message_block :
+				message_block = f"{user_target} doesn't exist"
+			if message_block :
+				context['message_block'] = message_block
+			# chat_name_url = None
+			# if chat_name :
+			# 	chat_name_url = chat_name
+			# else: 
+			chat_name_url = name_chat
+			logger.debug("message = %s", context['message'])
+			logger.debug("context = %s", context)
+			BlockedUser_all = BlockedUser.objects.all()
+			logger.debug("BlockedUser_all = %s", BlockedUser_all)
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/chat_content.html", context, request=request)
+			return JsonResponse({'html': html,
+									'url' : reverse("chat_solo")
+				})
+		else:
+			return render(request, "pong/chat.html", context)
 	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 		html = render_to_string("pong/chat_content.html", context, request=request)
 		return JsonResponse({'html': html,
@@ -666,10 +708,14 @@ def chat_room(request, chat_name):
 		else:
 			return HttpResponseRedirect(reverse("index"))
 	user = NewUser.objects.get(id=(request.session.get('user_id')))
-	chats = Chat.objects.all() #if none 
+	chats = Chat.objects.all() #if none
+	message_block = None
 	if not chats :
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/add_chat_content.html", {}, request=request)
+			html = render_to_string("pong/add_chat_content.html", {'chat_info' : {
+																					'value' : True,
+																					'list_of_chats' : list_of_chats,
+																				}}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("add_chat")
 			})
@@ -696,7 +742,9 @@ def chat_room(request, chat_name):
 	context = {'chat_info' : None,
 					'message_info' : None,
 					'chat_name' : None,
-					'chat_name_json' : None
+					'chat_name_json' : None,
+					'message_block' : message_block,
+					'is_solo' : False
 		}
 	if not chat_name :
 		for chat in reversed(list_of_chats) :
@@ -715,20 +763,21 @@ def chat_room(request, chat_name):
 		context['chat_name'] = name_chat
 		context['chat_name_json'] = json.dumps({'chat_name' : name_chat})
 	else :
+		toggle = True
 		for chat in reversed(list_of_chats) :
 			if (chat.name == chat_name) :
-				toggle = True
 				messages = chat.messages.all()
 				message_info[chat.name] = []
 				for message in messages :
-					blocked_object = BlockedUser.objects.all()
-					blocked_list = []
-					if blocked_object :
-						for blocked in blocked_object :
-							if user.pseudo == blocked.blocker.pseudo :
-								if message.sender == blocked.blocked.pseudo :
-									toggle = False
-					if toggle :
+					# blocked_object = BlockedUser.objects.all()
+					# blocked_list = []
+					# if blocked_object :
+					# 	for blocked in blocked_object :
+					# 		if user.pseudo == blocked.blocker.pseudo :
+					# 			if message.sender == blocked.blocked.pseudo :
+					# 				toggle = False
+					toggle = is_blocked(user, message.sender)
+					if not toggle :
 						message_info[chat.name].append({
 							'message' : message.content,
 							'sender' : message.sender.pseudo,
@@ -744,30 +793,79 @@ def chat_room(request, chat_name):
 		context['chat_name'] = chat_name
 		context['chat_name_json'] = json.dumps({'chat_name' : chat_name})
 	if request.method == "POST" : 
-		message_content = request.POST.get("message_content")
-		logger.debug("message_content = %s", message_content)
-		logger.debug("context = %s", context)
-		# chat_id = request.POST.get('chat_id')
-		# logger.debug("chat_id = %s", chat_id)
-		# chat = get_object_or_404(Chat, id=chat_id)
-		# logger.debug("chat = %s", chat)
-		chat_name_url = None
-		if chat_name :
-			chat_name_url = chat_name
-		else: 
-			chat_name_url = name_chat
-		chat_object = Chat.objects.get(name=chat_name_url)
-		logger.debug("chat_objet = %s", chat_object)
-		message_object = Message.objects.create(sender=user, content=message_content)
-		message_object.save()
-		send_message(chat_object, message_object)
-		chat_object.save()
-		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/chat_content.html", context, request=request)
-			return JsonResponse({'html': html,
-									'url' : (f"{chat_name_url}")
-				})
-			return render(request, "pong/chat.html", context)
+		if request.POST.get("message_content") :
+			message_content = request.POST.get("message_content")
+			logger.debug("message_content = %s", message_content)
+			logger.debug("context = %s", context)
+			# chat_id = request.POST.get('chat_id')
+			# logger.debug("chat_id = %s", chat_id)
+			# chat = get_object_or_404(Chat, id=chat_id)
+			# logger.debug("chat = %s", chat)
+			chat_name_url = None
+			if chat_name :
+				chat_name_url = chat_name
+			else: 
+				chat_name_url = name_chat
+			chat_object = Chat.objects.get(name=chat_name_url)
+			logger.debug("chat_objet = %s", chat_object)
+			message_object = Message.objects.create(sender=user, content=message_content)
+			message_object.save()
+			send_message(chat_object, message_object)
+			chat_object.save()
+			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+				html = render_to_string("pong/chat_content.html", context, request=request)
+				return JsonResponse({'html': html,
+										'url' : (f"{chat_name_url}")
+					})
+				return render(request, "pong/chat.html", context)
+		if request.POST.get('user_target') :
+			logger.info("Oui c'est bon")
+			user_target = request.POST.get('user_target')
+			if not user_target :
+				logger.info("On passe par ce chemin")
+				message = " Error : Field Empty"
+				context['message_block'] = message
+				if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+					html = render_to_string("pong/chat_content.html", context, request=request)
+					return JsonResponse({'html': html,
+											'url' : (f"{chat_name_url}")
+						})
+				else:
+					return render(request, "pong/chat.html", context)
+			logger.debug("user_target = %s", user_target)
+			all_users = NewUser.objects.all()
+			message = None
+			found = False
+			for founded in all_users : 
+				if (user_target == founded.pseudo) :
+					if founded.pseudo == user.pseudo :
+						message = "You can't block yourself"
+					else :
+						found = True
+					break
+			if found :
+				BlockedUser.objects.create(blocker=user, blocked_user=user_target)
+				message = f"{user_target} has been blocked"
+			elif not found and not message :
+				message = f"{user_target} doesn't exist"
+			if message :
+				context['message_block'] = message
+			chat_name_url = None
+			if chat_name :
+				chat_name_url = chat_name
+			else: 
+				chat_name_url = name_chat
+			logger.debug("message_block = %s", context['message_block'])
+			logger.debug("context = %s", context)
+			BlockedUser_all = BlockedUser.objects.all()
+			logger.debug("BlockedUser_all = %s", BlockedUser_all)
+			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+				html = render_to_string("pong/chat_content.html", context, request=request)
+				return JsonResponse({'html': html,
+										'url' : (f"{chat_name_url}")
+					})
+			else:
+				return render(request, "pong/chat.html", context)
 	else:
 		chat_name_url = None
 		if chat_name :
@@ -840,7 +938,7 @@ def is_in_friends_list(username, friend_list) :
 		error_message = f"{username} is not your friend"
 	return (error_message)
 
-def is_blocked(username, blocked_list) :
+def is_blocked_add_chat(username, blocked_list) :
 	toggle = False
 	error_message = None
 	for blocked in blocked_list : 
@@ -854,6 +952,44 @@ def is_blocked(username, blocked_list) :
 	# logger.debug("blocked_list = %s", blocked_list)
 	# # if username in blocked_list :
 	return (error_message)
+
+
+def is_blocked(user, target) :
+	blocked_object = BlockedUser.objects.all()
+	if blocked_object :
+		for block in blocked_object :
+			if block.blocker.pseudo == user.pseudo and block.blocked_user.pseudo == target.pseudo :
+				return (True)
+	return False
+
+# def block_user(request) :
+# 	if request.method == 'POST' :
+# 		logger.info("Oui c'est bon")
+# 		user = NewUser.objects.get(id=(request.session.get('user_id')))
+# 		user_target = request.POST.get('user_target')
+# 		all_users = NewUser.objects.all()
+# 		message = None
+# 		found = False
+# 		for user in all_users : 
+# 			if (user_target == user.pseudo) :
+# 				found = True
+# 				break
+# 		if found :
+# 			BlockedUser.objects.create(blocker=user, blocked_user=user_target)
+# 			message = f"{user_target} has been blocked"
+# 		else :
+# 			message = f"{user_target} doesn't exist"
+# 		logger.debug("message = %s", message)
+# 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+# 			return JsonResponse({'message' : message})
+# 		else:
+# 			return redirect('chat')
+# 	else :
+# 		response_data = {'error': 'Invalid request method'}
+# 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+# 			return JsonResponse(response_data)
+# 		else:
+# 			return redirect('chat')
 
 def add_chat(request) :
 	if not request.user.is_authenticated:
@@ -924,13 +1060,13 @@ def add_chat(request) :
 			error_message = None
 			other_user = is_in_users(friend_name)
 			if not other_user : 
-				error_message = f"{friend_name} suer doesn't exist"
+				error_message = f"{friend_name} user doesn't exist"
 			if not error_message :
 				friend_list = get_friends(user)
 				logger.debug("friend_list = %s", friend_list)
 				error_message = is_in_friends_list(friend_name, friend_list)
 				if not error_message :
-					error_message = is_blocked(friend_name, add_chat_info['blocked_users'])
+					error_message = is_blocked_add_chat(friend_name, add_chat_info['blocked_users'])
 					if not error_message :
 						error_message = "Tous les filtres ont ete passes"
 						chat_name = other_user.pseudo + " et " + user.pseudo
@@ -940,7 +1076,7 @@ def add_chat(request) :
 						chat_private.save()
 						participant1.save()
 						participant2.save()
-						error_message =  f"You are noz in private conversation with {other_user.pseudo}"
+						error_message =  f"You are now in private conversation with {other_user.pseudo}"
 			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 					html = render_to_string("pong/add_chat_content.html", {'message': {
 																		'value' : True,
@@ -989,17 +1125,29 @@ def join_chat(request) :
 		chat_name = request.POST.get("chat_name")
 		# all_chats = Chat.objects.all()
 		error_message = None
+		message = None
+		chat_exist = False
 		for chat in all_chats :
+			logger.info("on passe bien dans la boucle des chat")
 			if (chat_name == chat.name) :
+				chat_exist = True
 				participants = chat.participants.all()
 				for users in participants :
 					if (users == user) :
 						error_message = "You already are in that chat"
 						break
 				if not error_message :
-					Participant.objects.get_or_create(user=user, chat=chat)
-					message = f"YOU JOINED {chat_name}"
-					break
+					if chat.is_private == True :
+						error_message = "You cant't join that chat, it is private"
+					else : 
+						Participant.objects.get_or_create(user=user, chat=chat)
+						message = f"YOU JOINED {chat_name}"
+				break
+		if not chat_exist :
+			logger.info("On passe la aussi")
+			error_message = f"{chat_name} doesn't exist. Please try again"
+		logger.debug("error_message : %s", error_message)
+		logger.debug("list_of_chats : %s", list_of_chats)
 		if error_message :
 			context = {
 				'chat_info' : {
@@ -1037,6 +1185,7 @@ def join_chat(request) :
 				'list_of_chats' : list_of_chats,
 			}
 		}
+		logger.debug("context value = %s", context['chat_info']['value'])
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/join_chat_content.html", context, request=request)
 			return JsonResponse({'html': html,
@@ -1093,13 +1242,99 @@ def render_chat(request, chat_name) :
 	# else:
 	#     return HttpResponseRedirect(reverse('login'))
 
+def leave_chat(request) :
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			return JsonResponse({'html': html,
+								'url' : reverse("index")
+			})
+		else:
+			return HttpResponseRedirect(reverse("index"))
+	user = NewUser.objects.get(id=(request.session.get('user_id')))
+	logger.debug("THE USER IS = %s", user)
+	all_chats = Chat.objects.all()
+	list_of_chats = []
+	for chat in all_chats :
+		participants = chat.participants.all()
+		is_in = False
+		for users in participants :
+			logger.debug("chats = %s", chat)
+			logger.debug("user = %s", users)
+			if (users.pseudo == user.pseudo) :
+				is_in = True
+			if is_in :
+				list_of_chats.append(chat)
+				break
+	logger.debug("list_of_chats = %s", list_of_chats)
+	context = {
+		'error_message' : None,
+		'message' : None,
+		'list_of_chats' : []
+	}
+	if list_of_chats : 
+		context['list_of_chats'] = list_of_chats
+	if request.method == "POST" :
+		chat_exist = False
+		chat_name = request.POST.get("chat_name")
+		for chat in all_chats :
+			if chat.name == chat_name :
+				chat_exist = True
+				break
+		if chat_exist :
+			user_in_chat = False
+			for chats in list_of_chats :
+				if chats.name == chat_name :
+					user_in_chat = True
+					break
+			# if user_in_chat :
+			# 	participant_pool = chats.participants.all()
+			# 	for participant in participant_pool :
+			# 		if participant.pseudo == user.pseudo :
+			# 			participant.delete()
+			# 			message = f"You leaved {chat_name}"
+			# 			context['message'] = message
+			# 	participant_pool = chats.participants.all()
+			# 	if not participant_pool :
+			# 		chats.delete()
+			if user_in_chat:
+				participant_pool = chats.participants.all()
+				participant_to_remove = None
+				for participant in participant_pool:
+					if participant.pseudo == user.pseudo:
+						participant_to_remove = participant
+						break
+				if participant_to_remove:
+					chats.participants.remove(participant_to_remove)
+					message = f"You leaved {chats.name}"
+					context['message'] = message
+				participant_pool = chats.participants.all()
+				if not participant_pool:
+					chats.delete()
+				else :
+					chats.save()
+			else :
+				error_message = f"You are not in that chat"
+				context['error_message'] = error_message
+		else :
+			error_message = f"{chat_name} doesn't exist"
+			context['error_message'] = error_message
+	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/leave_chat_content.html", context, request=request)
+			return JsonResponse({'html': html,
+								'url' : reverse("leave_chat")
+			})
+	else:
+		return render(request, "pong/leave_chat.html", context)
+
+
+
 def logout_view(request):
 	if request.user.is_authenticated:
 		user = NewUser.objects.get(id=(request.session.get('user_id')))
 		user.is_active_status = False
 		user.save()
 		logout(request)
-
 	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 		html = render_to_string("pong/login_content.html", {}, request=request)
 		return JsonResponse({'html': html})
@@ -1227,6 +1462,34 @@ def profile_view(request):
 															'password_form_errors': password_form_errors,
 															'other_error': other_error
 													})
+
+
+def recup_user_info(user) :
+	url = pyotp.totp.TOTP(user.mfa_hash).provisioning_uri(name=user.email, issuer_name="Pong")
+	qr = qrcode.make(url)
+	buffered = BytesIO()
+	qr.save(buffered)
+	qr_base64 = base64.b64encode(buffered.getvalue()).decode('utf-8')
+	try:
+		user_avatar = user.avatar.url
+	except ValueError:
+		user_avatar = None
+	friends = get_friends(user)
+	other_error  = {
+		"avatar" : None,
+		"email" : None,
+		"pseudo" : None
+	}
+	user_info = {
+					'user_info' : {
+						'user_choice' : user.is_mfa_enabled,
+						'user_url' : qr_base64,
+						'user_pseudo' : user.pseudo,
+						'user_avatar' : user_avatar,
+						'user_friends' : friends,
+					}, 'other_error': other_error
+	}
+	return user_info
 
 
 
@@ -1659,7 +1922,9 @@ def other_profile(request, username) :
 						'token' : False
 		}
 	}
+	data = update_stats(user)
 	logger.debug("context = %s", context)
+	logger.debug("context=%s", data)
 	all_users = NewUser.objects.all()
 	user_target = None
 	is_friend = False
@@ -1717,6 +1982,656 @@ def other_profile(request, username) :
 								'url' : (f"/other_profile/{username}")})
 	else:
 		return render(request, "pong/other_profile.html", context)
+
+
+###################### HOME GAME
+def home_game(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+		html = render_to_string("pong/home_game_content.html", {}, request=request)
+		return JsonResponse({'html': html, 'url' : reverse("home_game") })
+	else:
+		return render(request, "pong/home_game.html", {})
+
+###################### PONG
+def waiting_pong(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	user = request.user
+	other_user = NewUser.objects.filter(in_waiting_pong=True).exclude(id=user.id).first()
+	if other_user:
+		party = Party.objects.create(winner=user, loser=other_user, user_red=user, user_blue=other_user, game_name='pong', game_time=timedelta(minutes=0))
+		user.in_waiting_pong = False
+		other_user.in_waiting_pong = False
+		user.save()
+		other_user.save()
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/waiting_pong_content.html", {}, request=request)
+			return JsonResponse({'html': html, 'url' : reverse("waiting_pong") })
+		else:
+			return render(request, "pong/waiting_pong.html", {})
+	else:
+		user.in_waiting_pong = True
+		user.save()
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/waiting_pong_content.html", {}, request=request)
+			return JsonResponse({'html': html, 'url' : reverse("waiting_pong") })
+		else:
+			return render(request, "pong/waiting_pong.html", {})
+
+def check_pong_match(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	user = request.user
+	party = Party.objects.filter(Q(user_red=user) | Q(user_blue=user), is_ended=False).last()
+	if party and party.user_red and party.user_blue:
+		print(" ")
+		print("found OK !")
+		print(" ")
+		party.user_red.in_waiting_pong = False
+		party.user_blue.in_waiting_pong = False
+		party.user_red.save()
+		party.user_blue.save()
+		if party.user_red == user:
+			return JsonResponse({
+				'match_found': True,
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+				'other_client': False
+			})
+		else:
+			return JsonResponse({
+				'match_found': False,
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+				'other_client': True
+			})
+
+	else:
+		print(" ")
+		print("Nothing")
+		print(" ")
+		return JsonResponse({'match_found': False})
+
+def pong_page(request, party_id):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	party = get_object_or_404(Party, id=party_id)
+	if party.is_ended:
+		return HttpResponseRedirect(reverse("home_game"))
+
+	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+		if party.tournament:
+			html = render_to_string("pong/pong_page_content.html", {
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'alias_red': party.tournament.alias1,
+				'alias_blue': party.tournament.alias2,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+			}, request=request)
+			return JsonResponse({'html': html, 'url' : reverse("pong_page", args=[party_id]) })
+		else:
+			html = render_to_string("pong/pong_page_content.html", {
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+			}, request=request)
+			return JsonResponse({'html': html, 'url' : reverse("pong_page", args=[party_id]) })
+	else:
+		if party.tournament:
+			return render(request, 'pong/pong_page.html', {
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'alias_red': party.tournament.alias1,
+				'alias_blue': party.tournament.alias2,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+			})
+		else:
+			return render(request, 'pong/pong_page.html', {
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+			})
+
+def scoring_pong(request, party_id):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	party = get_object_or_404(Party, id=party_id)
+	if not party.is_ended:
+		if (request.POST.get("red_score") > request.POST.get("blue_score")):
+			party.winner = party.user_red;
+			party.loser = party.user_blue;
+		else:
+			party.winner = party.user_blue;
+			party.loser = party.user_red;
+		party.winner.in_waiting_pong = False;
+		party.loser.in_waiting_pong = False;
+		party.score_red = request.POST.get("red_score");
+		party.score_blue = request.POST.get("blue_score");
+		party.game_time = timedelta(milliseconds=int(request.POST.get("game_time")))
+		party.is_ended = True;
+		party.save()
+	return JsonResponse({
+		'end_correctly': True,
+	})
+
+def check_pong_status(request, party_id):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	try:
+		party = Party.objects.get(id=party_id)
+		return JsonResponse({
+			'party': True,
+			'is_ended': party.is_ended,
+			'id_party': party.id,
+		})
+	except ObjectDoesNotExist:
+		return JsonResponse({
+			'party': False,
+			'is_ended': False,
+			'id_party': False,
+		})
+
+def stop_waiting_pong(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	request.user.in_waiting_pong = False;
+	request.user.save()
+	return JsonResponse({'everything_good': True})
+
+
+###################### TOURNAMENT
+def tournament(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	if request.method == 'POST':
+		alias = request.POST.get("alias")
+		if not alias:
+			return JsonResponse({
+				'message': "the input alias cannot be empty",
+			})
+
+
+	# 1st IF
+	tournament = Tournament.objects.filter(
+		Q(participant1=request.user) |
+		Q(participant2=request.user) |
+		Q(participant3=request.user) |
+		Q(participant4=request.user),
+		winner__isnull=True
+	).last()
+
+	if tournament:
+		if not tournament.participant1 or not tournament.participant2 or not tournament.participant3 or not tournament.participant4:
+			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+				html = render_to_string("pong/tournament_content.html", {}, request=request)
+				return JsonResponse({'html': html, 'url' : reverse("tournament") })
+			else:
+				return render(request, "pong/tournament.html", {'message': 'Waiting for more players.'})
+
+	# ELSE IF du cahier
+	tournament = Tournament.objects.filter(
+		~Q(participant1=request.user),
+		~Q(participant2=request.user),
+		~Q(participant3=request.user),
+		~Q(participant4=request.user),
+		winner__isnull=True
+	).filter(
+		Q(participant2__isnull=True) |
+		Q(participant3__isnull=True) |
+		Q(participant4__isnull=True)
+	).last()
+
+
+	if tournament:
+		logger.debug("tournament.participant1 %s: ", tournament.participant1)
+		logger.debug("tournament.participant2 %s: ", tournament.participant2)
+		logger.debug("tournament.participant3 %s: ", tournament.participant3)
+		logger.debug("tournament.participant4 %s: ", tournament.participant4)
+		logger.info("---------------")
+		if not tournament.participant2:
+			if tournament.alias1 == alias:
+				return JsonResponse({
+					'message': "this alias is already taken",
+				})
+			tournament.participant2 = request.user
+			tournament.alias2 = alias
+		elif not tournament.participant3:
+			if tournament.alias1 == alias or tournament.alias2 == alias:
+				return JsonResponse({
+					'message': "this alias is already taken",
+				})
+			tournament.participant3 = request.user
+			tournament.alias3 = alias
+		elif not tournament.participant4:
+			if tournament.alias1 == alias or tournament.alias2 == alias or tournament.alias3 == alias:
+				return JsonResponse({
+					'message': "this alias is already taken",
+				})
+			tournament.participant4 = request.user
+			tournament.alias4 = alias
+		tournament.save()
+
+		if tournament.participant1 and tournament.participant2 and tournament.participant3 and tournament.participant4:
+			if not tournament.party1:
+				tournament.party1 = Party.objects.create(
+					game_name="pong",
+					winner=tournament.participant1,
+					loser=tournament.participant2,
+					user_red=tournament.participant1,
+					user_blue=tournament.participant2,
+					game_time=timedelta(minutes=0),
+					tournament=tournament)
+				tournament.save()
+			return redirect('pong_page', party_id=tournament.party1.id)
+		else:
+			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+				html = render_to_string("pong/tournament_content.html", {}, request=request)
+				return JsonResponse({'html': html, 'url' : reverse("tournament") })
+			else:
+				return render(request, "pong/tournament.html", {'message': 'You have joined an existing tournament.'})
+
+	# GROS ELSE build
+	Tournament.objects.create(participant1=request.user, alias1=alias)
+	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+		html = render_to_string("pong/tournament_content.html", {}, request=request)
+		return JsonResponse({'html': html, 'url' : reverse("tournament") })
+	else:
+		return render(request, "pong/tournament.html", {'message': 'You have created a new tournament.'})
+
+def check_tournament_match(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	tournament = Tournament.objects.filter(
+		Q(participant1=request.user) |
+		Q(participant2=request.user) |
+		Q(participant3=request.user) |
+		Q(participant4=request.user)
+	).last()
+
+	if tournament:
+		if tournament.participant1 and tournament.participant2 and tournament.participant3 and tournament.participant4:
+			return JsonResponse({
+				'tournament_found': True,
+			})
+		else:
+			return JsonResponse({
+				'tournament_found': False,
+			})
+	else:
+		return JsonResponse({
+			'tournament_found': False,
+		})
+
+def scoring_tournament(request, party_id):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	party = get_object_or_404(Party, id=party_id)
+	if (request.POST.get("red_score") > request.POST.get("blue_score")):
+		party.winner = party.user_red;
+		party.loser = party.user_blue;
+	else:
+		party.winner = party.user_blue;
+		party.loser = party.user_red;
+	party.winner.in_waiting_pong = False;
+	party.loser.in_waiting_pong = False;
+	party.score_blue = request.POST.get("blue_score");
+	party.score_red = request.POST.get("red_score");
+	party.is_ended = True;
+	party.save()
+
+	participant1 = party.tournament.participant1
+	participant2 = party.tournament.participant2
+	participant3 = party.tournament.participant3
+	participant4 = party.tournament.participant4
+
+	if not party.tournament.party2:
+		logger.info("party2")
+		party.tournament.party2 = Party.objects.create(
+			winner=participant3,
+			loser=participant4,
+			user_red=participant3,
+			user_blue=participant4,
+			game_name='pong',
+			game_time=timedelta(minutes=0),
+			tournament=party.tournament)
+		party.tournament.save()
+		party.save()
+		logger.debug("ared: %s", party.tournament.alias3)
+		logger.debug("ablue: %s", party.tournament.alias4)
+
+		return JsonResponse({
+			'end_correctly': True,
+			'party_id': party.tournament.party2.id,
+			'user_red': participant3.pseudo,
+			'user_blue': participant4.pseudo,
+			'alias_red': party.tournament.alias3,
+			'alias_blue': party.tournament.alias4,
+		})
+	elif not party.tournament.party3:
+		logger.debug("W1: %s", party.tournament.party1.winner.pseudo)
+		logger.debug("W2: %s", party.tournament.party2.winner.pseudo)
+		party.tournament.party3 = Party.objects.create(
+			winner=party.tournament.party1.winner,
+			loser=party.tournament.party2.winner,
+			user_red=party.tournament.party1.winner,
+			user_blue=party.tournament.party2.winner,
+			game_name='pong',
+			game_time=timedelta(minutes=0),
+			tournament=party.tournament)
+		party.tournament.save()
+		party.save()
+		alias_red = None
+		alias_blue = None
+
+		if party.tournament.party1.winner.pseudo == party.tournament.participant1.pseudo:
+			alias_red = party.tournament.alias1
+		elif party.tournament.party1.winner.pseudo == party.tournament.participant2.pseudo:
+			alias_red = party.tournament.alias2
+		elif party.tournament.party1.winner.pseudo == party.tournament.participant3.pseudo:
+			alias_red = party.tournament.alias3
+		elif party.tournament.party1.winner.pseudo == party.tournament.participant4.pseudo:
+			alias_red = party.tournament.alias4
+
+		if party.tournament.party2.winner.pseudo == party.tournament.participant1.pseudo:
+			alias_blue = party.tournament.alias1
+		elif party.tournament.party2.winner.pseudo == party.tournament.participant2.pseudo:
+			alias_blue = party.tournament.alias2
+		elif party.tournament.party2.winner.pseudo == party.tournament.participant3.pseudo:
+			alias_blue = party.tournament.alias3
+		elif party.tournament.party2.winner.pseudo == party.tournament.participant4.pseudo:
+			alias_blue = party.tournament.alias4
+		logger.debug("ared: %s", alias_red)
+		logger.debug("ablue: %s", alias_blue)
+		return JsonResponse({
+			'end_correctly': True,
+			'party_id': party.tournament.party3.id,
+			'user_red': party.tournament.party1.winner.pseudo,
+			'user_blue': party.tournament.party2.winner.pseudo,
+			'alias_red': alias_red,
+			'alias_blue': alias_blue,
+		})
+	elif party.tournament.party3:
+		logger.info("-- -fin- --")
+		party.tournament.winner = party.tournament.party3.winner
+		party.tournament.save()
+		party.save()
+
+	party.save()
+	return JsonResponse({
+		'end_correctly': False,
+		'party_id': party.id
+	})
+
+
+###################### TIC TAC TOE
+def waiting_tic(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	user = request.user
+	other_user = NewUser.objects.filter(in_waiting_tic=True).exclude(id=user.id).first()
+	if other_user:
+		party = Party.objects.create(winner=user, loser=other_user, user_red=user, user_blue=other_user, game_name='tic', game_time=timedelta(minutes=0))
+		user.in_waiting_tic = False
+		other_user.in_waiting_tic = False
+		user.save()
+		other_user.save()
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/waiting_tic_content.html", {}, request=request)
+			return JsonResponse({'html': html, 'url' : reverse("waiting_tic") })
+		else:
+			return render(request, "pong/waiting_tic.html", {})
+	else:
+		user.in_waiting_tic = True
+		user.save()
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/waiting_tic_content.html", {}, request=request)
+			return JsonResponse({'html': html, 'url' : reverse("waiting_tic") })
+		else:
+			return render(request, "pong/waiting_tic.html", {})
+
+def check_tic_match(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	user = request.user
+	party = Party.objects.filter(Q(user_red=user) | Q(user_blue=user), is_ended=False).last()
+	if party and party.user_red and party.user_blue:
+		print(" ")
+		print("found OK !")
+		print(" ")
+		# party.user_red.in_waiting_tic = False
+		# party.user_blue.in_waiting_tic = False
+		# party.user_red.save()
+		# party.user_blue.save()
+		if party.user_red == user:
+			return JsonResponse({
+				'match_found': True,
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+				'other_client': False
+			})
+		else:
+			return JsonResponse({
+				'match_found': False,
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+				'other_client': True
+			})
+
+	else:
+		print(" ")
+		print("Nothing")
+		print(" ")
+		return JsonResponse({'match_found': False})
+
+def tic(request, party_id):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	party = get_object_or_404(Party, id=party_id)
+	if party.is_ended:
+		return HttpResponseRedirect(reverse("home_game"))
+
+	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+		if party.tournament:
+			html = render_to_string("pong/tic_content.html", {
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'alias_red': party.tournament.alias1,
+				'alias_blue': party.tournament.alias2,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+			}, request=request)
+			return JsonResponse({'html': html, 'url' : reverse("tic", args=[party_id]) })
+		else:
+			html = render_to_string("pong/tic_content.html", {
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+			}, request=request)
+			return JsonResponse({'html': html, 'url' : reverse("tic", args=[party_id]) })
+	else:
+		if party.tournament:
+			return render(request, 'pong/tic.html', {
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'alias_red': party.tournament.alias1,
+				'alias_blue': party.tournament.alias2,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+			})
+		else:
+			return render(request, 'pong/tic.html', {
+				'party_end': party.is_ended,
+				'party_id': party.id,
+				'user_red': party.user_red.pseudo,
+				'user_blue': party.user_blue.pseudo,
+				'id_red': party.user_red.id,
+				'id_blue': party.user_blue.id,
+			})
+
+def scoring_tic(request, party_id):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	party = get_object_or_404(Party, id=party_id)
+	if not party.is_ended:
+		if (request.POST.get("red_score") > request.POST.get("blue_score")):
+			party.winner = party.user_red;
+			party.loser = party.user_blue;
+		else:
+			party.winner = party.user_blue;
+			party.loser = party.user_red;
+		party.winner.in_waiting_tic = False;
+		party.loser.in_waiting_tic = False;
+		party.score_red = request.POST.get("red_score");
+		party.score_blue = request.POST.get("blue_score");
+		party.game_time = timedelta(milliseconds=int(request.POST.get("game_time")))
+		party.is_ended = True;
+		party.save()
+	return JsonResponse({
+		'end_correctly': True,
+	})
+
+def check_tic_status(request, party_id):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	try:
+		party = Party.objects.get(id=party_id)
+		return JsonResponse({
+			'party': True,
+			'is_ended': party.is_ended,
+			'id_party': party.id,
+		})
+	except ObjectDoesNotExist:
+		return JsonResponse({
+			'party': False,
+			'is_ended': False,
+			'id_party': False,
+		})
+
+def stop_waiting_tic(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	request.user.in_waiting_tic = False;
+	request.user.save()
+	return JsonResponse({'everything_good': True})
+
+
 
 # user_id = request.session.get('user_id')
 # 	if not user_id:

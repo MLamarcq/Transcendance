@@ -185,6 +185,9 @@
 // }
 
 var displayChatInterval = null;
+var checkGameStatusInterval;
+var searchingMatchInterval;
+
 
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('Script main.js est chargé');
@@ -242,13 +245,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // DEFINITIONB DES FONCTIONS
 
-var customHistory = [];
-var currentIndex = -1;
+var customHistory = [new URL(window.location.href).pathname];
+var currentIndex = 0;
+
+function send_score_quit(id_party) {
+	if (id_party)
+	{
+		$.ajax({
+			url: '/scoring_pong/' + id_party + '/',
+			type: 'POST',
+			async: false,
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+			},
+			data: {
+				'red_score': 0,
+				'blue_score': 0,
+				'exchanges': 0,
+				'game_time': 0,
+			},
+			success: function() {
+				// would you like to restart ?
+			}
+		});
+	}
+}
+
+function getCookie(name) {
+	var cookieValue = null;
+	if (document.cookie && document.cookie !== '') {
+		var cookies = document.cookie.split(';');
+		for (var i = 0; i < cookies.length; i++) {
+			var cookie = jQuery.trim(cookies[i]);
+			if (cookie.substring(0, name.length + 1) === (name + '=')) {
+				cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+				break;
+			}
+		}
+	}
+	return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
 
 
 function loadContent(path, addToHistory) {
 	console.log("addTohistory = ", addToHistory);
 	console.log('Loading content from:', path);
+	var i_clear_interval = -1;
+	while (++i_clear_interval < 2000)
+		clearInterval(i_clear_interval);
+
+	if (customHistory.length > 1
+	&& customHistory[customHistory.length - 1].indexOf('pong_page') != -1)
+	{
+		var id_party = customHistory[customHistory.length - 1].match(/\/pong_page\/(\d+)\//)
+		if (id_party)
+			id_party = id_party[1];
+		send_score_quit(id_party);
+	}
+	if (customHistory.length > 1
+	&& customHistory[customHistory.length - 1].indexOf('tic') != -1)
+	{
+		var id_party = customHistory[customHistory.length - 1].match(/\/tic\/(\d+)\//)
+		if (id_party)
+			id_party = id_party[1];
+		send_score_quit(id_party);
+	}
 	var toggle = false;
 	fetch(path, {
 		headers: { 'X-Requested-With': 'XMLHttpRequest' }
@@ -260,10 +323,6 @@ function loadContent(path, addToHistory) {
 			const data = JSON.parse(text);
 			// console.log("data =", data);
 			if (data.html) {
-				const regex = /\/chat/;
-				const isChatPresent = regex.test(window.location.href);
-				if (!isChatPresent && displayChatInterval)
-					clearInterval(displayChatInterval);
 				document.getElementById('app').innerHTML = data.html;
 				console.log("big =", document.getElementById('app'));
 				script_array = Array.from(document.getElementById('app').querySelectorAll("script"));
@@ -294,6 +353,34 @@ function loadContent(path, addToHistory) {
 					if (toggle === true)
 						window.history.pushState({ path: data.url }, '', data.url);
 				}
+				if (customHistory.length > 2
+					&& customHistory[customHistory.length - 1].indexOf('pong_page') == -1
+					&& customHistory[customHistory.length - 2].indexOf('waiting_pong') != -1)
+					{
+						$.ajax({
+							url: '/stop_waiting_pong/',
+							type: 'POST',
+							async: false,
+							beforeSend: function(xhr) {
+								xhr.setRequestHeader("X-CSRFToken", csrftoken);
+							},
+							success: function() {}
+						});
+					}
+					if (customHistory.length > 2
+					&& customHistory[customHistory.length - 1].indexOf('tic') == -1
+					&& customHistory[customHistory.length - 2].indexOf('waiting_tic') != -1)
+					{
+						$.ajax({
+							url: '/stop_waiting_tic/',
+							type: 'POST',
+							async: false,
+							beforeSend: function(xhr) {
+								xhr.setRequestHeader("X-CSRFToken", csrftoken);
+							},
+							success: function() {}
+						});
+					}
 				console.log("customHistory =", customHistory);
 				console.log("currentIndex =", currentIndex);
 			} 

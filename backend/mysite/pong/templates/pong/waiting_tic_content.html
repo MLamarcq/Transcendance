@@ -1,0 +1,109 @@
+{% load static %}
+<style>
+h1
+{
+	width: max-content;
+	margin: 1% auto;
+	display: block;
+	color: white;
+}
+</style>
+
+<h1 id="status">Waiting for a tic tac toe match...</h1>
+{% csrf_token %}
+<script>
+
+var id_party = -1;
+var searchingTicInterval = setInterval(function() {
+
+	console.log(" ----- 2000ms ----- ");
+
+	$.ajax({
+		url: '/check_tic_match/',
+		success: function(data) {
+			console.log(data);
+			if (data.match_found) {
+				id_party = data.party_id
+				clearInterval(searchingTicInterval);
+				// document.getElementById('status').textContent = 'Match found! Loading the game...';
+
+				fetch('/tic/' + data.party_id + '/', {
+					headers: { 'X-Requested-With': 'XMLHttpRequest' }
+				})
+				.then(response => response.text())
+				.then(text => {
+					try {
+						console.log("text: ", text)
+						const page_content = JSON.parse(text);
+						if (page_content.html) {
+							document.getElementById('app').innerHTML = page_content.html;
+							old_script = document.getElementById('app').querySelector("script");
+							if (old_script)
+							{
+								var new_script = document.createElement('script');
+								new_script.innerHTML = old_script.textContent;
+								old_script.remove();
+								document.getElementById('app').appendChild(new_script);
+								console.log(data, data.user_red, data.user_blue)
+								document.getElementById('red_user').textContent = data.user_red;
+								document.getElementById('blue_user').textContent = data.user_blue;
+							}
+
+							if (currentIndex === customHistory.length - 1)
+							{
+								if (customHistory[currentIndex] != page_content.url)
+								{
+									customHistory.push(page_content.url);
+									currentIndex++;
+									toggle = true;
+								}
+							}
+							else
+							{
+								customHistory = customHistory.slice(0, currentIndex + 1);
+								console.log("Custom history quand on tronque l'historique", customHistory)
+								customHistory.push(page_content.url);
+								currentIndex = customHistory.length - 1;
+							}
+							if (toggle === true)
+								window.history.pushState({ path: page_content.url }, '', page_content.url);
+							console.log("customHistory =", customHistory);
+							console.log("currentIndex =", currentIndex);
+						}
+						else
+						{
+							console.error('page_content.html is undefined');
+							document.getElementById('app').innerHTML = text;
+						}
+					} catch (error) {
+						console.error('Error parsing JSON:', error);
+						document.getElementById('app').innerHTML = text;
+					}
+				})
+
+			} // endif match
+			else if (document.getElementById('status') && data.other_client)
+			{
+				var checkGameStatusInterval = setInterval(() => {
+					$.ajax({
+						url: '/check_tic_status/' + data.party_id,
+						success: function(data_end) {
+							console.log(data_end);
+							if (data_end.party && data_end.is_ended) {
+								clearInterval(checkGameStatusInterval);
+								document.getElementById('status').textContent = 'The match is done'
+								// The game has ended. You can update the UI here.
+							}
+						}
+					})
+				}, 2000);
+				clearInterval(searchingTicInterval);
+				document.getElementById('status').textContent = 'Match found! go to the other player client'
+			}
+		} // success ajax
+	}); // ajax searching
+}, 2000);
+
+</script>
+
+

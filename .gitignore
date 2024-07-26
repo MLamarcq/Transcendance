@@ -1,5 +1,0 @@
-Makefile
-.env_virt
-docker-compose.yml
-certs/pong.fr.crt
-certs/pong.fr.key
