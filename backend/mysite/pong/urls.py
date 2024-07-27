@@ -25,6 +25,8 @@ urlpatterns = [
     path("add_friends", views.add_friends, name ="add_friends"),
     path("delete_friends", views.delete_friends, name = "delete_friends"),
     path("statistics/", views.statistics, name="statistics"),
+    path("statistics_pong", views.statistics_pong, name="statistics_pong"),
+    path("statistics_tic", views.statistics_tic, name="statistics_tic"),
 
     path('home_game/', views.home_game, name='home_game'),
 

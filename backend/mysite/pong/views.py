@@ -423,54 +423,65 @@ def otp_view(request):
 
 	return render(request, "pong/otp.html")
 
-# def statistics(request):
-	# if not request.user.is_authenticated:
-	#     return HttpResponseRedirect(reverse("index"))
-	# user = NewUser.objects.get(id=(request.session.get('user_id')))
-	# statistics = user.statistic
-	# history = []
-	# partie = Party.objects.all()
-	# for game in partie :
-	#     winner = game.winner.pseudo.strip()
-	#     loser = game.loser.pseudo.strip()
-	#     if ((user.pseudo == winner) or (user.pseudo == loser)) :
-	#         history.append(game)
-	# game_date = []
-	# game_result = []
-	# game_result_numeric = []
-	# for game in history :
-	#     game_date.append(game.date.strftime('%Y-%m-%d'))
-	#     if (game.winner.pseudo == user.pseudo) :
-	#         game_result.append('Victory')
-	#     elif (game.loser.pseudo == user.pseudo) :
-	#         game_result.append('Defeat')
-	# for result in game_result :
-	#     if (result == "Victory") :
-	#         game_result_numeric.append(1)
-	#     else :
-	#         game_result_numeric.append(-1)
-	# nbr_day = 1
-	# for i in range(1, len(game_date)):
-	#     if game_date[i] != game_date[i - 1]:
-	#         nbr_day += 1
-	# data = {}
-	# game_duration = timedelta()
-	# for i in range(len(history)):
-	#     game_duration += history[i].game_time
-	#     if ((i == len(history) - 1) or (history[i].date.strftime('%Y-%m-%d') != history[i + 1].date.strftime('%Y-%m-%d'))) :
-	#         data[history[i].date.strftime('%Y-%m-%d')] = game_duration.total_seconds()
-	#         game_duration = timedelta()
-	# return render(request, "pong/statistics.html", {
-	#                                                 'user' : user,
-	#                                                 'statistics' : statistics,
-	#                                                 'history' : history,
-	#                                                 'game_dates_json': json.dumps(game_date),
-	#                                                 'game_results_json': json.dumps(game_result_numeric),
-	#                                                 'game_duration_json' : json.dumps(data)
-	#                                                 })
+def build_history(user, partie) :
+	history = []
+	for game in partie :
+		winner = game.winner.pseudo.strip()
+		loser = game.loser.pseudo.strip()
+		if ((user.pseudo == winner) or (user.pseudo == loser)) :
+			history.append(game)
+	return (history)
+
+def update_stats_other_profile(user, partie, name) :
+	user_statistic = None
+	logger.info("On passe la ouai")
+	user_statistic, created = Statistic.objects.get_or_create(user=user)
+	data = {'user_statistic' : None,
+			'history' : []}
+	if created:
+		user.statistic = user_statistic
+		user.save()
+	logger.debug("user = %s", user)
+	logger.debug("statistics = %s", user.statistic)
+	history = build_history(user, partie)
+	data['history'] = history
+	if name == "pong" :
+		nbr_won_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(winner=user) & Q(game_name="pong")).count()
+		logger.debug("nbr_won_parties_ = %d", nbr_won_parties)
+		if (nbr_won_parties) :
+			user_statistic.nbr_won_parties = nbr_won_parties
+		nbr_lost_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(loser=user) & Q(game_name="pong")).count()
+		logger.debug("nbr_lost_parties_ = %d", nbr_lost_parties)
+		if (nbr_lost_parties) :
+			user_statistic.nbr_lose_parties = nbr_lost_parties
+	elif name == "tic" :
+		nbr_won_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(winner=user) & Q(game_name="tic")).count()
+		logger.debug("nbr_won_parties_ = %d", nbr_won_parties)
+		if (nbr_won_parties) :
+			user_statistic.nbr_won_parties = nbr_won_parties
+		nbr_lost_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(loser=user) & Q(game_name="tic")).count()
+		logger.debug("nbr_lost_parties_ = %d", nbr_lost_parties)
+		if (nbr_lost_parties) :
+			user_statistic.nbr_lose_parties = nbr_lost_parties
+	logger.debug("user stats = %s", user_statistic)
+	game_duration = timedelta()
+	user_statistic.total_time_played = timedelta(0)
+	for i in range(len(history)):
+		game_duration += history[i].game_time
+		if user_statistic :
+			logger.info("Ici oui")
+			logger.debug("time = %s", history[i].game_time)
+			user_statistic.total_time_played += history[i].game_time
+			logger.debug("time 2 = %s", user_statistic.total_time_played)
+	user.statistic = user_statistic
+	user.save()
+	data['user_statistic'] = user_statistic
+	logger.debug("data = %s", data)
+	return (data)
 
 
-def update_stats(user) :
+
+def update_stats(user, partie, name) :
 	user_statistic = None
 	# if not user.statistic:
 	data = {
@@ -485,47 +496,30 @@ def update_stats(user) :
 	if created:
 		user.statistic = user_statistic
 		user.save()
-		# user_statistic.nbr_won_parties += 1
+		# user_statistic.nbr_won_parties += 1#
+	logger.debug("parties = %s", partie)
 	logger.debug("user = %s", user)
 	logger.debug("statistics = %s", user.statistic)
-	history = []
-	partie = Party.objects.all()
-	user_here = 0
-	for game in partie :
-		winner = game.winner.pseudo.strip()
-		loser = game.loser.pseudo.strip()
-		if ((user.pseudo == winner) or (user.pseudo == loser)) :
-			history.append(game)
-			user_here += 1
-			user.nbr_parties = user_here
-			logger.info("C'est ici que ca se passe")
+	history = build_history(user, partie)
 	data['history'] = history
-	if user_statistic :
-		if user.nbr_parties > (user_statistic.nbr_won_parties + user_statistic.nbr_lose_parties) :
-			if user.pseudo == winner :
-				logger.info("C'est ici que ca se passe")
-				logger.debug(" nbr victoires avant = %d", user_statistic.nbr_won_parties)
-				user_statistic.nbr_won_parties += 1
-				logger.debug(" nbr victoires apres = %d", user_statistic.nbr_won_parties)
-			else :
-				user_statistic.nbr_lose_parties += 1
-			if game.tournament and game.tournament.name :
-				user_statistic.nbr_won_tournaments += 1
-			logger.info("J'arrive jusque la")
-			user_statistic.save()
-		# if user.pseudo == winner:
-		# 	if user.statistic:
-		# 		user.statistic.nbr_won_parties += 1
-		# 	# else:
-		# 	# 	# Vous pouvez créer l'objet Statistic ici si nécessaire
-		# 	# 	logger.info("on passe dans le else")
-		# 	# 	# user_statistic = Statistic.objects.create(user=user)
-		# 	# 	user_statistic.nbr_lose_parties += 1
-		# 	# 	user_statistic.save()
-		# elif user.pseudo == loser :
-
-
-	# logger.debug("user_here = %d", user_here)
+	if name == "pong" :
+		nbr_won_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(winner=user) & Q(game_name="pong")).count()
+		logger.debug("nbr_won_parties_ = %d", nbr_won_parties)
+		if (nbr_won_parties) :
+			user_statistic.nbr_won_parties = nbr_won_parties
+		nbr_lost_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(loser=user) & Q(game_name="pong")).count()
+		logger.debug("nbr_lost_parties_ = %d", nbr_lost_parties)
+		if (nbr_lost_parties) :
+			user_statistic.nbr_lose_parties = nbr_lost_parties
+	elif name == "tic" :
+		nbr_won_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(winner=user) & Q(game_name="tic")).count()
+		logger.debug("nbr_won_parties_ = %d", nbr_won_parties)
+		if (nbr_won_parties) :
+			user_statistic.nbr_won_parties = nbr_won_parties
+		nbr_lost_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(loser=user) & Q(game_name="tic")).count()
+		logger.debug("nbr_lost_parties_ = %d", nbr_lost_parties)
+		if (nbr_lost_parties) :
+			user_statistic.nbr_lose_parties = nbr_lost_parties
 	logger.debug("user stats = %s", user_statistic)
 	game_date = []
 	game_result = []
@@ -541,10 +535,6 @@ def update_stats(user) :
 			game_result_numeric.append(1)
 		else :
 			game_result_numeric.append(-1)
-	# nbr_day = 1
-	# for i in range(1, len(game_date)):
-	# 	if game_date[i] != game_date[i - 1]:
-	# 		nbr_day += 1
 	days_of_playing = {}
 	game_duration = timedelta()
 	user_statistic.total_time_played = timedelta(0)
@@ -569,7 +559,7 @@ def update_stats(user) :
 	return (data)
 
 
-def statistics(request):
+def statistics_pong(request):
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
@@ -580,20 +570,75 @@ def statistics(request):
 			return HttpResponseRedirect(reverse("index"))
 	user = NewUser.objects.get(id=(request.session.get('user_id')))
 	data = {}
-	data = update_stats(user)
+	partys_pong = Party.objects.filter(game_name="pong")
+	if partys_pong.exists() :
+		data = update_stats(user, partys_pong, "pong")
+	logger.debug("Data pong = %s", data)
 	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/statistics_content.html", {
+			html = render_to_string("pong/statistics_pong_content.html", {
 																		'user' : user,
 																		'data' : data
 																	}, request=request)
 			return JsonResponse({'html': html,
-								'url' : reverse("statistics")
+								'url' : reverse("statistics_pong")
 			})
 	else :
-		return render(request, "pong/statistics.html", {
+		return render(request, "pong/statistics_pong.html", {
 													'user' : user,
 													'data' : data
 													})
+
+
+def statistics_tic(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			return JsonResponse({'html': html,
+								'url' : reverse("index")
+			})
+		else:
+			return HttpResponseRedirect(reverse("index"))
+	user = NewUser.objects.get(id=(request.session.get('user_id')))
+	data = {'user_statistic' : None,
+			'history' : [],
+			'game_dates_json' : None,
+			'game_results_json' : None,
+			'game_duration_json' : None}
+	partys_tic = Party.objects.filter(game_name="tic")
+	if partys_tic.exists():
+		data = update_stats(user, partys_tic, "tic")
+	logger.debug("Data tic = %s", data)
+	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/statistics_pong_content.html", {
+																		'user' : user,
+																		'data' : data
+																	}, request=request)
+			return JsonResponse({'html': html,
+								'url' : reverse("statistics_tic")
+			})
+	else :
+		return render(request, "pong/statistics_pong.html", {
+													'user' : user,
+													'data' : data
+													})
+
+
+def statistics(request) :
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			return JsonResponse({'html': html,
+								'url' : reverse("index")
+			})
+		else:
+			return HttpResponseRedirect(reverse("index"))
+	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/statistics_content.html", {}, request=request)
+			return JsonResponse({'html': html,
+								'url' : reverse("statistics")
+			})
+	else :
+		return render(request, "pong/statistics.html", {})
 
 
 def chat_solo(request):
@@ -2075,23 +2120,22 @@ def other_profile(request, username) :
 		else:
 			return HttpResponseRedirect(reverse("login"))
 	user = NewUser.objects.get(id=(request.session.get('user_id')))
-	logger.debug("user = %s", user)
-	logger.info("Je passe la dans other profile")
+	# logger.debug("user = %s", user)
+	# logger.info("Je passe la dans other profile")
 	# username = username
-	logger.debug("username = %s", username)
-	data = {}
+	# logger.debug("username = %s", username)
 	context = {
 		'user_target' :{
 						'token' : False
 		}
 	}
-	data = update_stats(user)
-	logger.debug("context = %s", context)
-	logger.debug("context=%s", data)
+	# data = update_stats(user) ici seront les infos de l'user : email etc
+	# logger.debug("context = %s", context)
+	# logger.debug("context=%s", data)
 	all_users = NewUser.objects.all()
 	user_target = None
 	is_friend = False
-	logger.debug("all Users = %s", all_users)
+	# logger.debug("all Users = %s", all_users)
 	for user_found in all_users :
 		if user_found.pseudo == username :
 			user_target = user_found
@@ -2106,37 +2150,48 @@ def other_profile(request, username) :
 	# logger.debug("user_target email = %s", user_target.email)
 	# logger.debug("user_target pseudo = %s", user_target.pseudo)
 	# logger.debug("user_target password = %s", user_target.password)
-	logger.debug("user_target avatar = %s", user_target.avatar)
+	# logger.debug("user_target avatar = %s", user_target.avatar)
 	# logger.debug("user_target stats = %s", user_target.statistic)
 	# logger.debug("user_target = %s", user_target)
+	data_pong = {}
+	data_tic = {}
 	user_friend = get_friends(user)
 	try:
 		user_target_avatar = user_target.avatar.url
 	except ValueError:
 		user_target_avatar = None
-	logger.debug("friends = %s", user_friend)
+	# logger.debug("friends = %s", user_friend)
 	for friend in user_friend :
 		if friend.pseudo == user_target.pseudo :
 			is_friend = True
 			break
-	logger.debug("user_target.statistic = %s", user_target.statistic)
-	data = update_stats(user_target)
-	logger.debug("data = %s", data)
-	history = []
-	partie = Party.objects.all()
-	for game in partie :
-		winner = game.winner.pseudo.strip()
-		loser = game.loser.pseudo.strip()
-		if ((user.pseudo == winner) or (user.pseudo == loser)) :
-			history.append(game)
+	# logger.debug("user_target.statistic = %s", user_target.statistic)
+	# if Party.objects.exists() :
+	pong_partys = Party.objects.filter(game_name="pong")
+	if (pong_partys.exists()) :
+		data_pong = update_stats_other_profile(user_target, pong_partys, "pong")
+	tic_partys = Party.objects.filter(game_name="tic")
+	if (tic_partys.exists()) :
+		data_tic = update_stats_other_profile(user_target, tic_partys, "tic")
+	# logger.debug("data_pong other user = %s", data_pong)
+	# logger.debug("data_tic other user = %s", data_tic)
+	# history = []
+	# partie = Party.objects.all()
+	# for game in partie :
+	# 	winner = game.winner.pseudo.strip()
+	# 	loser = game.loser.pseudo.strip()
+	# 	if ((user.pseudo == winner) or (user.pseudo == loser)) :
+	# 		history.append(game)
+	logger.debug("data_pong = %s", data_pong)
+	logger.debug("data_tic = %s", data_tic)
 	context = {
 		'user_target' : {
 						'token' : True,
 						'username' : user_target.pseudo,
 						'is_friend' : is_friend,
 						'user_avatar' : user_target_avatar,
-						'statistics' : user_target.statistic,
-						'history' : history,
+						'pong_stats' : data_pong,
+						'tic_stats' : data_tic,
 		}
 	}
 	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
@@ -2308,17 +2363,17 @@ def scoring_pong(request, party_id):
 	party = get_object_or_404(Party, id=party_id)
 	if not party.is_ended:
 		if (request.POST.get("red_score") > request.POST.get("blue_score")):
-			party.winner = party.user_red;
-			party.loser = party.user_blue;
+			party.winner = party.user_red
+			party.loser = party.user_blue
 		else:
-			party.winner = party.user_blue;
-			party.loser = party.user_red;
-		party.winner.in_waiting_pong = False;
-		party.loser.in_waiting_pong = False;
-		party.score_red = request.POST.get("red_score");
-		party.score_blue = request.POST.get("blue_score");
+			party.winner = party.user_blue
+			party.loser = party.user_red
+		party.winner.in_waiting_pong = False
+		party.loser.in_waiting_pong = False
+		party.score_red = request.POST.get("red_score")
+		party.score_blue = request.POST.get("blue_score")
 		party.game_time = timedelta(milliseconds=int(request.POST.get("game_time")))
-		party.is_ended = True;
+		party.is_ended = True
 		party.save()
 	return JsonResponse({
 		'end_correctly': True,
@@ -2354,7 +2409,7 @@ def stop_waiting_pong(request):
 		else:
 			return HttpResponseRedirect(reverse("login"))
 
-	request.user.in_waiting_pong = False;
+	request.user.in_waiting_pong = False
 	request.user.save()
 	return JsonResponse({'everything_good': True})
 
@@ -2502,16 +2557,16 @@ def scoring_tournament(request, party_id):
 
 	party = get_object_or_404(Party, id=party_id)
 	if (request.POST.get("red_score") > request.POST.get("blue_score")):
-		party.winner = party.user_red;
-		party.loser = party.user_blue;
+		party.winner = party.user_red
+		party.loser = party.user_blue
 	else:
-		party.winner = party.user_blue;
-		party.loser = party.user_red;
-	party.winner.in_waiting_pong = False;
-	party.loser.in_waiting_pong = False;
-	party.score_blue = request.POST.get("blue_score");
-	party.score_red = request.POST.get("red_score");
-	party.is_ended = True;
+		party.winner = party.user_blue
+		party.loser = party.user_red
+	party.winner.in_waiting_pong = False
+	party.loser.in_waiting_pong = False
+	party.score_blue = request.POST.get("blue_score")
+	party.score_red = request.POST.get("red_score")
+	party.is_ended = True
 	party.save()
 
 	participant1 = party.tournament.participant1
@@ -2744,17 +2799,17 @@ def scoring_tic(request, party_id):
 	party = get_object_or_404(Party, id=party_id)
 	if not party.is_ended:
 		if (request.POST.get("red_score") > request.POST.get("blue_score")):
-			party.winner = party.user_red;
-			party.loser = party.user_blue;
+			party.winner = party.user_red
+			party.loser = party.user_blue
 		else:
-			party.winner = party.user_blue;
-			party.loser = party.user_red;
-		party.winner.in_waiting_tic = False;
-		party.loser.in_waiting_tic = False;
-		party.score_red = request.POST.get("red_score");
-		party.score_blue = request.POST.get("blue_score");
+			party.winner = party.user_blue
+			party.loser = party.user_red
+		party.winner.in_waiting_tic = False
+		party.loser.in_waiting_tic = False
+		party.score_red = request.POST.get("red_score")
+		party.score_blue = request.POST.get("blue_score")
 		party.game_time = timedelta(milliseconds=int(request.POST.get("game_time")))
-		party.is_ended = True;
+		party.is_ended = True
 		party.save()
 	return JsonResponse({
 		'end_correctly': True,
@@ -2790,7 +2845,7 @@ def stop_waiting_tic(request):
 		else:
 			return HttpResponseRedirect(reverse("login"))
 
-	request.user.in_waiting_tic = False;
+	request.user.in_waiting_tic = False
 	request.user.save()
 	return JsonResponse({'everything_good': True})
 

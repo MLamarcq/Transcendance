@@ -3,9 +3,16 @@
 <link href="{% static 'pong/css/other_profile.css' %}" rel=stylesheet>
 
 {% if user_target.token %}
-	<h1>{{ user_target.username }}'S PROFIL</h1>
 	<section>
 		<div class="user_info">
+			<div class="user">
+				<h1>{{ user_target.username }}'S PROFIL</h1>
+				{% if user_target.is_friend %}
+					<p class="is_friend">FRIEND : YES</p>
+				{% else %}
+					<p class="is_not_friend">FRIEND : NO</p>
+				{% endif %}
+			</div>
 			<div class="avatar">
 				{% if user_target.user_avatar %}
 				<img src="{{ user_target.user_avatar }}" alt="Avatar" />
@@ -13,60 +20,77 @@
 					<img src="{% static 'pong/image/profil_default.png' %}" alt="Default Avatar" />
 				{% endif %}
 			</div>
-			<div class="user_">
-				<h1>PSEUDO</h1>
-				<p>{{ user_target.username }}</p>
-				<h1>FRIEND</h1>
-				{% if user_target.is_friend %}
-					<p class="is_friend">YES</p>
-				{% else %}
-					<p class="is_not_friend">NO</p>
-				{% endif %}
-			</div>
-		</div>
-		<div class="user_stat">
-			<ul>
-				{% if user_target.statistics %}
-					<h3>Game Won</h3>
-					<li>{{ user_target.statistics.nbr_won_parties }}</li>
-					
-					<h3>Game Lost</h3>
-					<li>{{ user_target.statistics.nbr_lose_parties }}</li>
-					
-					<h3>Time played</h3>
-					<li>{{ user_target.statistics.total_time_played }}</li>
-
-					<h3>Won Tournament</h3>
-					<li>{{ user_target.statistics.nbr_won_tournaments }}</li>
-				{% else %}
-					<h3>Game Won</h3>
-					<li>0</li>
-					
-					<h3>Game Lost</h3>
-					<li>0</li>
-					
-					<h3>Time played</h3>
-					<li>0</li>
-					
-					<h3>Won Tournament</h3>
-					<li>0</li>
-				{% endif %}
-			</ul>
 		</div>
 	</section>
-	<section class="right_board">
+	<div class="user_stat">
+		<h1>PONG STATS</h1>
+		<ul>
+			{% if user_target.pong_stats %}
+				<h3>Game Won</h3>
+				<li>{{ user_target.pong_stats.user_statistic.nbr_won_parties }}</li>
+				
+				<h3>Game Lost</h3>
+				<li>{{ user_target.pong_stats.user_statistic.nbr_lose_parties }}</li>
+				
+				<h3>Time played</h3>
+				<li>{{ user_target.pong_stats.user_statistic.total_time_played }}</li>
+
+				<h3>Won Tournament</h3>
+				<li>{{ user_target.pong_stats.user_statistic.nbr_won_tournaments }}</li>
+			{% else %}
+				<h3>Game Won</h3>
+				<li>0</li>
+				
+				<h3>Game Lost</h3>
+				<li>0</li>
+				
+				<h3>Time played</h3>
+				<li>0</li>
+				
+				<h3>Won Tournament</h3>
+				<li>0</li>
+			{% endif %}
+		</ul>
+	</div>
+		<h1>TIC TAC TOE STATS</h1>
+		<ul>
+			{% if user_target.tic_stats %}
+				<h3>Game Won</h3>
+				<li>{{ user_target.tic_stats.user_statistic.nbr_won_parties }}</li>
+				
+				<h3>Game Lost</h3>
+				<li>{{ user_target.tic_stats.user_statistic.nbr_lose_parties }}</li>
+				
+				<h3>Time played</h3>
+				<li>{{ user_target.tic_stats.user_statistic.total_time_played }}</li>
+
+				<h3>Won Tournament</h3>
+				<li>{{ user_target.tic_stats.user_statistic.nbr_won_tournaments }}</li>
+			{% else %}
+				<h3>Game Won</h3>
+				<li>0</li>
+				
+				<h3>Game Lost</h3>
+				<li>0</li>
+				
+				<h3>Time played</h3>
+				<li>0</li>
+				
+				<h3>Won Tournament</h3>
+				<li>0</li>
+			{% endif %}
+		</ul>
+	</div>
+	<!-- </section> -->
+	<!-- <section class="right_board">
 		<div class="table-container">
 			<h1>HISTORY</h1>
-			<!-- <ul>
-				<li>Match 1</li>
-			</ul> -->
 			<table>
 				<thead>
 					<tr>
 						<th>Date</th>
 						<th>Opponent</th>
 						<th>Result</th>
-						<!-- <th>Game Duration</th> -->
 					</tr>
 				</thead>
 			</table>
@@ -96,5 +120,5 @@
 				</tbody>
 			</table>
 		</div>
-	</section>
+	</section> -->
 {% endif %}
