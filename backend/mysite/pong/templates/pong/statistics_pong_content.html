@@ -61,13 +61,13 @@
 							{% if game.winner.pseudo == user.pseudo %}
 								<tr>
 									<td class="victory">{{game.date}}</td>
-									<td class="victory">{{game.loser}}</td>
+									<td class="victory">{{game.loser.pseudo}}</td>
 									<td class="victory">Victory</td>
 								</tr>
 							{% else %}
 								<tr>
 									<td class="defeat">{{game.date}}</td>
-									<td class="defeat">{{game.winner}}</td>
+									<td class="defeat">{{game.winner.pseudo}}</td>
 									<td class="defeat">Defeat</td>
 								</tr>
 							{% endif %}

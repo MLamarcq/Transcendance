@@ -1,4 +1,80 @@
-.main
+main *
 {
-	
+	color: white;
+	text-align: center;
+
+	margin: 0;
+	padding: 0;
+}
+
+.body_page > section
+{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+
+	margin: 0;
+	padding: 5% 0;
+}
+
+.body_page section h1
+{
+	color: var(--orange);
+	font-size: 28px;
+	height: 80px;
+
+	margin: 0 0 25px;
+}
+
+.avatar span
+{
+	font-size: 29px;
+	color: var(--light-blue);
+	text-shadow: 0 0 5px var(--blue);
+	width: max-content;
+	display: inline-block;
+}
+
+.infos
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	height: auto;
+	width: 100%;
+}
+
+.friend
+{
+	margin: 20px 0;
+}
+.friend .yes span
+{
+	color: limegreen;
+}
+.friend .no span
+{
+	color: crimson;
+}
+
+main h3
+{
+	color: var(--green);
+}
+
+main section li
+{
+	display: inline-block;
+
+	width: 94%;
+
+	margin: 0 0 20px;
+	padding: 2% 0;
+
+	border: solid 2px var(--input);
+	border-radius: 10px;
+	background: #0008;
 }

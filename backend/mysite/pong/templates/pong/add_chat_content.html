@@ -16,7 +16,7 @@
 			</form>
 		</section>
 		{% if message.value %}
-			<p>{{ message.error_message }}</p>
+			<p class="message_form_chat">{{ message.error_message }}</p>
 		{% endif %}
 	</div>
 {% else %}
@@ -48,7 +48,7 @@
 						{% endfor %}
 					</ul>
 				{% else %}
-					<p>NO USERS AVALAIBLE</p>
+					<p class="message_form_chat_3">NO USERS AVAILABLE</p>
 				{% endif %}
 			</div>
 			<div class="blocked-div">
@@ -65,6 +65,6 @@
 			</div>
 	</div>
 	{% if message.value %}
-		<p>{{ message.error_message }}</p>
+		<p class="message_form_chat_2">{{ message.error_message }}</p>
 	{% endif %}
 {% endif %}

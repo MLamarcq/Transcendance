@@ -401,6 +401,8 @@ var y_ball_save = h_canva / 2;
 var x_speed = -5;
 var y_speed = -5;
 var ballRad = 10;
+var vmax = 9;
+var vmin = 6;
 
 // player
 var wpallet = 10;
@@ -413,7 +415,7 @@ var r_player = h_canva / 2;
 var start_time = Date.now();
 var end_time = 0;
 
-var end_score = 2;
+var end_score = 4;
 var red_score = 0;
 var blue_score = 0;
 
@@ -664,14 +666,7 @@ function move() {
 		pos_ball_pallet = l_player - y_ball;
 		perc_pos = abs(pos_ball_pallet) / 60;
 		deg = perc_pos * 50 + 20;
-		len_speed = (8 - 5.7) * (perc_pos) + 5.7
-		console.log("--------");
-		console.log("pos: ", pos_ball_pallet);
-		console.log("perc: ", perc_pos);
-		console.log("speed: ", len_speed);
-		console.log("x: ", 5.7 * Math.sin(deg_2_rad(deg) ) , deg);
-		console.log("y: ", 5.7 * Math.sin(deg_2_rad(abs(deg - 90)) ) , abs(deg - 90));
-		console.log("@@@@@@@@");
+		len_speed = (vmax - vmin) * (perc_pos) + vmin
 		if (pos_ball_pallet >= 0)
 		{
 			// top palet
@@ -700,14 +695,7 @@ function move() {
 		pos_ball_pallet = r_player - y_ball;
 		perc_pos = abs(pos_ball_pallet) / 60;
 		deg = perc_pos * 50 + 20;
-		len_speed = (8 - 5) * (perc_pos) + 5
-		console.log("--------");
-		console.log("pos: ", pos_ball_pallet);
-		console.log("perc: ", perc_pos);
-		console.log("speed: ", len_speed);
-		console.log("x: ", 5.7 * Math.sin(deg_2_rad(deg) ) , deg);
-		console.log("y: ", 5.7 * Math.sin(deg_2_rad(abs(deg - 90)) ) , abs(deg - 90));
-		console.log("@@@@@@@@");
+		len_speed = (vmax - vmin) * (perc_pos) + vmin
 		if (pos_ball_pallet >= 0)
 		{
 			// top palet
@@ -871,12 +859,11 @@ setTimeout(() => {
 	start_time = Date.now()
 }, 5000);
 
-
 function key_game(e)
 {
 	console.log("-key: ", e.keyCode);
 	still_alive = Date.now();
-	if (e.keyCode == 32 && first_time == false)
+	if (!stop && e.keyCode == 32 && first_time == false)
 	{
 		setTimeout(() => {
 			frame()
@@ -884,16 +871,37 @@ function key_game(e)
 		document.querySelector('.space').style.opacity = "0"
 		first_time = true;
 	}
-	if (!stop && e.keyCode == 38 && (r_player - hpallet_r / 2) > 0)
-		r_player -= 25; // up
-	if (!stop && e.keyCode == 40 && (r_player + hpallet_r / 2) < h_canva)
-		r_player += 25; // down
-
-	if (!stop && e.keyCode == 90 && (l_player - hpallet_l / 2) > 0)
-		l_player -= 25; // z
-	if (!stop && e.keyCode == 83 && (l_player + hpallet_l / 2) < h_canva)
-		l_player += 25; // s
+	if (!stop && e.keyCode == 38 && (l_player - hpallet_r / 2) > 0)
+		l_player -= 25; // up
+	if (!stop && e.keyCode == 40 && (l_player + hpallet_r / 2) < h_canva)
+		l_player += 25; // down
 }
+
+var ai_interval = setInterval(() => {
+	if (!stop)
+	{
+		if (x_ball > ((w_canva / 4) * 3) && x_speed > 0)
+		{
+			if (y_speed / x_speed > 1.8)
+			{
+				if (y_speed > 0)
+				{
+				}
+				else
+				{
+				}
+			}
+		}
+		if (x_ball > w_canva / 2 + ballRad && x_speed > 0 && (Math.random() * 10 < 7))
+		{
+			if (y_ball > r_player && (r_player + hpallet_r / 2) < h_canva)
+				r_player += 25
+			else if ((r_player - hpallet_r / 2) > 0)
+				r_player -= 25
+		}
+	}
+}, 50);
+
 document.removeEventListener('keydown', key_game);
 document.addEventListener('keydown', key_game)
 

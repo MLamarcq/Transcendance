@@ -413,7 +413,7 @@ var r_player = h_canva / 2;
 var start_time = Date.now();
 var end_time = 0;
 
-var end_score = 1;
+var end_score = 8;
 var red_score = 0;
 var blue_score = 0;
 
@@ -653,7 +653,7 @@ function move() {
 	var pos_ball_pallet = 0;
 	var perc_pos = 0;
 	var deg = 15;
-	var len_speed = 5.7;
+	var len_speed = 6;
 
 	if (x_ball - ballRad <= wpallet
 	&& y_ball >= yl_top && y_ball <= yl_bottom
@@ -664,13 +664,13 @@ function move() {
 		pos_ball_pallet = l_player - y_ball;
 		perc_pos = abs(pos_ball_pallet) / 60;
 		deg = perc_pos * 50 + 20;
-		len_speed = (8 - 5.7) * (perc_pos) + 5.7
+		len_speed = (8.2 - 6) * (perc_pos) + 6
 		console.log("--------");
 		console.log("pos: ", pos_ball_pallet);
 		console.log("perc: ", perc_pos);
 		console.log("speed: ", len_speed);
-		console.log("x: ", 5.7 * Math.sin(deg_2_rad(deg) ) , deg);
-		console.log("y: ", 5.7 * Math.sin(deg_2_rad(abs(deg - 90)) ) , abs(deg - 90));
+		console.log("x: ", 6 * Math.sin(deg_2_rad(deg) ) , deg);
+		console.log("y: ", 6 * Math.sin(deg_2_rad(abs(deg - 90)) ) , abs(deg - 90));
 		console.log("@@@@@@@@");
 		if (pos_ball_pallet >= 0)
 		{
@@ -700,13 +700,13 @@ function move() {
 		pos_ball_pallet = r_player - y_ball;
 		perc_pos = abs(pos_ball_pallet) / 60;
 		deg = perc_pos * 50 + 20;
-		len_speed = (8 - 5) * (perc_pos) + 5
+		len_speed = (8.2 - 6) * (perc_pos) + 6
 		console.log("--------");
 		console.log("pos: ", pos_ball_pallet);
 		console.log("perc: ", perc_pos);
 		console.log("speed: ", len_speed);
-		console.log("x: ", 5.7 * Math.sin(deg_2_rad(deg) ) , deg);
-		console.log("y: ", 5.7 * Math.sin(deg_2_rad(abs(deg - 90)) ) , abs(deg - 90));
+		console.log("x: ", 6 * Math.sin(deg_2_rad(deg) ) , deg);
+		console.log("y: ", 6 * Math.sin(deg_2_rad(abs(deg - 90)) ) , abs(deg - 90));
 		console.log("@@@@@@@@");
 		if (pos_ball_pallet >= 0)
 		{
@@ -816,9 +816,9 @@ function restart() {
 	if (getCookie('powerup') == "y")
 	{
 		if (red_score < blue_score)
-			hpallet_l = 120 + (10 * abs(red_score - blue_score))
+			hpallet_l = 120 + (20 * abs(red_score - blue_score))
 		else if (blue_score < red_score)
-			hpallet_r = 120 + (10 * abs(red_score - blue_score))
+			hpallet_r = 120 + (20 * abs(red_score - blue_score))
 	}
 	else
 	{

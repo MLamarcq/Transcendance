@@ -285,6 +285,8 @@ def signup(request):
 	#     return render(request, "pong/signin.html")
 
 
+
+
 def handle_authentication(request, email, password):
 	logger.info("__ D")
 	user = authenticate(request, email=email, password=password)
@@ -293,6 +295,8 @@ def handle_authentication(request, email, password):
 		logger.info("__ E")
 		request.session['user_id'] = user.id
 		user.is_active_status = True
+		user.save()
+		logger.debug("user = %s", user)
 		if user.is_mfa_enabled:
 			return {'redirect': "pong/otp_content.html",
 					'url' : reverse("otp")
@@ -327,6 +331,7 @@ def signin(request):
 		password = request.POST.get("password")
 
 		result = handle_authentication(request, email, password)
+
 		logger.debug("email = %s", email)
 		logger.debug("password = %s", password)
 
@@ -562,7 +567,7 @@ def update_stats(user, partie, name) :
 def statistics_pong(request):
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			html = render_to_string("pong/login_content.html", {}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("index")
 			})
@@ -592,7 +597,7 @@ def statistics_pong(request):
 def statistics_tic(request):
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			html = render_to_string("pong/login_content.html", {}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("index")
 			})
@@ -626,7 +631,7 @@ def statistics_tic(request):
 def statistics(request) :
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			html = render_to_string("pong/login_content.html", {}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("index")
 			})
@@ -670,27 +675,36 @@ def chat_solo(request):
 			if (participant.pseudo == user.pseudo) :
 				list_of_chats.append((chat))
 	if not list_of_chats :
+		list_of_chats = get_list_of_potential_chats(user, chats)
+		logger.debug("list de chat dans chat_room = %s", list_of_chats)
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/join_chat_content.html", {}, request=request)
+			html = render_to_string("pong/join_chat_content.html", {'chat_info': {
+																					'list_of_chats' : list_of_chats}}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("join_chat")
 			})
 		else:
 			return HttpResponseRedirect(reverse("join_chat"))
-	# logger.debug("list of chat = %s", list_of_chats)
 	chat_info = {'list_of_chats' : list_of_chats}
 	message_info = {}
+	toggle = True
+	# logger.debug("list of chat = %s", list_of_chats)
 	for chat in reversed(list_of_chats) :
 		messages = chat.messages.all()
 		message_info[chat.name] = []
 		for message in messages :
-			message_info[chat.name].append({
-				'message' : message.content,
-				'sender' : message.sender.pseudo,
-				'time' : message.timestamp.isoformat(),
-			})
+			toggle = is_blocked(user, message.sender)
+			logger.debug("toggle = %s", toggle)
+			if not toggle :
+				logger.info("la condition est remplie")
+				message_info[chat.name].append({
+					'message' : message.content,
+					'sender' : message.sender.pseudo,
+					'time' : message.timestamp.isoformat(),
+					})
 		name_chat = chat.name
 		break
+	
 	context = {'chat_info' : chat_info,
 				'message_info' : json.dumps(message_info),
 				'chat_name' : name_chat,
@@ -714,8 +728,10 @@ def chat_solo(request):
 						found = True
 					break
 			if found :
-				BlockedUser.objects.create(blocker=user, blocked_user=user_target)
-				message_block = f"{user_target} has been blocked"
+				target = NewUser.objects.get(pseudo=user_target)
+				if target :
+					BlockedUser.objects.create(blocker=user, blocked_user=target)
+					message_block = f"{user_target} has been blocked"
 			elif not found and not message_block :
 				message_block = f"{user_target} doesn't exist"
 			if message_block :
@@ -857,7 +873,7 @@ def invitation_response(request):
 def chat_room(request, chat_name):
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			html = render_to_string("pong/login_content.html", {}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("index")
 			})
@@ -886,8 +902,11 @@ def chat_room(request, chat_name):
 			if (participant.pseudo == user.pseudo) :
 				list_of_chats.append((chat))
 	if not list_of_chats :
+		list_of_chats = get_list_of_potential_chats(user, chats)
+		logger.debug("list de chat dans chat_room = %s", list_of_chats)
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/join_chat_content.html", {}, request=request)
+			html = render_to_string("pong/join_chat_content.html", {'chat_info': {
+																					'list_of_chats' : list_of_chats}}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("join_chat")
 			})
@@ -905,6 +924,7 @@ def chat_room(request, chat_name):
 					'is_solo' : False
 		}
 	if not chat_name :
+		logger.info("On rentre ici dans la vue chat_room")
 		for chat in reversed(list_of_chats) :
 			messages = chat.messages.all()
 			message_info[chat.name] = []
@@ -921,6 +941,7 @@ def chat_room(request, chat_name):
 		context['chat_name'] = name_chat
 		context['chat_name_json'] = json.dumps({'chat_name' : name_chat})
 	else :
+		logger.info("Tout va bien on passe la ")
 		toggle = True
 		for chat in reversed(list_of_chats) :
 			if (chat.name == chat_name) :
@@ -935,12 +956,15 @@ def chat_room(request, chat_name):
 					# 			if message.sender == blocked.blocked.pseudo :
 					# 				toggle = False
 					toggle = is_blocked(user, message.sender)
+					logger.debug("toggle = %s", toggle)
 					if not toggle :
+						logger.info("la condition est remplie")
 						message_info[chat.name].append({
 							'message' : message.content,
 							'sender' : message.sender.pseudo,
 							'time' : message.timestamp.isoformat(),
-					})
+						})
+
 				break
 			# context = {'chat_info' : chat_info,
 			# 			'message_info' : json.dumps(message_info),
@@ -950,6 +974,7 @@ def chat_room(request, chat_name):
 		context['message_info'] = json.dumps(message_info)
 		context['chat_name'] = chat_name
 		context['chat_name_json'] = json.dumps({'chat_name' : chat_name})
+		logger.debug("context = %s", context)
 	if request.method == "POST" :
 		if request.POST.get("message_content") :
 			message_content = request.POST.get("message_content")
@@ -1002,8 +1027,10 @@ def chat_room(request, chat_name):
 						found = True
 					break
 			if found :
-				BlockedUser.objects.create(blocker=user, blocked_user=user_target)
-				message = f"{user_target} has been blocked"
+				target = NewUser.objects.get(pseudo=user_target)
+				if target :
+					BlockedUser.objects.create(blocker=user, blocked_user=target)
+					message_block = f"{user_target} has been blocked"
 			elif not found and not message :
 				message = f"{user_target} doesn't exist"
 			if message :
@@ -1086,37 +1113,57 @@ def chat_room(request, chat_name):
 				})
 		return render(request, "pong/chat.html", context)
 
+
+def extract_blocked_list(user, user_friends) :
+	blocked_object = BlockedUser.objects.all()
+	blocked_list = []
+	if blocked_object :
+		for blocked in blocked_object :
+			if user.pseudo == blocked.blocker.pseudo:
+				for friend in user_friends :
+					if friend.pseudo == blocked.blocked_user.pseudo :
+						blocked_list.append(friend)
+	return blocked_list
+
+def extract_user_blocked_by_other(user, user_friends) :
+	blocked_object = BlockedUser.objects.all()
+	blocked_by = []
+	if blocked_object :
+		for blocked in blocked_object :
+			if user.pseudo == blocked.blocked_user.pseudo:
+				for friend in user_friends :
+					if friend.pseudo == blocked.blocker.pseudo :
+						blocked_by.append(friend)
+	return blocked_by
+
+def set_info_chat(user, user_friends, info_add_chat) :
+	blocked_list = extract_blocked_list(user, user_friends)
+	blocked_by = extract_user_blocked_by_other(user, user_friends)
+	if blocked_list or blocked_by:
+		for friend in user_friends :
+			if friend not in blocked_list and friend not in blocked_by :
+				info_add_chat['users_ok'].append(friend)
+		if blocked_list : 
+			info_add_chat['blocked_users'] = blocked_list
+		if blocked_by :
+			info_add_chat['blocked_by'] = blocked_by
+	else :
+		for friend in user_friends :
+			info_add_chat['users_ok'].append(friend)
+	return info_add_chat
+
 def check_private_possibility(user) :
 	user_friends = get_friends(user)
 	info_add_chat = {
 		'token' : None,
 		'users_ok' : [],
-		'blocked_users' : []
+		'blocked_users' : [],
+		'blocked_by' : []
 	}
 	if not user_friends :
 		info_add_chat['token'] = False
 		return info_add_chat
-	blocked_object = BlockedUser.objects.all()
-	blocked_list = []
-	if blocked_object :
-		for blocked in blocked_object :
-			if user.pseudo == blocked.blocker.pseudo :
-				for friend in user_friends :
-					if friend.pseudo == blocked.blocked_user.pseudo :
-						blocked_list.append(friend)
-		for friend in user_friends :
-			toggle = False
-			for users_blocked in blocked_list :
-				if friend.pseudo == users_blocked.pseudo :
-					toggle = True
-					break
-			if not toggle :
-				info_add_chat['users_ok'].append(friend)
-		info_add_chat['blocked_users'] = blocked_list
-	else :
-		for friend in user_friends :
-			info_add_chat['users_ok'].append(friend)
-	# if info_add_chat['users_ok'] or info_add_chat:
+	info_add_chat = set_info_chat(user, user_friends, info_add_chat)
 	info_add_chat['token'] = True
 	logger.debug("info_add_chat = %s", info_add_chat)
 	return (info_add_chat)
@@ -1157,6 +1204,21 @@ def is_blocked_add_chat(username, blocked_list) :
 		error_message = f"{username} is blocked"
 	# logger.debug("blocked_list = %s", blocked_list)
 	# # if username in blocked_list :
+	return (error_message)
+
+def is_blocked_by_other_add_chat(username, blocked_by) :
+	toggle = False
+	error_message = None
+	for blocked in blocked_by :
+		logger.debug("blocked.pseudo = %s", blocked.pseudo)
+		logger.debug("username = %s", username)
+		if blocked.pseudo == username :
+			toggle = True
+			break
+	if toggle :
+		error_message = f"{username} has blocked you"
+	# logger.debug("blocked_by = %s", blocked_by)
+	# # if username in blocked_by :
 	return (error_message)
 
 
@@ -1200,7 +1262,7 @@ def is_blocked(user, target) :
 def add_chat(request) :
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			html = render_to_string("pong/login_content.html", {}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("index")
 			})
@@ -1274,15 +1336,17 @@ def add_chat(request) :
 				if not error_message :
 					error_message = is_blocked_add_chat(friend_name, add_chat_info['blocked_users'])
 					if not error_message :
-						error_message = "Tous les filtres ont ete passes"
-						chat_name = other_user.pseudo + " et " + user.pseudo
-						chat_private, created = Chat.objects.get_or_create(name=chat_name, is_private=True)
-						participant1, created = Participant.objects.get_or_create(user=user, chat=chat_private)
-						participant2, created = Participant.objects.get_or_create(user=other_user, chat=chat_private)
-						chat_private.save()
-						participant1.save()
-						participant2.save()
-						error_message =  f"You are now in private conversation with {other_user.pseudo}"
+						error_message = is_blocked_by_other_add_chat(friend_name, add_chat_info['blocked_by'])
+						if not error_message :
+							error_message = "Tous les filtres ont ete passes"
+							chat_name = other_user.pseudo + " et " + user.pseudo
+							chat_private, created = Chat.objects.get_or_create(name=chat_name, is_private=True)
+							participant1, created = Participant.objects.get_or_create(user=user, chat=chat_private)
+							participant2, created = Participant.objects.get_or_create(user=other_user, chat=chat_private)
+							chat_private.save()
+							participant1.save()
+							participant2.save()
+							error_message =  f"You are now in private conversation with {other_user.pseudo}"
 			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 					html = render_to_string("pong/add_chat_content.html", {'message': {
 																		'value' : True,
@@ -1306,10 +1370,27 @@ def add_chat(request) :
 			return render(request, "pong/add_chat.html", {'add_chat_info' : add_chat_info})
 
 
+def get_list_of_potential_chats(user, chats) :
+	list_of_chats = []
+	for chat in chats :
+		participants = chat.participants.all()
+		is_in = False
+		logger.debug("chat = %s", chat)
+		for users in participants :
+			if (users == user) :
+				is_in = True
+				break
+		logger.debug("in_is = %s", is_in)
+		if not is_in :
+			if not chat.is_private :
+				list_of_chats.append(chat)
+	return (list_of_chats)
+
+
 def join_chat(request) :
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			html = render_to_string("pong/login_content.html", {}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("index")
 			})
@@ -1317,16 +1398,8 @@ def join_chat(request) :
 			return HttpResponseRedirect(reverse("index"))
 	user = NewUser.objects.get(id=(request.session.get('user_id')))
 	all_chats = Chat.objects.all()
-	list_of_chats = []
-	for chat in all_chats :
-		participants = chat.participants.all()
-		is_in = False
-		for users in participants :
-			if (users == user) :
-				is_in = True
-				break
-		if not is_in :
-			list_of_chats.append(chat)
+	list_of_chats = get_list_of_potential_chats(user, all_chats)
+	logger.debug("list_of_chats = %s", list_of_chats)
 	if request.method == "POST" :
 		chat_name = request.POST.get("chat_name")
 		# all_chats = Chat.objects.all()
@@ -1404,7 +1477,7 @@ def join_chat(request) :
 def render_chat(request, chat_name) :
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			html = render_to_string("pong/login_content.html", {}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("index")
 			})
@@ -1412,21 +1485,45 @@ def render_chat(request, chat_name) :
 			return HttpResponseRedirect(reverse("index"))
 	all_chats = Chat.objects.all()
 	update_message = {}
-	for chat in all_chats :
-		if chat.name == chat_name :
-			message_chat = chat.messages.all()
-			update_message[chat.name] = []
-			for message in message_chat :
-				update_message[chat.name].append({
-					'message' : message.content,
-					'sender' : message.sender.pseudo,
-					'time' : message.timestamp.isoformat(),
-				})
+	user = NewUser.objects.get(id=(request.session.get('user_id')))
+	# for chat in all_chats :
+	# 	if chat.name == chat_name :
+	# 		message_chat = chat.messages.all()
+	# 		update_message[chat.name] = []
+	# 		for message in message_chat :
+	# 			update_message[chat.name].append({
+	# 				'message' : message.content,
+	# 				'sender' : message.sender.pseudo,
+	# 				'time' : message.timestamp.isoformat()
+	# 			})
+	toggle = True
+	list_of_chats = []
+	for chat_solo in all_chats :
+		list_of_chats.append(chat_solo)
+	if list_of_chats :
+		for chat in reversed(list_of_chats) :
+			if (chat.name == chat_name) :
+				messages = chat.messages.all()
+				update_message[chat.name] = []
+				for message in messages :
+					toggle = is_blocked(user, message.sender)
+					logger.debug("toggle = %s", toggle)
+					if not toggle :
+						logger.info("la condition est remplie")
+						update_message[chat.name].append({
+							'message' : message.content,
+							'sender' : message.sender.pseudo,
+							'time' : message.timestamp.isoformat(),
+						})
+
+				break
+
 			# logger.debug("message_chat = %s", message_chat)
-			return JsonResponse({
-				'chat_found' : True,
-				'update_message' : update_message
-			})
+		return JsonResponse({
+			'chat_found' : True,
+			'update_message' : update_message,
+			'user' : user.pseudo,
+		})
 	return JsonResponse({
 		'chat_found' : False,
 	})
@@ -1451,7 +1548,7 @@ def render_chat(request, chat_name) :
 def leave_chat(request) :
 	if not request.user.is_authenticated:
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/login_content.html", {'message': message}, request=request)
+			html = render_to_string("pong/login_content.html", {}, request=request)
 			return JsonResponse({'html': html,
 								'url' : reverse("index")
 			})
@@ -1581,7 +1678,7 @@ def profile_view(request):
 		"pseudo" : None
 	}
 
-
+	logger.debug("friend = %s", friends)
 	if request.method == "POST":
 		if request.POST.get("options"):
 			choice = request.POST.get("options")
@@ -1638,6 +1735,7 @@ def profile_view(request):
 					password_form_errors.append('New passwords do not match.')
 			else:
 				password_form_errors.append('Please fill out all password fields.')
+		
 	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 		html = render_to_string("pong/profile_content.html", {
 														'user_info' : {
@@ -2110,6 +2208,7 @@ def delete_friends(request):
 																		'message' : "nothing"
 																}, 'user_friend' : user_friend,
 																})
+
 
 
 def other_profile(request, username) :
@@ -2871,3 +2970,16 @@ def stop_waiting_tic(request):
 
 
 
+def pong_ai(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+		html = render_to_string("pong/pong_ai_content.html", {}, request=request)
+		return JsonResponse({'html': html, 'url' : reverse("pong_ai") })
+	else:
+		return render(request, "pong/pong_ai.html", {})

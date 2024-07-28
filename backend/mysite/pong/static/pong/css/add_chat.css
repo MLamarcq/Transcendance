@@ -170,6 +170,47 @@ main
 	background: none;
 	font-size: 18px;
 }
+
+.message_form_chat
+{
+	text-align: center;
+	margin-top: 5px;
+	font-size: 15px;
+	color: var(--orange);
+	text-shadow: 
+	0 0 5px black,
+	0 0 5px black,
+	0 0 5px black;
+}
+
+.message_form_chat_3
+{
+	text-align: center;
+	margin-top: 5px;
+	font-size: 15px;
+	color: var(--input);
+	text-shadow: 
+		0 0 5px black,
+		0 0 5px black,
+		0 0 5px black;
+}
+
+.message_form_chat_2
+{
+	position: absolute;
+	z-index: 400;
+	bottom: 20%;
+	text-align: center;
+	margin-top: 5px;
+	font-size: 15px;
+	color: var(--orange);
+	text-shadow: 
+		0 0 5px black,
+		0 0 5px black,
+		0 0 5px black;
+}
+
+
 /* 
 .add_private
 {

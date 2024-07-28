@@ -1,88 +1,164 @@
 {% load static %}
 
+<link href="{% static 'pong/css/profil.css' %}" rel="stylesheet">
 <link href="{% static 'pong/css/other_profile.css' %}" rel=stylesheet>
 
 {% if user_target.token %}
-	<section>
-		<div class="user_info">
-			<div class="user">
-				<h1>{{ user_target.username }}'S PROFIL</h1>
-				{% if user_target.is_friend %}
-					<p class="is_friend">FRIEND : YES</p>
-				{% else %}
-					<p class="is_not_friend">FRIEND : NO</p>
-				{% endif %}
-			</div>
+	<h1>Profil</h1>
+<div class="body_page">
+	<section class="left_side">
+		<div class="infos">
 			<div class="avatar">
+				<h1>
+					<span>
+						{{ user_target.username }}
+					</span>'S PROFIL
+				</h1>
 				{% if user_target.user_avatar %}
-				<img src="{{ user_target.user_avatar }}" alt="Avatar" />
+					<img src="{{ user_target.user_avatar }}" alt="Avatar" />
 				{% else %}
 					<img src="{% static 'pong/image/profil_default.png' %}" alt="Default Avatar" />
 				{% endif %}
 			</div>
+			<div class="friend">
+				{% if user_target.is_friend %}
+					<p class="yes">FRIEND : <span>YES</span></p>
+				{% else %}
+					<p class="no">FRIEND : <span>NO</span></p>
+				{% endif %}
+			</div>
 		</div>
 	</section>
-	<div class="user_stat">
+	<section class="right_side">
 		<h1>PONG STATS</h1>
 		<ul>
 			{% if user_target.pong_stats %}
-				<h3>Game Won</h3>
-				<li>{{ user_target.pong_stats.user_statistic.nbr_won_parties }}</li>
-				
-				<h3>Game Lost</h3>
-				<li>{{ user_target.pong_stats.user_statistic.nbr_lose_parties }}</li>
-				
-				<h3>Time played</h3>
-				<li>{{ user_target.pong_stats.user_statistic.total_time_played }}</li>
+				<li>
+					<h3>Game Won</h3>
+					<p>
+						{{ user_target.pong_stats.user_statistic.nbr_won_parties }}
+					</p>
+				</li>
 
-				<h3>Won Tournament</h3>
-				<li>{{ user_target.pong_stats.user_statistic.nbr_won_tournaments }}</li>
+				<li>
+					<h3>Game Lost</h3>
+					<p>
+						{{ user_target.pong_stats.user_statistic.nbr_lose_parties }}
+					</p>
+				</li>
+
+				<li>
+					<h3>Time played</h3>
+					<p>
+						{{ user_target.pong_stats.user_statistic.total_time_played }}
+					</p>
+				</li>
+
+				<li>
+					<h3>Won Tournament</h3>
+					<p>
+						{{ user_target.pong_stats.user_statistic.nbr_won_tournaments }}
+					</p>
+				</li>
 			{% else %}
-				<h3>Game Won</h3>
-				<li>0</li>
-				
-				<h3>Game Lost</h3>
-				<li>0</li>
-				
-				<h3>Time played</h3>
-				<li>0</li>
-				
-				<h3>Won Tournament</h3>
-				<li>0</li>
+				<li>
+					<h3>Game Won</h3>
+					<p>
+						0
+					</p>
+				</li>
+
+				<li>
+					<h3>Game Lost</h3>
+					<p>
+						0
+					</p>
+				</li>
+
+				<li>
+					<h3>Time played</h3>
+					<p>
+						0
+					</p>
+				</li>
+
+				<li>
+					<h3>Won Tournament</h3>
+					<p>
+						0
+					</p>
+				</li>
 			{% endif %}
 		</ul>
-	</div>
+	</section>
+	<section class="bot_side">
 		<h1>TIC TAC TOE STATS</h1>
 		<ul>
 			{% if user_target.tic_stats %}
-				<h3>Game Won</h3>
-				<li>{{ user_target.tic_stats.user_statistic.nbr_won_parties }}</li>
-				
-				<h3>Game Lost</h3>
-				<li>{{ user_target.tic_stats.user_statistic.nbr_lose_parties }}</li>
-				
-				<h3>Time played</h3>
-				<li>{{ user_target.tic_stats.user_statistic.total_time_played }}</li>
+				<li>
+					<h3>Game Won</h3>
+					<p>
+						{{ user_target.tic_stats.user_statistic.nbr_won_parties }}
+					</p>
+				</li>
 
-				<h3>Won Tournament</h3>
-				<li>{{ user_target.tic_stats.user_statistic.nbr_won_tournaments }}</li>
+				<li>
+					<h3>Game Lost</h3>
+					<p>
+						{{ user_target.tic_stats.user_statistic.nbr_lose_parties }}
+					</p>
+				</li>
+
+				<li>
+					<h3>Time played</h3>
+					<p>
+						{{ user_target.tic_stats.user_statistic.total_time_played }}
+					</p>
+				</li>
+
+				<li>
+					<h3>Won Tournament</h3>
+					<p>
+						{{ user_target.tic_stats.user_statistic.nbr_won_tournaments }}
+					</p>
+				</li>
 			{% else %}
-				<h3>Game Won</h3>
-				<li>0</li>
-				
-				<h3>Game Lost</h3>
-				<li>0</li>
-				
-				<h3>Time played</h3>
-				<li>0</li>
-				
-				<h3>Won Tournament</h3>
-				<li>0</li>
+				<li>
+					<h3>Game Won</h3>
+					<p>
+						0
+					</p>
+				</li>
+
+				<li>
+					<h3>Game Lost</h3>
+					<p>
+						0
+					</p>
+				</li>
+
+				<li>
+					<h3>Time played</h3>
+					<p>
+						0
+					</p>
+				</li>
+
+				<li>
+					<h3>Won Tournament</h3>
+					<p>
+						0
+					</p>
+				</li>
 			{% endif %}
 		</ul>
-	</div>
+	</section>
+</div>
 	<!-- </section> -->
-	<!-- <section class="right_board">
+
+	<!-- check context from view -->
+	<!--
+		<section class="right_board">
 		<div class="table-container">
 			<h1>HISTORY</h1>
 			<table>

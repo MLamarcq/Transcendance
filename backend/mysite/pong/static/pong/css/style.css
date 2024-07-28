@@ -14,7 +14,7 @@
 	font-size: 16px;
 
 	box-sizing: border-box;
-	
+
 	border: none;
 	list-style: none;
 }
@@ -45,6 +45,7 @@
 html, body
 {
 	touch-action: manipulation;
+	margin: 0;
 }
 
 input, textarea, select, button {
@@ -71,7 +72,7 @@ header
 	width: 100%;
 }
 
-header > * 
+header > *
 {
 	margin: 25px;
 }
@@ -80,7 +81,7 @@ header h3 a
 {
 	color: var(--green);
 	font-size: 30px;
-	
+
 }
 
 header h3 a:hover
@@ -140,7 +141,7 @@ header span
 	height: 100%;
 	padding: 2px 9px;
 	display: inline-block;
-	margin-right: -2px;
+	margin-right: -11px;
 	border-radius: 0px 5px 5px 0px;
 	background: #aaa7;
 	border-left: solid 1px white;
@@ -171,13 +172,69 @@ input
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	transform: translate(-50%, -50%);
+
 	width: 350px;
 	height: 130px;
-	background: blue;
-	color: white;
+
+	background: white;
+	box-shadow: inset 0 0 5px #0005, 0 0 10px #000, 0 0 5px #000;
+
+	color: var(--green);
 	font-size: 20px;
-	transform: translate(-50%, -50%);
+	text-align: center;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	padding: 15px;
+
 	z-index: 9999;
+}
+
+#invit
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 350px;
+	height: 130px;
+
+	background: white;
+	box-shadow: inset 0 0 5px #0005, 0 0 10px #000, 0 0 5px #000;
+
+	color: var(--green);
+	font-size: 20px;
+	text-align: center;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	padding: 15px;
+
+	z-index: 9999;
+}
+
+#invit button
+{
+	background: var(--input);
+	color: white;
+	padding: 5px 15px;
+}
+
+#invit button:hover
+{
+	transform: scale(1.1);
+}
+#invit button:active
+{
+	transform: scale(0.9);
 }
 
 @media screen and (max-width: 1030px) {

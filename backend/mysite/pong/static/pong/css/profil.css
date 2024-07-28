@@ -30,9 +30,9 @@ main
 
 .friends_header
 {
-	display: flex; 
-	flex-direction: column; 
-	justify-content: center; 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	text-align: center;
 }
@@ -74,7 +74,7 @@ main
 .add_friends:hover
 {
 	color:limegreen;
-	text-shadow: 
+	text-shadow:
 		0 0 5px limegreen;
 	background: none;
 }
@@ -90,7 +90,7 @@ main
 .del_friends:hover
 {
 	color:crimson;
-	text-shadow: 
+	text-shadow:
 		0 0 5px crimson;
 	background: none;
 }
@@ -138,7 +138,7 @@ main
 .no_friends
 {
 	color: white;
-	text-shadow: 
+	text-shadow:
 		0 0 5px white;
 	font-size: 15px;
 	border: 2px solid var(--orange);
@@ -253,8 +253,8 @@ header
 {
 	font-size: 20px;
 	color: var(--light-blue);
-	text-shadow: 
-		0 0 5px var(--light-blue);
+	text-shadow:
+		0 0 5px var(--blue);
 }
 
 .infos_pseudo_email p
@@ -306,7 +306,7 @@ header
 	top: 5%; */
 	color: var(--orange);
 	font-size: 25px;
-	text-shadow: 
+	text-shadow:
 		0 0 5px var(--orange);
 }
 
@@ -321,7 +321,7 @@ header
 
 .left_side
 {
-	position: relative; 
+	position: relative;
 	/* left: 50px; */
 	width: 100%;
 	display: flex;
@@ -363,7 +363,7 @@ header
 .header_page a:hover
 {
 	color: var(--orange);
-	text-shadow: 
+	text-shadow:
 		0 0 5px var(--orange);
 	background: none;
 }
@@ -374,7 +374,7 @@ header
 	position: relative;
 	color: var(--purple);
 	color: white;
-	text-shadow: 
+	text-shadow:
 		0 0 5px var(--purple),
 		0 0 5px var(--purple),
 		0 0 5px white,
@@ -422,7 +422,7 @@ header
 	/* color: var(--green); */
 	/* color: white; */
 	color: white;
-	text-shadow: 
+	text-shadow:
 		0 0 5px white;
 	padding: 10px;
 }
@@ -514,7 +514,7 @@ header
 	/* color: var(--green); */
 	/* color: white; */
 	color: white;
-	text-shadow: 
+	text-shadow:
 		0 0 5px white;
 	padding: 5px;
 }
@@ -537,7 +537,7 @@ header
 {
 	margin-top: 2%;
 	color: var(--green);
-	text-shadow: 
+	text-shadow:
 		0 0 5px var(--green);
 	background: white;
 	border-radius: 5px;
@@ -561,7 +561,7 @@ header
 	position: relative;
 	bottom: 30%;
 	color: var(--green);
-	text-shadow: 
+	text-shadow:
 	0 0 5px var(--green);
 	background: white;
 	border-radius: 5px;
@@ -617,8 +617,8 @@ header
 	left: 50px;
 	color: white;
 	font-size: 20px;
-	text-shadow: 
-		0 0 5px white; 
+	text-shadow:
+		0 0 5px white;
 	text-align: center;
 } */
 

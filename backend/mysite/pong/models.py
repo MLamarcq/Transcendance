@@ -80,7 +80,7 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
 	
 
 	def __str__(self):
-		return self.pseudo
+		return f'psuedo = {self.pseudo}, is_active_status {self.is_active_status}'
 
 	def block_user(self, user):
 		self.blocked_users.add(user)
@@ -116,7 +116,7 @@ class Chat(models.Model):
 	is_private = models.BooleanField(default=False)
 
 	def __str__(self):
-		return self.name
+		return f'name = {self.name} and participants = {self.participants}'
 
 class Participant(models.Model):
 	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='participants')

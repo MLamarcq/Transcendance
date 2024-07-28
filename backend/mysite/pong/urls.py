@@ -47,4 +47,7 @@ urlpatterns = [
 	path('check_tic_match/', views.check_tic_match, name='check_tic_match'),
 	path('check_tic_status/<int:party_id>/', views.check_tic_status, name='check_tic_status'),
 	path('scoring_tic/<int:party_id>/', views.scoring_tic, name='scoring_tic'),
+
+	path('pong_ai/', views.pong_ai, name='pong_ai'),
+
 ]

@@ -73,7 +73,7 @@
 	}
 	section article a
 	{
-		height: 30vh;
+		height: 13.5vh;
 	}
 	section a:hover
 	{
@@ -211,6 +211,7 @@
 	</aside>
 	<article>
 		<a href="/waiting_pong">Pong</a>
+		<a href="/pong_ai">Pong AI</a>
 		<form action="/tournament/" method="post">
 			Tournament
 			{% csrf_token %}
@@ -221,7 +222,7 @@
 </section>
 
 <script>
- 
+
 
 if (getCookie('color') == 2)
 	document.getElementById('color2').checked = true;

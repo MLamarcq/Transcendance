@@ -411,13 +411,13 @@ function game(e)
 		var result;
 		if (turn % 2)
 		{
-			tic_arr[e.target.id] = 1
-			div.classList.add('cross')
+			tic_arr[e.target.id] = 1;
+			div.classList.add('cross');
 		}
 		else
 		{
-			tic_arr[e.target.id] = 0
-			div.classList.add('circle')
+			tic_arr[e.target.id] = 0;
+			div.classList.add('circle');
 		}
 		result = check_end();
 		console.log(result)
@@ -449,7 +449,6 @@ function game(e)
 		console.log(tic_arr);
 		turn++;
 	}
-
 }
 
 
