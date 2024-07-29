@@ -79,6 +79,16 @@
 									<td class="victory">{{game.loser.pseudo}}</td>
 									<td class="victory">Victory</td>
 								</tr>
+							{% elif game.score_red == game.score_blue %}
+								<tr>
+									<td class="draw">{{game.date}}</td>
+									{% if game.winner.pseudo == user.pseudo %}
+										<td class="draw">{{game.loser.pseudo}}</td>
+									{% else %}
+										<td class="draw">{{game.winner.pseudo}}</td>
+									{% endif %}
+									<td class="draw">Draw</td>
+								</tr>
 							{% else %}
 								<tr>
 									<td class="defeat">{{game.date}}</td>
