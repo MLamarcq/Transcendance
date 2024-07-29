@@ -310,7 +310,7 @@ header
 		0 0 5px var(--orange);
 }
 
-.right_side form fieldset
+.right_side fieldset
 {
 	display: flex;
 	align-items: center;
@@ -427,12 +427,19 @@ header
 	padding: 10px;
 }
 
+.action_enable_disabled button
+{
+	min-width: 300px;
+	margin: 20px 0;
+}
 .action_enable_disabled
 {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	flex-direction: column;
 	height: 200px;
+	padding: 0 20px;
 }
 
 .change_little form

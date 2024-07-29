@@ -1,3 +1,7 @@
+* {
+	transition: none;
+}
+
 :root{
 	--margin-header: 5vh;
 	/* --width-send: 150px; */

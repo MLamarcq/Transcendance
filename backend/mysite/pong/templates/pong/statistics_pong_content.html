@@ -13,10 +13,10 @@
 				{% if data.user_statistic %}
 					<h3>Game Won</h3>
 					<li>{{ data.user_statistic.nbr_won_parties }}</li>
-					
+
 					<h3>Game Lost</h3>
 					<li>{{ data.user_statistic.nbr_lose_parties }}</li>
-					
+
 					{% if data.is_tic %}
 						<h3>Draw</h3>
 						<li>{{ data.user_statistic.nbr_draw }}</li>
@@ -24,17 +24,19 @@
 
 					<h3>Time played</h3>
 					<li>{{ data.user_statistic.total_time_played }}</li>
-					
-					<h3>Won Tournament</h3>
-					<li>{{ data.user_statistic.nbr_won_tournaments }}</li>
+
+					{% if not data.is_tic %}
+						<h3>Won Tournament</h3>
+						<li>{{ data.user_statistic.nbr_won_tournaments }}</li>
+					{% endif %}
 
 				{% else %}
 					<h3>Game Won</h3>
 					<li>0</li>
-					
+
 					<h3>Game Lost</h3>
 					<li>0</li>
-					
+
 					{% if data.is_tic %}
 						<h3>Draw</h3>
 						<li>0</li>
@@ -42,9 +44,11 @@
 
 					<h3>Time played</h3>
 					<li>0</li>
-					
-					<h3>Won Tournament</h3>
-					<li>0</li>
+
+					{% if not data.is_tic %}
+						<h3>Won Tournament</h3>
+						<li>0</li>
+					{% endif %}
 				{% endif %}
 			</ul>
 		</section>
@@ -107,9 +111,9 @@
 	<script>
 		var gameDates = JSON.parse('{{ data.game_dates_json|escapejs }}');
 		var gameResults = JSON.parse('{{ data.game_results_json|escapejs }}');
-	  
+
 		var ctx = document.getElementById('myChart').getContext('2d');
-	  
+
 		var data = {
 		  labels: gameDates,
 		  datasets: [{
@@ -121,7 +125,7 @@
 			fill: false // Remplissage sous la ligne
 		  }]
 		};
-	  
+
 		var myChart = new Chart(ctx, {
 		  type: 'line', // Changez le type de graphique ici
 		  data: data,

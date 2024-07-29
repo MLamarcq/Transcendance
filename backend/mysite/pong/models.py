@@ -25,15 +25,15 @@ class CustomAccountManager(BaseUserManager):
 	def create_superuser(self, email, pseudo, password, **other_fields):
 		other_fields.setdefault('is_staff', True)
 		other_fields.setdefault('is_superuser', True)
-		
+
 		#if other_fields.get('is_staff') is not True:
 		#	raise ValueError('Superuser must have is_staff=True.')
 		#if other_fields.get('is_superuser') is not True:
 		#	raise ValueError('Superuser must have is_superuser=True.')
 		return self.create_user(email, pseudo, password, **other_fields)
-		
+
 	def create_user(self, email, pseudo, password, **other_fields):
-		
+
 		email = self.normalize_email(email)
 		user = self.model(email=email, pseudo=pseudo, **other_fields)
 		user.set_password(password)
@@ -77,17 +77,17 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
 	USERNAME_FIELD = 'email'
 	REQUIRED_FIELDS = ['pseudo']
 
-	
+
 
 	def __str__(self):
-		return f'psuedo = {self.pseudo}, is_active_status {self.is_active_status}'
+		return f'{self.pseudo}'
 
 	def block_user(self, user):
 		self.blocked_users.add(user)
-		
+
 	def unblock_user(self, user):
 		self.blocked_users.remove(user)
-		
+
 	def is_blocked(self, user):
 		return self.blocked_users.filter(id=user.id).exists()
 
@@ -99,12 +99,12 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
 class BlockedUser(models.Model):
 	blocked_user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='blocked_by_users', on_delete=models.CASCADE)
 	blocker = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='blocked_users_set', on_delete=models.CASCADE)
-	
+
 	class Meta:
 		constraints = [
 			models.UniqueConstraint(fields=['blocked_user', 'blocker'], name='unique_blocked_user')
 		]
-	
+
 	def __str__(self):
 		return f"{self.blocker.pseudo} blocked {self.blocked_user.pseudo}"
 
@@ -135,7 +135,7 @@ class Message(models.Model):
 
 	def __str__(self):
 		return f'{self.sender.pseudo}: {self.content}'
-	
+
 def send_message(chat, message):
 	# message = Message.objects.create(sender=sender, content=content)
 	chat.messages.add(message)
@@ -217,4 +217,4 @@ class Invitation(models.Model) :
 	is_ended = models.BooleanField(default=False)
 
 	def __str__(self) :
-		return f"Invitation : sender = {self.sender.psuedo} and receiver = {self.receiver.pseudo}. The invitation status is = {self.is_accepted} and its ended = {self.is_ended}"
+		return f"Invitation : sender = {self.sender.pseudo} and receiver = {self.receiver.pseudo}. The invitation status is = {self.is_accepted} and its ended = {self.is_ended}"

@@ -86,15 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
 								})
 								.then(response => response.text())
 								.then(text => {
-									console.log('Raw response:', text);
 									try {
 										const data = JSON.parse(text);
-										// console.log("data =", data);
 										if (data.html) {
 											document.getElementById('app').innerHTML = data.html;
-											console.log("big =", document.getElementById('app'));
 											script_array = Array.from(document.getElementById('app').querySelectorAll("script"));
-											console.log("script_array =", script_array);
 											script_array.forEach((script) => {
 												var new_script = document.createElement('script');
 												new_script.innerHTML = script.textContent;
@@ -148,8 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
 													success: function() {}
 												});
 											}
-											console.log("customHistory =", customHistory);
-											console.log("currentIndex =", currentIndex);
 										}
 										else
 										{
@@ -209,9 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}, 2000)
 
 	window.addEventListener('popstate', event => {
-		console.log("event = ", event);
 		if (event.state && event.state.path) {
-			console.log('Navigating to:', event.state.path);
 			const path = event.state.path;
 			currentIndex = customHistory.indexOf(path); // Synchronize custom history index
 			// var i = customHistory.length;
@@ -224,22 +216,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			//     }
 			//     i--;
 			// }
-			console.log("current index apres indexOf", currentIndex);
 			loadContent(path, false); // Load content without adding to history
 		} else {
 			// Cas où il n'y a pas d'état, on peut utiliser la location actuelle
-			console.log('Navigating to current path:', window.location.pathname);
 			loadContent(window.location.pathname, false); // Load content without adding to history
 		}
 	});
 
 	document.addEventListener('click', event => {
 		const link = event.target.closest('a');
-		console.log("Fonction principale : link =", link);
 		if (link) {
 			event.preventDefault();
 			const path = new URL(link.href).pathname;
-			console.log("Fonction principale : path =", path);
 			//window.history.pushState({}, '', path);
 			loadContent(path, true);
 		}
@@ -247,7 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Gestionnaire d'événements pour les formulaires
 	document.addEventListener('submit', event => {
-		console.log("target = ", event.target.tagName);
 		if (event.target.tagName === 'FORM') {
 			event.preventDefault();
 			submitForm(event.target, true);
@@ -302,8 +289,6 @@ function getCookie(name) {
 function loadContent(path, addToHistory) {
 
 	var csrftoken = getCookie('csrftoken');
-	console.log("addTohistory = ", addToHistory);
-	console.log('Loading content from:', path);
 	var i_clear_interval = -1;
 	while (++i_clear_interval < 2000)
 		clearInterval(i_clear_interval);
@@ -321,7 +306,6 @@ function loadContent(path, addToHistory) {
 			},
 			success: function(data_invit)
 			{
-				console.log(data_invit);
 				if (data_invit.status && is_invited == false)
 				{
 					invit.style.display = "block";
@@ -357,15 +341,11 @@ function loadContent(path, addToHistory) {
 								})
 								.then(response => response.text())
 								.then(text => {
-									console.log('Raw response:', text);
 									try {
 										const data = JSON.parse(text);
-										// console.log("data =", data);
 										if (data.html) {
 											document.getElementById('app').innerHTML = data.html;
-											console.log("big =", document.getElementById('app'));
 											script_array = Array.from(document.getElementById('app').querySelectorAll("script"));
-											console.log("script_array =", script_array);
 											script_array.forEach((script) => {
 												var new_script = document.createElement('script');
 												new_script.innerHTML = script.textContent;
@@ -384,13 +364,11 @@ function loadContent(path, addToHistory) {
 											else
 											{
 												customHistory = customHistory.slice(0, currentIndex + 1);
-												console.log("Custom history quand on tronque l'historique", customHistory)
 												customHistory.push(data.url);
 												currentIndex = customHistory.length - 1;
 											}
 											if (toggle === true)
 												window.history.pushState({ path: data.url }, '', data.url);
-											console.log("custom_hisotry = ", data)
 											if (customHistory.length > 2
 											&& customHistory[customHistory.length - 1].indexOf('pong_page') == -1
 											&& customHistory[customHistory.length - 2].indexOf('waiting_pong') != -1)
@@ -419,8 +397,6 @@ function loadContent(path, addToHistory) {
 													success: function() {}
 												});
 											}
-											console.log("customHistory =", customHistory);
-											console.log("currentIndex =", currentIndex);
 										}
 										else
 										{
@@ -499,15 +475,11 @@ function loadContent(path, addToHistory) {
 	})
 	.then(response => response.text())
 	.then(text => {
-		console.log('Raw response:', text);
 		try {
 			const data = JSON.parse(text);
-			// console.log("data =", data);
 			if (data.html) {
 				document.getElementById('app').innerHTML = data.html;
-				console.log("big =", document.getElementById('app'));
 				script_array = Array.from(document.getElementById('app').querySelectorAll("script"));
-				console.log("script_array =", script_array);
 				script_array.forEach((script) => {
 					var new_script = document.createElement('script');
 					new_script.innerHTML = script.textContent;
@@ -527,14 +499,12 @@ function loadContent(path, addToHistory) {
 					else
 					{
 						customHistory = customHistory.slice(0, currentIndex + 1);
-						console.log("Custom history quand on tronque l'historique", customHistory)
 						customHistory.push(data.url);
 						currentIndex = customHistory.length - 1;
 					}
 					if (toggle === true)
 						window.history.pushState({ path: data.url }, '', data.url);
 				}
-				console.log("custom_hisotry = ", data)
 				if (customHistory.length > 2
 					&& customHistory[customHistory.length - 1].indexOf('pong_page') == -1
 					&& customHistory[customHistory.length - 2].indexOf('waiting_pong') != -1)
@@ -563,8 +533,6 @@ function loadContent(path, addToHistory) {
 							success: function() {}
 						});
 					}
-				console.log("customHistory =", customHistory);
-				console.log("currentIndex =", currentIndex);
 			}
 			else
 			{
@@ -580,17 +548,12 @@ function loadContent(path, addToHistory) {
 }
 
 
-function printCustomHistory()
-{
-	console.log("Custom History =", customHistory);
-}
 
 
 function submitForm(form, addToHistory) {
 	var csrftoken = getCookie('csrftoken');
 	const formData = new FormData(form);
 	var toggle = false;
-	console.log("Submitting form:", form.action);
 	fetch(form.action, {
 		method: form.method || 'POST',
 		body: formData,
@@ -598,24 +561,18 @@ function submitForm(form, addToHistory) {
 	})
 	.then(response => response.text()) // Change to response.text() to debug
 	.then(text => {
-		console.log('Raw response:', text); // Log the raw response
 		try {
 			const data = JSON.parse(text); // Parse JSON manually
-			console.log("Parsed response:", data);
 			if (data.html)
 				document.getElementById('app').innerHTML = data.html;
-				console.log("big =", document.getElementById('app'));
 				script_array = Array.from(document.getElementById('app').querySelectorAll("script"));
-				console.log("script_array =", script_array);
 				script_array.forEach((script) => {
 					var new_script = document.createElement('script');
 					new_script.innerHTML = script.textContent;
 					script.remove();
 					document.getElementById('app').appendChild(new_script);
 				})
-				// console.log("big =", document.getElementById('app'));
 				// script_array = Array.from(document.getElementById('app').querySelectorAll("script"));
-				// console.log("script_array =", script_array);
 				// script_array.forEach((script) => {
 				//     var new_script = document.createElement('script');
 				//     new_script.innerHTML = script.textContent;

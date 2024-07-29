@@ -22,6 +22,7 @@ urlpatterns = [
 
     path("otp/", views.otp_view, name="otp"),
     path("profile", views.profile_view, name = "profile"),
+    path("check_box/", views.check_box, name = "check_box"),
     path("add_friends", views.add_friends, name ="add_friends"),
     path("delete_friends", views.delete_friends, name = "delete_friends"),
     path("statistics/", views.statistics, name="statistics"),

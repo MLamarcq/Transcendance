@@ -2,6 +2,7 @@
 
  <link href="{% static 'pong/css/profil.css' %}" rel="stylesheet">
 
+
  <h1>Profil</h1>
  <div class="header_page">
 			<a href="{% url 'statistics' %}">STATS</a>
@@ -94,29 +95,29 @@
 		 </div>
 	 </section>
 	 <section class="right_side">
-		 <form action="{% url 'profile' %}" method="post">
+		 <!-- <form action="{% url 'profile' %}" method="post"> -->
 			 {% csrf_token %}
 			 <fieldset>
 				 <legend class="FA_title">2FA</legend>
 				 {% if user_info.user_choice %}
 					 <div class="action_enable_disabled">
-						 <p class="enabled_status">Status : Enabled</p>
-						 <input style="display: none" type="checkbox" name="options" value="disabled">
-						 <input type="submit" value="Disabled">
+						<p class="enabled_status">Status : Enabled</p>
+						<input style="display: none" type="checkbox" name="options" value="disabled">
+						<button id="submit">Disabled</button>
+						{% if user_info.user_choice %}
+							<p class="text-center w-50 h5">Scan this QR code in your authentificator app</p>
+							<img src="data:image/png;base64,{{ user_info.user_url|safe }}" alt="QR Code">
+						{% endif %}
 					 </div>
 				 {% else %}
 					 <div class="action_enable_disabled">
-						 <p class="disabled_status">Status : Disabled</p>
-						 <input style="display: none;" type="checkbox" name="options" value="enabled">
-						 <input type="submit" value="Enabled">
+						<p class="disabled_status">Status : Disabled</p>
+						<input style="display: none;" type="checkbox" name="options" value="enabled">
+						<button id="submit">Enabled</button>
 					 </div>
 					 {% endif %}
 			 </fieldset>
-		 </form>
-		 {% if user_info.user_choice %}
-			 <p class="text-center w-50 h5">Scan this QR code in your authentificator app</p>
-			 <img src="data:image/png;base64,{{ user_info.user_url|safe }}" alt="QR Code">
-		 {% endif %}
+		 <!-- </form> -->
 	 </section>
 	 <section class="bot_side">
 			 <div class="friends_header">
@@ -161,19 +162,81 @@
 			{% endif %}
 	 </section>
  </div>
- <!-- <div>
+ <!-- <div>a
 
  </div> -->
 
 <script>
 	console.log("J'aime les fraises");
-	var submit = document.querySelector('.right_side input[type="submit"]');
-	submit.addEventListener('click', (e) => {
-		e.preventDefault();
-		e.target.form.querySelector('input[type="checkbox"]').checked = true;
-		e.target.form.submit();
-		console.log(e.target.form);
-	})
+	function sub()
+	{
+		var submit = document.querySelector('.right_side #submit');
+		var str = "";
+		// if (document.querySelector('input[name="options"]'))
+		// {
+		// 	if (document.querySelector('input[name="options"]').value == "enabled")
+		// 		str = "n"
+		// 	else
+		// 		str = "y"
+		// }
+		submit.addEventListener('click', (e) => {
+			e.preventDefault();
+			document.querySelector('.right_side input[type="checkbox"]').checked = true;
+			// e.target.form.submit();
+
+			if (document.querySelector('input[name="options"]'))
+			{
+				if (document.querySelector('input[name="options"]').value == "enabled")
+					str = "y"
+				else
+					str = "n"
+			}
+			console.log(str);
+			$.ajax({
+				url: '/check_box/',
+				type: 'POST',
+				data: {
+					'options': str
+				},
+				async: false,
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+				},
+				success: function(data)
+				{
+					console.log(data)
+					if (data && document.querySelector('.action_enable_disabled'))
+					{
+						document.querySelector('.action_enable_disabled').innerHTML = ""
+						if (data.mfa == false)
+						{
+							console.log("->>>>>>>>>>>>>>>>>>>>>fasle")
+							document.querySelector('.action_enable_disabled').innerHTML = `
+							<p class="disabled_status">Status : Disabled</p>
+							<input style="display: none;" type="checkbox" name="options" value="enabled">
+							<button id="submit">Enabled</button>
+							`
+							sub()
+						}
+						else
+						{
+							console.log("->>>>>>>>>>>>>>>>>>>>>>>>true")
+							document.querySelector('.action_enable_disabled').innerHTML = `
+							<p class="enabled_status">Status : Enabled</p>
+							<input style="display: none" type="checkbox" name="options" value="disabled">
+							<button id="submit">Disabled</button>
+							<p class="text-center w-50 h5">Scan this QR code in your authentificator app</p>
+							 <img src="data:image/png;base64,{{ user_info.user_url|safe }}" alt="QR Code">
+							`
+							sub()
+						}
+					}
+				}
+			})
+			console.log(e.target.form);
+		})
+	}
+	sub()
 	// let friends = Array.from(document.querySelectorAll('friend_list li'));
 	// friends.forEach((li) => {
 	// 	if (!li.data-is_active)

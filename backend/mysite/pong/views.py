@@ -517,6 +517,10 @@ def update_stats(user, partie, name) :
 		logger.debug("nbr_lost_parties_ = %d", nbr_lost_parties)
 		if (nbr_lost_parties) :
 			user_statistic.nbr_lose_parties = nbr_lost_parties
+		nbr_won_tournaments = Tournament.objects.filter(winner=user).count()
+		logger.debug("nbr_lost_parties_ = %d", nbr_lost_parties)
+		if (nbr_won_tournaments) :
+			user_statistic.nbr_won_tournaments = nbr_won_tournaments
 	if name == "tic":
 		# Comptage des parties nulles
 		nbr_draw_parties = Party.objects.filter(
@@ -684,6 +688,7 @@ def chat_solo(request):
 	chats = Chat.objects.all() #if none
 	message_block = None
 	message_invitation = None
+	message_unblock = None
 	if not chats :
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/add_chat_content.html", {}, request=request)
@@ -736,7 +741,9 @@ def chat_solo(request):
 				'chat_name_json' : json.dumps({'chat_name' : name_chat}),
 				'message_block' : message_block,
 				'message_invitation' : message_invitation,
-				'is_solo' : True
+				'is_solo' : True,
+				'message_unblock' : message_unblock,
+				'user' : user.pseudo
 	}
 	if request.method == 'POST' :
 		if request.POST.get('user_target') :
@@ -987,7 +994,8 @@ def chat_room(request, chat_name):
 					'message_block' : message_block,
 					'message_invitation' : message_invitation,
 					'is_solo' : False,
-					'message_unblock' : None
+					'message_unblock' : None,
+					'user' : user.pseudo
 		}
 	if not chat_name :
 		logger.info("On rentre ici dans la vue chat_room")
@@ -1751,6 +1759,32 @@ def logout_view(request):
 	else:
 		return HttpResponseRedirect(reverse('login'))
 
+def check_box(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html,
+								'url' : reverse("login")
+								})
+		else:
+			return HttpResponseRedirect(reverse("login"))
+
+	user = request.user
+	if request.method == "POST":
+		if request.POST.get("options"):
+			logger.info("->>>>>>>>>>>>>>>>>>>>>>")
+			choice = request.POST.get("options")
+			if choice == "y":
+				logger.info("y")
+				user.is_mfa_enabled = True
+				user.save()
+			else:
+				logger.info("n")
+				user.is_mfa_enabled = False
+				user.save()
+	return JsonResponse({
+		'mfa': user.is_mfa_enabled
+	})
 
 def profile_view(request):
 	#gérer block user
@@ -1785,15 +1819,15 @@ def profile_view(request):
 
 	logger.debug("friend = %s", friends)
 	if request.method == "POST":
-		if request.POST.get("options"):
-			choice = request.POST.get("options")
-			if choice == "enabled":
-				user.is_mfa_enabled = True
-				user.save()
-			else:
-				user.is_mfa_enabled = False
-				user.save()
-			#return HttpResponseRedirect(reverse("profile"))
+		# if request.POST.get("options"):
+		# 	choice = request.POST.get("options")
+		# 	if choice == "enabled":
+		# 		user.is_mfa_enabled = True
+		# 		user.save()
+		# 	else:
+		# 		user.is_mfa_enabled = False
+		# 		user.save()
+		# 	return HttpResponseRedirect(reverse("profile"))
 		if request.POST.get("change_pseudo"):
 			if user.pseudo is not request.POST.get("change_pseudo"):
 				try:
@@ -3084,7 +3118,9 @@ def pong_ai(request):
 			return HttpResponseRedirect(reverse("login"))
 
 	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-		html = render_to_string("pong/pong_ai_content.html", {}, request=request)
+		html = render_to_string("pong/pong_ai_content.html", {
+				'user': request.user.pseudo,
+			}, request=request)
 		return JsonResponse({'html': html, 'url' : reverse("pong_ai") })
 	else:
-		return render(request, "pong/pong_ai.html", {})
+		return render(request, "pong/pong_ai.html", {'user': request.user.pseudo})
