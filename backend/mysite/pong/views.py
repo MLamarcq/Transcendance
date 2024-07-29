@@ -729,7 +729,7 @@ def chat_solo(request):
 					})
 		name_chat = chat.name
 		break
-	
+
 	context = {'chat_info' : chat_info,
 				'message_info' : json.dumps(message_info),
 				'chat_name' : name_chat,
@@ -816,7 +816,7 @@ def chat_solo(request):
 			if check :
 				user_target = NewUser.objects.get(pseudo=unblock_user_pseudo)
 				error_message = unblock_user(user, user_target)
-			else : 
+			else :
 				error_message = f"{unblock_user_pseudo} doesn't exist"
 			context['message_unblock'] = error_message
 			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
@@ -1172,7 +1172,7 @@ def chat_room(request, chat_name):
 			if check :
 				user_target = NewUser.objects.get(pseudo=unblock_user_pseudo)
 				error_message = unblock_user(user, user_target)
-			else : 
+			else :
 				error_message = f"{unblock_user_pseudo} doesn't exist"
 			context['message_unblock'] = error_message
 			chat_name_url = None
@@ -1231,7 +1231,7 @@ def set_info_chat(user, user_friends, info_add_chat) :
 		for friend in user_friends :
 			if friend not in blocked_list and friend not in blocked_by :
 				info_add_chat['users_ok'].append(friend)
-		if blocked_list : 
+		if blocked_list :
 			info_add_chat['blocked_users'] = blocked_list
 		if blocked_by :
 			info_add_chat['blocked_by'] = blocked_by
@@ -1840,7 +1840,7 @@ def profile_view(request):
 					password_form_errors.append('New passwords do not match.')
 			else:
 				password_form_errors.append('Please fill out all password fields.')
-		
+
 	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 		html = render_to_string("pong/profile_content.html", {
 														'user_info' : {

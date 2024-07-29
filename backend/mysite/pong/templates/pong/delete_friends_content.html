@@ -1,13 +1,28 @@
 {% load static %}
 <link href="{% static 'pong/css/del_friends.css' %}" rel="stylesheet">
-{% if error_message.value %}
-    <p>{{error_message.message}}</p>
-{% endif %} 
+
+<style>
+    .err
+    {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -120%);
+
+        width: 100%;
+
+        text-align: center;
+        font-size: 15px;
+        color: var(--orange);
+        text-shadow:
+        0 0 5px black,
+        0 0 5px black,
+        0 0 5px black;
+    }
+</style>
+
 <h1 class="title">DEL FRIEND</h1>
-<section>
-    {% if error_message.value %}
-        <p>{{error_message.message}}</p>
-    {% endif %}
+<section class="position-relative">
     <div class="add_friend">
         <h1>Type Friend's Pseudo</h1>
         <form action="{% url 'delete_friends' %}" method="post">
@@ -28,6 +43,9 @@
             <p>FRIEND LIST EMPTY</p>
         {% endif %}
     </div>
+    {% if error_message.value %}
+        <p class="err">{{error_message.message}}</p>
+    {% endif %}
 </section>
 
 
@@ -35,7 +53,7 @@
 
 <!-- {% if error_message.value %}
     <p>{{error_message.message}}</p>
-{% endif %} 
+{% endif %}
 <h1>Type the pseudo of your friend</h1>
 <form action="{% url 'delete_friends' %}" method="post">
     {% csrf_token %}

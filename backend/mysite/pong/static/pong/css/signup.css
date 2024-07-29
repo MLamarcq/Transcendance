@@ -14,7 +14,7 @@
 	font-size: 16px;
 
 	box-sizing: border-box;
-	
+
 	border: none;
 	list-style: none;
 }
@@ -86,7 +86,7 @@ input
 h1
 {
 	color: var(--light-blue);
-	text-shadow: 
+	text-shadow:
 		0 0 5px var(--blue),
 		0 0 10px var(--blue),
 		0 0 20px black;
@@ -115,14 +115,14 @@ section > *
 	width: 30%;
 	display: flex;
 	justify-content: center;
-	align-items: center; 
+	align-items: center;
 	flex-direction: column;
 }
 
 form label
 {
 	color: var(--light-blue);
-	text-shadow: 
+	text-shadow:
 		0 0 5px var(--blue),
 		0 0 10px var(--blue),
 		0 0 20px black;
@@ -150,7 +150,7 @@ input[type="submit"]
 
 	color: var(--light-green);
 	font-size: 45px;
-	text-shadow: 
+	text-shadow:
 	0 0 5px var(--green),
 	0 0 8px var(--green),
 	0 0 10px black;
@@ -160,7 +160,7 @@ input[type="submit"]
 input[type="submit"]:hover
 {
 	cursor: pointer;
-	text-shadow: 
+	text-shadow:
 		0 0 15px black,
 		0 0 10px var(--green),
 		0 0 5px var(--green),
@@ -179,7 +179,7 @@ input[type="submit"]:hover
 	margin: 2% 0;
 	text-shadow: none;
 	color: var(--light-blue);
-	text-shadow: 
+	text-shadow:
 		0 0 5px var(--blue),
 		0 0 10px var(--blue),
 		0 0 20px black;
@@ -188,7 +188,7 @@ input[type="submit"]:hover
 {
 	/* background: var(); */
 	cursor: pointer;
-	
+
 	transform: scale(1.1);
 	color: var(--blue);
 	text-shadow: none;
@@ -213,7 +213,7 @@ section a
 section a:hover
 {
 	cursor: pointer;
-	text-shadow: 
+	text-shadow:
 		0 0 15px black,
 		0 0 10px var(--orange),
 		0 0 5px var(--orange),
@@ -225,4 +225,29 @@ section a:hover
 .login
 {
 	margin-bottom: 5%;
+}
+
+.rel
+{
+	position: relative;
+	width: 500px;
+}
+
+.message_form_chat
+{
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+
+	margin-top: 5px;
+	width: 100%;
+
+	text-align: center;
+	font-size: 15px;
+	color: var(--orange);
+	text-shadow:
+	0 0 5px black,
+	0 0 5px black,
+	0 0 5px black;
 }

@@ -196,6 +196,7 @@
 			background: #ff914d !important;
 		}
 	}
+
 	#win
 	{
 		transition: 1.5s ease;
@@ -227,6 +228,12 @@
 		animation: red_win 1s ease;
 		animation-delay: 4s;
 		background: #F04 !important;
+	}
+	.draw_win
+	{
+		animation: red_win 1s ease;
+		animation-delay: 4s;
+		background: #FFF !important;
 	}
 	.blue_win2
 	{
@@ -409,17 +416,24 @@ function game(e)
 	{
 		var div = document.createElement('div')
 		var result;
-		if (turn % 2)
+		if (turn % 2 && tic_arr[e.target.id] == null)
 		{
 			tic_arr[e.target.id] = 1;
 			div.classList.add('cross');
+			e.target.appendChild(div)
+			console.log("cross");
+			turn++;
 		}
-		else
+		else if (tic_arr[e.target.id] == null)
 		{
 			tic_arr[e.target.id] = 0;
 			div.classList.add('circle');
+			e.target.appendChild(div)
+			console.log("circle");
+			turn++;
 		}
 		result = check_end();
+		console.log("$->", turn)
 		console.log(result)
 		if (result != null)
 		{
@@ -445,9 +459,33 @@ function game(e)
 				send_score(id_party);
 			}, 300);
 		}
-		e.target.appendChild(div)
-		console.log(tic_arr);
-		turn++;
+		else
+		{
+			var i = 0;
+			var full = true;
+			while (i < tic_arr.length)
+			{
+				if (tic_arr[i] == null)
+					full = false;
+				i++;
+			}
+			if (full == true)
+			{
+				end_time = Date.now();
+				document.getElementById("win").style.display = "flex";
+				setTimeout(() => {
+					document.getElementById("win").style.height = "600px";
+					document.getElementById("win").style.width = "600px";
+					document.getElementById("win").style.top = "50%";
+					document.getElementById("win").style.opacity = "1";
+					document.getElementById("win").firstChild.nextSibling.classList.add('draw_win');
+					blue_score = 0;
+					red_score = 1;
+					send_score(id_party);
+				}, 300);
+			}
+		}
+		console.log("#", tic_arr);
 	}
 }
 

@@ -5,15 +5,17 @@ var searchingMatchInterval;
 
 var customHistory = [new URL(window.location.href).pathname];
 var currentIndex = 0;
+var csrftoken = getCookie('csrftoken');
+console.log(csrftoken)
 
 function is_there_a_tournament(data) {
+	var tournament = document.getElementById('tournament')
 	if (data.status
 	&& window.location.href.indexOf('waiting') == -1
 	&& window.location.href.indexOf('pong') == -1
 	&& window.location.href.indexOf('tic/') == -1
 	&& window.location.href.indexOf('tournament') == -1)
 	{
-		var tournament = document.getElementById('tournament')
 		tournament.style.display = "flex";
 		setTimeout(() =>{
 			tournament.style.opacity = ".65";
@@ -36,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	var invit = document.getElementById('invit')
 	var opponent = document.getElementById('opponent')
 	var is_invited = false;
+	var csrftoken = getCookie('csrftoken');
 
 	var InvitationInterval = setInterval(() => {
 		$.ajax({
@@ -43,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			type: 'POST',
 			async: false,
 			beforeSend: function(xhr) {
-				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+				xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 			},
 			success: function(data_invit)
 			{
@@ -74,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 							},
 							async: false,
 							beforeSend: function(xhr) {
-								xhr.setRequestHeader("X-CSRFToken", csrftoken);
+								xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 							},
 							success: function(created_party){
 								var toggle = false;
@@ -126,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 													type: 'POST',
 													async: false,
 													beforeSend: function(xhr) {
-														xhr.setRequestHeader("X-CSRFToken", csrftoken);
+														xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 													},
 													success: function() {}
 												});
@@ -140,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 													type: 'POST',
 													async: false,
 													beforeSend: function(xhr) {
-														xhr.setRequestHeader("X-CSRFToken", csrftoken);
+														xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 													},
 													success: function() {}
 												});
@@ -178,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 							},
 							async: false,
 							beforeSend: function(xhr) {
-								xhr.setRequestHeader("X-CSRFToken", csrftoken);
+								xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 							},
 							success: function(){}
 						})
@@ -195,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			type: 'POST',
 			async: false,
 			beforeSend: function(xhr) {
-				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+				xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 			},
 			success: function(data_tournament)
 			{
@@ -265,7 +268,7 @@ function send_score_quit(id_party) {
 			type: 'POST',
 			async: false,
 			beforeSend: function(xhr) {
-				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+				xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 			},
 			data: {
 				'red_score': 0,
@@ -295,10 +298,10 @@ function getCookie(name) {
 	return cookieValue;
 }
 
-var csrftoken = getCookie('csrftoken');
 
 function loadContent(path, addToHistory) {
 
+	var csrftoken = getCookie('csrftoken');
 	console.log("addTohistory = ", addToHistory);
 	console.log('Loading content from:', path);
 	var i_clear_interval = -1;
@@ -314,7 +317,7 @@ function loadContent(path, addToHistory) {
 			type: 'POST',
 			async: false,
 			beforeSend: function(xhr) {
-				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+				xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 			},
 			success: function(data_invit)
 			{
@@ -345,7 +348,7 @@ function loadContent(path, addToHistory) {
 							},
 							async: false,
 							beforeSend: function(xhr) {
-								xhr.setRequestHeader("X-CSRFToken", csrftoken);
+								xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 							},
 							success: function(created_party){
 								var toggle = false;
@@ -397,7 +400,7 @@ function loadContent(path, addToHistory) {
 													type: 'POST',
 													async: false,
 													beforeSend: function(xhr) {
-														xhr.setRequestHeader("X-CSRFToken", csrftoken);
+														xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 													},
 													success: function() {}
 												});
@@ -411,7 +414,7 @@ function loadContent(path, addToHistory) {
 													type: 'POST',
 													async: false,
 													beforeSend: function(xhr) {
-														xhr.setRequestHeader("X-CSRFToken", csrftoken);
+														xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 													},
 													success: function() {}
 												});
@@ -449,7 +452,7 @@ function loadContent(path, addToHistory) {
 							},
 							async: false,
 							beforeSend: function(xhr) {
-								xhr.setRequestHeader("X-CSRFToken", csrftoken);
+								xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 							},
 							success: function(){}
 						})
@@ -466,7 +469,7 @@ function loadContent(path, addToHistory) {
 			type: 'POST',
 			async: false,
 			beforeSend: function(xhr) {
-				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+				xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 			},
 			success: function(data_tournament)
 			{
@@ -541,7 +544,7 @@ function loadContent(path, addToHistory) {
 							type: 'POST',
 							async: false,
 							beforeSend: function(xhr) {
-								xhr.setRequestHeader("X-CSRFToken", csrftoken);
+								xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 							},
 							success: function() {}
 						});
@@ -555,7 +558,7 @@ function loadContent(path, addToHistory) {
 							type: 'POST',
 							async: false,
 							beforeSend: function(xhr) {
-								xhr.setRequestHeader("X-CSRFToken", csrftoken);
+								xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
 							},
 							success: function() {}
 						});
@@ -584,6 +587,7 @@ function printCustomHistory()
 
 
 function submitForm(form, addToHistory) {
+	var csrftoken = getCookie('csrftoken');
 	const formData = new FormData(form);
 	var toggle = false;
 	console.log("Submitting form:", form.action);
