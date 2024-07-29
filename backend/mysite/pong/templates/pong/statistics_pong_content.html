@@ -17,11 +17,17 @@
 					<h3>Game Lost</h3>
 					<li>{{ data.user_statistic.nbr_lose_parties }}</li>
 					
+					{% if data.is_tic %}
+						<h3>Draw</h3>
+						<li>{{ data.user_statistic.nbr_draw }}</li>
+					{% endif %}
+
 					<h3>Time played</h3>
 					<li>{{ data.user_statistic.total_time_played }}</li>
 					
 					<h3>Won Tournament</h3>
 					<li>{{ data.user_statistic.nbr_won_tournaments }}</li>
+
 				{% else %}
 					<h3>Game Won</h3>
 					<li>0</li>
@@ -29,6 +35,11 @@
 					<h3>Game Lost</h3>
 					<li>0</li>
 					
+					{% if data.is_tic %}
+						<h3>Draw</h3>
+						<li>0</li>
+					{% endif %}
+
 					<h3>Time played</h3>
 					<li>0</li>
 					

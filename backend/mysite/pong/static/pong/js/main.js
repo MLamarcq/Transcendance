@@ -6,6 +6,29 @@ var searchingMatchInterval;
 var customHistory = [new URL(window.location.href).pathname];
 var currentIndex = 0;
 
+function is_there_a_tournament(data) {
+	if (data.status
+	&& window.location.href.indexOf('waiting') == -1
+	&& window.location.href.indexOf('pong') == -1
+	&& window.location.href.indexOf('tic/') == -1
+	&& window.location.href.indexOf('tournament') == -1)
+	{
+		var tournament = document.getElementById('tournament')
+		tournament.style.display = "flex";
+		setTimeout(() =>{
+			tournament.style.opacity = ".65";
+		}, 300)
+		tournament.innerHTML = "A tournament is waiting for participant";
+	}
+	else
+	{
+		tournament.style.opacity = "0";
+		setTimeout(() =>{
+			tournament.style.display = "none";
+		}, 400)
+	}
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
 	console.log('Script main.js est chargé');
@@ -167,6 +190,19 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			}
 		});
+		$.ajax({
+			url: '/looking_for_tournament/',
+			type: 'POST',
+			async: false,
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+			},
+			success: function(data_tournament)
+			{
+				is_there_a_tournament(data_tournament);
+			}
+		});
+
 	}, 2000)
 
 	window.addEventListener('popstate', event => {
@@ -423,6 +459,18 @@ function loadContent(path, addToHistory) {
 					document.querySelector('#invit #refuse').addEventListener('click', refuse)
 
 				}
+			}
+		});
+		$.ajax({
+			url: '/looking_for_tournament/',
+			type: 'POST',
+			async: false,
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+			},
+			success: function(data_tournament)
+			{
+				is_there_a_tournament(data_tournament);
 			}
 		});
 	}, 2000)

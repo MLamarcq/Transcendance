@@ -167,6 +167,27 @@ input
 	border-radius: 50px;
 }
 
+#tournament
+{
+	position: absolute;
+	top: 0%;
+	left: 40%;
+	transform: translate(-40%, 0%);
+
+	opacity: .5;
+	background: #0008;
+
+	color: white;
+	text-align: center;
+
+	width: 320px;
+	height: 90px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
 #pop_up
 {
 	position: absolute;
@@ -193,7 +214,6 @@ input
 
 	z-index: 9999;
 }
-
 #invit
 {
 	position: absolute;

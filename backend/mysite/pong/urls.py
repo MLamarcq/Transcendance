@@ -40,6 +40,7 @@ urlpatterns = [
 	path('tournament/', views.tournament, name='tournament'),
 	path('scoring_tournament/<int:party_id>/', views.scoring_tournament, name='scoring_tournament'),
 	path('check_tournament_match/', views.check_tournament_match, name='check_tournament_match'),
+	path("looking_for_tournament/", views.looking_for_tournament, name="looking_for_tournament"),
 
 	path('waiting_tic/', views.waiting_tic, name='waiting_tic'),
 	path('stop_waiting_tic/', views.stop_waiting_tic, name='stop_waiting_tic'),

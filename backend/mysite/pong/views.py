@@ -495,6 +495,7 @@ def update_stats(user, partie, name) :
 		'game_dates_json': [],
 		'game_results_json': [],
 		'game_duration_json' : {},
+		'is_tic' : False
 	}
 	logger.info("On passe la ouai")
 	user_statistic, created = Statistic.objects.get_or_create(user=user)
@@ -516,15 +517,43 @@ def update_stats(user, partie, name) :
 		logger.debug("nbr_lost_parties_ = %d", nbr_lost_parties)
 		if (nbr_lost_parties) :
 			user_statistic.nbr_lose_parties = nbr_lost_parties
-	elif name == "tic" :
-		nbr_won_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(winner=user) & Q(game_name="tic")).count()
-		logger.debug("nbr_won_parties_ = %d", nbr_won_parties)
-		if (nbr_won_parties) :
+	if name == "tic":
+		# Comptage des parties nulles
+		nbr_draw_parties = Party.objects.filter(
+			Q(user_red=user) | Q(user_blue=user),
+			score_red=0,
+			score_blue=0,
+			game_name="tic"
+		).count()
+		logger.debug("nbr_draw_parties = %d", nbr_draw_parties)
+		if nbr_draw_parties:
+			user_statistic.nbr_draw = nbr_draw_parties
+
+		# Comptage des parties gagnées
+		nbr_won_parties = Party.objects.filter(
+			Q(user_red=user) | Q(user_blue=user),
+			winner=user,
+			game_name="tic"
+		).exclude(
+			Q(score_red=0) & Q(score_blue=0)
+		).count()
+		logger.debug("nbr_won_parties = %d", nbr_won_parties)
+		if nbr_won_parties:
 			user_statistic.nbr_won_parties = nbr_won_parties
-		nbr_lost_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(loser=user) & Q(game_name="tic")).count()
-		logger.debug("nbr_lost_parties_ = %d", nbr_lost_parties)
-		if (nbr_lost_parties) :
+
+		# Comptage des parties perdues
+		nbr_lost_parties = Party.objects.filter(
+			Q(user_red=user) | Q(user_blue=user),
+			loser=user,
+			game_name="tic"
+		).exclude(
+			Q(score_red=0) & Q(score_blue=0)
+		).count()
+		logger.debug("nbr_lost_parties = %d", nbr_lost_parties)
+		if nbr_lost_parties:
 			user_statistic.nbr_lose_parties = nbr_lost_parties
+
+		data['is_tic'] = True
 	logger.debug("user stats = %s", user_statistic)
 	game_date = []
 	game_result = []
@@ -604,11 +633,7 @@ def statistics_tic(request):
 		else:
 			return HttpResponseRedirect(reverse("index"))
 	user = NewUser.objects.get(id=(request.session.get('user_id')))
-	data = {'user_statistic' : None,
-			'history' : [],
-			'game_dates_json' : None,
-			'game_results_json' : None,
-			'game_duration_json' : None}
+	data = {'is_tic' : True}
 	partys_tic = Party.objects.filter(game_name="tic")
 	if partys_tic.exists():
 		data = update_stats(user, partys_tic, "tic")
@@ -777,14 +802,30 @@ def chat_solo(request):
 			except ObjectDoesNotExist :
 				message_invitation = "User doesn't exist"
 				context['message_invitation'] = message_invitation
-		logger.debug("ctxt3 = %s", context)
-		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-			html = render_to_string("pong/chat_content.html", context, request=request)
-			return JsonResponse({'html': html,
-									'url' : reverse("chat_solo")
-				})
-		else:
-			return render(request, "pong/chat.html", context)
+			logger.debug("ctxt3 = %s", context)
+			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+				html = render_to_string("pong/chat_content.html", context, request=request)
+				return JsonResponse({'html': html,
+										'url' : reverse("chat_solo")
+					})
+			else:
+				return render(request, "pong/chat.html", context)
+		if request.POST.get("unblock") :
+			unblock_user_pseudo = request.POST.get("unblock")
+			check = is_in_users(unblock_user_pseudo)
+			if check :
+				user_target = NewUser.objects.get(pseudo=unblock_user_pseudo)
+				error_message = unblock_user(user, user_target)
+			else : 
+				error_message = f"{unblock_user_pseudo} doesn't exist"
+			context['message_unblock'] = error_message
+			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+				html = render_to_string("pong/chat_content.html", context, request=request)
+				return JsonResponse({'html': html,
+										'url' : reverse("chat_solo")
+					})
+			else:
+				return render(request, "pong/chat.html", context)
 	if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 		html = render_to_string("pong/chat_content.html", context, request=request)
 		return JsonResponse({'html': html,
@@ -868,7 +909,30 @@ def invitation_response(request):
 	return JsonResponse({})
 
 
+def looking_for_tournament(request):
+	if not request.user.is_authenticated:
+		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+			html = render_to_string("pong/login_content.html", {}, request)
+			return JsonResponse({'html': html, 'url' : reverse("login")})
+		else:
+			return HttpResponseRedirect(reverse("login"))
 
+	user = request.user
+	not_full_tournaments = Tournament.objects.filter(
+		Q(participant1__isnull=True) |
+		Q(participant2__isnull=True) |
+		Q(participant3__isnull=True) |
+		Q(participant4__isnull=True)
+	).last()
+
+	if not_full_tournaments:
+		return JsonResponse({
+			'status': True,
+		})
+	else:
+		return JsonResponse({
+			'status': False,
+		})
 
 def chat_room(request, chat_name):
 	if not request.user.is_authenticated:
@@ -883,6 +947,7 @@ def chat_room(request, chat_name):
 	chats = Chat.objects.all() #if none
 	message_block = None
 	message_invitation = None
+	message_unblock = None
 	if not chats :
 		if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
 			html = render_to_string("pong/add_chat_content.html", {'chat_info' : {
@@ -921,7 +986,8 @@ def chat_room(request, chat_name):
 					'chat_name_json' : None,
 					'message_block' : message_block,
 					'message_invitation' : message_invitation,
-					'is_solo' : False
+					'is_solo' : False,
+					'message_unblock' : None
 		}
 	if not chat_name :
 		logger.info("On rentre ici dans la vue chat_room")
@@ -1100,6 +1166,28 @@ def chat_room(request, chat_name):
 					})
 			else:
 				return render(request, "pong/chat.html", context)
+		if request.POST.get("unblock") :
+			unblock_user_pseudo = request.POST.get("unblock")
+			check = is_in_users(unblock_user_pseudo)
+			if check :
+				user_target = NewUser.objects.get(pseudo=unblock_user_pseudo)
+				error_message = unblock_user(user, user_target)
+			else : 
+				error_message = f"{unblock_user_pseudo} doesn't exist"
+			context['message_unblock'] = error_message
+			chat_name_url = None
+			if chat_name :
+				chat_name_url = chat_name
+			else:
+				chat_name_url = name_chat
+			logger.debug("ctxt = %s", context)
+			if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+				html = render_to_string("pong/chat_content.html", context, request=request)
+				return JsonResponse({'html': html,
+										'url' : (f"{chat_name_url}")
+					})
+			else:
+				return render(request, "pong/chat.html", context)
 	else:
 		chat_name_url = None
 		if chat_name :
@@ -1229,6 +1317,23 @@ def is_blocked(user, target) :
 			if block.blocker.pseudo == user.pseudo and block.blocked_user.pseudo == target.pseudo :
 				return (True)
 	return False
+
+
+def unblock_user(user, user_target):
+	verif = is_blocked(user, user_target)
+	error_message = None
+	if verif:
+		blocked_object = BlockedUser.objects.filter(blocker=user, blocked_user=user_target).first()
+		if blocked_object:
+			blocked_object.delete()
+			error_message = f"{user_target.pseudo} is unblocked"
+		else:
+			error_message = f"Error: {user_target.pseudo} is not in your blocked user list"
+	else:
+		error_message = f"Error: {user_target.pseudo} is not in your blocked user list"
+	return error_message
+
+
 
 # def block_user(request) :
 # 	if request.method == 'POST' :

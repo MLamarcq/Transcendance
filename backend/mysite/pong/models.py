@@ -202,6 +202,7 @@ class Statistic(models.Model):
 	user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='user_statistic')
 	nbr_won_parties = models.IntegerField(default=0)
 	nbr_lose_parties = models.IntegerField(default=0)
+	nbr_draw = models.IntegerField(default=0)
 	total_time_played = models.DurationField(default=timedelta(0))
 	nbr_won_tournaments = models.IntegerField(default=0)
 

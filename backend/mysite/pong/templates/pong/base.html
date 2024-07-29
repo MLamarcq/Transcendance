@@ -33,7 +33,7 @@
 				<a href="{% url 'index' %}" alt="Pong">Pong</a>
 			</h3>
 			<nav>
-				<a id="logout-button" href="/logout">logout</a>
+				<a id="logout-button" href="/logout">Logout</a>
 				<a href="/home_game" alt="Game">Game</a>
 				<a href="/chat" alt="Chat">Chat</a>
 				<a href="{% url 'profile' %}" alt="Profil">
@@ -42,6 +42,7 @@
 				</a>
 			</nav>
 		</header>
+		<div id="tournament" style="opacity:0; display:none;"></div>
 		<div id="pop_up" style="opacity:0; display:none;"></div>
 		<div id="invit" style="opacity:0; display:none;">
 			<p>You are invited to play by <span id="opponent"></span></p>
