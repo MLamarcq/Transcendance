@@ -354,6 +354,33 @@ function send_score(id_party)
 		}
 	});
 }
+function send_draw(id_party)
+{
+	if (id_party == -1 || !id_party)
+	{
+		var path = window.location.pathname;
+		var id_party = path.match(/\/tic\/(\d+)\//)
+		if (id_party)
+			id_party = id_party[1];
+	}
+	console.log("send_score: ", id_party, red_score, blue_score);
+	$.ajax({
+		url: '/scoring_tic/' + id_party + '/',
+		type: 'POST',
+		async: false,
+		beforeSend: function(xhr) {
+			xhr.setRequestHeader("X-CSRFToken", csrftoken);
+		},
+		data: {
+			'red_score': 0,
+			'blue_score': 0,
+			'game_time': end_time - start_time,
+		},
+		success: function() {
+
+		}
+	});
+}
 
 function check_end() {
 	// col
@@ -481,7 +508,7 @@ function game(e)
 					document.getElementById("win").firstChild.nextSibling.classList.add('draw_win');
 					blue_score = 0;
 					red_score = 1;
-					send_score(id_party);
+					send_draw(id_party);
 				}, 300);
 			}
 		}

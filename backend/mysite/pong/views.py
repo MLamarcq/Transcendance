@@ -459,15 +459,46 @@ def update_stats_other_profile(user, partie, name) :
 		logger.debug("nbr_lost_parties_ = %d", nbr_lost_parties)
 		if (nbr_lost_parties) :
 			user_statistic.nbr_lose_parties = nbr_lost_parties
-	elif name == "tic" :
-		nbr_won_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(winner=user) & Q(game_name="tic")).count()
-		logger.debug("nbr_won_parties_ = %d", nbr_won_parties)
-		if (nbr_won_parties) :
-			user_statistic.nbr_won_parties = nbr_won_parties
-		nbr_lost_parties = Party.objects.filter((Q(user_red=user) | Q(user_blue=user)) & Q(loser=user) & Q(game_name="tic")).count()
+		nbr_won_tournaments = Tournament.objects.filter(winner=user).count()
 		logger.debug("nbr_lost_parties_ = %d", nbr_lost_parties)
-		if (nbr_lost_parties) :
+		if (nbr_won_tournaments) :
+			user_statistic.nbr_won_tournaments = nbr_won_tournaments
+	if name == "tic":
+		# Comptage des parties nulles
+		nbr_draw_parties = Party.objects.filter(
+			Q(user_red=user) | Q(user_blue=user),
+			score_red=0,
+			score_blue=0,
+			game_name="tic"
+		).count()
+		logger.debug("nbr_draw_parties = %d", nbr_draw_parties)
+		if nbr_draw_parties:
+			user_statistic.nbr_draw = nbr_draw_parties
+
+		# Comptage des parties gagnées
+		nbr_won_parties = Party.objects.filter(
+			Q(user_red=user) | Q(user_blue=user),
+			winner=user,
+			game_name="tic"
+		).exclude(
+			Q(score_red=0) & Q(score_blue=0)
+		).count()
+		logger.debug("nbr_won_parties = %d", nbr_won_parties)
+		if nbr_won_parties:
+			user_statistic.nbr_won_parties = nbr_won_parties
+
+		# Comptage des parties perdues
+		nbr_lost_parties = Party.objects.filter(
+			Q(user_red=user) | Q(user_blue=user),
+			loser=user,
+			game_name="tic"
+		).exclude(
+			Q(score_red=0) & Q(score_blue=0)
+		).count()
+		logger.debug("nbr_lost_parties = %d", nbr_lost_parties)
+		if nbr_lost_parties:
 			user_statistic.nbr_lose_parties = nbr_lost_parties
+
 	logger.debug("user stats = %s", user_statistic)
 	game_duration = timedelta()
 	user_statistic.total_time_played = timedelta(0)
