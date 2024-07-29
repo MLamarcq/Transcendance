@@ -105,6 +105,7 @@
 		});
 		var messageInfo = JSON.parse('{{ message_info|safe|escapejs }}');
 		var chatName = JSON.parse('{{ chat_name_json|safe|escapejs }}');
+		var user = "{{ user }}";
 		// var user = JSON.parse('{{ user|safe|escapejs }}');
 		// var user_info = JSON.parse('{{ user_info|safe|escapejs }}');
 		// console.log("message_info = ", messageInfo);
@@ -118,7 +119,7 @@
 			var p = document.createElement("p");
 			a.textContent = msg.sender.substr(0, 1);
 			p.textContent = msg.message;
-			if (msg.sender )
+			if (msg.sender != user)
 			{
 				li.appendChild(a);
 				li.appendChild(p);
